@@ -1,0 +1,408 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>dfitspy as an executable &mdash; dfitspy 0.1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="dfitspy as a Python Module" href="usage_module.html" />
+    <link rel="prev" title="Installation" href="installation.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> dfitspy
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="index.html">Home</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">dfitspy as an executable</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#the-command-line-interface-help">The command line interface help</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#if-you-want-to-dfits-fitsort">If you want to dfits | fitsort</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#extra-arguments">Extra arguments</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="usage_module.html">dfitspy as a Python Module</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">dfitspy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>dfitspy as an executable</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/usage.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <p id="usagecli"><img alt="Python36" src="https://img.shields.io/badge/python-3.6-blue.svg" /> <a class="reference external" href="http://perso.crans.org/besson/LICENSE.html"><img alt="Licence" src="https://img.shields.io/badge/License-GPLv3-blue.svg" /></a> <a class="reference external" href="http://www.numpy.org/"><img alt="numpy" src="https://img.shields.io/badge/poweredby-numpy-orange.svg" /></a></p>
+<div class="section" id="dfitspy-as-an-executable">
+<h1>dfitspy as an executable<a class="headerlink" href="#dfitspy-as-an-executable" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="the-command-line-interface-help">
+<h2>The command line interface help<a class="headerlink" href="#the-command-line-interface-help" title="Permalink to this headline">¶</a></h2>
+<p>You can start dfitspy from a terminal. dfitspy comes with a command line interface which includes a ‘help’ that you can display in your terminal using the help command. It must be called like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[user@machine]$ dfitspy --help
+</pre></div>
+</div>
+<p>This command will display the help of the program:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">dfitspy</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">file</span> <span class="p">[</span><span class="n">FILE</span> <span class="p">[</span><span class="n">FILE</span> <span class="o">...</span><span class="p">]]]</span> <span class="p">[</span><span class="o">-</span><span class="n">key</span> <span class="n">KEY</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="nb">dir</span> <span class="n">DIR</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="nb">list</span><span class="p">]</span>
+         <span class="p">[</span><span class="o">--</span><span class="n">grep</span> <span class="n">GREP</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">test</span><span class="p">]</span>
+
+<span class="n">dfitspy</span><span class="p">,</span> <span class="n">version</span> <span class="mf">18.10</span><span class="o">.</span><span class="mi">0</span><span class="p">,</span> <span class="n">Licence</span><span class="p">:</span> <span class="n">GPL</span>
+
+<span class="n">optional</span> <span class="n">arguments</span><span class="p">:</span>
+   <span class="o">-</span><span class="n">h</span><span class="p">,</span> <span class="o">--</span><span class="n">help</span>            <span class="n">show</span> <span class="n">this</span> <span class="n">help</span> <span class="n">message</span> <span class="ow">and</span> <span class="n">exit</span>
+   <span class="o">--</span><span class="nb">dir</span> <span class="n">DIR</span>             <span class="n">Directory</span> <span class="n">where</span> <span class="n">we</span> <span class="n">search</span> <span class="k">for</span> <span class="n">files</span><span class="o">.</span> <span class="n">If</span> <span class="n">none</span> <span class="n">given</span><span class="p">,</span>
+                      <span class="n">the</span> <span class="n">default</span> <span class="n">directory</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">one</span> <span class="kn">from</span> <span class="nn">where</span> <span class="n">dfitspy</span> <span class="ow">is</span>
+                      <span class="n">started</span><span class="o">.</span>
+   <span class="o">--</span><span class="nb">list</span>                <span class="n">List</span> <span class="nb">all</span> <span class="n">keywords</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">given</span> <span class="n">file</span> <span class="p">(</span><span class="k">if</span> <span class="n">a</span> <span class="nb">list</span> <span class="n">of</span> <span class="n">file</span>
+                      <span class="ow">is</span> <span class="n">given</span> <span class="n">the</span> <span class="n">first</span> <span class="n">one</span> <span class="ow">is</span> <span class="n">used</span><span class="p">)</span>
+   <span class="o">--</span><span class="n">grep</span> <span class="n">GREP</span>           <span class="n">Restrain</span> <span class="n">the</span> <span class="n">files</span> <span class="n">to</span> <span class="n">the</span> <span class="n">one</span> <span class="k">with</span> <span class="n">a</span> <span class="n">given</span> <span class="n">value</span> <span class="n">of</span> <span class="n">a</span>
+                      <span class="n">given</span> <span class="n">parameter</span><span class="p">,</span> <span class="n">Work</span> <span class="n">ONLY</span> <span class="k">for</span> <span class="n">the</span> <span class="n">first</span> <span class="n">keyword</span>
+   <span class="o">--</span><span class="n">test</span>                <span class="n">Start</span> <span class="n">the</span> <span class="n">testing</span> <span class="n">of</span> <span class="n">the</span> <span class="n">program</span>
+   <span class="o">--</span><span class="n">version</span>             <span class="n">Display</span> <span class="n">the</span> <span class="n">version</span> <span class="n">of</span> <span class="n">the</span> <span class="n">program</span>
+   <span class="o">--</span><span class="n">docs</span>                <span class="n">Diplay</span> <span class="n">the</span> <span class="n">online</span> <span class="ow">or</span> <span class="n">local</span> <span class="n">documentation</span> <span class="n">program</span>
+
+
+
+<span class="n">Mandatory</span> <span class="n">arguments</span><span class="p">:</span>
+   <span class="o">-</span><span class="n">file</span> <span class="p">[</span><span class="n">FILE</span> <span class="p">[</span><span class="n">FILE</span> <span class="o">...</span><span class="p">]]</span>
+                      <span class="n">a</span> <span class="n">file</span><span class="p">,</span> <span class="n">a</span> <span class="nb">list</span> <span class="n">of</span> <span class="n">file</span> <span class="n">separated</span> <span class="n">by</span> <span class="n">coma</span><span class="p">,</span> <span class="o">*.</span><span class="n">fits</span> <span class="ow">is</span>
+                      <span class="n">accepted</span><span class="p">,</span> <span class="o">*</span> <span class="k">as</span> <span class="n">well</span>
+   <span class="o">-</span><span class="n">key</span> <span class="n">KEY</span>           <span class="n">Header</span> <span class="n">keyword</span> <span class="ow">or</span> <span class="nb">list</span> <span class="n">of</span> <span class="n">header</span> <span class="n">keywords</span> <span class="p">(</span><span class="n">separated</span>
+                      <span class="n">by</span> <span class="n">coma</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>In details it means:</p>
+<p>dfitspy has few optionnal arguments and 2 semi mandatory arguements. You can not start dfitspy without any argument:</p>
+<ul class="simple">
+<li>-h and –help: Display this help in the terminal.</li>
+</ul>
+</div>
+<div class="section" id="if-you-want-to-dfits-fitsort">
+<h2>If you want to dfits | fitsort<a class="headerlink" href="#if-you-want-to-dfits-fitsort" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first">-file: here is where you give your files. You have multiple option how to give values to this argument:</p>
+<blockquote>
+<div><ul class="simple">
+<li>A single file:  <strong>-file test.fits</strong></li>
+<li>Multiple particular files: <strong>-file test.fits,test2.fits</strong>. They must be separated with comas.</li>
+<li>You can use the ‘all’ argument: <strong>-file all</strong></li>
+<li>You can use the ‘*’ solution: <strong>-file</strong> *</li>
+<li>All the fits file in the directory: <strong>-file *.fits</strong></li>
+<li>Semi complete names: <strong>-file test*</strong> or <strong>-file *test.fits</strong> or with path: <strong>-file /test/*test.fits</strong>.</li>
+</ul>
+</div></blockquote>
+</li>
+<li><dl class="first docutils">
+<dt>-key: Here is where you ask dfitspy to look for particular keywords in the headers. Here again you have multiple option</dt>
+<dd><ul class="first last simple">
+<li>a single keyword: <strong>-key OBJECT</strong></li>
+<li>multiple arguements: <strong>-key OBJECT,LST</strong>. They must be separated by comas</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p>Two things you must be careful of:</p>
+<ul class="last simple">
+<li>ESO keywords may contain the ‘HIERARCH’ prefix. This is ignored by dfitspy therefore do not use i t.</li>
+<li>If your keywords contain spaces (ex: ESO OBS ID) you must give it inside quotes –&gt; ‘ESO OBS ID’</li>
+</ul>
+</div>
+<p>An example of output is the following (run the command: <strong>dfitspy -f Test_data/*.fits -key LST,’ESO OBS NAME’</strong>):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">Command</span><span class="p">:</span> <span class="n">dfitspy</span> <span class="o">-</span><span class="n">f</span> <span class="n">Test_data</span><span class="o">/*.</span><span class="n">fits</span> <span class="o">-</span><span class="n">key</span> <span class="n">LST</span><span class="p">,</span><span class="s1">&#39;ESO OBS NAME&#39;</span><span class="p">]</span>
+
+<span class="p">[</span><span class="n">DFITSPY</span> <span class="n">INFO</span><span class="p">]</span><span class="o">&gt;</span> <span class="mi">34</span> <span class="n">files</span> <span class="n">found</span>
+<span class="o">-----------------------------------</span>
+<span class="n">filename</span>                                                <span class="n">LST</span>             <span class="n">ESO</span> <span class="n">OBS</span> <span class="n">NAME</span>
+<span class="o">-------------------------------------------------</span>       <span class="o">---------</span>       <span class="o">------------------</span>
+<span class="n">r</span><span class="o">.</span><span class="n">XSHOO</span><span class="o">.</span><span class="mi">2018</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">01</span><span class="n">T09</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mf">43.577</span><span class="n">_tpl</span><span class="o">-</span><span class="n">A01_0000</span><span class="o">.</span><span class="n">fits</span>       <span class="mf">78684.245</span>       <span class="n">Hip106831_TELL_SLT</span>
+<span class="n">r</span><span class="o">.</span><span class="n">XSHOO</span><span class="o">.</span><span class="mi">2018</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">01</span><span class="n">T09</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mf">43.577</span><span class="n">_tpl</span><span class="o">-</span><span class="n">A01_0001</span><span class="o">.</span><span class="n">fits</span>       <span class="mf">78684.245</span>       <span class="n">Hip106831_TELL_SLT</span>
+<span class="n">r</span><span class="o">.</span><span class="n">XSHOO</span><span class="o">.</span><span class="mi">2018</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">01</span><span class="n">T09</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mf">43.577</span><span class="n">_tpl</span><span class="o">-</span><span class="n">A01_0002</span><span class="o">.</span><span class="n">fits</span>       <span class="mf">78684.245</span>       <span class="n">Hip106831_TELL_SLT</span>
+<span class="n">r</span><span class="o">.</span><span class="n">XSHOO</span><span class="o">.</span><span class="mi">2018</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">01</span><span class="n">T09</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mf">43.577</span><span class="n">_tpl</span><span class="o">-</span><span class="n">A02_0000</span><span class="o">.</span><span class="n">fits</span>       <span class="mf">78684.245</span>       <span class="n">Hip106831_TELL_SLT</span>
+<span class="n">r</span><span class="o">.</span><span class="n">XSHOO</span><span class="o">.</span><span class="mi">2018</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">01</span><span class="n">T09</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mf">43.577</span><span class="n">_tpl</span><span class="o">-</span><span class="n">A02_0001</span><span class="o">.</span><span class="n">fits</span>       <span class="mf">78684.245</span>       <span class="n">Hip106831_TELL_SLT</span>
+<span class="n">r</span><span class="o">.</span><span class="n">XSHOO</span><span class="o">.</span><span class="mi">2018</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">01</span><span class="n">T09</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mf">43.577</span><span class="n">_tpl</span><span class="o">-</span><span class="n">A02_0002</span><span class="o">.</span><span class="n">fits</span>       <span class="mf">78684.245</span>       <span class="n">Hip106831_TELL_SLT</span>
+<span class="n">r</span><span class="o">.</span><span class="n">XSHOO</span><span class="o">.</span><span class="mi">2018</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">01</span><span class="n">T09</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mf">43.577</span><span class="n">_tpl</span><span class="o">-</span><span class="n">A03_0000</span><span class="o">.</span><span class="n">fits</span>       <span class="mf">78684.245</span>       <span class="n">Hip106831_TELL_SLT</span>
+<span class="n">r</span><span class="o">.</span><span class="n">XSHOO</span><span class="o">.</span><span class="mi">2018</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">01</span><span class="n">T09</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mf">43.577</span><span class="n">_tpl</span><span class="o">-</span><span class="n">A03_0001</span><span class="o">.</span><span class="n">fits</span>       <span class="mf">78684.245</span>       <span class="n">Hip106831_TELL_SLT</span>
+<span class="n">r</span><span class="o">.</span><span class="n">XSHOO</span><span class="o">.</span><span class="mi">2018</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">01</span><span class="n">T09</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mf">43.577</span><span class="n">_tpl</span><span class="o">-</span><span class="n">A03_0002</span><span class="o">.</span><span class="n">fits</span>       <span class="mf">78684.245</span>       <span class="n">Hip106831_TELL_SLT</span>
+<span class="n">r</span><span class="o">.</span><span class="n">XSHOO</span><span class="o">.</span><span class="mi">2018</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">01</span><span class="n">T09</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mf">44.797</span><span class="n">_tpl</span><span class="o">-</span><span class="n">A01_0000</span><span class="o">.</span><span class="n">fits</span>       <span class="mf">78684.245</span>       <span class="n">Hip106831_TELL_SLT</span>
+<span class="n">r</span><span class="o">.</span><span class="n">XSHOO</span><span class="o">.</span><span class="mi">2018</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">01</span><span class="n">T09</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mf">44.797</span><span class="n">_tpl</span><span class="o">-</span><span class="n">A01_0001</span><span class="o">.</span><span class="n">fits</span>       <span class="mf">78684.245</span>       <span class="n">Hip106831_TELL_SLT</span>
+<span class="n">r</span><span class="o">.</span><span class="n">XSHOO</span><span class="o">.</span><span class="mi">2018</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">01</span><span class="n">T09</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mf">44.797</span><span class="n">_tpl</span><span class="o">-</span><span class="n">A01_0002</span><span class="o">.</span><span class="n">fits</span>       <span class="mf">78684.245</span>       <span class="n">Hip106831_TELL_SLT</span>
+<span class="n">r</span><span class="o">.</span><span class="n">XSHOO</span><span class="o">.</span><span class="mi">2018</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">01</span><span class="n">T09</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mf">44.797</span><span class="n">_tpl</span><span class="o">-</span><span class="n">A02_0000</span><span class="o">.</span><span class="n">fits</span>       <span class="mf">78684.245</span>       <span class="n">Hip106831_TELL_SLT</span>
+<span class="n">r</span><span class="o">.</span><span class="n">XSHOO</span><span class="o">.</span><span class="mi">2018</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">01</span><span class="n">T09</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mf">44.797</span><span class="n">_tpl</span><span class="o">-</span><span class="n">A02_0001</span><span class="o">.</span><span class="n">fits</span>       <span class="mf">78684.245</span>       <span class="n">Hip106831_TELL_SLT</span>
+<span class="n">r</span><span class="o">.</span><span class="n">XSHOO</span><span class="o">.</span><span class="mi">2018</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">01</span><span class="n">T09</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mf">44.797</span><span class="n">_tpl</span><span class="o">-</span><span class="n">A02_0002</span><span class="o">.</span><span class="n">fits</span>       <span class="mf">78684.245</span>       <span class="n">Hip106831_TELL_SLT</span>
+<span class="n">r</span><span class="o">.</span><span class="n">XSHOO</span><span class="o">.</span><span class="mi">2018</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">01</span><span class="n">T09</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mf">44.797</span><span class="n">_tpl</span><span class="o">-</span><span class="n">A03_0000</span><span class="o">.</span><span class="n">fits</span>       <span class="mf">78684.245</span>       <span class="n">Hip106831_TELL_SLT</span>
+<span class="n">r</span><span class="o">.</span><span class="n">XSHOO</span><span class="o">.</span><span class="mi">2018</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">01</span><span class="n">T09</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mf">44.797</span><span class="n">_tpl</span><span class="o">-</span><span class="n">A03_0001</span><span class="o">.</span><span class="n">fits</span>       <span class="mf">78684.245</span>       <span class="n">Hip106831_TELL_SLT</span>
+<span class="n">r</span><span class="o">.</span><span class="n">XSHOO</span><span class="o">.</span><span class="mi">2018</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">01</span><span class="n">T09</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mf">44.797</span><span class="n">_tpl</span><span class="o">-</span><span class="n">A03_0002</span><span class="o">.</span><span class="n">fits</span>       <span class="mf">78684.245</span>       <span class="n">Hip106831_TELL_SLT</span>
+<span class="n">r</span><span class="o">.</span><span class="n">XSHOO</span><span class="o">.</span><span class="mi">2018</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">01</span><span class="n">T09</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mf">45.055</span><span class="n">_tpl</span><span class="o">-</span><span class="n">A01_0000</span><span class="o">.</span><span class="n">fits</span>       <span class="mf">78685.247</span>       <span class="n">Hip106831_TELL_SLT</span>
+<span class="n">r</span><span class="o">.</span><span class="n">XSHOO</span><span class="o">.</span><span class="mi">2018</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">01</span><span class="n">T09</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mf">45.055</span><span class="n">_tpl</span><span class="o">-</span><span class="n">A01_0001</span><span class="o">.</span><span class="n">fits</span>       <span class="mf">78685.247</span>       <span class="n">Hip106831_TELL_SLT</span>
+<span class="n">r</span><span class="o">.</span><span class="n">XSHOO</span><span class="o">.</span><span class="mi">2018</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">01</span><span class="n">T09</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mf">45.055</span><span class="n">_tpl</span><span class="o">-</span><span class="n">A01_0002</span><span class="o">.</span><span class="n">fits</span>       <span class="mf">78685.247</span>       <span class="n">Hip106831_TELL_SLT</span>
+<span class="n">r</span><span class="o">.</span><span class="n">XSHOO</span><span class="o">.</span><span class="mi">2018</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">01</span><span class="n">T09</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mf">45.055</span><span class="n">_tpl</span><span class="o">-</span><span class="n">A02_0000</span><span class="o">.</span><span class="n">fits</span>       <span class="mf">78685.247</span>       <span class="n">Hip106831_TELL_SLT</span>
+<span class="n">r</span><span class="o">.</span><span class="n">XSHOO</span><span class="o">.</span><span class="mi">2018</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">01</span><span class="n">T09</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mf">45.055</span><span class="n">_tpl</span><span class="o">-</span><span class="n">A02_0001</span><span class="o">.</span><span class="n">fits</span>       <span class="mf">78685.247</span>       <span class="n">Hip106831_TELL_SLT</span>
+<span class="n">r</span><span class="o">.</span><span class="n">XSHOO</span><span class="o">.</span><span class="mi">2018</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">01</span><span class="n">T09</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mf">45.055</span><span class="n">_tpl</span><span class="o">-</span><span class="n">A02_0002</span><span class="o">.</span><span class="n">fits</span>       <span class="mf">78685.247</span>       <span class="n">Hip106831_TELL_SLT</span>
+<span class="n">r</span><span class="o">.</span><span class="n">XSHOO</span><span class="o">.</span><span class="mi">2018</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">01</span><span class="n">T09</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mf">45.055</span><span class="n">_tpl</span><span class="o">-</span><span class="n">A03_0000</span><span class="o">.</span><span class="n">fits</span>       <span class="mf">78685.247</span>       <span class="n">Hip106831_TELL_SLT</span>
+<span class="n">r</span><span class="o">.</span><span class="n">XSHOO</span><span class="o">.</span><span class="mi">2018</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">01</span><span class="n">T09</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mf">45.055</span><span class="n">_tpl</span><span class="o">-</span><span class="n">A03_0001</span><span class="o">.</span><span class="n">fits</span>       <span class="mf">78685.247</span>       <span class="n">Hip106831_TELL_SLT</span>
+<span class="n">r</span><span class="o">.</span><span class="n">XSHOO</span><span class="o">.</span><span class="mi">2018</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">01</span><span class="n">T09</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mf">45.055</span><span class="n">_tpl</span><span class="o">-</span><span class="n">A03_0002</span><span class="o">.</span><span class="n">fits</span>       <span class="mf">78685.247</span>       <span class="n">Hip106831_TELL_SLT</span>
+<span class="n">r</span><span class="o">.</span><span class="n">XSHOO</span><span class="o">.</span><span class="mi">2018</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">01</span><span class="n">T09</span><span class="p">:</span><span class="mi">59</span><span class="p">:</span><span class="mf">57.509</span><span class="n">_tpl</span><span class="o">-</span><span class="n">A01_0000</span><span class="o">.</span><span class="n">fits</span>       <span class="mf">79056.26</span>        <span class="n">Hip106831_TELL_SLT</span>
+<span class="n">r</span><span class="o">.</span><span class="n">XSHOO</span><span class="o">.</span><span class="mi">2018</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">01</span><span class="n">T09</span><span class="p">:</span><span class="mi">59</span><span class="p">:</span><span class="mf">57.509</span><span class="n">_tpl</span><span class="o">-</span><span class="n">A01_0001</span><span class="o">.</span><span class="n">fits</span>       <span class="mf">79056.26</span>        <span class="n">Hip106831_TELL_SLT</span>
+<span class="n">r</span><span class="o">.</span><span class="n">XSHOO</span><span class="o">.</span><span class="mi">2018</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">01</span><span class="n">T09</span><span class="p">:</span><span class="mi">59</span><span class="p">:</span><span class="mf">57.509</span><span class="n">_tpl</span><span class="o">-</span><span class="n">A01_0002</span><span class="o">.</span><span class="n">fits</span>       <span class="mf">79056.26</span>        <span class="n">Hip106831_TELL_SLT</span>
+<span class="n">r</span><span class="o">.</span><span class="n">XSHOO</span><span class="o">.</span><span class="mi">2018</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">01</span><span class="n">T09</span><span class="p">:</span><span class="mi">59</span><span class="p">:</span><span class="mf">57.509</span><span class="n">_tpl</span><span class="o">-</span><span class="n">A01_0003</span><span class="o">.</span><span class="n">fits</span>       <span class="mf">79056.26</span>        <span class="n">Hip106831_TELL_SLT</span>
+<span class="n">r</span><span class="o">.</span><span class="n">XSHOO</span><span class="o">.</span><span class="mi">2018</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">01</span><span class="n">T09</span><span class="p">:</span><span class="mi">59</span><span class="p">:</span><span class="mf">57.509</span><span class="n">_tpl</span><span class="o">-</span><span class="n">A01_0004</span><span class="o">.</span><span class="n">fits</span>       <span class="mf">79056.26</span>        <span class="n">Hip106831_TELL_SLT</span>
+<span class="n">r</span><span class="o">.</span><span class="n">XSHOO</span><span class="o">.</span><span class="mi">2018</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">01</span><span class="n">T09</span><span class="p">:</span><span class="mi">59</span><span class="p">:</span><span class="mf">57.509</span><span class="n">_tpl</span><span class="o">-</span><span class="n">A01_0005</span><span class="o">.</span><span class="n">fits</span>       <span class="mf">79056.26</span>        <span class="n">Hip106831_TELL_SLT</span>
+<span class="n">r</span><span class="o">.</span><span class="n">XSHOO</span><span class="o">.</span><span class="mi">2018</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">01</span><span class="n">T09</span><span class="p">:</span><span class="mi">59</span><span class="p">:</span><span class="mf">57.509</span><span class="n">_tpl</span><span class="o">-</span><span class="n">A01_0006</span><span class="o">.</span><span class="n">fits</span>       <span class="mf">79056.26</span>        <span class="n">Hip106831_TELL_SLT</span>
+</pre></div>
+</div>
+<p>First dfitspy gives you the number of files that was considered with the command. Then it displays the header always starting with the filename and then all the keywords the user requires to be displayed. Anf finally display the list of all the filenames and fits header values.</p>
+<p><strong>GREPPING option</strong>:
+dfitspy offers you the possibility to grep a particular value that you are expecting. This is done using the option <em>- - grep</em> (double dash) and giving as arguement an expected value of a keyword given with the <em>-key</em> option. Doing so will tell dfitspy to consider the files only if one of the keyword that the user ask to display as the grepping value. Taking the same command as above, one might want to get only the files with LST = 79056.26. This is easily done using: <strong>dfitspy -f Test_data/*.fits -key LST,’ESO OBS NAME’ –grep 79056.26</strong>  and produce the output in terminal:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">command</span><span class="p">:</span> <span class="n">dfitspy</span> <span class="o">-</span><span class="n">f</span> <span class="n">Test_data</span><span class="o">/*.</span><span class="n">fits</span> <span class="o">-</span><span class="n">key</span> <span class="n">LST</span><span class="p">,</span><span class="s1">&#39;ESO OBS NAME&#39;</span> <span class="o">--</span><span class="n">grep</span> <span class="mf">79056.26</span><span class="p">]</span>
+
+<span class="p">[</span><span class="n">DFITSPY</span> <span class="n">INFO</span><span class="p">]</span><span class="o">&gt;</span> <span class="mi">34</span> <span class="n">files</span> <span class="n">found</span>
+ <span class="o">-----------------------------------</span>
+<span class="n">filename</span>                                                <span class="n">LST</span>             <span class="n">ESO</span> <span class="n">OBS</span> <span class="n">NAME</span>
+<span class="o">-------------------------------------------------</span>       <span class="o">--------</span>        <span class="o">------------------</span>
+<span class="n">r</span><span class="o">.</span><span class="n">XSHOO</span><span class="o">.</span><span class="mi">2018</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">01</span><span class="n">T09</span><span class="p">:</span><span class="mi">59</span><span class="p">:</span><span class="mf">57.509</span><span class="n">_tpl</span><span class="o">-</span><span class="n">A01_0000</span><span class="o">.</span><span class="n">fits</span>       <span class="mf">79056.26</span>        <span class="n">Hip106831_TELL_SLT</span>
+<span class="n">r</span><span class="o">.</span><span class="n">XSHOO</span><span class="o">.</span><span class="mi">2018</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">01</span><span class="n">T09</span><span class="p">:</span><span class="mi">59</span><span class="p">:</span><span class="mf">57.509</span><span class="n">_tpl</span><span class="o">-</span><span class="n">A01_0001</span><span class="o">.</span><span class="n">fits</span>       <span class="mf">79056.26</span>        <span class="n">Hip106831_TELL_SLT</span>
+<span class="n">r</span><span class="o">.</span><span class="n">XSHOO</span><span class="o">.</span><span class="mi">2018</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">01</span><span class="n">T09</span><span class="p">:</span><span class="mi">59</span><span class="p">:</span><span class="mf">57.509</span><span class="n">_tpl</span><span class="o">-</span><span class="n">A01_0002</span><span class="o">.</span><span class="n">fits</span>       <span class="mf">79056.26</span>        <span class="n">Hip106831_TELL_SLT</span>
+<span class="n">r</span><span class="o">.</span><span class="n">XSHOO</span><span class="o">.</span><span class="mi">2018</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">01</span><span class="n">T09</span><span class="p">:</span><span class="mi">59</span><span class="p">:</span><span class="mf">57.509</span><span class="n">_tpl</span><span class="o">-</span><span class="n">A01_0003</span><span class="o">.</span><span class="n">fits</span>       <span class="mf">79056.26</span>        <span class="n">Hip106831_TELL_SLT</span>
+<span class="n">r</span><span class="o">.</span><span class="n">XSHOO</span><span class="o">.</span><span class="mi">2018</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">01</span><span class="n">T09</span><span class="p">:</span><span class="mi">59</span><span class="p">:</span><span class="mf">57.509</span><span class="n">_tpl</span><span class="o">-</span><span class="n">A01_0004</span><span class="o">.</span><span class="n">fits</span>       <span class="mf">79056.26</span>        <span class="n">Hip106831_TELL_SLT</span>
+<span class="n">r</span><span class="o">.</span><span class="n">XSHOO</span><span class="o">.</span><span class="mi">2018</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">01</span><span class="n">T09</span><span class="p">:</span><span class="mi">59</span><span class="p">:</span><span class="mf">57.509</span><span class="n">_tpl</span><span class="o">-</span><span class="n">A01_0005</span><span class="o">.</span><span class="n">fits</span>       <span class="mf">79056.26</span>        <span class="n">Hip106831_TELL_SLT</span>
+<span class="n">r</span><span class="o">.</span><span class="n">XSHOO</span><span class="o">.</span><span class="mi">2018</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">01</span><span class="n">T09</span><span class="p">:</span><span class="mi">59</span><span class="p">:</span><span class="mf">57.509</span><span class="n">_tpl</span><span class="o">-</span><span class="n">A01_0006</span><span class="o">.</span><span class="n">fits</span>       <span class="mf">79056.26</span>        <span class="n">Hip106831_TELL_SLT</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="extra-arguments">
+<h2>Extra arguments<a class="headerlink" href="#extra-arguments" title="Permalink to this headline">¶</a></h2>
+<p>Few extra arguments can be used:</p>
+<ul>
+<li><p class="first">–test: This runs the tests (written with unittest library) of dfitspy.</p>
+</li>
+<li><p class="first">–dir: This changes the directory you want to analyse. By default it is the current working directory.</p>
+</li>
+<li><p class="first">–list: <strong>This must be used with the -file option described above</strong>. It takes the first file given by ‘-file’ and display a list of all the arguments in a 3 columns fashion. Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">List</span> <span class="n">of</span> <span class="n">keywords</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">first</span> <span class="n">file</span>
+<span class="o">----------------------------------</span>
+<span class="n">SIMPLE</span>                         <span class="o">|</span> <span class="n">BITPIX</span>                         <span class="o">|</span> <span class="n">NAXIS</span>
+<span class="n">EXTEND</span>                         <span class="o">|</span> <span class="n">COMMENT</span>                        <span class="o">|</span> <span class="n">DATE</span>
+<span class="n">ORIGIN</span>                         <span class="o">|</span> <span class="n">TELESCOP</span>                       <span class="o">|</span> <span class="n">INSTRUME</span>
+<span class="n">OBJECT</span>                         <span class="o">|</span> <span class="n">RA</span>                             <span class="o">|</span> <span class="n">DEC</span>
+<span class="n">EQUINOX</span>                        <span class="o">|</span> <span class="n">RADECSYS</span>                       <span class="o">|</span> <span class="n">MJD</span><span class="o">-</span><span class="n">OBS</span>
+<span class="n">DATE</span><span class="o">-</span><span class="n">OBS</span>                       <span class="o">|</span> <span class="n">UTC</span>                            <span class="o">|</span> <span class="n">LST</span>
+<span class="n">PI</span><span class="o">-</span><span class="n">COI</span>                         <span class="o">|</span> <span class="n">OBSERVER</span>                       <span class="o">|</span> <span class="n">ARCFILE</span>
+<span class="n">DATAMD5</span>                        <span class="o">|</span> <span class="n">PIPEFILE</span>                       <span class="o">|</span> <span class="n">ESO</span> <span class="n">OBS</span> <span class="n">AIRM</span>
+<span class="n">ESO</span> <span class="n">OBS</span> <span class="n">AMBI</span> <span class="n">FWHM</span>              <span class="o">|</span> <span class="n">ESO</span> <span class="n">OBS</span> <span class="n">AMBI</span> <span class="n">TRANS</span>             <span class="o">|</span> <span class="n">ESO</span> <span class="n">OBS</span> <span class="n">ATM</span>
+<span class="n">ESO</span> <span class="n">OBS</span> <span class="n">CONTAINER</span> <span class="n">ID</span>           <span class="o">|</span> <span class="n">ESO</span> <span class="n">OBS</span> <span class="n">CONTAINER</span> <span class="n">TYPE</span>         <span class="o">|</span> <span class="n">ESO</span> <span class="n">OBS</span> <span class="n">CONTRAST</span>
+<span class="n">ESO</span> <span class="n">OBS</span> <span class="n">DID</span>                    <span class="o">|</span> <span class="n">ESO</span> <span class="n">OBS</span> <span class="n">EXECTIME</span>               <span class="o">|</span> <span class="n">ESO</span> <span class="n">OBS</span> <span class="n">GRP</span>
+<span class="n">ESO</span> <span class="n">OBS</span> <span class="n">ID</span>                     <span class="o">|</span> <span class="n">ESO</span> <span class="n">OBS</span> <span class="n">MOON</span> <span class="n">DIST</span>              <span class="o">|</span> <span class="n">ESO</span> <span class="n">OBS</span> <span class="n">MOON</span> <span class="n">FLI</span>
+<span class="n">ESO</span> <span class="n">OBS</span> <span class="n">NAME</span>                   <span class="o">|</span> <span class="n">ESO</span> <span class="n">OBS</span> <span class="n">NTPL</span>                   <span class="o">|</span> <span class="n">ESO</span> <span class="n">OBS</span> <span class="n">OBSERVER</span>
+<span class="n">ESO</span> <span class="n">OBS</span> <span class="n">PI</span><span class="o">-</span><span class="n">COI</span> <span class="n">ID</span>              <span class="o">|</span> <span class="n">ESO</span> <span class="n">OBS</span> <span class="n">PI</span><span class="o">-</span><span class="n">COI</span> <span class="n">NAME</span>            <span class="o">|</span> <span class="n">ESO</span> <span class="n">OBS</span> <span class="n">PROG</span> <span class="n">ID</span>
+<span class="n">ESO</span> <span class="n">OBS</span> <span class="n">START</span>                  <span class="o">|</span> <span class="n">ESO</span> <span class="n">OBS</span> <span class="n">STREHLRATIO</span>            <span class="o">|</span> <span class="n">ESO</span> <span class="n">OBS</span> <span class="n">TARG</span> <span class="n">NAME</span>
+<span class="n">ESO</span> <span class="n">OBS</span> <span class="n">TPLNO</span>                  <span class="o">|</span> <span class="n">ESO</span> <span class="n">OBS</span> <span class="n">TWILIGHT</span>               <span class="o">|</span> <span class="n">ESO</span> <span class="n">OBS</span> <span class="n">WATERVAPOUR</span>
+<span class="n">ESO</span> <span class="n">TPL</span> <span class="n">DID</span>                    <span class="o">|</span> <span class="n">ESO</span> <span class="n">TPL</span> <span class="n">EXPNO</span>                  <span class="o">|</span> <span class="n">ESO</span> <span class="n">TPL</span> <span class="n">ID</span>
+<span class="n">ESO</span> <span class="n">TPL</span> <span class="n">NAME</span>                   <span class="o">|</span> <span class="n">ESO</span> <span class="n">TPL</span> <span class="n">NEXP</span>                   <span class="o">|</span> <span class="n">ESO</span> <span class="n">TPL</span> <span class="n">PRESEQ</span>
+<span class="n">ESO</span> <span class="n">TPL</span> <span class="n">START</span>                  <span class="o">|</span> <span class="n">ESO</span> <span class="n">TPL</span> <span class="n">VERSION</span>                <span class="o">|</span> <span class="n">ESO</span> <span class="n">TEL</span> <span class="n">AIRM</span> <span class="n">END</span>
+<span class="n">ESO</span> <span class="n">TEL</span> <span class="n">AIRM</span> <span class="n">START</span>             <span class="o">|</span> <span class="n">ESO</span> <span class="n">TEL</span> <span class="n">ALT</span>                    <span class="o">|</span> <span class="n">ESO</span> <span class="n">TEL</span> <span class="n">AMBI</span> <span class="n">FWHM</span> <span class="n">END</span>
+<span class="n">ESO</span> <span class="n">TEL</span> <span class="n">AMBI</span> <span class="n">FWHM</span> <span class="n">START</span>        <span class="o">|</span> <span class="n">ESO</span> <span class="n">TEL</span> <span class="n">AMBI</span> <span class="n">IRSKY</span> <span class="n">TEMP</span>        <span class="o">|</span> <span class="n">ESO</span> <span class="n">TEL</span> <span class="n">AMBI</span> <span class="n">IWV</span> <span class="n">END</span>
+<span class="n">ESO</span> <span class="n">TEL</span> <span class="n">AMBI</span> <span class="n">IWV</span> <span class="n">START</span>         <span class="o">|</span> <span class="n">ESO</span> <span class="n">TEL</span> <span class="n">AMBI</span> <span class="n">IWV30D</span> <span class="n">END</span>        <span class="o">|</span> <span class="n">ESO</span> <span class="n">TEL</span> <span class="n">AMBI</span> <span class="n">IWV30D</span> <span class="n">START</span>
+<span class="n">ESO</span> <span class="n">TEL</span> <span class="n">AMBI</span> <span class="n">IWV30DSTD</span> <span class="n">END</span>     <span class="o">|</span> <span class="n">ESO</span> <span class="n">TEL</span> <span class="n">AMBI</span> <span class="n">IWV30DSTD</span> <span class="n">START</span>   <span class="o">|</span> <span class="n">ESO</span> <span class="n">TEL</span> <span class="n">AMBI</span> <span class="n">IWVSTD</span> <span class="n">END</span>
+<span class="n">ESO</span> <span class="n">TEL</span> <span class="n">AMBI</span> <span class="n">IWVSTD</span> <span class="n">START</span>      <span class="o">|</span> <span class="n">ESO</span> <span class="n">TEL</span> <span class="n">AMBI</span> <span class="n">PRES</span> <span class="n">END</span>          <span class="o">|</span> <span class="n">ESO</span> <span class="n">TEL</span> <span class="n">AMBI</span> <span class="n">PRES</span> <span class="n">START</span>
+<span class="n">ESO</span> <span class="n">TEL</span> <span class="n">AMBI</span> <span class="n">RHUM</span>              <span class="o">|</span> <span class="n">ESO</span> <span class="n">TEL</span> <span class="n">AMBI</span> <span class="n">TAU0</span>              <span class="o">|</span> <span class="n">ESO</span> <span class="n">TEL</span> <span class="n">AMBI</span> <span class="n">TEMP</span>
+<span class="n">ESO</span> <span class="n">TEL</span> <span class="n">AMBI</span> <span class="n">WINDDIR</span>           <span class="o">|</span> <span class="n">ESO</span> <span class="n">TEL</span> <span class="n">AMBI</span> <span class="n">WINDSP</span>            <span class="o">|</span> <span class="n">ESO</span> <span class="n">TEL</span> <span class="n">AZ</span>
+<span class="n">ESO</span> <span class="n">TEL</span> <span class="n">CHOP</span> <span class="n">ST</span>                <span class="o">|</span> <span class="n">ESO</span> <span class="n">TEL</span> <span class="n">DATE</span>                   <span class="o">|</span> <span class="n">ESO</span> <span class="n">TEL</span> <span class="n">DID</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">–docs: Display in the web browser the documentation of the code. If you have a valid internet connection it will open the online documentation, if not it will open the local documentation.</p>
+</li>
+<li><p class="first">–version: Display in terminal the current version of the software.</p>
+</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="usage_module.html" class="btn btn-neutral float-right" title="dfitspy as a Python Module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="installation.html" class="btn btn-neutral" title="Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, R. Thomas.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1.0',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

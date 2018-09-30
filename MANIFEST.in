@@ -1,0 +1,6 @@
+include README.md
+include LICENSE
+include MANIFEST.in
+iclude dfistpy/_fitsio_wrap.cpython-36m-x86_64-linux-gnu.so
+recursive-include dfitspy/tests *
+

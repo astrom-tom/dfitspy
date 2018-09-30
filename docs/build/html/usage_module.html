@@ -1,0 +1,575 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>dfitspy as a Python Module &mdash; dfitspy 0.1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="dfitspy as an executable" href="usage.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> dfitspy
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="index.html">Home</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">dfitspy as an executable</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">dfitspy as a Python Module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#if-you-want-to-dfits-fitsort-inside-your-program">If you want to dfits | fitsort inside your program</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#get-your-files-ready">1 - Get your files ready</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-your-keywords-ready">2 - Get your keywords ready</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fitsort-your-files">3 - Fitsort your files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#grepping">4 - Grepping</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#test">Test</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">dfitspy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>dfitspy as a Python Module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/usage_module.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <p id="usagecli"><img alt="Python36" src="https://img.shields.io/badge/python-3.6-blue.svg" /> <a class="reference external" href="http://perso.crans.org/besson/LICENSE.html"><img alt="Licence" src="https://img.shields.io/badge/License-GPLv3-blue.svg" /></a> <a class="reference external" href="http://www.numpy.org/"><img alt="numpy" src="https://img.shields.io/badge/poweredby-numpy-orange.svg" /></a></p>
+<div class="section" id="dfitspy-as-a-python-module">
+<h1>dfitspy as a Python Module<a class="headerlink" href="#dfitspy-as-a-python-module" title="Permalink to this headline">¶</a></h1>
+<p>dfitspy can be also used as a third party module in one of your own code. You can import it the usual way:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="kn">import</span> <span class="nn">dfitspy</span>
+</pre></div>
+</div>
+<p>dfitspy contains few functions that I will details below:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">get_all_keyword</span>
+<span class="n">get_files</span>
+<span class="n">get_keys</span>
+<span class="n">keywords_in_file</span>
+<span class="n">readfits</span>
+<span class="n">test</span>
+<span class="n">display_final</span>
+<span class="n">display_list</span>
+</pre></div>
+</div>
+<div class="section" id="if-you-want-to-dfits-fitsort-inside-your-program">
+<h2>If you want to dfits | fitsort inside your program<a class="headerlink" href="#if-you-want-to-dfits-fitsort-inside-your-program" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="get-your-files-ready">
+<h3>1 - Get your files ready<a class="headerlink" href="#get-your-files-ready" title="Permalink to this headline">¶</a></h3>
+<p>dfitspy can be easily use to dfits|fitsio a set of files. First of all you must prepare a list of files. You can do it using your favorite python package. Or you can use the <em>get_files</em> function of dfitspy:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="kn">import</span> <span class="nn">dfitspy</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="n">help</span><span class="p">(</span><span class="n">dfitspy</span><span class="o">.</span><span class="n">get_files</span><span class="p">)</span>  <span class="o">&lt;---</span><span class="n">this</span> <span class="nb">print</span> <span class="n">the</span> <span class="n">help</span> <span class="n">of</span> <span class="n">the</span> <span class="n">function</span>
+
+<span class="n">get_files</span><span class="p">(</span><span class="n">files</span><span class="p">,</span> <span class="n">dire</span><span class="p">)</span>
+<span class="n">This</span> <span class="n">function</span> <span class="n">extracts</span> <span class="n">the</span> <span class="nb">list</span> <span class="n">of</span> <span class="n">files</span> <span class="n">based</span> <span class="n">on</span> <span class="n">the</span> <span class="n">files</span>
+<span class="ow">and</span> <span class="n">dire</span> <span class="n">parameters</span><span class="o">.</span>
+
+<span class="n">example</span><span class="p">:</span> <span class="n">get_files</span><span class="p">([</span><span class="s1">&#39;fil1.fits,file2.fits&#39;</span><span class="p">]</span> <span class="p">,</span> <span class="s1">&#39;/home/Documents&#39;</span><span class="p">)</span>
+
+
+<span class="n">Parameter</span>
+<span class="o">---------</span>
+<span class="n">files</span>
+            <span class="nb">list</span> <span class="n">of</span> <span class="nb">str</span><span class="p">,</span> <span class="nb">list</span> <span class="n">of</span> <span class="n">files</span> <span class="n">names</span> <span class="p">(</span><span class="n">without</span> <span class="n">path</span><span class="p">)</span>
+                         <span class="n">it</span> <span class="n">can</span> <span class="n">be</span> <span class="p">[</span><span class="s1">&#39;file1.fits,file2.fits,....&#39;</span><span class="p">]</span>
+                                   <span class="p">[</span><span class="s1">&#39;file1.fits&#39;</span><span class="p">]</span>
+                                   <span class="p">[</span><span class="s1">&#39;file1,fits&#39;</span><span class="p">,</span> <span class="s1">&#39;file2.fits&#39;</span><span class="p">]</span>
+                                   <span class="p">[</span><span class="s1">&#39;*.fits&#39;</span><span class="p">]</span>
+                                   <span class="p">[</span><span class="s1">&#39;all&#39;</span><span class="p">]</span>
+<span class="n">dire</span>
+            <span class="nb">str</span><span class="p">,</span> <span class="n">path</span> <span class="n">of</span> <span class="n">the</span> <span class="n">directory</span> <span class="n">to</span> <span class="n">look</span> <span class="ow">in</span>
+
+<span class="n">Return</span>
+<span class="o">------</span>
+<span class="nb">list</span> <span class="n">of</span> <span class="n">files</span>
+</pre></div>
+</div>
+<p>This function takes two arguments. The first is the file argument and must be a <strong>LIST</strong> of strings. It will return a list of files. <strong>Only fits files will be returned</strong>.</p>
+<p>The easiest way is to analyse <strong>all</strong> the files in a directory:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="n">listfiles</span> <span class="o">=</span> <span class="n">get_files</span><span class="p">([</span><span class="s1">&#39;all&#39;</span><span class="p">],</span><span class="s1">&#39;/Test_data/&#39;</span><span class="p">)</span>
+<span class="p">[</span><span class="s1">&#39;Test_data/r.XSHOO.2018-06-01T09:53:45.055_tpl-A02_0001.fits&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Test_data/r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0004.fits&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Test_data/r.XSHOO.2018-06-01T09:53:45.055_tpl-A01_0002.fits&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Test_data/r.XSHOO.2018-06-01T09:53:43.577_tpl-A02_0001.fits&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Test_data/r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0002.fits&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Test_data/r.XSHOO.2018-06-01T09:53:45.055_tpl-A02_0000.fits&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Test_data/r.XSHOO.2018-06-01T09:53:43.577_tpl-A01_0001.fits&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Test_data/r.XSHOO.2018-06-01T09:53:44.797_tpl-A03_0002.fits&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Test_data/r.XSHOO.2018-06-01T09:53:44.797_tpl-A03_0000.fits&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Test_data/r.XSHOO.2018-06-01T09:53:45.055_tpl-A03_0001.fits&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Test_data/r.XSHOO.2018-06-01T09:53:45.055_tpl-A02_0002.fits&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Test_data/r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0006.fits&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Test_data/r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0000.fits&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Test_data/r.XSHOO.2018-06-01T09:53:43.577_tpl-A02_0002.fits&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Test_data/r.XSHOO.2018-06-01T09:53:43.577_tpl-A01_0000.fits&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Test_data/r.XSHOO.2018-06-01T09:53:44.797_tpl-A01_0002.fits&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Test_data/r.XSHOO.2018-06-01T09:53:43.577_tpl-A03_0001.fits&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Test_data/r.XSHOO.2018-06-01T09:53:44.797_tpl-A01_0001.fits&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Test_data/r.XSHOO.2018-06-01T09:53:45.055_tpl-A01_0001.fits&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Test_data/r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0001.fits&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Test_data/r.XSHOO.2018-06-01T09:53:43.577_tpl-A03_0000.fits&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Test_data/r.XSHOO.2018-06-01T09:53:45.055_tpl-A01_0000.fits&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Test_data/r.XSHOO.2018-06-01T09:53:43.577_tpl-A03_0002.fits&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Test_data/r.XSHOO.2018-06-01T09:53:44.797_tpl-A02_0001.fits&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Test_data/r.XSHOO.2018-06-01T09:53:44.797_tpl-A03_0001.fits&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Test_data/r.XSHOO.2018-06-01T09:53:45.055_tpl-A03_0000.fits&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Test_data/r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0003.fits&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Test_data/r.XSHOO.2018-06-01T09:53:43.577_tpl-A02_0000.fits&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Test_data/r.XSHOO.2018-06-01T09:53:45.055_tpl-A03_0002.fits&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Test_data/r.XSHOO.2018-06-01T09:53:44.797_tpl-A02_0000.fits&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Test_data/r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0005.fits&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Test_data/r.XSHOO.2018-06-01T09:53:44.797_tpl-A01_0000.fits&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Test_data/r.XSHOO.2018-06-01T09:53:43.577_tpl-A01_0002.fits&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;Test_data/r.XSHOO.2018-06-01T09:53:44.797_tpl-A02_0002.fits&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>You would get the same results using:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">4</span><span class="p">]:</span> <span class="n">listfiles</span> <span class="o">=</span> <span class="n">get_files</span><span class="p">([</span><span class="s1">&#39;*.fits&#39;</span><span class="p">],</span><span class="s1">&#39;/Test_data/&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="get-your-keywords-ready">
+<h3>2 - Get your keywords ready<a class="headerlink" href="#get-your-keywords-ready" title="Permalink to this headline">¶</a></h3>
+<p>After preparing the files you must prepare the keywords you want to fitsort your files with. The correct format is a list of string, each string being a keyword, example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">listkeys</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;OBJECT&#39;</span><span class="p">,</span> <span class="s1">&#39;LST&#39;</span><span class="p">,</span> <span class="s1">&#39;DATE&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>If you do not remember the name of the keywords you want to use you can retrieve them all and display them:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">5</span><span class="p">]:</span> <span class="n">help</span><span class="p">(</span><span class="n">dfitspy</span><span class="o">.</span><span class="n">get_all_keyword</span><span class="p">)</span>
+
+<span class="n">get_all_keyword</span><span class="p">(</span><span class="n">thefile</span><span class="p">)</span>
+<span class="n">This</span> <span class="n">function</span> <span class="n">gets</span> <span class="nb">all</span> <span class="n">the</span> <span class="n">keyword</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">header</span> <span class="n">of</span> <span class="n">the</span> <span class="n">file</span>
+
+<span class="n">Parameter</span><span class="p">:</span>
+<span class="o">----------</span>
+<span class="n">thefile</span>
+            <span class="nb">str</span><span class="p">,</span> <span class="n">path</span><span class="o">/</span><span class="ow">and</span><span class="o">/</span><span class="n">file</span><span class="o">.</span><span class="n">txt</span>
+
+<span class="n">Return</span>
+<span class="o">------</span>
+<span class="n">keywords</span>
+            <span class="nb">list</span><span class="p">,</span> <span class="n">of</span> <span class="n">keywords</span> <span class="p">(</span><span class="n">string</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This function takes a file as input and return the list of all the keywords:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">6</span><span class="p">]:</span> <span class="n">keys</span> <span class="o">=</span> <span class="n">dfitspy</span><span class="o">.</span><span class="n">get_all_keyword</span><span class="p">(</span><span class="n">listfiles</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">7</span><span class="p">]:</span> <span class="n">keys</span>
+
+    <span class="p">[</span><span class="s1">&#39;SIMPLE&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;BITPIX&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;NAXIS&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;EXTEND&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;COMMENT&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;DATE&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;ORIGIN&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;TELESCOP&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;INSTRUME&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;OBJECT&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;MJD-OBS&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;DATE-OBS&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;PI-COI&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;DATAMD5&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;PIPEFILE&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;RA&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;DEC&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;EQUINOX&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;RADECSYS&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;UTC&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;LST&#39;</span><span class="o">...........</span><span class="p">(</span><span class="n">cut</span> <span class="k">for</span> <span class="n">display</span> <span class="n">convinience</span><span class="p">)]</span>
+</pre></div>
+</div>
+<p>If you have a very long list you can display it using the <em>display_list</em> function, which will cut the length by three:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">8</span><span class="p">]</span> <span class="p">:</span> <span class="n">dfitspy</span><span class="o">.</span><span class="n">display_list</span><span class="p">(</span><span class="n">keys</span><span class="p">)</span>
+
+<span class="n">List</span> <span class="n">of</span> <span class="n">keywords</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">first</span> <span class="n">file</span>
+<span class="o">----------------------------------</span>
+<span class="n">SIMPLE</span>                        <span class="o">|</span> <span class="n">BITPIX</span>                        <span class="o">|</span> <span class="n">NAXIS</span>
+<span class="n">EXTEND</span>                        <span class="o">|</span> <span class="n">COMMENT</span>                       <span class="o">|</span> <span class="n">DATE</span>
+<span class="n">ORIGIN</span>                        <span class="o">|</span> <span class="n">TELESCOP</span>                      <span class="o">|</span> <span class="n">INSTRUME</span>
+<span class="n">OBJECT</span>                        <span class="o">|</span> <span class="n">MJD</span><span class="o">-</span><span class="n">OBS</span>                       <span class="o">|</span> <span class="n">DATE</span><span class="o">-</span><span class="n">OBS</span>
+<span class="n">PI</span><span class="o">-</span><span class="n">COI</span>                        <span class="o">|</span> <span class="n">DATAMD5</span>                       <span class="o">|</span> <span class="n">PIPEFILE</span>
+<span class="n">RA</span>                            <span class="o">|</span> <span class="n">DEC</span>                           <span class="o">|</span> <span class="n">EQUINOX</span>
+<span class="n">RADECSYS</span>                      <span class="o">|</span> <span class="n">UTC</span>                           <span class="o">|</span> <span class="n">LST</span>
+<span class="n">OBSERVER</span>                      <span class="o">|</span> <span class="n">ARCFILE</span>                       <span class="o">|</span> <span class="n">ESO</span> <span class="n">OBS</span> <span class="n">DID</span>
+<span class="n">ESO</span> <span class="n">OBS</span> <span class="n">GRP</span>                   <span class="o">|</span> <span class="n">ESO</span> <span class="n">OBS</span> <span class="n">ID</span>                    <span class="o">|</span> <span class="n">ESO</span> <span class="n">OBS</span> <span class="n">NAME</span>
+<span class="n">ESO</span> <span class="n">OBS</span> <span class="n">NTPL</span>                  <span class="o">|</span> <span class="n">ESO</span> <span class="n">OBS</span> <span class="n">PI</span><span class="o">-</span><span class="n">COI</span> <span class="n">ID</span>             <span class="o">|</span> <span class="n">ESO</span> <span class="n">OBS</span> <span class="n">PI</span><span class="o">-</span><span class="n">COI</span> <span class="n">NAME</span>
+<span class="o">.</span>                             <span class="o">|</span> <span class="o">.</span>                             <span class="o">|</span> <span class="o">.</span>
+<span class="o">.</span>                             <span class="o">|</span> <span class="o">.</span>                             <span class="o">|</span> <span class="o">.</span>
+<span class="o">.</span>                             <span class="o">|</span> <span class="o">.</span>                             <span class="o">|</span> <span class="o">.</span>
+<span class="p">(</span><span class="n">it</span> <span class="n">has</span> <span class="n">been</span> <span class="n">cut</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="fitsort-your-files">
+<h3>3 - Fitsort your files<a class="headerlink" href="#fitsort-your-files" title="Permalink to this headline">¶</a></h3>
+<p>At this point you are ready to fitsort all files. In order to achieve that you have to use the <em>get_all_values</em> function:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>In [9]: help(dfitspy.get_all_values)
+
+get_all_values(listfiles, listkeys, grepping=None)
+This function get for all files, the value of all the keywords that are passed
+
+example:  get_all_values([file1, file2], [key1, key2], &#39;match&#39;)
+
+Parameter
+---------
+listfiles
+            list, with file names (string, path included)
+listkeys
+            list, of keywords (strings)
+grep
+            string, by defaul is None. if not, the grepping value (a string!)
+                    will be compared to all the values of the keywords and if one match
+                    the file will be kept
+Return
+------
+file_dict
+            dictionnary, keys=filename
+                         values=dictionnary of keyword-value pairs
+</pre></div>
+</div>
+<p>This function takes as argument the list of file and the list of parameter and returns a dictionnary of files withe values of all the keywords required:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">10</span><span class="p">]:</span> <span class="n">fitsort</span> <span class="o">=</span> <span class="n">dfitspy</span><span class="o">.</span><span class="n">get_all_values</span><span class="p">(</span><span class="n">listfiles</span><span class="p">,</span> <span class="n">listkeys</span><span class="p">)</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">11</span><span class="p">]:</span> <span class="n">fitsort</span>
+
+<span class="p">{</span><span class="s1">&#39;r.XSHOO.2018-06-01T09:53:45.055_tpl-A02_0001.fits&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;INSTRUME&#39;</span><span class="p">:</span> <span class="s1">&#39;XSHOOTER&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;LST&#39;</span><span class="p">:</span> <span class="s1">&#39;78685.247&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;UTC&#39;</span><span class="p">:</span> <span class="s1">&#39;35622.&#39;</span><span class="p">},</span>
+ <span class="s1">&#39;r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0004.fits&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;INSTRUME&#39;</span><span class="p">:</span> <span class="s1">&#39;XSHOOTER&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;LST&#39;</span><span class="p">:</span> <span class="s1">&#39;79056.26&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;UTC&#39;</span><span class="p">:</span> <span class="s1">&#39;35992.&#39;</span><span class="p">},</span>
+ <span class="s1">&#39;r.XSHOO.2018-06-01T09:53:45.055_tpl-A01_0002.fits&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;INSTRUME&#39;</span><span class="p">:</span> <span class="s1">&#39;XSHOOTER&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;LST&#39;</span><span class="p">:</span> <span class="s1">&#39;78685.247&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;UTC&#39;</span><span class="p">:</span> <span class="s1">&#39;35622.&#39;</span><span class="p">},</span>
+ <span class="s1">&#39;r.XSHOO.2018-06-01T09:53:43.577_tpl-A02_0001.fits&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;INSTRUME&#39;</span><span class="p">:</span> <span class="s1">&#39;XSHOOTER&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;LST&#39;</span><span class="p">:</span> <span class="s1">&#39;78684.245&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;UTC&#39;</span><span class="p">:</span> <span class="s1">&#39;35621.&#39;</span><span class="p">},</span>
+ <span class="s1">&#39;r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0002.fits&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;INSTRUME&#39;</span><span class="p">:</span> <span class="s1">&#39;XSHOOTER&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;LST&#39;</span><span class="p">:</span> <span class="s1">&#39;79056.26&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;UTC&#39;</span><span class="p">:</span> <span class="s1">&#39;35992.&#39;</span><span class="p">},</span>
+ <span class="s1">&#39;r.XSHOO.2018-06-01T09:53:45.055_tpl-A02_0000.fits&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;INSTRUME&#39;</span><span class="p">:</span> <span class="s1">&#39;XSHOOTER&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;LST&#39;</span><span class="p">:</span> <span class="s1">&#39;78685.247&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;UTC&#39;</span><span class="p">:</span> <span class="s1">&#39;35622.&#39;</span><span class="p">},</span>
+ <span class="s1">&#39;r.XSHOO.2018-06-01T09:53:43.577_tpl-A01_0001.fits&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;INSTRUME&#39;</span><span class="p">:</span> <span class="s1">&#39;XSHOOTER&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;LST&#39;</span><span class="p">:</span> <span class="s1">&#39;78684.245&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;UTC&#39;</span><span class="p">:</span> <span class="s1">&#39;35621.&#39;</span><span class="p">},</span>
+ <span class="s1">&#39;r.XSHOO.2018-06-01T09:53:44.797_tpl-A03_0002.fits&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;INSTRUME&#39;</span><span class="p">:</span> <span class="s1">&#39;XSHOOTER&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;LST&#39;</span><span class="p">:</span> <span class="s1">&#39;78684.245&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;UTC&#39;</span><span class="p">:</span> <span class="s1">&#39;35621.&#39;</span><span class="p">},</span>
+ <span class="s1">&#39;r.XSHOO.2018-06-01T09:53:44.797_tpl-A03_0000.fits&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;INSTRUME&#39;</span><span class="p">:</span> <span class="s1">&#39;XSHOOTER&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;LST&#39;</span><span class="p">:</span> <span class="s1">&#39;78684.245&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;UTC&#39;</span><span class="p">:</span> <span class="s1">&#39;35621.&#39;</span><span class="p">},</span>
+  <span class="o">.</span>
+  <span class="o">.</span>
+  <span class="o">.</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>you can display everything in a nice way using the <em>display_final</em> function:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">12</span><span class="p">]:</span> <span class="n">dfitspy</span><span class="o">.</span><span class="n">display_final</span><span class="p">(</span><span class="n">fitsort</span><span class="p">)</span>
+
+<span class="n">filename</span>                                            <span class="n">INSTRUME</span>        <span class="n">LST</span>             <span class="n">UTC</span>
+<span class="o">-------------------------------------------------</span>   <span class="o">--------</span>        <span class="o">---------</span>       <span class="o">------</span>
+<span class="n">r</span><span class="o">.</span><span class="n">XSHOO</span><span class="o">.</span><span class="mi">2018</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">01</span><span class="n">T09</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mf">45.055</span><span class="n">_tpl</span><span class="o">-</span><span class="n">A02_0001</span><span class="o">.</span><span class="n">fits</span>   <span class="n">XSHOOTER</span>        <span class="mf">78685.247</span>       <span class="mf">35622.</span>
+<span class="n">r</span><span class="o">.</span><span class="n">XSHOO</span><span class="o">.</span><span class="mi">2018</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">01</span><span class="n">T09</span><span class="p">:</span><span class="mi">59</span><span class="p">:</span><span class="mf">57.509</span><span class="n">_tpl</span><span class="o">-</span><span class="n">A01_0004</span><span class="o">.</span><span class="n">fits</span>   <span class="n">XSHOOTER</span>        <span class="mf">79056.26</span>        <span class="mf">35992.</span>
+<span class="n">r</span><span class="o">.</span><span class="n">XSHOO</span><span class="o">.</span><span class="mi">2018</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">01</span><span class="n">T09</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mf">45.055</span><span class="n">_tpl</span><span class="o">-</span><span class="n">A01_0002</span><span class="o">.</span><span class="n">fits</span>   <span class="n">XSHOOTER</span>        <span class="mf">78685.247</span>       <span class="mf">35622.</span>
+<span class="n">r</span><span class="o">.</span><span class="n">XSHOO</span><span class="o">.</span><span class="mi">2018</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">01</span><span class="n">T09</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mf">43.577</span><span class="n">_tpl</span><span class="o">-</span><span class="n">A02_0001</span><span class="o">.</span><span class="n">fits</span>   <span class="n">XSHOOTER</span>        <span class="mf">78684.245</span>       <span class="mf">35621.</span>
+<span class="n">r</span><span class="o">.</span><span class="n">XSHOO</span><span class="o">.</span><span class="mi">2018</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">01</span><span class="n">T09</span><span class="p">:</span><span class="mi">59</span><span class="p">:</span><span class="mf">57.509</span><span class="n">_tpl</span><span class="o">-</span><span class="n">A01_0002</span><span class="o">.</span><span class="n">fits</span>   <span class="n">XSHOOTER</span>        <span class="mf">79056.26</span>        <span class="mf">35992.</span>
+<span class="n">r</span><span class="o">.</span><span class="n">XSHOO</span><span class="o">.</span><span class="mi">2018</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">01</span><span class="n">T09</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mf">45.055</span><span class="n">_tpl</span><span class="o">-</span><span class="n">A02_0000</span><span class="o">.</span><span class="n">fits</span>   <span class="n">XSHOOTER</span>        <span class="mf">78685.247</span>       <span class="mf">35622.</span>
+<span class="n">r</span><span class="o">.</span><span class="n">XSHOO</span><span class="o">.</span><span class="mi">2018</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">01</span><span class="n">T09</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mf">43.577</span><span class="n">_tpl</span><span class="o">-</span><span class="n">A01_0001</span><span class="o">.</span><span class="n">fits</span>   <span class="n">XSHOOTER</span>        <span class="mf">78684.245</span>       <span class="mf">35621.</span>
+<span class="n">r</span><span class="o">.</span><span class="n">XSHOO</span><span class="o">.</span><span class="mi">2018</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">01</span><span class="n">T09</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mf">44.797</span><span class="n">_tpl</span><span class="o">-</span><span class="n">A03_0002</span><span class="o">.</span><span class="n">fits</span>   <span class="n">XSHOOTER</span>        <span class="mf">78684.245</span>       <span class="mf">35621.</span>
+<span class="n">r</span><span class="o">.</span><span class="n">XSHOO</span><span class="o">.</span><span class="mi">2018</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">01</span><span class="n">T09</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mf">44.797</span><span class="n">_tpl</span><span class="o">-</span><span class="n">A03_0000</span><span class="o">.</span><span class="n">fits</span>   <span class="n">XSHOOTER</span>        <span class="mf">78684.245</span>       <span class="mf">35621.</span>
+<span class="n">r</span><span class="o">.</span><span class="n">XSHOO</span><span class="o">.</span><span class="mi">2018</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">01</span><span class="n">T09</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mf">45.055</span><span class="n">_tpl</span><span class="o">-</span><span class="n">A03_0001</span><span class="o">.</span><span class="n">fits</span>   <span class="n">XSHOOTER</span>        <span class="mf">78685.247</span>       <span class="mf">35622.</span>
+<span class="n">r</span><span class="o">.</span><span class="n">XSHOO</span><span class="o">.</span><span class="mi">2018</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">01</span><span class="n">T09</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mf">45.055</span><span class="n">_tpl</span><span class="o">-</span><span class="n">A02_0002</span><span class="o">.</span><span class="n">fits</span>   <span class="n">XSHOOTER</span>        <span class="mf">78685.247</span>       <span class="mf">35622.</span>
+<span class="n">r</span><span class="o">.</span><span class="n">XSHOO</span><span class="o">.</span><span class="mi">2018</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">01</span><span class="n">T09</span><span class="p">:</span><span class="mi">59</span><span class="p">:</span><span class="mf">57.509</span><span class="n">_tpl</span><span class="o">-</span><span class="n">A01_0006</span><span class="o">.</span><span class="n">fits</span>   <span class="n">XSHOOTER</span>        <span class="mf">79056.26</span>        <span class="mf">35992.</span>
+<span class="n">r</span><span class="o">.</span><span class="n">XSHOO</span><span class="o">.</span><span class="mi">2018</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">01</span><span class="n">T09</span><span class="p">:</span><span class="mi">59</span><span class="p">:</span><span class="mf">57.509</span><span class="n">_tpl</span><span class="o">-</span><span class="n">A01_0000</span><span class="o">.</span><span class="n">fits</span>   <span class="n">XSHOOTER</span>        <span class="mf">79056.26</span>        <span class="mf">35992.</span>
+<span class="n">r</span><span class="o">.</span><span class="n">XSHOO</span><span class="o">.</span><span class="mi">2018</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">01</span><span class="n">T09</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mf">43.577</span><span class="n">_tpl</span><span class="o">-</span><span class="n">A02_0002</span><span class="o">.</span><span class="n">fits</span>   <span class="n">XSHOOTER</span>        <span class="mf">78684.245</span>       <span class="mf">35621.</span>
+<span class="n">r</span><span class="o">.</span><span class="n">XSHOO</span><span class="o">.</span><span class="mi">2018</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">01</span><span class="n">T09</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mf">43.577</span><span class="n">_tpl</span><span class="o">-</span><span class="n">A01_0000</span><span class="o">.</span><span class="n">fits</span>   <span class="n">XSHOOTER</span>        <span class="mf">78684.245</span>       <span class="mf">35621.</span>
+<span class="n">r</span><span class="o">.</span><span class="n">XSHOO</span><span class="o">.</span><span class="mi">2018</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">01</span><span class="n">T09</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mf">44.797</span><span class="n">_tpl</span><span class="o">-</span><span class="n">A01_0002</span><span class="o">.</span><span class="n">fits</span>   <span class="n">XSHOOTER</span>        <span class="mf">78684.245</span>       <span class="mf">35621.</span>
+<span class="n">r</span><span class="o">.</span><span class="n">XSHOO</span><span class="o">.</span><span class="mi">2018</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">01</span><span class="n">T09</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mf">43.577</span><span class="n">_tpl</span><span class="o">-</span><span class="n">A03_0001</span><span class="o">.</span><span class="n">fits</span>   <span class="n">XSHOOTER</span>        <span class="mf">78684.245</span>       <span class="mf">35621.</span>
+<span class="n">r</span><span class="o">.</span><span class="n">XSHOO</span><span class="o">.</span><span class="mi">2018</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">01</span><span class="n">T09</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mf">44.797</span><span class="n">_tpl</span><span class="o">-</span><span class="n">A01_0001</span><span class="o">.</span><span class="n">fits</span>   <span class="n">XSHOOTER</span>        <span class="mf">78684.245</span>       <span class="mf">35621.</span>
+<span class="n">r</span><span class="o">.</span><span class="n">XSHOO</span><span class="o">.</span><span class="mi">2018</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">01</span><span class="n">T09</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mf">45.055</span><span class="n">_tpl</span><span class="o">-</span><span class="n">A01_0001</span><span class="o">.</span><span class="n">fits</span>   <span class="n">XSHOOTER</span>        <span class="mf">78685.247</span>       <span class="mf">35622.</span>
+<span class="n">r</span><span class="o">.</span><span class="n">XSHOO</span><span class="o">.</span><span class="mi">2018</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">01</span><span class="n">T09</span><span class="p">:</span><span class="mi">59</span><span class="p">:</span><span class="mf">57.509</span><span class="n">_tpl</span><span class="o">-</span><span class="n">A01_0001</span><span class="o">.</span><span class="n">fits</span>   <span class="n">XSHOOTER</span>        <span class="mf">79056.26</span>        <span class="mf">35992.</span>
+<span class="n">r</span><span class="o">.</span><span class="n">XSHOO</span><span class="o">.</span><span class="mi">2018</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">01</span><span class="n">T09</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mf">43.577</span><span class="n">_tpl</span><span class="o">-</span><span class="n">A03_0000</span><span class="o">.</span><span class="n">fits</span>   <span class="n">XSHOOTER</span>        <span class="mf">78684.245</span>       <span class="mf">35621.</span>
+<span class="n">r</span><span class="o">.</span><span class="n">XSHOO</span><span class="o">.</span><span class="mi">2018</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">01</span><span class="n">T09</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mf">45.055</span><span class="n">_tpl</span><span class="o">-</span><span class="n">A01_0000</span><span class="o">.</span><span class="n">fits</span>   <span class="n">XSHOOTER</span>        <span class="mf">78685.247</span>       <span class="mf">35622.</span>
+<span class="n">r</span><span class="o">.</span><span class="n">XSHOO</span><span class="o">.</span><span class="mi">2018</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">01</span><span class="n">T09</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mf">43.577</span><span class="n">_tpl</span><span class="o">-</span><span class="n">A03_0002</span><span class="o">.</span><span class="n">fits</span>   <span class="n">XSHOOTER</span>        <span class="mf">78684.245</span>       <span class="mf">35621.</span>
+<span class="n">r</span><span class="o">.</span><span class="n">XSHOO</span><span class="o">.</span><span class="mi">2018</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">01</span><span class="n">T09</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mf">44.797</span><span class="n">_tpl</span><span class="o">-</span><span class="n">A02_0001</span><span class="o">.</span><span class="n">fits</span>   <span class="n">XSHOOTER</span>        <span class="mf">78684.245</span>       <span class="mf">35621.</span>
+<span class="n">r</span><span class="o">.</span><span class="n">XSHOO</span><span class="o">.</span><span class="mi">2018</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">01</span><span class="n">T09</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mf">44.797</span><span class="n">_tpl</span><span class="o">-</span><span class="n">A03_0001</span><span class="o">.</span><span class="n">fits</span>   <span class="n">XSHOOTER</span>        <span class="mf">78684.245</span>       <span class="mf">35621.</span>
+<span class="n">r</span><span class="o">.</span><span class="n">XSHOO</span><span class="o">.</span><span class="mi">2018</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">01</span><span class="n">T09</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mf">45.055</span><span class="n">_tpl</span><span class="o">-</span><span class="n">A03_0000</span><span class="o">.</span><span class="n">fits</span>   <span class="n">XSHOOTER</span>        <span class="mf">78685.247</span>       <span class="mf">35622.</span>
+<span class="n">r</span><span class="o">.</span><span class="n">XSHOO</span><span class="o">.</span><span class="mi">2018</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">01</span><span class="n">T09</span><span class="p">:</span><span class="mi">59</span><span class="p">:</span><span class="mf">57.509</span><span class="n">_tpl</span><span class="o">-</span><span class="n">A01_0003</span><span class="o">.</span><span class="n">fits</span>   <span class="n">XSHOOTER</span>        <span class="mf">79056.26</span>        <span class="mf">35992.</span>
+<span class="n">r</span><span class="o">.</span><span class="n">XSHOO</span><span class="o">.</span><span class="mi">2018</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">01</span><span class="n">T09</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mf">43.577</span><span class="n">_tpl</span><span class="o">-</span><span class="n">A02_0000</span><span class="o">.</span><span class="n">fits</span>   <span class="n">XSHOOTER</span>        <span class="mf">78684.245</span>       <span class="mf">35621.</span>
+<span class="n">r</span><span class="o">.</span><span class="n">XSHOO</span><span class="o">.</span><span class="mi">2018</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">01</span><span class="n">T09</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mf">45.055</span><span class="n">_tpl</span><span class="o">-</span><span class="n">A03_0002</span><span class="o">.</span><span class="n">fits</span>   <span class="n">XSHOOTER</span>        <span class="mf">78685.247</span>       <span class="mf">35622.</span>
+<span class="n">r</span><span class="o">.</span><span class="n">XSHOO</span><span class="o">.</span><span class="mi">2018</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">01</span><span class="n">T09</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mf">44.797</span><span class="n">_tpl</span><span class="o">-</span><span class="n">A02_0000</span><span class="o">.</span><span class="n">fits</span>   <span class="n">XSHOOTER</span>        <span class="mf">78684.245</span>       <span class="mf">35621.</span>
+<span class="n">r</span><span class="o">.</span><span class="n">XSHOO</span><span class="o">.</span><span class="mi">2018</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">01</span><span class="n">T09</span><span class="p">:</span><span class="mi">59</span><span class="p">:</span><span class="mf">57.509</span><span class="n">_tpl</span><span class="o">-</span><span class="n">A01_0005</span><span class="o">.</span><span class="n">fits</span>   <span class="n">XSHOOTER</span>        <span class="mf">79056.26</span>        <span class="mf">35992.</span>
+<span class="n">r</span><span class="o">.</span><span class="n">XSHOO</span><span class="o">.</span><span class="mi">2018</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">01</span><span class="n">T09</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mf">44.797</span><span class="n">_tpl</span><span class="o">-</span><span class="n">A01_0000</span><span class="o">.</span><span class="n">fits</span>   <span class="n">XSHOOTER</span>        <span class="mf">78684.245</span>       <span class="mf">35621.</span>
+<span class="n">r</span><span class="o">.</span><span class="n">XSHOO</span><span class="o">.</span><span class="mi">2018</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">01</span><span class="n">T09</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mf">43.577</span><span class="n">_tpl</span><span class="o">-</span><span class="n">A01_0002</span><span class="o">.</span><span class="n">fits</span>   <span class="n">XSHOOTER</span>        <span class="mf">78684.245</span>       <span class="mf">35621.</span>
+<span class="n">r</span><span class="o">.</span><span class="n">XSHOO</span><span class="o">.</span><span class="mi">2018</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">01</span><span class="n">T09</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mf">44.797</span><span class="n">_tpl</span><span class="o">-</span><span class="n">A02_0002</span><span class="o">.</span><span class="n">fits</span>   <span class="n">XSHOOTER</span>        <span class="mf">78684.245</span>       <span class="mf">35621.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="grepping">
+<h3>4 - Grepping<a class="headerlink" href="#grepping" title="Permalink to this headline">¶</a></h3>
+<p>The last function allows you to grep files that have a certain value in their keywords.
+By default it is set to <em>None</em> but you can give a <em>grepping value</em> (<strong>a string</strong>) to replace it. When doing so dfitspy will look at all the files you give in listfiles and in all the keywords you give in listkeys. <strong>If one of the value of the keywords matches the grepping value the file will be kept, if not the file will be rejected.</strong> For example here we want all the files for which LST = 79056.26</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">13</span><span class="p">]:</span> <span class="n">fitsortgrep</span> <span class="o">=</span> <span class="n">dfitspy</span><span class="o">.</span><span class="n">get_all_values</span><span class="p">(</span><span class="n">listfiles</span><span class="p">,</span> <span class="n">listkeys</span><span class="p">,</span> <span class="s1">&#39;79056.26&#39;</span><span class="p">)</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">14</span><span class="p">]:</span> <span class="n">dfitspy</span><span class="o">.</span><span class="n">display_final</span><span class="p">(</span><span class="n">fitsortgrep</span><span class="p">)</span>
+
+<span class="n">filename</span>                                            <span class="n">INSTRUME</span>        <span class="n">LST</span>             <span class="n">UTC</span>
+<span class="o">-------------------------------------------------</span>   <span class="o">--------</span>        <span class="o">--------</span>        <span class="o">------</span>
+<span class="n">r</span><span class="o">.</span><span class="n">XSHOO</span><span class="o">.</span><span class="mi">2018</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">01</span><span class="n">T09</span><span class="p">:</span><span class="mi">59</span><span class="p">:</span><span class="mf">57.509</span><span class="n">_tpl</span><span class="o">-</span><span class="n">A01_0004</span><span class="o">.</span><span class="n">fits</span>   <span class="n">XSHOOTER</span>        <span class="mf">79056.26</span>        <span class="mf">35992.</span>
+<span class="n">r</span><span class="o">.</span><span class="n">XSHOO</span><span class="o">.</span><span class="mi">2018</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">01</span><span class="n">T09</span><span class="p">:</span><span class="mi">59</span><span class="p">:</span><span class="mf">57.509</span><span class="n">_tpl</span><span class="o">-</span><span class="n">A01_0002</span><span class="o">.</span><span class="n">fits</span>   <span class="n">XSHOOTER</span>        <span class="mf">79056.26</span>        <span class="mf">35992.</span>
+<span class="n">r</span><span class="o">.</span><span class="n">XSHOO</span><span class="o">.</span><span class="mi">2018</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">01</span><span class="n">T09</span><span class="p">:</span><span class="mi">59</span><span class="p">:</span><span class="mf">57.509</span><span class="n">_tpl</span><span class="o">-</span><span class="n">A01_0006</span><span class="o">.</span><span class="n">fits</span>   <span class="n">XSHOOTER</span>        <span class="mf">79056.26</span>        <span class="mf">35992.</span>
+<span class="n">r</span><span class="o">.</span><span class="n">XSHOO</span><span class="o">.</span><span class="mi">2018</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">01</span><span class="n">T09</span><span class="p">:</span><span class="mi">59</span><span class="p">:</span><span class="mf">57.509</span><span class="n">_tpl</span><span class="o">-</span><span class="n">A01_0000</span><span class="o">.</span><span class="n">fits</span>   <span class="n">XSHOOTER</span>        <span class="mf">79056.26</span>        <span class="mf">35992.</span>
+<span class="n">r</span><span class="o">.</span><span class="n">XSHOO</span><span class="o">.</span><span class="mi">2018</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">01</span><span class="n">T09</span><span class="p">:</span><span class="mi">59</span><span class="p">:</span><span class="mf">57.509</span><span class="n">_tpl</span><span class="o">-</span><span class="n">A01_0001</span><span class="o">.</span><span class="n">fits</span>   <span class="n">XSHOOTER</span>        <span class="mf">79056.26</span>        <span class="mf">35992.</span>
+<span class="n">r</span><span class="o">.</span><span class="n">XSHOO</span><span class="o">.</span><span class="mi">2018</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">01</span><span class="n">T09</span><span class="p">:</span><span class="mi">59</span><span class="p">:</span><span class="mf">57.509</span><span class="n">_tpl</span><span class="o">-</span><span class="n">A01_0003</span><span class="o">.</span><span class="n">fits</span>   <span class="n">XSHOOTER</span>        <span class="mf">79056.26</span>        <span class="mf">35992.</span>
+<span class="n">r</span><span class="o">.</span><span class="n">XSHOO</span><span class="o">.</span><span class="mi">2018</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">01</span><span class="n">T09</span><span class="p">:</span><span class="mi">59</span><span class="p">:</span><span class="mf">57.509</span><span class="n">_tpl</span><span class="o">-</span><span class="n">A01_0005</span><span class="o">.</span><span class="n">fits</span>   <span class="n">XSHOOTER</span>        <span class="mf">79056.26</span>        <span class="mf">35992.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="test">
+<h2>Test<a class="headerlink" href="#test" title="Permalink to this headline">¶</a></h2>
+<p>Dfitspy comes with a unit testing suite (21 tests in total). To run it:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="kn">import</span> <span class="nn">dfitspy</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="n">dfitspy</span><span class="o">.</span><span class="n">test</span><span class="p">()</span>
+
+    <span class="o">---</span><span class="n">UnitTest</span> <span class="n">the</span> <span class="n">command</span> <span class="n">interface</span>
+<span class="n">test_cli</span> <span class="p">(</span><span class="n">dfitspy</span><span class="o">.</span><span class="n">cli</span><span class="o">.</span><span class="n">interface_test</span><span class="p">)</span> <span class="o">...</span> <span class="n">ok</span>
+
+<span class="o">----------------------------------------------------------------------</span>
+<span class="n">Ran</span> <span class="mi">1</span> <span class="n">test</span> <span class="ow">in</span> <span class="mf">0.002</span><span class="n">s</span>
+
+<span class="n">OK</span>
+
+<span class="o">---</span><span class="n">UnitTest</span> <span class="n">the</span> <span class="n">display</span> <span class="n">printouts</span>
+<span class="n">test_displayfinal</span> <span class="p">(</span><span class="n">dfitspy</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">Testdisplay_final</span><span class="p">)</span> <span class="o">...</span> <span class="n">ok</span>
+<span class="n">test_five</span> <span class="p">(</span><span class="n">dfitspy</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">Testdisplay_list</span><span class="p">)</span> <span class="o">...</span> <span class="n">ok</span>
+<span class="n">test_four</span> <span class="p">(</span><span class="n">dfitspy</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">Testdisplay_list</span><span class="p">)</span> <span class="o">...</span> <span class="n">ok</span>
+<span class="n">test_six</span> <span class="p">(</span><span class="n">dfitspy</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">Testdisplay_list</span><span class="p">)</span> <span class="o">...</span> <span class="n">ok</span>
+<span class="n">test_three</span> <span class="p">(</span><span class="n">dfitspy</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">Testdisplay_list</span><span class="p">)</span> <span class="o">...</span> <span class="n">ok</span>
+
+<span class="o">----------------------------------------------------------------------</span>
+<span class="n">Ran</span> <span class="mi">5</span> <span class="n">tests</span> <span class="ow">in</span> <span class="mf">0.001</span><span class="n">s</span>
+
+<span class="n">OK</span>
+
+<span class="o">---</span><span class="n">UnitTest</span> <span class="n">read</span> <span class="n">fits</span> <span class="ow">and</span> <span class="n">extraction</span> <span class="n">functions</span>
+<span class="n">test_readfile</span> <span class="p">(</span><span class="n">dfitspy</span><span class="o">.</span><span class="n">readfits</span><span class="o">.</span><span class="n">Test_extractheader</span><span class="p">)</span> <span class="o">...</span> <span class="n">ok</span>
+<span class="n">test_get_all_keyword</span> <span class="p">(</span><span class="n">dfitspy</span><span class="o">.</span><span class="n">readfits</span><span class="o">.</span><span class="n">Testkeyword_extraction</span><span class="p">)</span> <span class="o">...</span> <span class="n">ok</span>
+<span class="n">test_get_value_True</span> <span class="p">(</span><span class="n">dfitspy</span><span class="o">.</span><span class="n">readfits</span><span class="o">.</span><span class="n">Testkeyword_extraction</span><span class="p">)</span> <span class="o">...</span> <span class="n">ok</span>
+<span class="n">test_get_value_no_grep</span> <span class="p">(</span><span class="n">dfitspy</span><span class="o">.</span><span class="n">readfits</span><span class="o">.</span><span class="n">Testkeyword_extraction</span><span class="p">)</span> <span class="o">...</span> <span class="n">ok</span>
+<span class="n">test_get_value_with_grep</span> <span class="p">(</span><span class="n">dfitspy</span><span class="o">.</span><span class="n">readfits</span><span class="o">.</span><span class="n">Testkeyword_extraction</span><span class="p">)</span> <span class="o">...</span> <span class="n">ok</span>
+<span class="n">test_get_value_wrong</span> <span class="p">(</span><span class="n">dfitspy</span><span class="o">.</span><span class="n">readfits</span><span class="o">.</span><span class="n">Testkeyword_extraction</span><span class="p">)</span> <span class="o">...</span> <span class="n">ok</span>
+
+<span class="o">----------------------------------------------------------------------</span>
+<span class="n">Ran</span> <span class="mi">6</span> <span class="n">tests</span> <span class="ow">in</span> <span class="mf">0.002</span><span class="n">s</span>
+
+<span class="n">OK</span>
+
+<span class="o">---</span><span class="n">UnitTest</span> <span class="n">getting</span> <span class="n">file</span> <span class="n">names</span>
+<span class="n">test_get_file_all_no_files</span> <span class="p">(</span><span class="n">dfitspy</span><span class="o">.</span><span class="n">get_files_and_keys</span><span class="o">.</span><span class="n">Testgetfiles</span><span class="p">)</span> <span class="o">...</span> <span class="n">ok</span>
+<span class="n">test_get_file_all_with_files</span> <span class="p">(</span><span class="n">dfitspy</span><span class="o">.</span><span class="n">get_files_and_keys</span><span class="o">.</span><span class="n">Testgetfiles</span><span class="p">)</span> <span class="o">...</span> <span class="n">ok</span>
+<span class="n">test_get_files_allfits</span> <span class="p">(</span><span class="n">dfitspy</span><span class="o">.</span><span class="n">get_files_and_keys</span><span class="o">.</span><span class="n">Testgetfiles</span><span class="p">)</span> <span class="o">...</span> <span class="n">ok</span>
+<span class="n">test_get_multi_file_goodname</span> <span class="p">(</span><span class="n">dfitspy</span><span class="o">.</span><span class="n">get_files_and_keys</span><span class="o">.</span><span class="n">Testgetfiles</span><span class="p">)</span> <span class="o">...</span> <span class="n">ok</span>
+<span class="n">test_get_single_file_goodname</span> <span class="p">(</span><span class="n">dfitspy</span><span class="o">.</span><span class="n">get_files_and_keys</span><span class="o">.</span><span class="n">Testgetfiles</span><span class="p">)</span> <span class="o">...</span> <span class="n">ok</span>
+<span class="n">test_get_single_file_wrongname</span> <span class="p">(</span><span class="n">dfitspy</span><span class="o">.</span><span class="n">get_files_and_keys</span><span class="o">.</span><span class="n">Testgetfiles</span><span class="p">)</span> <span class="o">...</span> <span class="n">ok</span>
+<span class="n">test_list_files</span> <span class="p">(</span><span class="n">dfitspy</span><span class="o">.</span><span class="n">get_files_and_keys</span><span class="o">.</span><span class="n">Testgetfiles</span><span class="p">)</span> <span class="o">...</span> <span class="n">ok</span>
+<span class="n">test_get_multi_key</span> <span class="p">(</span><span class="n">dfitspy</span><span class="o">.</span><span class="n">get_files_and_keys</span><span class="o">.</span><span class="n">Testgetkeys</span><span class="p">)</span> <span class="o">...</span> <span class="n">ok</span>
+<span class="n">test_get_single_key</span> <span class="p">(</span><span class="n">dfitspy</span><span class="o">.</span><span class="n">get_files_and_keys</span><span class="o">.</span><span class="n">Testgetkeys</span><span class="p">)</span> <span class="o">...</span> <span class="n">ok</span>
+
+<span class="o">----------------------------------------------------------------------</span>
+<span class="n">Ran</span> <span class="mi">9</span> <span class="n">tests</span> <span class="ow">in</span> <span class="mf">0.001</span><span class="n">s</span>
+
+<span class="n">OK</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="usage.html" class="btn btn-neutral" title="dfitspy as an executable" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, R. Thomas.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1.0',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

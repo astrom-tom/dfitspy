@@ -1,0 +1,68 @@
+README of dfitspy
+
+0-Change log
+
+I-Introduction
+--------------
+
+II-As a library
+
+
+III-As an executable
+--------------------
+
+dfitspy can also be used as dfits in a terminal (where the environment has been activate of course). The best way 
+to learn what you can do is to have a look at the help of the program using: dfistpy --help
+
+
+------------------------- Help of dfitspy ---------------------------------------
+usage: dfitspy.py [-h] -file [FILE [FILE ...]] -key KEY [--dir DIR] [--list]
+                  [--grep GREP] [--test]
+
+dfitspy, version 0.1, Licence: GPL
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --dir DIR             Directory where we search for files. If none given,
+                        the default directory is the one from where dfitspy is
+                        started.
+  --list                List all keywords in a given file (if a list of file
+                        is given the first one is used)
+  --grep GREP           Restrain the files to the one with a given value of a
+                        given parameter, Work ONLY for the first keyword
+  --test                Start the testing of the program
+
+Mandatory arguments:
+  -file [FILE [FILE ...]]
+                        a file, a list of file separated by coma, *.fits is
+                        accepted, * as well
+  -key KEY              Header keyword or list of header keywords (separated
+                        by coma)
+-------------------------------------------------------------------------------
+
+Two arguments are mandatory: the file and the keyword (key) which means that you can not use dfistpy without 
+giving a filename (or more, see below) and a keyword to display.
+
+
+'-file': 
+This arguments accept multiple formats:
+    -A single filename,                          ex: -file file.fits
+    -Multiple files,                             ex: -f file1.fits,file2.fits  (!!No space!!) 
+    -All the fits file in the working directory, ex: -file *.fits
+    -All the files in the working directory,     ex: -file *
+    -Files that start with a fiven prefix,       ex: -file file_000*  TODO
+
+'-key': 
+This arguements accepts as well different formats:
+
+    -A single keyword                 ex: 'OBJECT'
+    -Multiple keywords                ex: 'OBJECT','TELESCOP'  (!!NO SPACE!!)
+
+As you can see the keywords are inside quotes. This is mandatory.
+
+
+Five arguments are optionals and can be u
+
+
+
+

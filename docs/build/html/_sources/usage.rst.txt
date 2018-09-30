@@ -1,0 +1,197 @@
+.. _Usagecli:
+
+
+|Python36| |Licence| |numpy|  
+
+.. |Licence| image:: https://img.shields.io/badge/License-GPLv3-blue.svg
+      :target: http://perso.crans.org/besson/LICENSE.html
+
+.. |Opensource| image:: https://badges.frapsoft.com/os/v1/open-source.svg?v=103
+      :target: https://github.com/ellerbrock/open-source-badges/
+
+.. |Python36| image:: https://img.shields.io/badge/python-3.6-blue.svg
+.. _Python36: https://www.python.org/downloads/release/python-360/
+
+.. |numpy| image:: https://img.shields.io/badge/poweredby-numpy-orange.svg
+   :target: http://www.numpy.org/
+
+
+dfitspy as an executable
+========================
+
+
+The command line interface help
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+You can start dfitspy from a terminal. dfitspy comes with a command line interface which includes a 'help' that you can display in your terminal using the help command. It must be called like this::
+
+           [user@machine]$ dfitspy --help
+
+This command will display the help of the program::
+
+      usage: dfitspy [-h] [-file [FILE [FILE ...]]] [-key KEY] [--dir DIR] [--list]
+               [--grep GREP] [--test]
+
+      dfitspy, version 18.10.0, Licence: GPL
+
+      optional arguments:
+         -h, --help            show this help message and exit
+         --dir DIR             Directory where we search for files. If none given,
+                            the default directory is the one from where dfitspy is
+                            started.
+         --list                List all keywords in a given file (if a list of file
+                            is given the first one is used)
+         --grep GREP           Restrain the files to the one with a given value of a
+                            given parameter, Work ONLY for the first keyword
+         --test                Start the testing of the program
+         --version             Display the version of the program
+         --docs                Diplay the online or local documentation program
+
+
+
+      Mandatory arguments:
+         -file [FILE [FILE ...]]
+                            a file, a list of file separated by coma, *.fits is
+                            accepted, * as well
+         -key KEY           Header keyword or list of header keywords (separated
+                            by coma)
+
+
+In details it means:
+
+dfitspy has few optionnal arguments and 2 semi mandatory arguements. You can not start dfitspy without any argument:
+	
+* -h and --help: Display this help in the terminal.
+
+If you want to dfits | fitsort
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+* -file: here is where you give your files. You have multiple option how to give values to this argument:
+
+    * A single file:  **-file test.fits**
+    * Multiple particular files: **-file test.fits,test2.fits**. They must be separated with comas.
+    * You can use the 'all' argument: **-file all**
+    * You can use the '*' solution: **-file** *
+    * All the fits file in the directory: **-file *.fits**
+    * Semi complete names: **-file test*** or **-file *test.fits** or with path: **-file /test/*test.fits**.
+
+* -key: Here is where you ask dfitspy to look for particular keywords in the headers. Here again you have multiple option
+    * a single keyword: **-key OBJECT**
+    * multiple arguements: **-key OBJECT,LST**. They must be separated by comas
+
+.. warning::
+
+    Two things you must be careful of:
+
+    * ESO keywords may contain the 'HIERARCH' prefix. This is ignored by dfitspy therefore do not use i t.
+    * If your keywords contain spaces (ex: ESO OBS ID) you must give it inside quotes --> 'ESO OBS ID'
+    
+An example of output is the following (run the command: **dfitspy -f Test_data/*.fits -key LST,'ESO OBS NAME'**)::
+
+        [Command: dfitspy -f Test_data/*.fits -key LST,'ESO OBS NAME']
+        
+        [DFITSPY INFO]> 34 files found
+        -----------------------------------
+        filename                                         	LST      	ESO OBS NAME
+        -------------------------------------------------	---------	------------------
+        r.XSHOO.2018-06-01T09:53:43.577_tpl-A01_0000.fits	78684.245	Hip106831_TELL_SLT
+        r.XSHOO.2018-06-01T09:53:43.577_tpl-A01_0001.fits	78684.245	Hip106831_TELL_SLT
+        r.XSHOO.2018-06-01T09:53:43.577_tpl-A01_0002.fits	78684.245	Hip106831_TELL_SLT
+        r.XSHOO.2018-06-01T09:53:43.577_tpl-A02_0000.fits	78684.245	Hip106831_TELL_SLT
+        r.XSHOO.2018-06-01T09:53:43.577_tpl-A02_0001.fits	78684.245	Hip106831_TELL_SLT
+        r.XSHOO.2018-06-01T09:53:43.577_tpl-A02_0002.fits	78684.245	Hip106831_TELL_SLT
+        r.XSHOO.2018-06-01T09:53:43.577_tpl-A03_0000.fits	78684.245	Hip106831_TELL_SLT
+        r.XSHOO.2018-06-01T09:53:43.577_tpl-A03_0001.fits	78684.245	Hip106831_TELL_SLT
+        r.XSHOO.2018-06-01T09:53:43.577_tpl-A03_0002.fits	78684.245	Hip106831_TELL_SLT
+        r.XSHOO.2018-06-01T09:53:44.797_tpl-A01_0000.fits	78684.245	Hip106831_TELL_SLT
+        r.XSHOO.2018-06-01T09:53:44.797_tpl-A01_0001.fits	78684.245	Hip106831_TELL_SLT
+        r.XSHOO.2018-06-01T09:53:44.797_tpl-A01_0002.fits	78684.245	Hip106831_TELL_SLT
+        r.XSHOO.2018-06-01T09:53:44.797_tpl-A02_0000.fits	78684.245	Hip106831_TELL_SLT
+        r.XSHOO.2018-06-01T09:53:44.797_tpl-A02_0001.fits	78684.245	Hip106831_TELL_SLT
+        r.XSHOO.2018-06-01T09:53:44.797_tpl-A02_0002.fits	78684.245	Hip106831_TELL_SLT
+        r.XSHOO.2018-06-01T09:53:44.797_tpl-A03_0000.fits	78684.245	Hip106831_TELL_SLT
+        r.XSHOO.2018-06-01T09:53:44.797_tpl-A03_0001.fits	78684.245	Hip106831_TELL_SLT
+        r.XSHOO.2018-06-01T09:53:44.797_tpl-A03_0002.fits	78684.245	Hip106831_TELL_SLT
+        r.XSHOO.2018-06-01T09:53:45.055_tpl-A01_0000.fits	78685.247	Hip106831_TELL_SLT
+        r.XSHOO.2018-06-01T09:53:45.055_tpl-A01_0001.fits	78685.247	Hip106831_TELL_SLT
+        r.XSHOO.2018-06-01T09:53:45.055_tpl-A01_0002.fits	78685.247	Hip106831_TELL_SLT
+        r.XSHOO.2018-06-01T09:53:45.055_tpl-A02_0000.fits	78685.247	Hip106831_TELL_SLT
+        r.XSHOO.2018-06-01T09:53:45.055_tpl-A02_0001.fits	78685.247	Hip106831_TELL_SLT
+        r.XSHOO.2018-06-01T09:53:45.055_tpl-A02_0002.fits	78685.247	Hip106831_TELL_SLT
+        r.XSHOO.2018-06-01T09:53:45.055_tpl-A03_0000.fits	78685.247	Hip106831_TELL_SLT
+        r.XSHOO.2018-06-01T09:53:45.055_tpl-A03_0001.fits	78685.247	Hip106831_TELL_SLT
+        r.XSHOO.2018-06-01T09:53:45.055_tpl-A03_0002.fits	78685.247	Hip106831_TELL_SLT
+        r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0000.fits	79056.26 	Hip106831_TELL_SLT
+        r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0001.fits	79056.26 	Hip106831_TELL_SLT
+        r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0002.fits	79056.26 	Hip106831_TELL_SLT
+        r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0003.fits	79056.26 	Hip106831_TELL_SLT
+        r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0004.fits	79056.26 	Hip106831_TELL_SLT
+        r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0005.fits	79056.26 	Hip106831_TELL_SLT
+        r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0006.fits	79056.26 	Hip106831_TELL_SLT
+
+
+First dfitspy gives you the number of files that was considered with the command. Then it displays the header always starting with the filename and then all the keywords the user requires to be displayed. Anf finally display the list of all the filenames and fits header values. 
+
+**GREPPING option**:
+dfitspy offers you the possibility to grep a particular value that you are expecting. This is done using the option *- - grep* (double dash) and giving as arguement an expected value of a keyword given with the *-key* option. Doing so will tell dfitspy to consider the files only if one of the keyword that the user ask to display as the grepping value. Taking the same command as above, one might want to get only the files with LST = 79056.26. This is easily done using: **dfitspy -f Test_data/*.fits -key LST,'ESO OBS NAME' --grep 79056.26**  and produce the output in terminal::
+
+        [command: dfitspy -f Test_data/*.fits -key LST,'ESO OBS NAME' --grep 79056.26]
+        
+        [DFITSPY INFO]> 34 files found 
+         ----------------------------------- 
+        filename                                         	LST     	ESO OBS NAME      
+        -------------------------------------------------	--------	------------------
+        r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0000.fits	79056.26	Hip106831_TELL_SLT
+        r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0001.fits	79056.26	Hip106831_TELL_SLT
+        r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0002.fits	79056.26	Hip106831_TELL_SLT
+        r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0003.fits	79056.26	Hip106831_TELL_SLT
+        r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0004.fits	79056.26	Hip106831_TELL_SLT
+        r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0005.fits	79056.26	Hip106831_TELL_SLT
+        r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0006.fits	79056.26	Hip106831_TELL_SLT
+
+
+
+
+
+Extra arguments
+^^^^^^^^^^^^^^^
+Few extra arguments can be used:
+
+* --test: This runs the tests (written with unittest library) of dfitspy. 
+* --dir: This changes the directory you want to analyse. By default it is the current working directory.
+* --list: **This must be used with the -file option described above**. It takes the first file given by '-file' and display a list of all the arguments in a 3 columns fashion. Example::
+
+
+    List of keywords in the first file
+    ----------------------------------
+    SIMPLE                         | BITPIX                         | NAXIS                         
+    EXTEND                         | COMMENT                        | DATE                          
+    ORIGIN                         | TELESCOP                       | INSTRUME                      
+    OBJECT                         | RA                             | DEC                           
+    EQUINOX                        | RADECSYS                       | MJD-OBS                       
+    DATE-OBS                       | UTC                            | LST                           
+    PI-COI                         | OBSERVER                       | ARCFILE                       
+    DATAMD5                        | PIPEFILE                       | ESO OBS AIRM                  
+    ESO OBS AMBI FWHM              | ESO OBS AMBI TRANS             | ESO OBS ATM                   
+    ESO OBS CONTAINER ID           | ESO OBS CONTAINER TYPE         | ESO OBS CONTRAST              
+    ESO OBS DID                    | ESO OBS EXECTIME               | ESO OBS GRP                   
+    ESO OBS ID                     | ESO OBS MOON DIST              | ESO OBS MOON FLI              
+    ESO OBS NAME                   | ESO OBS NTPL                   | ESO OBS OBSERVER              
+    ESO OBS PI-COI ID              | ESO OBS PI-COI NAME            | ESO OBS PROG ID               
+    ESO OBS START                  | ESO OBS STREHLRATIO            | ESO OBS TARG NAME             
+    ESO OBS TPLNO                  | ESO OBS TWILIGHT               | ESO OBS WATERVAPOUR           
+    ESO TPL DID                    | ESO TPL EXPNO                  | ESO TPL ID                    
+    ESO TPL NAME                   | ESO TPL NEXP                   | ESO TPL PRESEQ                
+    ESO TPL START                  | ESO TPL VERSION                | ESO TEL AIRM END              
+    ESO TEL AIRM START             | ESO TEL ALT                    | ESO TEL AMBI FWHM END         
+    ESO TEL AMBI FWHM START        | ESO TEL AMBI IRSKY TEMP        | ESO TEL AMBI IWV END          
+    ESO TEL AMBI IWV START         | ESO TEL AMBI IWV30D END        | ESO TEL AMBI IWV30D START     
+    ESO TEL AMBI IWV30DSTD END     | ESO TEL AMBI IWV30DSTD START   | ESO TEL AMBI IWVSTD END       
+    ESO TEL AMBI IWVSTD START      | ESO TEL AMBI PRES END          | ESO TEL AMBI PRES START       
+    ESO TEL AMBI RHUM              | ESO TEL AMBI TAU0              | ESO TEL AMBI TEMP             
+    ESO TEL AMBI WINDDIR           | ESO TEL AMBI WINDSP            | ESO TEL AZ                    
+    ESO TEL CHOP ST                | ESO TEL DATE                   | ESO TEL DID                   
+      
+* --docs: Display in the web browser the documentation of the code. If you have a valid internet connection it will open the online documentation, if not it will open the local documentation.
+* --version: Display in terminal the current version of the software.
+
