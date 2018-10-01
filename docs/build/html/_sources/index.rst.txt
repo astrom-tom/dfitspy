@@ -27,14 +27,14 @@ Content
 What is dfitspy?
 ================
 
-dfitspy is a small project that migrates the main dfist (link) and fitsort (link) capabilities to python.
+dfitspy is a small project that migrates the main dfits (link) and fitsort (link) capabilities to python.
 It is made to search information inside header of fitsfile. The fits part of the code come from the python 
 wrapper of the fits library CFITSIO (see below). dfitspy can be used both as a executable program and as a python
 module inside another code.
 
 What is not dfitspy?
 ====================
-dfistpy does not read data inside fits file. Other libraries are doing this very efficiently and dfitspy is not made for that (see fitsio and astropy). 
+dfitspy does not read data inside fits file. Other libraries are doing this very efficiently and dfitspy is not made for that (see fitsio and astropy). 
 It works only on the header and allows you to find common values in large amount of fits files in a very fast way. 
 
 
@@ -47,7 +47,7 @@ thanks the writter of this wrapper for the authorization he gave us to use this 
 ----
 
 **Contribute!**
-dfistpy is not perfect! It has been primarily developed for my private research and I decided to release i
+dfitspy is not perfect! It has been primarily developed for my private research and I decided to release i
 n the spirit of making the research process as transparent as possible and in the hope it can be used by
 other people. If you have any comment or anything you would like to be added to dfitspy, or, even better,
 if you want to modify you can either do it yourself or please feel free to contact me! ---> **rthomas@eso.org**
