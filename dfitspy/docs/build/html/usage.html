@@ -217,6 +217,8 @@
 </ul>
 </div></blockquote>
 </li>
+<li><p class="first">‘- -dir’: If you want to analyse files not in the current working directory you can use the ‘’- - dir’’ option which allows you to define the working directory. It is by default the current working directory.</p>
+</li>
 <li><dl class="first docutils">
 <dt>-key: Here is where you ask dfitspy to look for particular keywords in the headers. Here again you have multiple option</dt>
 <dd><ul class="first last simple">
@@ -235,7 +237,7 @@
 <li>If your keywords contain spaces (ex: ESO OBS ID) you must replace it by dots: ‘ESO.OBS.ID’</li>
 </ul>
 </div>
-<p>An example of output is the following (run the command: <strong>dfitspy -f Test_data/*.fits -key LST,’ESO OBS NAME’</strong>):</p>
+<p>An example of output is the following (run the command: <strong>dfitspy -f Test_data/*.fits -key OBJECT,LST,DATE –dir Test_data</strong>):</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">Command</span><span class="p">:</span> <span class="n">dfitspy</span> <span class="o">-</span><span class="n">f</span> <span class="nb">all</span> <span class="o">-</span><span class="n">k</span> <span class="n">OBJECT</span><span class="p">,</span><span class="n">LST</span><span class="p">,</span><span class="n">DATE</span> <span class="o">--</span><span class="nb">dir</span> <span class="n">Test_data</span><span class="o">/</span><span class="p">]</span>
 
 <span class="p">[</span><span class="n">DFITSPY</span> <span class="n">INFO</span><span class="p">]</span><span class="o">&gt;</span> <span class="mi">34</span> <span class="n">files</span> <span class="n">found</span>
@@ -285,7 +287,7 @@
 <p>dfitspy offers you the possibility to display files with particular values that you are expecting. This is done using the option <em>- - grep</em> (double dash) and giving as arguement an expected value of a keyword given with the <em>-key</em> option. Doing so will tell dfitspy to consider the files only if one of the keyword that the user ask to display as the grepping value.</p>
 <div class="section" id="simple-grepping">
 <h3>Simple grepping<a class="headerlink" href="#simple-grepping" title="Permalink to this headline">¶</a></h3>
-<p>Taking the same command as above, one might want to get only the files with LST = 79056.26. This is easily done using: <strong>dfitspy -f Test_data/*.fits -key LST,’ESO OBS NAME’ –grep 79056.26</strong>  and produce the output in terminal:</p>
+<p>Taking the same command as above, one might want to get only the files with LST = 79056.26. This is easily done using: <strong>dfitspy -f * -k OBJECT,LST,DATE –dir Test_data/ –grep 79056.26</strong>  and produce the output in terminal:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">command</span><span class="p">:</span> <span class="n">dfitspy</span> <span class="o">-</span><span class="n">f</span> <span class="o">*</span> <span class="o">-</span><span class="n">k</span> <span class="n">OBJECT</span><span class="p">,</span><span class="n">LST</span><span class="p">,</span><span class="n">DATE</span> <span class="o">--</span><span class="nb">dir</span> <span class="n">Test_data</span><span class="o">/</span> <span class="o">--</span><span class="n">grep</span> <span class="mf">79056.26</span><span class="p">]</span>
 
 <span class="p">[</span><span class="n">DFITSPY</span> <span class="n">INFO</span><span class="p">]</span><span class="o">&gt;</span> <span class="mi">34</span> <span class="n">files</span> <span class="n">found</span>

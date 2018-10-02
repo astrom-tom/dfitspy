@@ -75,9 +75,13 @@ If you want to dfits | fitsort
     * All the fits file in the directory: **-file *.fits**
     * Semi complete names: **-file test*** or **-file *test.fits** or with path: **-file /test/*test.fits**.
 
+* '- -dir': If you want to analyse files not in the current working directory you can use the ''- - dir'' option which allows you to define the working directory. It is by default the current working directory. 
+
 * -key: Here is where you ask dfitspy to look for particular keywords in the headers. Here again you have multiple option
     * a single keyword: **-key OBJECT**
     * multiple arguements: **-key OBJECT,LST**. They must be separated by comas
+
+
 
 .. warning::
 
@@ -86,7 +90,7 @@ If you want to dfits | fitsort
     * ESO keywords may contain the 'HIERARCH' prefix. This is ignored by dfitspy therefore do not use you can not use this prefix. For example if you have the following keywords HIERARCH ESO PRO CATG you must call it with ESO.PRO.CATG 
     * If your keywords contain spaces (ex: ESO OBS ID) you must replace it by dots: 'ESO.OBS.ID'
     
-An example of output is the following (run the command: **dfitspy -f Test_data/*.fits -key LST,'ESO OBS NAME'**)::
+An example of output is the following (run the command: **dfitspy -f Test_data/*.fits -key OBJECT,LST,DATE --dir Test_data**)::
 
         [Command: dfitspy -f all -k OBJECT,LST,DATE --dir Test_data/]
         
@@ -139,7 +143,7 @@ dfitspy offers you the possibility to display files with particular values that 
 
 Simple grepping
 ---------------
-Taking the same command as above, one might want to get only the files with LST = 79056.26. This is easily done using: **dfitspy -f Test_data/*.fits -key LST,'ESO OBS NAME' --grep 79056.26**  and produce the output in terminal::
+Taking the same command as above, one might want to get only the files with LST = 79056.26. This is easily done using: **dfitspy -f * -k OBJECT,LST,DATE --dir Test_data/ --grep 79056.26**  and produce the output in terminal::
 
         [command: dfitspy -f * -k OBJECT,LST,DATE --dir Test_data/ --grep 79056.26]
         
