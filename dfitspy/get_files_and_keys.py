@@ -66,12 +66,13 @@ def get_files(files, dire):
     ##second option, a list is given, need to check if some are fits file
     elif len(files) > 1:
         allfiles = []
-        for k in files:
+        files_path = [os.path.join(dire, i) for i in os.listdir(dire)]
+        for k in files_path:
             if k.endswith(".fits"):
                 allfiles.append(k)
 
     ##third option the user wants to look at all the files in the directory
-    elif files == ['all']:
+    elif files == ['all'] or len(files) > 1:
         allfiles = []
         files_path = [os.path.join(dire, i) for i in os.listdir(dire)]
         for k in files_path:
@@ -224,6 +225,7 @@ class Testgetfiles(unittest.TestCase):
         inputlist = ['test.fits', 'test5.fits', 'test2.fits', 'test4.fits', 'test3.fits']
         files = get_files(inputlist, os.path.join(os.path.dirname(os.path.realpath(__file__)),\
                 'tests'))
+        files = [os.path.basename(i) for i in files]
         self.assertEqual(files, inputlist)
  
 if __name__ == "__main__": 

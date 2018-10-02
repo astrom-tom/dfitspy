@@ -88,69 +88,92 @@ If you want to dfits | fitsort
     
 An example of output is the following (run the command: **dfitspy -f Test_data/*.fits -key LST,'ESO OBS NAME'**)::
 
-        [Command: dfitspy -f Test_data/*.fits -key LST,'ESO OBS NAME']
-        
-        [DFITSPY INFO]> 34 files found
-        -----------------------------------
-        filename                                         	LST      	ESO OBS NAME
-        -------------------------------------------------	---------	------------------
-        r.XSHOO.2018-06-01T09:53:43.577_tpl-A01_0000.fits	78684.245	Hip106831_TELL_SLT
-        r.XSHOO.2018-06-01T09:53:43.577_tpl-A01_0001.fits	78684.245	Hip106831_TELL_SLT
-        r.XSHOO.2018-06-01T09:53:43.577_tpl-A01_0002.fits	78684.245	Hip106831_TELL_SLT
-        r.XSHOO.2018-06-01T09:53:43.577_tpl-A02_0000.fits	78684.245	Hip106831_TELL_SLT
-        r.XSHOO.2018-06-01T09:53:43.577_tpl-A02_0001.fits	78684.245	Hip106831_TELL_SLT
-        r.XSHOO.2018-06-01T09:53:43.577_tpl-A02_0002.fits	78684.245	Hip106831_TELL_SLT
-        r.XSHOO.2018-06-01T09:53:43.577_tpl-A03_0000.fits	78684.245	Hip106831_TELL_SLT
-        r.XSHOO.2018-06-01T09:53:43.577_tpl-A03_0001.fits	78684.245	Hip106831_TELL_SLT
-        r.XSHOO.2018-06-01T09:53:43.577_tpl-A03_0002.fits	78684.245	Hip106831_TELL_SLT
-        r.XSHOO.2018-06-01T09:53:44.797_tpl-A01_0000.fits	78684.245	Hip106831_TELL_SLT
-        r.XSHOO.2018-06-01T09:53:44.797_tpl-A01_0001.fits	78684.245	Hip106831_TELL_SLT
-        r.XSHOO.2018-06-01T09:53:44.797_tpl-A01_0002.fits	78684.245	Hip106831_TELL_SLT
-        r.XSHOO.2018-06-01T09:53:44.797_tpl-A02_0000.fits	78684.245	Hip106831_TELL_SLT
-        r.XSHOO.2018-06-01T09:53:44.797_tpl-A02_0001.fits	78684.245	Hip106831_TELL_SLT
-        r.XSHOO.2018-06-01T09:53:44.797_tpl-A02_0002.fits	78684.245	Hip106831_TELL_SLT
-        r.XSHOO.2018-06-01T09:53:44.797_tpl-A03_0000.fits	78684.245	Hip106831_TELL_SLT
-        r.XSHOO.2018-06-01T09:53:44.797_tpl-A03_0001.fits	78684.245	Hip106831_TELL_SLT
-        r.XSHOO.2018-06-01T09:53:44.797_tpl-A03_0002.fits	78684.245	Hip106831_TELL_SLT
-        r.XSHOO.2018-06-01T09:53:45.055_tpl-A01_0000.fits	78685.247	Hip106831_TELL_SLT
-        r.XSHOO.2018-06-01T09:53:45.055_tpl-A01_0001.fits	78685.247	Hip106831_TELL_SLT
-        r.XSHOO.2018-06-01T09:53:45.055_tpl-A01_0002.fits	78685.247	Hip106831_TELL_SLT
-        r.XSHOO.2018-06-01T09:53:45.055_tpl-A02_0000.fits	78685.247	Hip106831_TELL_SLT
-        r.XSHOO.2018-06-01T09:53:45.055_tpl-A02_0001.fits	78685.247	Hip106831_TELL_SLT
-        r.XSHOO.2018-06-01T09:53:45.055_tpl-A02_0002.fits	78685.247	Hip106831_TELL_SLT
-        r.XSHOO.2018-06-01T09:53:45.055_tpl-A03_0000.fits	78685.247	Hip106831_TELL_SLT
-        r.XSHOO.2018-06-01T09:53:45.055_tpl-A03_0001.fits	78685.247	Hip106831_TELL_SLT
-        r.XSHOO.2018-06-01T09:53:45.055_tpl-A03_0002.fits	78685.247	Hip106831_TELL_SLT
-        r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0000.fits	79056.26 	Hip106831_TELL_SLT
-        r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0001.fits	79056.26 	Hip106831_TELL_SLT
-        r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0002.fits	79056.26 	Hip106831_TELL_SLT
-        r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0003.fits	79056.26 	Hip106831_TELL_SLT
-        r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0004.fits	79056.26 	Hip106831_TELL_SLT
-        r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0005.fits	79056.26 	Hip106831_TELL_SLT
-        r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0006.fits	79056.26 	Hip106831_TELL_SLT
-
-
-First dfitspy gives you the number of files that was considered with the command. Then it displays the header always starting with the filename and then all the keywords the user requires to be displayed. Anf finally display the list of all the filenames and fits header values. 
-
-**GREPPING option**:
-dfitspy offers you the possibility to grep a particular value that you are expecting. This is done using the option *- - grep* (double dash) and giving as arguement an expected value of a keyword given with the *-key* option. Doing so will tell dfitspy to consider the files only if one of the keyword that the user ask to display as the grepping value. Taking the same command as above, one might want to get only the files with LST = 79056.26. This is easily done using: **dfitspy -f Test_data/*.fits -key LST,'ESO OBS NAME' --grep 79056.26**  and produce the output in terminal::
-
-        [command: dfitspy -f Test_data/*.fits -key LST,'ESO OBS NAME' --grep 79056.26]
+        [Command: dfitspy -f all -k OBJECT,LST,DATE --dir Test_data/]
         
         [DFITSPY INFO]> 34 files found 
          ----------------------------------- 
-        filename                                         	LST     	ESO OBS NAME      
-        -------------------------------------------------	--------	------------------
-        r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0000.fits	79056.26	Hip106831_TELL_SLT
-        r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0001.fits	79056.26	Hip106831_TELL_SLT
-        r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0002.fits	79056.26	Hip106831_TELL_SLT
-        r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0003.fits	79056.26	Hip106831_TELL_SLT
-        r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0004.fits	79056.26	Hip106831_TELL_SLT
-        r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0005.fits	79056.26	Hip106831_TELL_SLT
-        r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0006.fits	79056.26	Hip106831_TELL_SLT
+        filename                                         	OBJECT      	LST      	DATE               
+        -------------------------------------------------	------------	---------	-------------------
+        r.XSHOO.2018-06-01T09:53:45.055_tpl-A02_0001.fits	LAMP,AFC    	78685.247	2018-06-01T09:55:04
+        r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0004.fits	STD,TELLURIC	79056.26 	2018-06-01T10:03:01
+        r.XSHOO.2018-06-01T09:53:45.055_tpl-A01_0002.fits	LAMP,AFC    	78685.247	2018-06-01T09:54:49
+        r.XSHOO.2018-06-01T09:53:43.577_tpl-A02_0001.fits	LAMP,AFC    	78684.245	2018-06-01T09:54:57
+        r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0002.fits	STD,TELLURIC	79056.26 	2018-06-01T10:03:01
+        r.XSHOO.2018-06-01T09:53:45.055_tpl-A02_0000.fits	LAMP,AFC    	78685.247	2018-06-01T09:55:04
+        r.XSHOO.2018-06-01T09:53:43.577_tpl-A01_0001.fits	LAMP,AFC    	78684.245	2018-06-01T09:54:42
+        r.XSHOO.2018-06-01T09:53:44.797_tpl-A03_0002.fits	LAMP,AFC    	78684.245	2018-06-01T09:56:28
+        r.XSHOO.2018-06-01T09:53:44.797_tpl-A03_0000.fits	LAMP,AFC    	78684.245	2018-06-01T09:56:28
+        r.XSHOO.2018-06-01T09:53:45.055_tpl-A03_0001.fits	LAMP,AFC    	78685.247	2018-06-01T09:56:30
+        r.XSHOO.2018-06-01T09:53:45.055_tpl-A02_0002.fits	LAMP,AFC    	78685.247	2018-06-01T09:55:04
+        r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0006.fits	HD 205828   	79056.26 	2018-06-01T10:03:02
+        r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0000.fits	STD,TELLURIC	79056.26 	2018-06-01T10:03:01
+        r.XSHOO.2018-06-01T09:53:43.577_tpl-A02_0002.fits	LAMP,AFC    	78684.245	2018-06-01T09:54:57
+        r.XSHOO.2018-06-01T09:53:43.577_tpl-A01_0000.fits	LAMP,AFC    	78684.245	2018-06-01T09:54:42
+        r.XSHOO.2018-06-01T09:53:44.797_tpl-A01_0002.fits	LAMP,AFC    	78684.245	2018-06-01T09:54:48
+        r.XSHOO.2018-06-01T09:53:43.577_tpl-A03_0001.fits	LAMP,AFC    	78684.245	2018-06-01T09:56:22
+        r.XSHOO.2018-06-01T09:53:44.797_tpl-A01_0001.fits	LAMP,AFC    	78684.245	2018-06-01T09:54:48
+        r.XSHOO.2018-06-01T09:53:45.055_tpl-A01_0001.fits	LAMP,AFC    	78685.247	2018-06-01T09:54:49
+        r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0001.fits	STD,TELLURIC	79056.26 	2018-06-01T10:03:01
+        r.XSHOO.2018-06-01T09:53:43.577_tpl-A03_0000.fits	LAMP,AFC    	78684.245	2018-06-01T09:56:22
+        r.XSHOO.2018-06-01T09:53:45.055_tpl-A01_0000.fits	LAMP,AFC    	78685.247	2018-06-01T09:54:49
+        r.XSHOO.2018-06-01T09:53:43.577_tpl-A03_0002.fits	LAMP,AFC    	78684.245	2018-06-01T09:56:22
+        r.XSHOO.2018-06-01T09:53:44.797_tpl-A02_0001.fits	LAMP,AFC    	78684.245	2018-06-01T09:55:03
+        r.XSHOO.2018-06-01T09:53:44.797_tpl-A03_0001.fits	LAMP,AFC    	78684.245	2018-06-01T09:56:28
+        r.XSHOO.2018-06-01T09:53:45.055_tpl-A03_0000.fits	LAMP,AFC    	78685.247	2018-06-01T09:56:30
+        r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0003.fits	STD,TELLURIC	79056.26 	2018-06-01T10:03:01
+        r.XSHOO.2018-06-01T09:53:43.577_tpl-A02_0000.fits	LAMP,AFC    	78684.245	2018-06-01T09:54:57
+        r.XSHOO.2018-06-01T09:53:45.055_tpl-A03_0002.fits	LAMP,AFC    	78685.247	2018-06-01T09:56:30
+        r.XSHOO.2018-06-01T09:53:44.797_tpl-A02_0000.fits	LAMP,AFC    	78684.245	2018-06-01T09:55:03
+        r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0005.fits	STD,TELLURIC	79056.26 	2018-06-01T10:03:02
+        r.XSHOO.2018-06-01T09:53:44.797_tpl-A01_0000.fits	LAMP,AFC    	78684.245	2018-06-01T09:54:48
+        r.XSHOO.2018-06-01T09:53:43.577_tpl-A01_0002.fits	LAMP,AFC    	78684.245	2018-06-01T09:54:42
+        r.XSHOO.2018-06-01T09:53:44.797_tpl-A02_0002.fits	LAMP,AFC    	78684.245	2018-06-01T09:55:03
+
+
+First dfitspy gives you the number of files that was considered with the command. Then it displays the header always starting with the filename and then all the keywords the user requires to be displayed. And finally it displays the list of all the filenames and fits header values. 
+
+GREPPING option
+^^^^^^^^^^^^^^^
+
+dfitspy offers you the possibility to display files with particular values that you are expecting. This is done using the option *- - grep* (double dash) and giving as arguement an expected value of a keyword given with the *-key* option. Doing so will tell dfitspy to consider the files only if one of the keyword that the user ask to display as the grepping value. 
+
+Simple grepping
+---------------
+Taking the same command as above, one might want to get only the files with LST = 79056.26. This is easily done using: **dfitspy -f Test_data/*.fits -key LST,'ESO OBS NAME' --grep 79056.26**  and produce the output in terminal::
+
+        [command: dfitspy -f * -k OBJECT,LST,DATE --dir Test_data/ --grep 79056.26]
+        
+        [DFITSPY INFO]> 34 files found 
+         ----------------------------------- 
+        filename                                         	OBJECT      	LST     	DATE               
+        -------------------------------------------------	------------	--------	-------------------
+        r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0004.fits	STD,TELLURIC	79056.26	2018-06-01T10:03:01
+        r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0002.fits	STD,TELLURIC	79056.26	2018-06-01T10:03:01
+        r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0006.fits	HD 205828   	79056.26	2018-06-01T10:03:02
+        r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0000.fits	STD,TELLURIC	79056.26	2018-06-01T10:03:01
+        r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0001.fits	STD,TELLURIC	79056.26	2018-06-01T10:03:01
+        r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0003.fits	STD,TELLURIC	79056.26	2018-06-01T10:03:01
+        r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0005.fits	STD,TELLURIC	79056.26	2018-06-01T10:03:02
 
 
 
+Multi grepping
+--------------
+
+In the previous command we see that one file as a different OBJECT value as the other ones. If we want to remove it we must **add a grepping option** and take only files with OBJECT='STD,TELLURIC', like this::
+
+    [Command: dfitspy -f * -k OBJECT,LST,DATE --dir Test_data/ --grep 79056.26 --grep STD,TELLURIC]
+
+    [DFITSPY INFO]> 34 files found
+     -----------------------------------
+    filename                                         	OBJECT      	LST     	DATE
+    -------------------------------------------------	------------	--------	-------------------
+    r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0004.fits	STD,TELLURIC	79056.26	2018-06-01T10:03:01
+    r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0002.fits	STD,TELLURIC	79056.26	2018-06-01T10:03:01
+    r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0000.fits	STD,TELLURIC	79056.26	2018-06-01T10:03:01
+    r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0001.fits	STD,TELLURIC	79056.26	2018-06-01T10:03:01
+    r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0003.fits	STD,TELLURIC	79056.26	2018-06-01T10:03:01
+    r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0005.fits	STD,TELLURIC	79056.26	2018-06-01T10:03:02
 
 
 Extra arguments

@@ -100,7 +100,7 @@ def main():
         ###get all keywords
         all_keywords = readfits.get_all_keyword(list_files[0])
         ###display them
-        dp.display_list(all_keywords)
+        dp.keywords_view(all_keywords)
         sys.exit()
 
     ###get greeping from command line
@@ -117,10 +117,10 @@ def main():
         list_keys = get.get_keys(args.key)
 
     ##get all values for each keys and each files
-    allvalues = readfits.get_all_values(list_files, list_keys, grep)
+    allvalues = readfits.dfitsort(list_files, list_keys, grep)
 
     ##display them in terminal
-    dp.display_final(allvalues)
+    dp.dfitsort_view(allvalues)
 
 if __name__ == "__main__":
     main()
