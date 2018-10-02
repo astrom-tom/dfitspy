@@ -108,7 +108,7 @@ def get_all_keyword(thefile):
 
 def keywords_in_file(thefile, keyword):
     '''
-    This function extract in the thefile file the value
+    This function extracts in the thefile file the value
     of the keyword
 
     Parameter
@@ -136,12 +136,12 @@ def keywords_in_file(thefile, keyword):
     return value.strip()
 
 
-def get_all_values(listfiles, listkeys, grepping=None):
+def dfitsort(listfiles, listkeys, grepping=None):
     '''
     This function get for all files, the value of all the keywords that are passed
 
-    example:  get_all_values([file1, file2], [key1, key2]) <-- no grep
-    example:  get_all_values([file1, file2], [key1, key2], 'match') <--grep 
+    example:  dfitsort([file1, file2], [key1, key2]) <-- no grep
+    example:  dfitsort([file1, file2], [key1, key2], ['match', 'match2']) <-- multi grep 
 
     Parameter
     ---------
@@ -150,10 +150,11 @@ def get_all_values(listfiles, listkeys, grepping=None):
     listkeys
                 list, of keywords (strings)
     grep
-                string, if not false, the grepping value 
-                        will be compared to all the values 
-                        of the keywords and if one match 
-                        the file will be kept
+                list of string,
+                if not false, the grepping valueS 
+                will be compared to all the values 
+                of the keywords. If all grepping values appear in the
+                header of one file the file will be kept
     Return
     ------
     file_dict
@@ -179,7 +180,9 @@ def get_all_values(listfiles, listkeys, grepping=None):
         if not grepping:
             file_dict[os.path.basename(file)] = key_dict
         else:
-            if grepping in key_dict.values():
+            ###we check at one if all the grepping values are
+            ##in the file
+            if set(grepping).issubset(key_dict.values()):
                 file_dict[os.path.basename(file)] = key_dict
 
 
@@ -244,7 +247,7 @@ class Testkeyword_extraction(unittest.TestCase):
         filetest2 = os.path.join(dir_path, 'tests/test2.fits')
 
         ###get all values
-        allvalues = get_all_values([filetest, filetest2], ['YEAR', 'NAME'], False)
+        allvalues = dfitsort([filetest, filetest2], ['YEAR', 'NAME'], False)
 
         ##expected values:
         expected = {'test.fits':{'YEAR':'2018','NAME':'dfitspy'}, 'test2.fits':{'YEAR':'2018', 'NAME':'dfitspy'}}
@@ -258,7 +261,7 @@ class Testkeyword_extraction(unittest.TestCase):
         filetest2 = os.path.join(dir_path, 'tests/test5.fits')
 
         ###get all values
-        allvalues = get_all_values([filetest, filetest2], ['YEAR', 'NAME'], '2018')
+        allvalues = dfitsort([filetest, filetest2], ['YEAR', 'NAME'], ['2018'])
 
         ##expected values (one out of the two files as year=2018)
         expected = {'test.fits':{'YEAR':'2018','NAME':'dfitspy'}}

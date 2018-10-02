@@ -61,7 +61,7 @@ In details it means:
 
 dfitspy has few optionnal arguments and 2 semi mandatory arguements. You can not start dfitspy without any argument:
 	
-* -h and --help: Display this help in the terminal.
+* -h and '- -help': Display this help in the terminal.
 
 If you want to dfits | fitsort
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -83,8 +83,8 @@ If you want to dfits | fitsort
 
     Two things you must be careful of:
 
-    * ESO keywords may contain the 'HIERARCH' prefix. This is ignored by dfitspy therefore do not use i t.
-    * If your keywords contain spaces (ex: ESO OBS ID) you must give it inside quotes --> 'ESO OBS ID'
+    * ESO keywords may contain the 'HIERARCH' prefix. This is ignored by dfitspy therefore do not use you can not use this prefix. For example if you have the following keywords HIERARCH ESO PRO CATG you must call it with ESO.PRO.CATG 
+    * If your keywords contain spaces (ex: ESO OBS ID) you must replace it by dots: 'ESO.OBS.ID'
     
 An example of output is the following (run the command: **dfitspy -f Test_data/*.fits -key LST,'ESO OBS NAME'**)::
 
@@ -157,9 +157,9 @@ Extra arguments
 ^^^^^^^^^^^^^^^
 Few extra arguments can be used:
 
-* --test: This runs the tests (written with unittest library) of dfitspy. 
-* --dir: This changes the directory you want to analyse. By default it is the current working directory.
-* --list: **This must be used with the -file option described above**. It takes the first file given by '-file' and display a list of all the arguments in a 3 columns fashion. Example::
+* '- -test': This runs the tests (written with unittest library) of dfitspy. 
+* '- -dir': This changes the directory you want to analyse. By default it is the current working directory.
+* '- -list': **This must be used with the -file option described above**. It takes the first file given by '-file' and display a list of all the arguments in a 3 columns fashion. Example::
 
 
     List of keywords in the first file
@@ -192,6 +192,6 @@ Few extra arguments can be used:
     ESO TEL AMBI WINDDIR           | ESO TEL AMBI WINDSP            | ESO TEL AZ                    
     ESO TEL CHOP ST                | ESO TEL DATE                   | ESO TEL DID                   
       
-* --docs: Display in the web browser the documentation of the code. If you have a valid internet connection it will open the online documentation, if not it will open the local documentation.
-* --version: Display in terminal the current version of the software.
+* '- -docs': Display in the web browser the documentation of the code. If you have a valid internet connection it will open the online documentation, if not it will open the local documentation.
+* '- -version': Display in terminal the current version of the software.
 

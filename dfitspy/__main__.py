@@ -29,8 +29,12 @@ usage: dfitspy FILE.fits OBJECT
 
 ###Python standard library
 import sys
+import os
+from subprocess import call
+
 
 ###local imports
+from . import __info__ as info
 from . import cli
 from . import display as dp
 from . import readfits
@@ -40,6 +44,43 @@ from . import tests
 def main():
     ###first we load the command line interface
     args = cli.command_line(sys.argv[1:])
+
+    ###here we check if at least one argument was given:
+    if args.docs == False and args.file == None and args.grep == None and \
+            args.key == None and args.list == False and args.version == False and\
+            args.test == False:
+        print('\033[1m[DFITSPY Error]> no argument passed ...exit\033[0;0m')
+        sys.exit()
+
+    if args.version:
+        print('version %s, Author: %s'%(info.__version__, info.__credits__))
+        sys.exit()
+
+    if args.docs == True:
+        ##check if there is any internet connection
+        try:
+            socket.setdefaulttimeout(3)
+            socket.socket(socket.AF_INET, socket.SOCK_STREAM).connect(("8.8.8.8",53))
+            url = info.__website__
+        ##if not we use the local documentation distributed along the software
+        except:
+            print('No internet connection detected, open local documentation')
+            dir_path = os.path.dirname(os.path.realpath(__file__))
+            url = os.path.join(dir_path, 'docs/build/html/index.html')
+
+        for i in ['falkon', 'firefox', 'open', 'qupzilla', 'chromium', 'google-chrome']:
+            ##we check if the command exist in the system
+            exist = call(['which', i])
+            if exist == 0:
+                if i == 'firefox':
+                   call([i, '--no-remote', url]) 
+                   sys.exit()
+                ##if it does then we use it to load the documentation
+                else:
+                    call([i, url])
+                    ##and we stop the loop
+                    sys.exit()
+                break
 
     if args.test:
         tests.test()

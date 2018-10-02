@@ -1,0 +1,3 @@
+[gui_scripts]
+dfitspy = dfitspy.__main__:main
+

@@ -35,7 +35,7 @@ import unittest.mock
 ###third party
 import numpy
 
-def display_final(values_dict):
+def dfitsort_view(values_dict):
     '''
     This function displays a-la-dfits the requested informations
 
@@ -102,7 +102,7 @@ def display_final(values_dict):
         print(form.format(*allvalue))
 
 
-def display_list(keywords):
+def keywords_view(keywords):
     '''
     This function displays the list of keywords given in parameters
     By default it displays it in a 3 columns display :
@@ -163,7 +163,7 @@ class Testdisplay_list(unittest.TestCase):
         '''
         Function that run that actually run the test
         '''
-        display_list(param)
+        keywords_view(param)
         self.assertEqual(mock_stdout.getvalue(), exp)
 
     def test_three(self):
@@ -220,7 +220,7 @@ class Testdisplay_final(unittest.TestCase):
         '''
         Function that actually run the test
         '''
-        display_final(param)
+        dfitsort_view(param)
         self.assertEqual(mock_stdout.getvalue(), exp)
 
     def test_displayfinal(self):

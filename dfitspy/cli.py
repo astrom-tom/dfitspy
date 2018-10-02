@@ -67,7 +67,8 @@ def command_line(args):
     parser.add_argument('--list', help='List all keywords in a given file \
             (if a list of file is given the first one is used)', action='store_true')
     parser.add_argument('--grep', help='Restrain the files to the one with a given \
-            value of a given parameter, Work ONLY for the first keyword', type=str)
+            value of a given parameter. It can be used multiple times with different values', \
+            type=str, action='append')
     parser.add_argument('--test', help='Start the testing of the program', action='store_true')
     parser.add_argument('--version', help='Display the version of the program', action='store_true')
     parser.add_argument('--docs', help='Diplay the online or local documentation program', action='store_true')
@@ -91,7 +92,7 @@ class interface_test(unittest.TestCase):
                                 '--grep', 'testobject',\
                                 '--list', '--test'])
         self.assertEqual(options.dir, '/home')
-        self.assertEqual(options.grep, 'testobject')
+        self.assertEqual(options.grep, ['testobject'])
         self.assertEqual(options.list, True)
         self.assertEqual(options.test, True)
 

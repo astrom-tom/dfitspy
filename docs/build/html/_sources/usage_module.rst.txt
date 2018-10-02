@@ -30,11 +30,11 @@ dfitspy contains few functions that I will details below::
     get_all_keyword
     get_files
     get_keys
+    keywords_view
     keywords_in_file
-    readfits
+    dfitsort
+    dfitsort_view
     test
-    display_final
-    display_list
 
 
 
@@ -77,7 +77,7 @@ This function takes two arguments. The first is the file argument and must be a 
 
 The easiest way is to analyse **all** the files in a directory::
 
-    In [3]: listfiles = get_files(['all'],'/Test_data/')
+    In [3]: listfiles = dfitspy.get_files(['all'],'Test_data/')
     ['Test_data/r.XSHOO.2018-06-01T09:53:45.055_tpl-A02_0001.fits',
      'Test_data/r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0004.fits',
      'Test_data/r.XSHOO.2018-06-01T09:53:45.055_tpl-A01_0002.fits',
@@ -115,7 +115,7 @@ The easiest way is to analyse **all** the files in a directory::
 
 You would get the same results using::
 
-    In [4]: listfiles = get_files(['*.fits'],'/Test_data/')
+    In [4]: listfiles = get_files(['*.fits'],'Test_data/')
 
 
 2 - Get your keywords ready
@@ -173,7 +173,7 @@ This function takes a file as input and return the list of all the keywords::
 
 If you have a very long list you can display it using the *display_list* function, which will cut the length by three::
 
-    In [8] : dfitspy.display_list(keys)
+    In [8] : dfitspy.keywords_view(keys)
 
     List of keywords in the first file
     ----------------------------------
@@ -199,129 +199,147 @@ If you have a very long list you can display it using the *display_list* functio
 
 At this point you are ready to fitsort all files. In order to achieve that you have to use the *get_all_values* function::
 
-    In [9]: help(dfitspy.get_all_values)
+    In [9]: help(dfitspy.dfitsort)
 
-    get_all_values(listfiles, listkeys, grepping=None)
-    This function get for all files, the value of all the keywords that are passed
-
-    example:  get_all_values([file1, file2], [key1, key2], 'match')
-
-    Parameter
-    ---------
-    listfiles
-                list, with file names (string, path included)
-    listkeys
-                list, of keywords (strings)
-    grep
-                string, by defaul is None. if not, the grepping value (a string!)
-                        will be compared to all the values of the keywords and if one match
-                        the file will be kept
-    Return
-    ------
-    file_dict
-                dictionnary, keys=filename
-                             values=dictionnary of keyword-value pairs
+    dfitsort(listfiles, listkeys, grepping=None)
+        This function get for all files, the value of all the keywords that are passed
+        
+        example:  dfitsort([file1, file2], [key1, key2]) <-- no grep
+        example:  dfitsort([file1, file2], [key1, key2], ['match', 'match2']) <-- multi grep 
+        
+        Parameter
+        ---------
+        listfiles
+                    list, with file names (string, path included)
+        listkeys
+                    list, of keywords (strings)
+        grep
+                    list of string,
+                    if not false, the grepping valueS 
+                    will be compared to all the values 
+                    of the keywords. If all grepping values appear in the
+                    header of one file the file will be kept
+        Return
+        ------
+        file_dict
+                    dictionnary, keys=filename
+                                 values=dictionnary of keyword-value pairs
 
 
 This function takes as argument the list of file and the list of parameter and returns a dictionnary of files withe values of all the keywords required::
 
-    In [10]: fitsort = dfitspy.get_all_values(listfiles, listkeys)
+    In [10]: fitsort = dfitspy.dfitsort(listfiles, listkeys)
 
     In [11]: fitsort
-
-    {'r.XSHOO.2018-06-01T09:53:45.055_tpl-A02_0001.fits': {'INSTRUME': 'XSHOOTER',
+    {'r.XSHOO.2018-06-01T09:53:45.055_tpl-A02_0001.fits': {'OBJECT': 'LAMP,AFC',
       'LST': '78685.247',
-      'UTC': '35622.'},
-     'r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0004.fits': {'INSTRUME': 'XSHOOTER',
+      'DATE': '2018-06-01T09:55:04'},
+     'r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0004.fits': {'OBJECT': 'STD,TELLURIC',
       'LST': '79056.26',
-      'UTC': '35992.'},
-     'r.XSHOO.2018-06-01T09:53:45.055_tpl-A01_0002.fits': {'INSTRUME': 'XSHOOTER',
+      'DATE': '2018-06-01T10:03:01'},
+     'r.XSHOO.2018-06-01T09:53:45.055_tpl-A01_0002.fits': {'OBJECT': 'LAMP,AFC',
       'LST': '78685.247',
-      'UTC': '35622.'},
-     'r.XSHOO.2018-06-01T09:53:43.577_tpl-A02_0001.fits': {'INSTRUME': 'XSHOOTER',
+      'DATE': '2018-06-01T09:54:49'},
+     'r.XSHOO.2018-06-01T09:53:45.055_tpl-A03_0002.fits': {'OBJECT': 'LAMP,AFC',
+      'LST': '78685.247',
+      'DATE': '2018-06-01T09:56:30'},
+     'r.XSHOO.2018-06-01T09:53:44.797_tpl-A02_0000.fits': {'OBJECT': 'LAMP,AFC',
       'LST': '78684.245',
-      'UTC': '35621.'},
-     'r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0002.fits': {'INSTRUME': 'XSHOOTER',
+      'DATE': '2018-06-01T09:55:03'},
+     'r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0005.fits': {'OBJECT': 'STD,TELLURIC',
       'LST': '79056.26',
-      'UTC': '35992.'},
-     'r.XSHOO.2018-06-01T09:53:45.055_tpl-A02_0000.fits': {'INSTRUME': 'XSHOOTER',
-      'LST': '78685.247',
-      'UTC': '35622.'},
-     'r.XSHOO.2018-06-01T09:53:43.577_tpl-A01_0001.fits': {'INSTRUME': 'XSHOOTER',
-      'LST': '78684.245',
-      'UTC': '35621.'},
-     'r.XSHOO.2018-06-01T09:53:44.797_tpl-A03_0002.fits': {'INSTRUME': 'XSHOOTER',
-      'LST': '78684.245',
-      'UTC': '35621.'},
-     'r.XSHOO.2018-06-01T09:53:44.797_tpl-A03_0000.fits': {'INSTRUME': 'XSHOOTER',
-      'LST': '78684.245',
-      'UTC': '35621.'},
+      'DATE': '2018-06-01T10:03:02'},
       .
       .
-      .}
-    
+      .
+     'r.XSHOO.2018-06-01T09:53:44.797_tpl-A01_0000.fits': {'OBJECT': 'LAMP,AFC',
+      'LST': '78684.245',
+      'DATE': '2018-06-01T09:54:48'},
+     'r.XSHOO.2018-06-01T09:53:43.577_tpl-A01_0002.fits': {'OBJECT': 'LAMP,AFC',
+      'LST': '78684.245',
+      'DATE': '2018-06-01T09:54:42'},
+     'r.XSHOO.2018-06-01T09:53:44.797_tpl-A02_0002.fits': {'OBJECT': 'LAMP,AFC',
+      'LST': '78684.245',
+      'DATE': '2018-06-01T09:55:03'}}
 
 you can display everything in a nice way using the *display_final* function::
 
-    In [12]: dfitspy.display_final(fitsort)
+    In [12]: dfitspy.dfitsort_view(fitsort)
 
-    filename                                         	INSTRUME	LST      	UTC
-    -------------------------------------------------	--------	---------	------
-    r.XSHOO.2018-06-01T09:53:45.055_tpl-A02_0001.fits	XSHOOTER	78685.247	35622.
-    r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0004.fits	XSHOOTER	79056.26 	35992.
-    r.XSHOO.2018-06-01T09:53:45.055_tpl-A01_0002.fits	XSHOOTER	78685.247	35622.
-    r.XSHOO.2018-06-01T09:53:43.577_tpl-A02_0001.fits	XSHOOTER	78684.245	35621.
-    r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0002.fits	XSHOOTER	79056.26 	35992.
-    r.XSHOO.2018-06-01T09:53:45.055_tpl-A02_0000.fits	XSHOOTER	78685.247	35622.
-    r.XSHOO.2018-06-01T09:53:43.577_tpl-A01_0001.fits	XSHOOTER	78684.245	35621.
-    r.XSHOO.2018-06-01T09:53:44.797_tpl-A03_0002.fits	XSHOOTER	78684.245	35621.
-    r.XSHOO.2018-06-01T09:53:44.797_tpl-A03_0000.fits	XSHOOTER	78684.245	35621.
-    r.XSHOO.2018-06-01T09:53:45.055_tpl-A03_0001.fits	XSHOOTER	78685.247	35622.
-    r.XSHOO.2018-06-01T09:53:45.055_tpl-A02_0002.fits	XSHOOTER	78685.247	35622.
-    r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0006.fits	XSHOOTER	79056.26 	35992.
-    r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0000.fits	XSHOOTER	79056.26 	35992.
-    r.XSHOO.2018-06-01T09:53:43.577_tpl-A02_0002.fits	XSHOOTER	78684.245	35621.
-    r.XSHOO.2018-06-01T09:53:43.577_tpl-A01_0000.fits	XSHOOTER	78684.245	35621.
-    r.XSHOO.2018-06-01T09:53:44.797_tpl-A01_0002.fits	XSHOOTER	78684.245	35621.
-    r.XSHOO.2018-06-01T09:53:43.577_tpl-A03_0001.fits	XSHOOTER	78684.245	35621.
-    r.XSHOO.2018-06-01T09:53:44.797_tpl-A01_0001.fits	XSHOOTER	78684.245	35621.
-    r.XSHOO.2018-06-01T09:53:45.055_tpl-A01_0001.fits	XSHOOTER	78685.247	35622.
-    r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0001.fits	XSHOOTER	79056.26 	35992.
-    r.XSHOO.2018-06-01T09:53:43.577_tpl-A03_0000.fits	XSHOOTER	78684.245	35621.
-    r.XSHOO.2018-06-01T09:53:45.055_tpl-A01_0000.fits	XSHOOTER	78685.247	35622.
-    r.XSHOO.2018-06-01T09:53:43.577_tpl-A03_0002.fits	XSHOOTER	78684.245	35621.
-    r.XSHOO.2018-06-01T09:53:44.797_tpl-A02_0001.fits	XSHOOTER	78684.245	35621.
-    r.XSHOO.2018-06-01T09:53:44.797_tpl-A03_0001.fits	XSHOOTER	78684.245	35621.
-    r.XSHOO.2018-06-01T09:53:45.055_tpl-A03_0000.fits	XSHOOTER	78685.247	35622.
-    r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0003.fits	XSHOOTER	79056.26 	35992.
-    r.XSHOO.2018-06-01T09:53:43.577_tpl-A02_0000.fits	XSHOOTER	78684.245	35621.
-    r.XSHOO.2018-06-01T09:53:45.055_tpl-A03_0002.fits	XSHOOTER	78685.247	35622.
-    r.XSHOO.2018-06-01T09:53:44.797_tpl-A02_0000.fits	XSHOOTER	78684.245	35621.
-    r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0005.fits	XSHOOTER	79056.26 	35992.
-    r.XSHOO.2018-06-01T09:53:44.797_tpl-A01_0000.fits	XSHOOTER	78684.245	35621.
-    r.XSHOO.2018-06-01T09:53:43.577_tpl-A01_0002.fits	XSHOOTER	78684.245	35621.
-    r.XSHOO.2018-06-01T09:53:44.797_tpl-A02_0002.fits	XSHOOTER	78684.245	35621.
+    filename                                         	OBJECT      	LST      	DATE               
+    -------------------------------------------------	------------	---------	-------------------
+    r.XSHOO.2018-06-01T09:53:45.055_tpl-A02_0001.fits	LAMP,AFC    	78685.247	2018-06-01T09:55:04
+    r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0004.fits	STD,TELLURIC	79056.26 	2018-06-01T10:03:01
+    r.XSHOO.2018-06-01T09:53:45.055_tpl-A01_0002.fits	LAMP,AFC    	78685.247	2018-06-01T09:54:49
+    r.XSHOO.2018-06-01T09:53:43.577_tpl-A02_0001.fits	LAMP,AFC    	78684.245	2018-06-01T09:54:57
+    r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0002.fits	STD,TELLURIC	79056.26 	2018-06-01T10:03:01
+    r.XSHOO.2018-06-01T09:53:45.055_tpl-A02_0000.fits	LAMP,AFC    	78685.247	2018-06-01T09:55:04
+    r.XSHOO.2018-06-01T09:53:43.577_tpl-A01_0001.fits	LAMP,AFC    	78684.245	2018-06-01T09:54:42
+    r.XSHOO.2018-06-01T09:53:44.797_tpl-A03_0002.fits	LAMP,AFC    	78684.245	2018-06-01T09:56:28
+    r.XSHOO.2018-06-01T09:53:44.797_tpl-A03_0000.fits	LAMP,AFC    	78684.245	2018-06-01T09:56:28
+    r.XSHOO.2018-06-01T09:53:45.055_tpl-A03_0001.fits	LAMP,AFC    	78685.247	2018-06-01T09:56:30
+    r.XSHOO.2018-06-01T09:53:45.055_tpl-A02_0002.fits	LAMP,AFC    	78685.247	2018-06-01T09:55:04
+    r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0006.fits	HD 205828   	79056.26 	2018-06-01T10:03:02
+    r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0000.fits	STD,TELLURIC	79056.26 	2018-06-01T10:03:01
+    r.XSHOO.2018-06-01T09:53:43.577_tpl-A02_0002.fits	LAMP,AFC    	78684.245	2018-06-01T09:54:57
+    r.XSHOO.2018-06-01T09:53:43.577_tpl-A01_0000.fits	LAMP,AFC    	78684.245	2018-06-01T09:54:42
+    r.XSHOO.2018-06-01T09:53:44.797_tpl-A01_0002.fits	LAMP,AFC    	78684.245	2018-06-01T09:54:48
+    r.XSHOO.2018-06-01T09:53:43.577_tpl-A03_0001.fits	LAMP,AFC    	78684.245	2018-06-01T09:56:22
+    r.XSHOO.2018-06-01T09:53:44.797_tpl-A01_0001.fits	LAMP,AFC    	78684.245	2018-06-01T09:54:48
+    r.XSHOO.2018-06-01T09:53:45.055_tpl-A01_0001.fits	LAMP,AFC    	78685.247	2018-06-01T09:54:49
+    r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0001.fits	STD,TELLURIC	79056.26 	2018-06-01T10:03:01
+    r.XSHOO.2018-06-01T09:53:43.577_tpl-A03_0000.fits	LAMP,AFC    	78684.245	2018-06-01T09:56:22
+    r.XSHOO.2018-06-01T09:53:45.055_tpl-A01_0000.fits	LAMP,AFC    	78685.247	2018-06-01T09:54:49
+    r.XSHOO.2018-06-01T09:53:43.577_tpl-A03_0002.fits	LAMP,AFC    	78684.245	2018-06-01T09:56:22
+    r.XSHOO.2018-06-01T09:53:44.797_tpl-A02_0001.fits	LAMP,AFC    	78684.245	2018-06-01T09:55:03
+    r.XSHOO.2018-06-01T09:53:44.797_tpl-A03_0001.fits	LAMP,AFC    	78684.245	2018-06-01T09:56:28
+    r.XSHOO.2018-06-01T09:53:45.055_tpl-A03_0000.fits	LAMP,AFC    	78685.247	2018-06-01T09:56:30
+    r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0003.fits	STD,TELLURIC	79056.26 	2018-06-01T10:03:01
+    r.XSHOO.2018-06-01T09:53:43.577_tpl-A02_0000.fits	LAMP,AFC    	78684.245	2018-06-01T09:54:57
+    r.XSHOO.2018-06-01T09:53:45.055_tpl-A03_0002.fits	LAMP,AFC    	78685.247	2018-06-01T09:56:30
+    r.XSHOO.2018-06-01T09:53:44.797_tpl-A02_0000.fits	LAMP,AFC    	78684.245	2018-06-01T09:55:03
+    r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0005.fits	STD,TELLURIC	79056.26 	2018-06-01T10:03:02
+    r.XSHOO.2018-06-01T09:53:44.797_tpl-A01_0000.fits	LAMP,AFC    	78684.245	2018-06-01T09:54:48
+    r.XSHOO.2018-06-01T09:53:43.577_tpl-A01_0002.fits	LAMP,AFC    	78684.245	2018-06-01T09:54:42
+    r.XSHOO.2018-06-01T09:53:44.797_tpl-A02_0002.fits	LAMP,AFC    	78684.245	2018-06-01T09:55:03
 
 
 4 - Grepping
 ------------
 
-The last function allows you to grep files that have a certain value in their keywords.
-By default it is set to *None* but you can give a *grepping value* (**a string**) to replace it. When doing so dfitspy will look at all the files you give in listfiles and in all the keywords you give in listkeys. **If one of the value of the keywords matches the grepping value the file will be kept, if not the file will be rejected.** For example here we want all the files for which LST = 79056.26 ::
+The last option allows you to grep files that have a certain value in their keywords.
+By default it is set to *None* but you can give a *grepping value* (**in a list**) to replace it. When doing so dfitspy will look at all the files you give in listfiles and in all the keywords you give in listkeys. **If all the grepping values are inside the keyword values the file will be kept, if not the file will be rejected.** For example here we want all the files for which LST = 79056.26 ::
 
-    In [13]: fitsortgrep = dfitspy.get_all_values(listfiles, listkeys, '79056.26')
+    In [13]: fitsortgrep = dfitspy.dfitsort(listfiles, listkeys, ['79056.26'])
 
-    In [14]: dfitspy.display_final(fitsortgrep)
+    In [14]: dfitspy.dfitsort_view(fitsortgrep)
 
-    filename                                         	INSTRUME	LST     	UTC
-    -------------------------------------------------	--------	--------	------
-    r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0004.fits	XSHOOTER	79056.26	35992.
-    r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0002.fits	XSHOOTER	79056.26	35992.
-    r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0006.fits	XSHOOTER	79056.26	35992.
-    r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0000.fits	XSHOOTER	79056.26	35992.
-    r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0001.fits	XSHOOTER	79056.26	35992.
-    r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0003.fits	XSHOOTER	79056.26	35992.
-    r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0005.fits	XSHOOTER	79056.26	35992.
+    filename                                         	OBJECT      	LST     	DATE               
+    -------------------------------------------------	------------	--------	-------------------
+    r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0004.fits	STD,TELLURIC	79056.26	2018-06-01T10:03:01
+    r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0002.fits	STD,TELLURIC	79056.26	2018-06-01T10:03:01
+    r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0006.fits	HD 205828   	79056.26	2018-06-01T10:03:02
+    r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0000.fits	STD,TELLURIC	79056.26	2018-06-01T10:03:01
+    r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0001.fits	STD,TELLURIC	79056.26	2018-06-01T10:03:01
+    r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0003.fits	STD,TELLURIC	79056.26	2018-06-01T10:03:01
+    r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0005.fits	STD,TELLURIC	79056.26	2018-06-01T10:03:02
+
+
+If we want to remove the third line then we must add a grepping value of 'STD,TELLURIC'::
+
+    In [15]: fitsortgrep = dfitspy.dfitsort(listfiles, listkeys, ['79056.26', 'STD,TELLURIC'])
+    In [16:] dfitspy.dfitsort_view(fitsortgrep)
+
+    filename                                         	OBJECT      	LST     	DATE
+    -------------------------------------------------	------------	--------	-------------------
+    r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0004.fits	STD,TELLURIC	79056.26	2018-06-01T10:03:01
+    r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0002.fits	STD,TELLURIC	79056.26	2018-06-01T10:03:01
+    r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0000.fits	STD,TELLURIC	79056.26	2018-06-01T10:03:01
+    r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0001.fits	STD,TELLURIC	79056.26	2018-06-01T10:03:01
+    r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0003.fits	STD,TELLURIC	79056.26	2018-06-01T10:03:01
+    r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0005.fits	STD,TELLURIC	79056.26	2018-06-01T10:03:02
+
+
 
  
 Test

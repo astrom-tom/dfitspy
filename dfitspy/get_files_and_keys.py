@@ -99,6 +99,8 @@ def get_keys(key_string):
                         ex: SEEING
                             SEEING,AIRMASS
                             SEEING,ARIMASS,OBID
+                if a string contains dots, e.g, ESO.SEQ.ARM it will be
+                transform to ESO SEQ ARM (with spaces)
 
     Return
     ------
@@ -106,7 +108,7 @@ def get_keys(key_string):
             list, list of keys (string)
     '''
 
-    keys = [i.strip() for i in key_string.split(',')]
+    keys = [i.strip().replace('.', ' ') for i in key_string.split(',')]
     return keys
 
 
