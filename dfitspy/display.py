@@ -91,6 +91,7 @@ def dfitsort_view(values_dict):
         else:
             sep += '\t'+j*"-"
 
+
     ##print them
     print(header)
     print(sep)
@@ -125,8 +126,7 @@ def keywords_view(keywords):
     ##get the length of all the keywords
     length = [len(i) for i in keywords]
 
-    print('List of keywords in the first file')
-    print(34*'-')
+    print(80*'-')
 
     ##define the format of the output
     form = "{:%s} | {:%s} | {:%s}"%(max(length)+1, max(length)+1, max(length)+1)
@@ -170,43 +170,39 @@ class Testdisplay_list(unittest.TestCase):
         '''
         Test if 3 keywords have to be displayed
         '''
-        out1 = 'List of keywords in the first file\n'
-        out2 = '----------------------------------\n'
-        out3 = 'A  | B  | C \n'
-        out = out1 + out2 + out3
+        out1 = 80*'-'+'\n'
+        out2 = 'A  | B  | C \n'
+        out = out1 + out2
         self.displaylist(['A', 'B', 'C'], out)
 
     def test_four(self):
         '''
         idem with 4 keywords
         '''
-        out1 = 'List of keywords in the first file\n'
-        out2 = '----------------------------------\n'
-        out3 = 'A  | B  | C \n'
-        out4 = 'D  | -  | - \n'
-        out = out1 + out2 + out3 + out4
+        out1 = 80*'-'+'\n'
+        out2 = 'A  | B  | C \n'
+        out3 = 'D  | -  | - \n'
+        out = out1 + out2 + out3
         self.displaylist(['A', 'B', 'C', 'D'], out)
 
     def test_five(self):
         '''
         idem with five
         '''
-        out1 = 'List of keywords in the first file\n'
-        out2 = '----------------------------------\n'
-        out3 = 'A  | B  | C \n'
-        out4 = 'D  | E  | - \n'
-        out = out1 + out2 + out3 + out4
+        out1 = 80*'-'+'\n'
+        out2 = 'A  | B  | C \n'
+        out3 = 'D  | E  | - \n'
+        out = out1 + out2 + out3
         self.displaylist(['A', 'B', 'C', 'D', 'E'], out)
 
     def test_six(self):
         '''
         idem with six
         '''
-        out1 = 'List of keywords in the first file\n'
-        out2 = '----------------------------------\n'
-        out3 = 'A  | B  | C \n'
-        out4 = 'D  | E  | F \n'
-        out = out1 + out2 + out3 + out4
+        out1 = 80*'-'+'\n'
+        out2 = 'A  | B  | C \n'
+        out3 = 'D  | E  | F \n'
+        out = out1 + out2 + out3
         self.displaylist(['A', 'B', 'C', 'D', 'E', 'F'], out)
 
 

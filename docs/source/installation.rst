@@ -1,6 +1,6 @@
 .. _installation:
 
-|Python36| |Licence| |numpy| |scipy| 
+|Python36| |Licence| |numpy| 
 
 .. |Licence| image:: https://img.shields.io/badge/License-GPLv3-blue.svg
       :target: http://perso.crans.org/besson/LICENSE.html
@@ -14,25 +14,34 @@
 .. |numpy| image:: https://img.shields.io/badge/poweredby-numpy-orange.svg
    :target: http://www.numpy.org/
 
-.. |scipy| image:: https://img.shields.io/badge/poweredby-scipy-orange.svg
-   :target: https://www.scipy.org/
-
 
 Installation
 ============
 
-dfitspy is written in python 3.6. It need only the following library:
+dfitspy is written in python 3.6. It need only the following libraries:
 
 * Numpy v1.14.3: Numerical python
+* fitsio v0.9.11: fitsio library
 
 Other libraries are used but they are all part of the standard python library. As such no extra installations are needed.
 
-The last dfitspy version is v0.1.0 and is available in the pypi test repository. To install it:
+1-from the python repository
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. code-block:: shell
-     :linenos:
+The last dfitspy version is v18.10 and is available in the pypi test repository. To install it::
+
 
      pip install --extra-index-url https://test.pypi.org/simple dfitspy --user
 
 Using this command will allow you not to have to install any other package. Pip will install what is missing for you.
 
+
+2-From the local the github repository
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The installable package can be found in the github directory under the ''dist'' directory. Take the last version and
+run::
+
+	pip install dfitspy.X.Y.Z.tar.gz --user
+
+This will install dfitspy.

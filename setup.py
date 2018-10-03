@@ -12,6 +12,7 @@ setup(
    python_requires = '>=3.6',
    install_requires = [
        "numpy >= 1.14.3",
+       "fitsio >= 0.9.11",
    ],
    include_package_data=True,
 )

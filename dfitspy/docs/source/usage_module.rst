@@ -50,13 +50,14 @@ dfitspy can be easily use to dfits|fitsio a set of files. First of all you must 
 
     In [2]: help(dfitspy.get_files)  <---this print the help of the function
 
-    get_files(files, dire)
+    get_files(files, dire=False)
     This function extracts the list of files based on the files
     and dire parameters.
-
+    
     example: get_files(['fil1.fits,file2.fits'] , '/home/Documents')
-
-
+    example: get_files(['fil1.fits,file2.fits'])
+    
+    
     Parameter
     ---------
     files
@@ -64,58 +65,58 @@ dfitspy can be easily use to dfits|fitsio a set of files. First of all you must 
                              it can be ['file1.fits,file2.fits,....']
                                        ['file1.fits']
                                        ['file1,fits', 'file2.fits']
-                                       ['*.fits']
                                        ['all']
     dire
                 str, path of the directory to look in
-
+    
     Return
     ------
     list of files
+
 
 This function takes two arguments. The first is the file argument and must be a **LIST** of strings. It will return a list of files. **Only fits files will be returned**. 
 
 The easiest way is to analyse **all** the files in a directory::
 
     In [3]: listfiles = dfitspy.get_files(['all'],'Test_data/')
-    ['Test_data/r.XSHOO.2018-06-01T09:53:45.055_tpl-A02_0001.fits',
-     'Test_data/r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0004.fits',
-     'Test_data/r.XSHOO.2018-06-01T09:53:45.055_tpl-A01_0002.fits',
-     'Test_data/r.XSHOO.2018-06-01T09:53:43.577_tpl-A02_0001.fits',
-     'Test_data/r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0002.fits',
-     'Test_data/r.XSHOO.2018-06-01T09:53:45.055_tpl-A02_0000.fits',
-     'Test_data/r.XSHOO.2018-06-01T09:53:43.577_tpl-A01_0001.fits',
-     'Test_data/r.XSHOO.2018-06-01T09:53:44.797_tpl-A03_0002.fits',
-     'Test_data/r.XSHOO.2018-06-01T09:53:44.797_tpl-A03_0000.fits',
-     'Test_data/r.XSHOO.2018-06-01T09:53:45.055_tpl-A03_0001.fits',
-     'Test_data/r.XSHOO.2018-06-01T09:53:45.055_tpl-A02_0002.fits',
-     'Test_data/r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0006.fits',
-     'Test_data/r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0000.fits',
-     'Test_data/r.XSHOO.2018-06-01T09:53:43.577_tpl-A02_0002.fits',
-     'Test_data/r.XSHOO.2018-06-01T09:53:43.577_tpl-A01_0000.fits',
-     'Test_data/r.XSHOO.2018-06-01T09:53:44.797_tpl-A01_0002.fits',
-     'Test_data/r.XSHOO.2018-06-01T09:53:43.577_tpl-A03_0001.fits',
-     'Test_data/r.XSHOO.2018-06-01T09:53:44.797_tpl-A01_0001.fits',
-     'Test_data/r.XSHOO.2018-06-01T09:53:45.055_tpl-A01_0001.fits',
-     'Test_data/r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0001.fits',
-     'Test_data/r.XSHOO.2018-06-01T09:53:43.577_tpl-A03_0000.fits',
-     'Test_data/r.XSHOO.2018-06-01T09:53:45.055_tpl-A01_0000.fits',
-     'Test_data/r.XSHOO.2018-06-01T09:53:43.577_tpl-A03_0002.fits',
-     'Test_data/r.XSHOO.2018-06-01T09:53:44.797_tpl-A02_0001.fits',
-     'Test_data/r.XSHOO.2018-06-01T09:53:44.797_tpl-A03_0001.fits',
-     'Test_data/r.XSHOO.2018-06-01T09:53:45.055_tpl-A03_0000.fits',
-     'Test_data/r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0003.fits',
-     'Test_data/r.XSHOO.2018-06-01T09:53:43.577_tpl-A02_0000.fits',
-     'Test_data/r.XSHOO.2018-06-01T09:53:45.055_tpl-A03_0002.fits',
-     'Test_data/r.XSHOO.2018-06-01T09:53:44.797_tpl-A02_0000.fits',
-     'Test_data/r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0005.fits',
-     'Test_data/r.XSHOO.2018-06-01T09:53:44.797_tpl-A01_0000.fits',
-     'Test_data/r.XSHOO.2018-06-01T09:53:43.577_tpl-A01_0002.fits',
-     'Test_data/r.XSHOO.2018-06-01T09:53:44.797_tpl-A02_0002.fits']
+	['/home/alien/Desktop/Test_data/r.XSHOO.2018-06-01T09:53:45.055_tpl-A02_0001.fits',
+	 '/home/alien/Desktop/Test_data/r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0004.fits',
+	 '/home/alien/Desktop/Test_data/r.XSHOO.2018-06-01T09:53:45.055_tpl-A01_0002.fits',
+	 '/home/alien/Desktop/Test_data/r.XSHOO.2018-06-01T09:53:43.577_tpl-A02_0001.fits',
+	 '/home/alien/Desktop/Test_data/r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0002.fits',
+	 '/home/alien/Desktop/Test_data/r.XSHOO.2018-06-01T09:53:45.055_tpl-A02_0000.fits',
+	 '/home/alien/Desktop/Test_data/r.XSHOO.2018-06-01T09:53:43.577_tpl-A01_0001.fits',
+	 '/home/alien/Desktop/Test_data/r.XSHOO.2018-06-01T09:53:44.797_tpl-A03_0002.fits',
+	 '/home/alien/Desktop/Test_data/r.XSHOO.2018-06-01T09:53:44.797_tpl-A03_0000.fits',
+	 '/home/alien/Desktop/Test_data/r.XSHOO.2018-06-01T09:53:45.055_tpl-A03_0001.fits',
+	 '/home/alien/Desktop/Test_data/r.XSHOO.2018-06-01T09:53:45.055_tpl-A02_0002.fits',
+	 '/home/alien/Desktop/Test_data/r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0006.fits',
+	 '/home/alien/Desktop/Test_data/r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0000.fits',
+	 '/home/alien/Desktop/Test_data/r.XSHOO.2018-06-01T09:53:43.577_tpl-A02_0002.fits',
+	 '/home/alien/Desktop/Test_data/r.XSHOO.2018-06-01T09:53:43.577_tpl-A01_0000.fits',
+	 '/home/alien/Desktop/Test_data/r.XSHOO.2018-06-01T09:53:44.797_tpl-A01_0002.fits',
+	 '/home/alien/Desktop/Test_data/r.XSHOO.2018-06-01T09:53:43.577_tpl-A03_0001.fits',
+	 '/home/alien/Desktop/Test_data/r.XSHOO.2018-06-01T09:53:44.797_tpl-A01_0001.fits',
+	 '/home/alien/Desktop/Test_data/r.XSHOO.2018-06-01T09:53:45.055_tpl-A01_0001.fits',
+	 '/home/alien/Desktop/Test_data/r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0001.fits',
+	 '/home/alien/Desktop/Test_data/r.XSHOO.2018-06-01T09:53:43.577_tpl-A03_0000.fits',
+	 '/home/alien/Desktop/Test_data/r.XSHOO.2018-06-01T09:53:45.055_tpl-A01_0000.fits',
+	 '/home/alien/Desktop/Test_data/r.XSHOO.2018-06-01T09:53:43.577_tpl-A03_0002.fits',
+	 '/home/alien/Desktop/Test_data/r.XSHOO.2018-06-01T09:53:44.797_tpl-A02_0001.fits',
+	 '/home/alien/Desktop/Test_data/r.XSHOO.2018-06-01T09:53:44.797_tpl-A03_0001.fits',
+	 '/home/alien/Desktop/Test_data/r.XSHOO.2018-06-01T09:53:45.055_tpl-A03_0000.fits',
+	 '/home/alien/Desktop/Test_data/r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0003.fits',
+	 '/home/alien/Desktop/Test_data/r.XSHOO.2018-06-01T09:53:43.577_tpl-A02_0000.fits',
+	 '/home/alien/Desktop/Test_data/r.XSHOO.2018-06-01T09:53:45.055_tpl-A03_0002.fits',
+	 '/home/alien/Desktop/Test_data/r.XSHOO.2018-06-01T09:53:44.797_tpl-A02_0000.fits',
+	 '/home/alien/Desktop/Test_data/r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0005.fits',
+	 '/home/alien/Desktop/Test_data/r.XSHOO.2018-06-01T09:53:44.797_tpl-A01_0000.fits',
+	 '/home/alien/Desktop/Test_data/r.XSHOO.2018-06-01T09:53:43.577_tpl-A01_0002.fits',
+	 '/home/alien/Desktop/Test_data/r.XSHOO.2018-06-01T09:53:44.797_tpl-A02_0002.fits']
 
 You would get the same results using::
 
-    In [4]: listfiles = get_files(['*.fits'],'Test_data/')
+    In [4]: listfiles = get_files(['all'],'../Test_data/')
 
 
 2 - Get your keywords ready
@@ -201,29 +202,30 @@ At this point you are ready to fitsort all files. In order to achieve that you h
 
     In [9]: help(dfitspy.dfitsort)
 
-    dfitsort(listfiles, listkeys, grepping=None)
-        This function get for all files, the value of all the keywords that are passed
-        
-        example:  dfitsort([file1, file2], [key1, key2]) <-- no grep
-        example:  dfitsort([file1, file2], [key1, key2], ['match', 'match2']) <-- multi grep 
-        
-        Parameter
-        ---------
-        listfiles
-                    list, with file names (string, path included)
-        listkeys
-                    list, of keywords (strings)
-        grep
-                    list of string,
-                    if not false, the grepping valueS 
-                    will be compared to all the values 
-                    of the keywords. If all grepping values appear in the
-                    header of one file the file will be kept
-        Return
-        ------
-        file_dict
-                    dictionnary, keys=filename
-                                 values=dictionnary of keyword-value pairs
+	dfitsort(listfiles, listkeys, grepping=None)
+	    This function get for all files, the value of all the keywords that are passed
+	    
+	    example:  dfitsort([file1, file2], [key1, key2]) <-- no grep
+	    example:  dfitsort([file1, file2], [key1, key2], ['match', 'match2']) <-- multi grep 
+	    
+	    Parameter
+	    ---------
+	    listfiles
+		        list, with file names (string, path included)
+	    listkeys
+		        list, of keywords (strings)
+	    grep
+		        list of string,
+		        if not false, the grepping valueS 
+		        will be compared to all the values 
+		        of the keywords. If all grepping values appear in the
+		        header of one file the file will be kept
+	    Return
+	    ------
+	    file_dict
+		        dictionnary, keys=filename
+		                     values=dictionnary of keyword-value pairs
+
 
 
 This function takes as argument the list of file and the list of parameter and returns a dictionnary of files withe values of all the keywords required::

@@ -25,19 +25,19 @@ This file create the file list depending on the user input as well as the keywor
 
 ###standrd imports
 import os
-import glob
 
 ##testing
 import unittest
 import unittest.mock
 
 
-def get_files(files, dire):
+def get_files(files, dire=False):
     '''
     This function extracts the list of files based on the files
     and dire parameters.
 
     example: get_files(['fil1.fits,file2.fits'] , '/home/Documents')
+    example: get_files(['fil1.fits,file2.fits'])
 
 
     Parameter
@@ -47,7 +47,6 @@ def get_files(files, dire):
                              it can be ['file1.fits,file2.fits,....']
                                        ['file1.fits']
                                        ['file1,fits', 'file2.fits']
-                                       ['*.fits']
                                        ['all']
     dire
                 str, path of the directory to look in
@@ -56,23 +55,20 @@ def get_files(files, dire):
     ------
     list of files
     '''
-    ###first solution, user want to look at all fits file in the directory
-    if files == ['*.fits']:
-        allfiles = []
-        for j in os.listdir(dire):
-            if j.endswith(".fits"):
-                allfiles.append(os.path.join(dire, j))
 
-    ##second option, a list is given, need to check if some are fits file
-    elif len(files) > 1:
+    ##if no directory was given, we assume the current working directory
+    if not dire:
+        dire = os.getcwd()
+
+    ##A list is given, need to check if some are fits file
+    if len(files) > 1:
         allfiles = []
-        files_path = [os.path.join(dire, i) for i in os.listdir(dire)]
-        for k in files_path:
+        for k in files:
             if k.endswith(".fits"):
                 allfiles.append(k)
 
     ##third option the user wants to look at all the files in the directory
-    elif files == ['all'] or len(files) > 1:
+    elif files == ['all']:
         allfiles = []
         files_path = [os.path.join(dire, i) for i in os.listdir(dire)]
         for k in files_path:
@@ -82,7 +78,6 @@ def get_files(files, dire):
     else:
         ##last solution, the user gives a files or a list of files
         ##we split it by coma
-        #print('ok')
         splits = files[0].split(',')
         allfiles = [os.path.join(dire, i.strip()) for i in splits if \
                 os.path.join(dire, i).endswith(".fits")]
@@ -160,19 +155,6 @@ class Testgetfiles(unittest.TestCase):
         '''
         ##the current directory here is set at the directory of the program
         files = get_files(['all'], os.path.join(os.path.dirname(os.path.realpath(__file__)), \
-                'tests'))
-        ##we are expecting 4 files to be found
-        ##for convinience here we just compare the file name (without paths)
-        files = [os.path.basename(i) for i in files]
-        expected_files = ['test.fits', 'test5.fits', 'test2.fits', 'test4.fits', 'test3.fits']
-        self.assertEqual(files, expected_files)
-
-    def test_get_files_allfits(self):
-        '''
-        Test the *.fits function
-        '''
-        ##the current directory here is set at the directory of the program
-        files = get_files(['*.fits'], os.path.join(os.path.dirname(os.path.realpath(__file__)), \
                 'tests'))
         ##we are expecting 4 files to be found
         ##for convinience here we just compare the file name (without paths)

@@ -40,9 +40,7 @@ It works only on the header and allows you to find common values in large amount
 
 Acknowldgements
 ===============
-The python wrapper of the CFITSIO library have been made for the fitsio python library (link). We kindly 
-thanks the writter of this wrapper for the authorization he gave us to use this wrapper.
-
+The python wrapper of the CFITSIO library have been made for the fitsio python library (`fitsio <https://github.com/esheldon/fitsio>`_) and is used in dfitspy.
 
 ----
 
@@ -50,7 +48,7 @@ thanks the writter of this wrapper for the authorization he gave us to use this 
 dfitspy is not perfect! It has been primarily developed for my private research and I decided to release i
 n the spirit of making the research process as transparent as possible and in the hope it can be used by
 other people. If you have any comment or anything you would like to be added to dfitspy, or, even better,
-if you want to modify you can either do it yourself or please feel free to contact me! ---> **rthomas@eso.org**
+if you want to modify you can either do it yourself or please feel free to contact me! ---> **rthomas@eso.org, the.spartan.proj@gmail.com**
 
 ----
 
@@ -68,3 +66,10 @@ if you want to modify you can either do it yourself or please feel free to conta
 	You should have received a copy of the GNU General Public License along with the program.
 	If not, see http://www.gnu.org/licenses/ .
 
+----
+
+.. warning::
+
+	**Disclaimer**
+
+	dfitspy is not supported nor endorsed by the European Southern Observatory [ESO].

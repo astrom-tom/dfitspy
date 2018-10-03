@@ -68,7 +68,8 @@ def main():
             dir_path = os.path.dirname(os.path.realpath(__file__))
             url = os.path.join(dir_path, 'docs/build/html/index.html')
 
-        for i in ['falkon', 'firefox', 'open', 'qupzilla', 'chromium', 'google-chrome']:
+        for i in ['firefox', 'falkon', 'open', 'qupzilla', \
+                'chromium', 'google-chrome']:
             ##we check if the command exist in the system
             exist = call(['which', i])
             if exist == 0:
@@ -88,9 +89,7 @@ def main():
         sys.exit()
 
     ###get all the files
-    list_files = get.get_files(args.file, args.dir)
-    print('\n\033[1m[DFITSPY INFO]> %s files found \033[0;0m'%len(list_files))
-    print('\033[1m',35*'-', '\033[0;0m')
+    list_files = get.get_files(args.file)
 
     if list_files == []:
         print('\n\033[1m[DFITSPY Error]>Invalid file name or no fits file found \033[0;0m')
@@ -100,8 +99,13 @@ def main():
         ###get all keywords
         all_keywords = readfits.get_all_keyword(list_files[0])
         ###display them
+        print('\n\033[1m[DFITSPY INFO]>keywords in %s \033[0;0m'%\
+                os.path.basename(list_files[0]))
         dp.keywords_view(all_keywords)
         sys.exit()
+
+    ##display number of files
+    print('\n\033[1m[DFITSPY INFO]> %s fits files will be considered \033[0;0m\n'%len(list_files))
 
     ###get greeping from command line
     if args.grep:
@@ -121,6 +125,10 @@ def main():
 
     ##display them in terminal
     dp.dfitsort_view(allvalues)
+
+    
+    print('\n\033[1m[DFITSPY INFO]> %s files used in output \033[0;0m'%len(allvalues))
+
 
 if __name__ == "__main__":
     main()

@@ -52,6 +52,9 @@
           
 
           
+            
+            <img src="_static/dfitspy_tr.png" class="logo" alt="Logo"/>
+          
           </a>
 
           
@@ -184,11 +187,12 @@
 
 <span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="n">help</span><span class="p">(</span><span class="n">dfitspy</span><span class="o">.</span><span class="n">get_files</span><span class="p">)</span>  <span class="o">&lt;---</span><span class="n">this</span> <span class="nb">print</span> <span class="n">the</span> <span class="n">help</span> <span class="n">of</span> <span class="n">the</span> <span class="n">function</span>
 
-<span class="n">get_files</span><span class="p">(</span><span class="n">files</span><span class="p">,</span> <span class="n">dire</span><span class="p">)</span>
+<span class="n">get_files</span><span class="p">(</span><span class="n">files</span><span class="p">,</span> <span class="n">dire</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">This</span> <span class="n">function</span> <span class="n">extracts</span> <span class="n">the</span> <span class="nb">list</span> <span class="n">of</span> <span class="n">files</span> <span class="n">based</span> <span class="n">on</span> <span class="n">the</span> <span class="n">files</span>
 <span class="ow">and</span> <span class="n">dire</span> <span class="n">parameters</span><span class="o">.</span>
 
 <span class="n">example</span><span class="p">:</span> <span class="n">get_files</span><span class="p">([</span><span class="s1">&#39;fil1.fits,file2.fits&#39;</span><span class="p">]</span> <span class="p">,</span> <span class="s1">&#39;/home/Documents&#39;</span><span class="p">)</span>
+<span class="n">example</span><span class="p">:</span> <span class="n">get_files</span><span class="p">([</span><span class="s1">&#39;fil1.fits,file2.fits&#39;</span><span class="p">])</span>
 
 
 <span class="n">Parameter</span>
@@ -198,7 +202,6 @@
                          <span class="n">it</span> <span class="n">can</span> <span class="n">be</span> <span class="p">[</span><span class="s1">&#39;file1.fits,file2.fits,....&#39;</span><span class="p">]</span>
                                    <span class="p">[</span><span class="s1">&#39;file1.fits&#39;</span><span class="p">]</span>
                                    <span class="p">[</span><span class="s1">&#39;file1,fits&#39;</span><span class="p">,</span> <span class="s1">&#39;file2.fits&#39;</span><span class="p">]</span>
-                                   <span class="p">[</span><span class="s1">&#39;*.fits&#39;</span><span class="p">]</span>
                                    <span class="p">[</span><span class="s1">&#39;all&#39;</span><span class="p">]</span>
 <span class="n">dire</span>
             <span class="nb">str</span><span class="p">,</span> <span class="n">path</span> <span class="n">of</span> <span class="n">the</span> <span class="n">directory</span> <span class="n">to</span> <span class="n">look</span> <span class="ow">in</span>
@@ -211,44 +214,44 @@
 <p>This function takes two arguments. The first is the file argument and must be a <strong>LIST</strong> of strings. It will return a list of files. <strong>Only fits files will be returned</strong>.</p>
 <p>The easiest way is to analyse <strong>all</strong> the files in a directory:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="n">listfiles</span> <span class="o">=</span> <span class="n">dfitspy</span><span class="o">.</span><span class="n">get_files</span><span class="p">([</span><span class="s1">&#39;all&#39;</span><span class="p">],</span><span class="s1">&#39;Test_data/&#39;</span><span class="p">)</span>
-<span class="p">[</span><span class="s1">&#39;Test_data/r.XSHOO.2018-06-01T09:53:45.055_tpl-A02_0001.fits&#39;</span><span class="p">,</span>
- <span class="s1">&#39;Test_data/r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0004.fits&#39;</span><span class="p">,</span>
- <span class="s1">&#39;Test_data/r.XSHOO.2018-06-01T09:53:45.055_tpl-A01_0002.fits&#39;</span><span class="p">,</span>
- <span class="s1">&#39;Test_data/r.XSHOO.2018-06-01T09:53:43.577_tpl-A02_0001.fits&#39;</span><span class="p">,</span>
- <span class="s1">&#39;Test_data/r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0002.fits&#39;</span><span class="p">,</span>
- <span class="s1">&#39;Test_data/r.XSHOO.2018-06-01T09:53:45.055_tpl-A02_0000.fits&#39;</span><span class="p">,</span>
- <span class="s1">&#39;Test_data/r.XSHOO.2018-06-01T09:53:43.577_tpl-A01_0001.fits&#39;</span><span class="p">,</span>
- <span class="s1">&#39;Test_data/r.XSHOO.2018-06-01T09:53:44.797_tpl-A03_0002.fits&#39;</span><span class="p">,</span>
- <span class="s1">&#39;Test_data/r.XSHOO.2018-06-01T09:53:44.797_tpl-A03_0000.fits&#39;</span><span class="p">,</span>
- <span class="s1">&#39;Test_data/r.XSHOO.2018-06-01T09:53:45.055_tpl-A03_0001.fits&#39;</span><span class="p">,</span>
- <span class="s1">&#39;Test_data/r.XSHOO.2018-06-01T09:53:45.055_tpl-A02_0002.fits&#39;</span><span class="p">,</span>
- <span class="s1">&#39;Test_data/r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0006.fits&#39;</span><span class="p">,</span>
- <span class="s1">&#39;Test_data/r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0000.fits&#39;</span><span class="p">,</span>
- <span class="s1">&#39;Test_data/r.XSHOO.2018-06-01T09:53:43.577_tpl-A02_0002.fits&#39;</span><span class="p">,</span>
- <span class="s1">&#39;Test_data/r.XSHOO.2018-06-01T09:53:43.577_tpl-A01_0000.fits&#39;</span><span class="p">,</span>
- <span class="s1">&#39;Test_data/r.XSHOO.2018-06-01T09:53:44.797_tpl-A01_0002.fits&#39;</span><span class="p">,</span>
- <span class="s1">&#39;Test_data/r.XSHOO.2018-06-01T09:53:43.577_tpl-A03_0001.fits&#39;</span><span class="p">,</span>
- <span class="s1">&#39;Test_data/r.XSHOO.2018-06-01T09:53:44.797_tpl-A01_0001.fits&#39;</span><span class="p">,</span>
- <span class="s1">&#39;Test_data/r.XSHOO.2018-06-01T09:53:45.055_tpl-A01_0001.fits&#39;</span><span class="p">,</span>
- <span class="s1">&#39;Test_data/r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0001.fits&#39;</span><span class="p">,</span>
- <span class="s1">&#39;Test_data/r.XSHOO.2018-06-01T09:53:43.577_tpl-A03_0000.fits&#39;</span><span class="p">,</span>
- <span class="s1">&#39;Test_data/r.XSHOO.2018-06-01T09:53:45.055_tpl-A01_0000.fits&#39;</span><span class="p">,</span>
- <span class="s1">&#39;Test_data/r.XSHOO.2018-06-01T09:53:43.577_tpl-A03_0002.fits&#39;</span><span class="p">,</span>
- <span class="s1">&#39;Test_data/r.XSHOO.2018-06-01T09:53:44.797_tpl-A02_0001.fits&#39;</span><span class="p">,</span>
- <span class="s1">&#39;Test_data/r.XSHOO.2018-06-01T09:53:44.797_tpl-A03_0001.fits&#39;</span><span class="p">,</span>
- <span class="s1">&#39;Test_data/r.XSHOO.2018-06-01T09:53:45.055_tpl-A03_0000.fits&#39;</span><span class="p">,</span>
- <span class="s1">&#39;Test_data/r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0003.fits&#39;</span><span class="p">,</span>
- <span class="s1">&#39;Test_data/r.XSHOO.2018-06-01T09:53:43.577_tpl-A02_0000.fits&#39;</span><span class="p">,</span>
- <span class="s1">&#39;Test_data/r.XSHOO.2018-06-01T09:53:45.055_tpl-A03_0002.fits&#39;</span><span class="p">,</span>
- <span class="s1">&#39;Test_data/r.XSHOO.2018-06-01T09:53:44.797_tpl-A02_0000.fits&#39;</span><span class="p">,</span>
- <span class="s1">&#39;Test_data/r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0005.fits&#39;</span><span class="p">,</span>
- <span class="s1">&#39;Test_data/r.XSHOO.2018-06-01T09:53:44.797_tpl-A01_0000.fits&#39;</span><span class="p">,</span>
- <span class="s1">&#39;Test_data/r.XSHOO.2018-06-01T09:53:43.577_tpl-A01_0002.fits&#39;</span><span class="p">,</span>
- <span class="s1">&#39;Test_data/r.XSHOO.2018-06-01T09:53:44.797_tpl-A02_0002.fits&#39;</span><span class="p">]</span>
+    <span class="p">[</span><span class="s1">&#39;/home/alien/Desktop/Test_data/r.XSHOO.2018-06-01T09:53:45.055_tpl-A02_0001.fits&#39;</span><span class="p">,</span>
+     <span class="s1">&#39;/home/alien/Desktop/Test_data/r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0004.fits&#39;</span><span class="p">,</span>
+     <span class="s1">&#39;/home/alien/Desktop/Test_data/r.XSHOO.2018-06-01T09:53:45.055_tpl-A01_0002.fits&#39;</span><span class="p">,</span>
+     <span class="s1">&#39;/home/alien/Desktop/Test_data/r.XSHOO.2018-06-01T09:53:43.577_tpl-A02_0001.fits&#39;</span><span class="p">,</span>
+     <span class="s1">&#39;/home/alien/Desktop/Test_data/r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0002.fits&#39;</span><span class="p">,</span>
+     <span class="s1">&#39;/home/alien/Desktop/Test_data/r.XSHOO.2018-06-01T09:53:45.055_tpl-A02_0000.fits&#39;</span><span class="p">,</span>
+     <span class="s1">&#39;/home/alien/Desktop/Test_data/r.XSHOO.2018-06-01T09:53:43.577_tpl-A01_0001.fits&#39;</span><span class="p">,</span>
+     <span class="s1">&#39;/home/alien/Desktop/Test_data/r.XSHOO.2018-06-01T09:53:44.797_tpl-A03_0002.fits&#39;</span><span class="p">,</span>
+     <span class="s1">&#39;/home/alien/Desktop/Test_data/r.XSHOO.2018-06-01T09:53:44.797_tpl-A03_0000.fits&#39;</span><span class="p">,</span>
+     <span class="s1">&#39;/home/alien/Desktop/Test_data/r.XSHOO.2018-06-01T09:53:45.055_tpl-A03_0001.fits&#39;</span><span class="p">,</span>
+     <span class="s1">&#39;/home/alien/Desktop/Test_data/r.XSHOO.2018-06-01T09:53:45.055_tpl-A02_0002.fits&#39;</span><span class="p">,</span>
+     <span class="s1">&#39;/home/alien/Desktop/Test_data/r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0006.fits&#39;</span><span class="p">,</span>
+     <span class="s1">&#39;/home/alien/Desktop/Test_data/r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0000.fits&#39;</span><span class="p">,</span>
+     <span class="s1">&#39;/home/alien/Desktop/Test_data/r.XSHOO.2018-06-01T09:53:43.577_tpl-A02_0002.fits&#39;</span><span class="p">,</span>
+     <span class="s1">&#39;/home/alien/Desktop/Test_data/r.XSHOO.2018-06-01T09:53:43.577_tpl-A01_0000.fits&#39;</span><span class="p">,</span>
+     <span class="s1">&#39;/home/alien/Desktop/Test_data/r.XSHOO.2018-06-01T09:53:44.797_tpl-A01_0002.fits&#39;</span><span class="p">,</span>
+     <span class="s1">&#39;/home/alien/Desktop/Test_data/r.XSHOO.2018-06-01T09:53:43.577_tpl-A03_0001.fits&#39;</span><span class="p">,</span>
+     <span class="s1">&#39;/home/alien/Desktop/Test_data/r.XSHOO.2018-06-01T09:53:44.797_tpl-A01_0001.fits&#39;</span><span class="p">,</span>
+     <span class="s1">&#39;/home/alien/Desktop/Test_data/r.XSHOO.2018-06-01T09:53:45.055_tpl-A01_0001.fits&#39;</span><span class="p">,</span>
+     <span class="s1">&#39;/home/alien/Desktop/Test_data/r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0001.fits&#39;</span><span class="p">,</span>
+     <span class="s1">&#39;/home/alien/Desktop/Test_data/r.XSHOO.2018-06-01T09:53:43.577_tpl-A03_0000.fits&#39;</span><span class="p">,</span>
+     <span class="s1">&#39;/home/alien/Desktop/Test_data/r.XSHOO.2018-06-01T09:53:45.055_tpl-A01_0000.fits&#39;</span><span class="p">,</span>
+     <span class="s1">&#39;/home/alien/Desktop/Test_data/r.XSHOO.2018-06-01T09:53:43.577_tpl-A03_0002.fits&#39;</span><span class="p">,</span>
+     <span class="s1">&#39;/home/alien/Desktop/Test_data/r.XSHOO.2018-06-01T09:53:44.797_tpl-A02_0001.fits&#39;</span><span class="p">,</span>
+     <span class="s1">&#39;/home/alien/Desktop/Test_data/r.XSHOO.2018-06-01T09:53:44.797_tpl-A03_0001.fits&#39;</span><span class="p">,</span>
+     <span class="s1">&#39;/home/alien/Desktop/Test_data/r.XSHOO.2018-06-01T09:53:45.055_tpl-A03_0000.fits&#39;</span><span class="p">,</span>
+     <span class="s1">&#39;/home/alien/Desktop/Test_data/r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0003.fits&#39;</span><span class="p">,</span>
+     <span class="s1">&#39;/home/alien/Desktop/Test_data/r.XSHOO.2018-06-01T09:53:43.577_tpl-A02_0000.fits&#39;</span><span class="p">,</span>
+     <span class="s1">&#39;/home/alien/Desktop/Test_data/r.XSHOO.2018-06-01T09:53:45.055_tpl-A03_0002.fits&#39;</span><span class="p">,</span>
+     <span class="s1">&#39;/home/alien/Desktop/Test_data/r.XSHOO.2018-06-01T09:53:44.797_tpl-A02_0000.fits&#39;</span><span class="p">,</span>
+     <span class="s1">&#39;/home/alien/Desktop/Test_data/r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0005.fits&#39;</span><span class="p">,</span>
+     <span class="s1">&#39;/home/alien/Desktop/Test_data/r.XSHOO.2018-06-01T09:53:44.797_tpl-A01_0000.fits&#39;</span><span class="p">,</span>
+     <span class="s1">&#39;/home/alien/Desktop/Test_data/r.XSHOO.2018-06-01T09:53:43.577_tpl-A01_0002.fits&#39;</span><span class="p">,</span>
+     <span class="s1">&#39;/home/alien/Desktop/Test_data/r.XSHOO.2018-06-01T09:53:44.797_tpl-A02_0002.fits&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>You would get the same results using:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">4</span><span class="p">]:</span> <span class="n">listfiles</span> <span class="o">=</span> <span class="n">get_files</span><span class="p">([</span><span class="s1">&#39;*.fits&#39;</span><span class="p">],</span><span class="s1">&#39;Test_data/&#39;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">4</span><span class="p">]:</span> <span class="n">listfiles</span> <span class="o">=</span> <span class="n">get_files</span><span class="p">([</span><span class="s1">&#39;all&#39;</span><span class="p">],</span><span class="s1">&#39;../Test_data/&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -329,29 +332,29 @@
 <p>At this point you are ready to fitsort all files. In order to achieve that you have to use the <em>get_all_values</em> function:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">9</span><span class="p">]:</span> <span class="n">help</span><span class="p">(</span><span class="n">dfitspy</span><span class="o">.</span><span class="n">dfitsort</span><span class="p">)</span>
 
-<span class="n">dfitsort</span><span class="p">(</span><span class="n">listfiles</span><span class="p">,</span> <span class="n">listkeys</span><span class="p">,</span> <span class="n">grepping</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
-    <span class="n">This</span> <span class="n">function</span> <span class="n">get</span> <span class="k">for</span> <span class="nb">all</span> <span class="n">files</span><span class="p">,</span> <span class="n">the</span> <span class="n">value</span> <span class="n">of</span> <span class="nb">all</span> <span class="n">the</span> <span class="n">keywords</span> <span class="n">that</span> <span class="n">are</span> <span class="n">passed</span>
+    <span class="n">dfitsort</span><span class="p">(</span><span class="n">listfiles</span><span class="p">,</span> <span class="n">listkeys</span><span class="p">,</span> <span class="n">grepping</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+        <span class="n">This</span> <span class="n">function</span> <span class="n">get</span> <span class="k">for</span> <span class="nb">all</span> <span class="n">files</span><span class="p">,</span> <span class="n">the</span> <span class="n">value</span> <span class="n">of</span> <span class="nb">all</span> <span class="n">the</span> <span class="n">keywords</span> <span class="n">that</span> <span class="n">are</span> <span class="n">passed</span>
 
-    <span class="n">example</span><span class="p">:</span>  <span class="n">dfitsort</span><span class="p">([</span><span class="n">file1</span><span class="p">,</span> <span class="n">file2</span><span class="p">],</span> <span class="p">[</span><span class="n">key1</span><span class="p">,</span> <span class="n">key2</span><span class="p">])</span> <span class="o">&lt;--</span> <span class="n">no</span> <span class="n">grep</span>
-    <span class="n">example</span><span class="p">:</span>  <span class="n">dfitsort</span><span class="p">([</span><span class="n">file1</span><span class="p">,</span> <span class="n">file2</span><span class="p">],</span> <span class="p">[</span><span class="n">key1</span><span class="p">,</span> <span class="n">key2</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;match&#39;</span><span class="p">,</span> <span class="s1">&#39;match2&#39;</span><span class="p">])</span> <span class="o">&lt;--</span> <span class="n">multi</span> <span class="n">grep</span>
+        <span class="n">example</span><span class="p">:</span>  <span class="n">dfitsort</span><span class="p">([</span><span class="n">file1</span><span class="p">,</span> <span class="n">file2</span><span class="p">],</span> <span class="p">[</span><span class="n">key1</span><span class="p">,</span> <span class="n">key2</span><span class="p">])</span> <span class="o">&lt;--</span> <span class="n">no</span> <span class="n">grep</span>
+        <span class="n">example</span><span class="p">:</span>  <span class="n">dfitsort</span><span class="p">([</span><span class="n">file1</span><span class="p">,</span> <span class="n">file2</span><span class="p">],</span> <span class="p">[</span><span class="n">key1</span><span class="p">,</span> <span class="n">key2</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;match&#39;</span><span class="p">,</span> <span class="s1">&#39;match2&#39;</span><span class="p">])</span> <span class="o">&lt;--</span> <span class="n">multi</span> <span class="n">grep</span>
 
-    <span class="n">Parameter</span>
-    <span class="o">---------</span>
-    <span class="n">listfiles</span>
-                <span class="nb">list</span><span class="p">,</span> <span class="k">with</span> <span class="n">file</span> <span class="n">names</span> <span class="p">(</span><span class="n">string</span><span class="p">,</span> <span class="n">path</span> <span class="n">included</span><span class="p">)</span>
-    <span class="n">listkeys</span>
-                <span class="nb">list</span><span class="p">,</span> <span class="n">of</span> <span class="n">keywords</span> <span class="p">(</span><span class="n">strings</span><span class="p">)</span>
-    <span class="n">grep</span>
-                <span class="nb">list</span> <span class="n">of</span> <span class="n">string</span><span class="p">,</span>
-                <span class="k">if</span> <span class="ow">not</span> <span class="n">false</span><span class="p">,</span> <span class="n">the</span> <span class="n">grepping</span> <span class="n">valueS</span>
-                <span class="n">will</span> <span class="n">be</span> <span class="n">compared</span> <span class="n">to</span> <span class="nb">all</span> <span class="n">the</span> <span class="n">values</span>
-                <span class="n">of</span> <span class="n">the</span> <span class="n">keywords</span><span class="o">.</span> <span class="n">If</span> <span class="nb">all</span> <span class="n">grepping</span> <span class="n">values</span> <span class="n">appear</span> <span class="ow">in</span> <span class="n">the</span>
-                <span class="n">header</span> <span class="n">of</span> <span class="n">one</span> <span class="n">file</span> <span class="n">the</span> <span class="n">file</span> <span class="n">will</span> <span class="n">be</span> <span class="n">kept</span>
-    <span class="n">Return</span>
-    <span class="o">------</span>
-    <span class="n">file_dict</span>
-                <span class="n">dictionnary</span><span class="p">,</span> <span class="n">keys</span><span class="o">=</span><span class="n">filename</span>
-                             <span class="n">values</span><span class="o">=</span><span class="n">dictionnary</span> <span class="n">of</span> <span class="n">keyword</span><span class="o">-</span><span class="n">value</span> <span class="n">pairs</span>
+        <span class="n">Parameter</span>
+        <span class="o">---------</span>
+        <span class="n">listfiles</span>
+                    <span class="nb">list</span><span class="p">,</span> <span class="k">with</span> <span class="n">file</span> <span class="n">names</span> <span class="p">(</span><span class="n">string</span><span class="p">,</span> <span class="n">path</span> <span class="n">included</span><span class="p">)</span>
+        <span class="n">listkeys</span>
+                    <span class="nb">list</span><span class="p">,</span> <span class="n">of</span> <span class="n">keywords</span> <span class="p">(</span><span class="n">strings</span><span class="p">)</span>
+        <span class="n">grep</span>
+                    <span class="nb">list</span> <span class="n">of</span> <span class="n">string</span><span class="p">,</span>
+                    <span class="k">if</span> <span class="ow">not</span> <span class="n">false</span><span class="p">,</span> <span class="n">the</span> <span class="n">grepping</span> <span class="n">valueS</span>
+                    <span class="n">will</span> <span class="n">be</span> <span class="n">compared</span> <span class="n">to</span> <span class="nb">all</span> <span class="n">the</span> <span class="n">values</span>
+                    <span class="n">of</span> <span class="n">the</span> <span class="n">keywords</span><span class="o">.</span> <span class="n">If</span> <span class="nb">all</span> <span class="n">grepping</span> <span class="n">values</span> <span class="n">appear</span> <span class="ow">in</span> <span class="n">the</span>
+                    <span class="n">header</span> <span class="n">of</span> <span class="n">one</span> <span class="n">file</span> <span class="n">the</span> <span class="n">file</span> <span class="n">will</span> <span class="n">be</span> <span class="n">kept</span>
+        <span class="n">Return</span>
+        <span class="o">------</span>
+        <span class="n">file_dict</span>
+                    <span class="n">dictionnary</span><span class="p">,</span> <span class="n">keys</span><span class="o">=</span><span class="n">filename</span>
+                                 <span class="n">values</span><span class="o">=</span><span class="n">dictionnary</span> <span class="n">of</span> <span class="n">keyword</span><span class="o">-</span><span class="n">value</span> <span class="n">pairs</span>
 </pre></div>
 </div>
 <p>This function takes as argument the list of file and the list of parameter and returns a dictionnary of files withe values of all the keywords required:</p>

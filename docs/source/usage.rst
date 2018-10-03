@@ -29,16 +29,13 @@ You can start dfitspy from a terminal. dfitspy comes with a command line interfa
 
 This command will display the help of the program::
 
-      usage: dfitspy [-h] [-file [FILE [FILE ...]]] [-key KEY] [--dir DIR] [--list]
+      usage: dfitspy [-h] [-file [FILE [FILE ...]]] [-key KEY] [--list]
                [--grep GREP] [--test]
 
-      dfitspy, version 18.10.0, Licence: GPL
+      dfitspy: dfits|fitsort in python, version 18.10, Licence: GPL
 
       optional arguments:
          -h, --help            show this help message and exit
-         --dir DIR             Directory where we search for files. If none given,
-                            the default directory is the one from where dfitspy is
-                            started.
          --list                List all keywords in a given file (if a list of file
                             is given the first one is used)
          --grep GREP           Restrain the files to the one with a given value of a
@@ -69,17 +66,20 @@ If you want to dfits | fitsort
 * -file: here is where you give your files. You have multiple option how to give values to this argument:
 
     * A single file:  **-file test.fits**
-    * Multiple particular files: **-file test.fits,test2.fits**. They must be separated with comas.
+    * Multiple particular files: **-file test.fits,test2.fits**. They must be separated with comas and **without spaces**
     * You can use the 'all' argument: **-file all**
     * You can use the '*' solution: **-file** *
-    * All the fits file in the directory: **-file *.fits**
     * Semi complete names: **-file test*** or **-file *test.fits** or with path: **-file /test/*test.fits**.
 
-* '- -dir': If you want to analyse files not in the current working directory you can use the ''- - dir'' option which allows you to define the working directory. It is by default the current working directory. 
+
+.. warning::
+	
+    The directory that is considered here is the current directory where dfistpy is started.
 
 * -key: Here is where you ask dfitspy to look for particular keywords in the headers. Here again you have multiple option
+  
     * a single keyword: **-key OBJECT**
-    * multiple arguements: **-key OBJECT,LST**. They must be separated by comas
+    * multiple arguments: **-key OBJECT,LST**. They must be separated by comas and **without spaces**.
 
 
 
@@ -88,53 +88,55 @@ If you want to dfits | fitsort
     Two things you must be careful of:
 
     * ESO keywords may contain the 'HIERARCH' prefix. This is ignored by dfitspy therefore do not use you can not use this prefix. For example if you have the following keywords HIERARCH ESO PRO CATG you must call it with ESO.PRO.CATG 
-    * If your keywords contain spaces (ex: ESO OBS ID) you must replace it by dots: 'ESO.OBS.ID'
+    * If your keywords contain spaces (ex: ESO OBS ID) you must replace it by dots: ESO.OBS.ID
     
-An example of output is the following (run the command: **dfitspy -f Test_data/*.fits -key OBJECT,LST,DATE --dir Test_data**)::
+An example of output is the following (running the command: **dfitspy -f Test_data/* -k OBJECT,LST,ESO.OBS.ID**)::
 
-        [Command: dfitspy -f all -k OBJECT,LST,DATE --dir Test_data/]
+        [Command: dfitspy -f Test_data/* -k OBJECT,LST,ESO.OBS.ID]
         
-        [DFITSPY INFO]> 34 files found 
-         ----------------------------------- 
-        filename                                         	OBJECT      	LST      	DATE               
-        -------------------------------------------------	------------	---------	-------------------
-        r.XSHOO.2018-06-01T09:53:45.055_tpl-A02_0001.fits	LAMP,AFC    	78685.247	2018-06-01T09:55:04
-        r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0004.fits	STD,TELLURIC	79056.26 	2018-06-01T10:03:01
-        r.XSHOO.2018-06-01T09:53:45.055_tpl-A01_0002.fits	LAMP,AFC    	78685.247	2018-06-01T09:54:49
-        r.XSHOO.2018-06-01T09:53:43.577_tpl-A02_0001.fits	LAMP,AFC    	78684.245	2018-06-01T09:54:57
-        r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0002.fits	STD,TELLURIC	79056.26 	2018-06-01T10:03:01
-        r.XSHOO.2018-06-01T09:53:45.055_tpl-A02_0000.fits	LAMP,AFC    	78685.247	2018-06-01T09:55:04
-        r.XSHOO.2018-06-01T09:53:43.577_tpl-A01_0001.fits	LAMP,AFC    	78684.245	2018-06-01T09:54:42
-        r.XSHOO.2018-06-01T09:53:44.797_tpl-A03_0002.fits	LAMP,AFC    	78684.245	2018-06-01T09:56:28
-        r.XSHOO.2018-06-01T09:53:44.797_tpl-A03_0000.fits	LAMP,AFC    	78684.245	2018-06-01T09:56:28
-        r.XSHOO.2018-06-01T09:53:45.055_tpl-A03_0001.fits	LAMP,AFC    	78685.247	2018-06-01T09:56:30
-        r.XSHOO.2018-06-01T09:53:45.055_tpl-A02_0002.fits	LAMP,AFC    	78685.247	2018-06-01T09:55:04
-        r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0006.fits	HD 205828   	79056.26 	2018-06-01T10:03:02
-        r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0000.fits	STD,TELLURIC	79056.26 	2018-06-01T10:03:01
-        r.XSHOO.2018-06-01T09:53:43.577_tpl-A02_0002.fits	LAMP,AFC    	78684.245	2018-06-01T09:54:57
-        r.XSHOO.2018-06-01T09:53:43.577_tpl-A01_0000.fits	LAMP,AFC    	78684.245	2018-06-01T09:54:42
-        r.XSHOO.2018-06-01T09:53:44.797_tpl-A01_0002.fits	LAMP,AFC    	78684.245	2018-06-01T09:54:48
-        r.XSHOO.2018-06-01T09:53:43.577_tpl-A03_0001.fits	LAMP,AFC    	78684.245	2018-06-01T09:56:22
-        r.XSHOO.2018-06-01T09:53:44.797_tpl-A01_0001.fits	LAMP,AFC    	78684.245	2018-06-01T09:54:48
-        r.XSHOO.2018-06-01T09:53:45.055_tpl-A01_0001.fits	LAMP,AFC    	78685.247	2018-06-01T09:54:49
-        r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0001.fits	STD,TELLURIC	79056.26 	2018-06-01T10:03:01
-        r.XSHOO.2018-06-01T09:53:43.577_tpl-A03_0000.fits	LAMP,AFC    	78684.245	2018-06-01T09:56:22
-        r.XSHOO.2018-06-01T09:53:45.055_tpl-A01_0000.fits	LAMP,AFC    	78685.247	2018-06-01T09:54:49
-        r.XSHOO.2018-06-01T09:53:43.577_tpl-A03_0002.fits	LAMP,AFC    	78684.245	2018-06-01T09:56:22
-        r.XSHOO.2018-06-01T09:53:44.797_tpl-A02_0001.fits	LAMP,AFC    	78684.245	2018-06-01T09:55:03
-        r.XSHOO.2018-06-01T09:53:44.797_tpl-A03_0001.fits	LAMP,AFC    	78684.245	2018-06-01T09:56:28
-        r.XSHOO.2018-06-01T09:53:45.055_tpl-A03_0000.fits	LAMP,AFC    	78685.247	2018-06-01T09:56:30
-        r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0003.fits	STD,TELLURIC	79056.26 	2018-06-01T10:03:01
-        r.XSHOO.2018-06-01T09:53:43.577_tpl-A02_0000.fits	LAMP,AFC    	78684.245	2018-06-01T09:54:57
-        r.XSHOO.2018-06-01T09:53:45.055_tpl-A03_0002.fits	LAMP,AFC    	78685.247	2018-06-01T09:56:30
-        r.XSHOO.2018-06-01T09:53:44.797_tpl-A02_0000.fits	LAMP,AFC    	78684.245	2018-06-01T09:55:03
-        r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0005.fits	STD,TELLURIC	79056.26 	2018-06-01T10:03:02
-        r.XSHOO.2018-06-01T09:53:44.797_tpl-A01_0000.fits	LAMP,AFC    	78684.245	2018-06-01T09:54:48
-        r.XSHOO.2018-06-01T09:53:43.577_tpl-A01_0002.fits	LAMP,AFC    	78684.245	2018-06-01T09:54:42
-        r.XSHOO.2018-06-01T09:53:44.797_tpl-A02_0002.fits	LAMP,AFC    	78684.245	2018-06-01T09:55:03
+	[DFITSPY INFO]> 34 fits files will be considered 
+
+	filename                                         	OBJECT      	LST      	ESO OBS ID
+	-------------------------------------------------	------------	---------	----------
+	r.XSHOO.2018-06-01T09:53:43.577_tpl-A01_0000.fits	LAMP,AFC    	78684.245	2025011   
+	r.XSHOO.2018-06-01T09:53:43.577_tpl-A01_0001.fits	LAMP,AFC    	78684.245	2025011   
+	r.XSHOO.2018-06-01T09:53:43.577_tpl-A01_0002.fits	LAMP,AFC    	78684.245	2025011   
+	r.XSHOO.2018-06-01T09:53:43.577_tpl-A02_0000.fits	LAMP,AFC    	78684.245	2025011   
+	r.XSHOO.2018-06-01T09:53:43.577_tpl-A02_0001.fits	LAMP,AFC    	78684.245	2025011   
+	r.XSHOO.2018-06-01T09:53:43.577_tpl-A02_0002.fits	LAMP,AFC    	78684.245	2025011   
+	r.XSHOO.2018-06-01T09:53:43.577_tpl-A03_0000.fits	LAMP,AFC    	78684.245	2025011   
+	r.XSHOO.2018-06-01T09:53:43.577_tpl-A03_0001.fits	LAMP,AFC    	78684.245	2025011   
+	r.XSHOO.2018-06-01T09:53:43.577_tpl-A03_0002.fits	LAMP,AFC    	78684.245	2025011   
+	r.XSHOO.2018-06-01T09:53:44.797_tpl-A01_0000.fits	LAMP,AFC    	78684.245	2025011   
+	r.XSHOO.2018-06-01T09:53:44.797_tpl-A01_0001.fits	LAMP,AFC    	78684.245	2025011   
+	r.XSHOO.2018-06-01T09:53:44.797_tpl-A01_0002.fits	LAMP,AFC    	78684.245	2025011   
+	r.XSHOO.2018-06-01T09:53:44.797_tpl-A02_0000.fits	LAMP,AFC    	78684.245	2025011   
+	r.XSHOO.2018-06-01T09:53:44.797_tpl-A02_0001.fits	LAMP,AFC    	78684.245	2025011   
+	r.XSHOO.2018-06-01T09:53:44.797_tpl-A02_0002.fits	LAMP,AFC    	78684.245	2025011   
+	r.XSHOO.2018-06-01T09:53:44.797_tpl-A03_0000.fits	LAMP,AFC    	78684.245	2025011   
+	r.XSHOO.2018-06-01T09:53:44.797_tpl-A03_0001.fits	LAMP,AFC    	78684.245	2025011   
+	r.XSHOO.2018-06-01T09:53:44.797_tpl-A03_0002.fits	LAMP,AFC    	78684.245	2025011   
+	r.XSHOO.2018-06-01T09:53:45.055_tpl-A01_0000.fits	LAMP,AFC    	78685.247	2025011   
+	r.XSHOO.2018-06-01T09:53:45.055_tpl-A01_0001.fits	LAMP,AFC    	78685.247	2025011   
+	r.XSHOO.2018-06-01T09:53:45.055_tpl-A01_0002.fits	LAMP,AFC    	78685.247	2025011   
+	r.XSHOO.2018-06-01T09:53:45.055_tpl-A02_0000.fits	LAMP,AFC    	78685.247	2025011   
+	r.XSHOO.2018-06-01T09:53:45.055_tpl-A02_0001.fits	LAMP,AFC    	78685.247	2025011   
+	r.XSHOO.2018-06-01T09:53:45.055_tpl-A02_0002.fits	LAMP,AFC    	78685.247	2025011   
+	r.XSHOO.2018-06-01T09:53:45.055_tpl-A03_0000.fits	LAMP,AFC    	78685.247	2025011   
+	r.XSHOO.2018-06-01T09:53:45.055_tpl-A03_0001.fits	LAMP,AFC    	78685.247	2025011   
+	r.XSHOO.2018-06-01T09:53:45.055_tpl-A03_0002.fits	LAMP,AFC    	78685.247	2025011   
+	r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0000.fits	STD,TELLURIC	79056.26 	2025011   
+	r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0001.fits	STD,TELLURIC	79056.26 	2025011   
+	r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0002.fits	STD,TELLURIC	79056.26 	2025011   
+	r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0003.fits	STD,TELLURIC	79056.26 	2025011   
+	r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0004.fits	STD,TELLURIC	79056.26 	2025011   
+	r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0005.fits	STD,TELLURIC	79056.26 	2025011   
+	r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0006.fits	HD 205828   	79056.26 	2025011   
+
+	[DFITSPY INFO]> 34 files used in output 
 
 
-First dfitspy gives you the number of files that was considered with the command. Then it displays the header always starting with the filename and then all the keywords the user requires to be displayed. And finally it displays the list of all the filenames and fits header values. 
+First dfitspy gives you the number of files that was considered with the command, this number depends on what you give through the '-f' argument. Then it displays the header always starting with the filename and then all the keywords the user requires to be displayed. And It displays the list of all the filenames and fits header values. Finally it gives you the number of files in the list.
 
 GREPPING option
 ^^^^^^^^^^^^^^^
@@ -143,21 +145,23 @@ dfitspy offers you the possibility to display files with particular values that 
 
 Simple grepping
 ---------------
-Taking the same command as above, one might want to get only the files with LST = 79056.26. This is easily done using: **dfitspy -f * -k OBJECT,LST,DATE --dir Test_data/ --grep 79056.26**  and produce the output in terminal::
+Taking the same command as above, one might want to get only the files with LST = 79056.26. This is easily done using: **dfitspy -f Test_data/* -k OBJECT,LST,ESO.OBS.ID - -grep 79056.26**  and produce the output in terminal::
 
-        [command: dfitspy -f * -k OBJECT,LST,DATE --dir Test_data/ --grep 79056.26]
+        [command: dfitspy -f Test_data/* -k OBJECT,LST,ESO.OBS.ID --grep 79056.26]
         
-        [DFITSPY INFO]> 34 files found 
-         ----------------------------------- 
-        filename                                         	OBJECT      	LST     	DATE               
-        -------------------------------------------------	------------	--------	-------------------
-        r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0004.fits	STD,TELLURIC	79056.26	2018-06-01T10:03:01
-        r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0002.fits	STD,TELLURIC	79056.26	2018-06-01T10:03:01
-        r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0006.fits	HD 205828   	79056.26	2018-06-01T10:03:02
-        r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0000.fits	STD,TELLURIC	79056.26	2018-06-01T10:03:01
-        r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0001.fits	STD,TELLURIC	79056.26	2018-06-01T10:03:01
-        r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0003.fits	STD,TELLURIC	79056.26	2018-06-01T10:03:01
-        r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0005.fits	STD,TELLURIC	79056.26	2018-06-01T10:03:02
+        [DFITSPY INFO]> 34 fits files will be considered 
+
+	filename                                         	OBJECT      	LST     	ESO OBS ID
+	-------------------------------------------------	------------	--------	----------
+	r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0000.fits	STD,TELLURIC	79056.26	2025011   
+	r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0001.fits	STD,TELLURIC	79056.26	2025011   
+	r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0002.fits	STD,TELLURIC	79056.26	2025011   
+	r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0003.fits	STD,TELLURIC	79056.26	2025011   
+	r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0004.fits	STD,TELLURIC	79056.26	2025011   
+	r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0005.fits	STD,TELLURIC	79056.26	2025011   
+	r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0006.fits	HD 205828   	79056.26	2025011   
+
+	[DFITSPY INFO]> 7 files used in output
 
 
 
@@ -166,18 +170,20 @@ Multi grepping
 
 In the previous command we see that one file as a different OBJECT value as the other ones. If we want to remove it we must **add a grepping option** and take only files with OBJECT='STD,TELLURIC', like this::
 
-    [Command: dfitspy -f * -k OBJECT,LST,DATE --dir Test_data/ --grep 79056.26 --grep STD,TELLURIC]
+    	[Command: dfitspy -f Test_data/* -k OBJECT,LST,ESO.OBS.ID --grep 79056.26 --grep STD,TELLURIC]
 
-    [DFITSPY INFO]> 34 files found
-     -----------------------------------
-    filename                                         	OBJECT      	LST     	DATE
-    -------------------------------------------------	------------	--------	-------------------
-    r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0004.fits	STD,TELLURIC	79056.26	2018-06-01T10:03:01
-    r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0002.fits	STD,TELLURIC	79056.26	2018-06-01T10:03:01
-    r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0000.fits	STD,TELLURIC	79056.26	2018-06-01T10:03:01
-    r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0001.fits	STD,TELLURIC	79056.26	2018-06-01T10:03:01
-    r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0003.fits	STD,TELLURIC	79056.26	2018-06-01T10:03:01
-    r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0005.fits	STD,TELLURIC	79056.26	2018-06-01T10:03:02
+	[DFITSPY INFO]> 34 fits files will be considered 
+
+	filename                                         	OBJECT      	LST     	ESO OBS ID
+	-------------------------------------------------	------------	--------	----------
+	r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0000.fits	STD,TELLURIC	79056.26	2025011   
+	r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0001.fits	STD,TELLURIC	79056.26	2025011   
+	r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0002.fits	STD,TELLURIC	79056.26	2025011   
+	r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0003.fits	STD,TELLURIC	79056.26	2025011   
+	r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0004.fits	STD,TELLURIC	79056.26	2025011   
+	r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0005.fits	STD,TELLURIC	79056.26	2025011   
+
+	[DFITSPY INFO]> 6 files used in output
 
 
 Extra arguments
@@ -185,12 +191,11 @@ Extra arguments
 Few extra arguments can be used:
 
 * '- -test': This runs the tests (written with unittest library) of dfitspy. 
-* '- -dir': This changes the directory you want to analyse. By default it is the current working directory.
 * '- -list': **This must be used with the -file option described above**. It takes the first file given by '-file' and display a list of all the arguments in a 3 columns fashion. Example::
 
 
-    List of keywords in the first file
-    ----------------------------------
+    [DFITSPY INFO]>keywords in r.XSHOO.2018-06-01T09:53:43.577_tpl-A01_0000.fits 
+    --------------------------------------------------------------------------------
     SIMPLE                         | BITPIX                         | NAXIS                         
     EXTEND                         | COMMENT                        | DATE                          
     ORIGIN                         | TELESCOP                       | INSTRUME                      

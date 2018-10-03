@@ -50,7 +50,7 @@ def command_line(args):
     '''
 
     ##create parser object
-    parser = argparse.ArgumentParser(description='dfitspy, version %s, \
+    parser = argparse.ArgumentParser(description='dfitspy: dfits|fitsort in python, version %s, \
             Licence: GPL'%(info.__version__))
 
     mand = parser.add_argument_group("Mandatory arguments if you want to dfitsort your files")
@@ -61,9 +61,9 @@ def command_line(args):
 
 
     ###optional arguments
-    parser.add_argument('--dir', help='Directory where we search for files. \
-            If none given, the default directory is the one from where dfitspy \
-            is started.', default=os.getcwd())
+    #parser.add_argument('--dir', help='Directory where we search for files. \
+    #        If none given, the default directory is the one from where dfitspy \
+    #        is started.', default=os.getcwd())
     parser.add_argument('--list', help='List all keywords in a given file \
             (if a list of file is given the first one is used)', action='store_true')
     parser.add_argument('--grep', help='Restrain the files to the one with a given \
@@ -88,10 +88,8 @@ class interface_test(unittest.TestCase):
         The principle is that we send some argument configuration
         and see what the interface is giving back
         '''
-        options = command_line(['--dir', '/home', \
-                                '--grep', 'testobject',\
+        options = command_line(['--grep', 'testobject',\
                                 '--list', '--test'])
-        self.assertEqual(options.dir, '/home')
         self.assertEqual(options.grep, ['testobject'])
         self.assertEqual(options.list, True)
         self.assertEqual(options.test, True)

@@ -33,10 +33,7 @@ import unittest.mock
 
 ###third party
 import numpy
-
-###local import
-from . import _fitsio_wrap
-
+import fitsio._fitsio_wrap as _fitsio_wrap
 
 def read_fitsfile(thefile):
     '''
@@ -80,6 +77,7 @@ def read_fitsfile(thefile):
 
     ##and close the file
     FITS.close()
+
     return dict_values
 
 
