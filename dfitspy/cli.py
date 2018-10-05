@@ -69,9 +69,14 @@ def command_line(args):
     parser.add_argument('--grep', help='Restrain the files to the one with a given \
             value of a given parameter. It can be used multiple times with different values', \
             type=str, action='append')
-    parser.add_argument('--test', help='Start the testing of the program', action='store_true')
-    parser.add_argument('--version', help='Display the version of the program', action='store_true')
-    parser.add_argument('--docs', help='Diplay the online or local documentation program', action='store_true')
+    parser.add_argument('--save', help='Save the list of files into an ascii file',\
+            action='store_true')
+    parser.add_argument('--test', help='Start the testing of the program', \
+            action='store_true')
+    parser.add_argument('--version', help='Display the version of the program', \
+            action='store_true')
+    parser.add_argument('--docs', help='Diplay the online or local documentation program', \
+            action='store_true')
 
     ##create a group of arguments that are mandatory
     return parser.parse_args(args)

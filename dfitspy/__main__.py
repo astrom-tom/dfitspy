@@ -31,6 +31,7 @@ usage: dfitspy FILE.fits OBJECT
 import sys
 import os
 from subprocess import call
+import datetime
 
 
 ###local imports
@@ -105,7 +106,8 @@ def main():
         sys.exit()
 
     ##display number of files
-    print('\n\033[1m[DFITSPY INFO]> %s fits files will be considered \033[0;0m\n'%len(list_files))
+    print('\n\033[1m[DFITSPY INFO]> Current directory: %s \033[0;0m'%os.getcwd())
+    print('\033[1m[DFITSPY INFO]> %s fits files will be considered \033[0;0m\n'%len(list_files))
 
     ###get greeping from command line
     if args.grep:
@@ -128,6 +130,15 @@ def main():
 
     
     print('\n\033[1m[DFITSPY INFO]> %s files used in output \033[0;0m'%len(allvalues))
+    if args.save:
+        ###if we want to save the list of files into a file:
+        with open('dfitspy_file_list.txt', 'w') as f:
+            f.write('##file produced by dfitspy %s\n'%(datetime.datetime.now())) 
+            f.write('##Current directory: %s\n'%os.getcwd())
+            for i in  allvalues.keys():
+                f.write('%s\n'%i)    
+        if os.path.isfile('dfitspy_file_list.txt'): 
+            print('\033[1m[DFITSPY INFO]> File saved: dfitspy_file_list.txt \033[0;0m')
 
 
 if __name__ == "__main__":

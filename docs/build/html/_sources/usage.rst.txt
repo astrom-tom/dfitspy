@@ -29,29 +29,31 @@ You can start dfitspy from a terminal. dfitspy comes with a command line interfa
 
 This command will display the help of the program::
 
-      usage: dfitspy [-h] [-file [FILE [FILE ...]]] [-key KEY] [--list]
-               [--grep GREP] [--test]
+	usage: dfitspy [-h] [-file [FILE [FILE ...]]] [-key KEY] [--list]
+		       [--grep GREP] [--save] [--test] [--version] [--docs]
 
-      dfitspy: dfits|fitsort in python, version 18.10, Licence: GPL
+	dfitspy: dfits|fitsort in python, version 18.10.5, Licence: GPL
 
-      optional arguments:
-         -h, --help            show this help message and exit
-         --list                List all keywords in a given file (if a list of file
-                            is given the first one is used)
-         --grep GREP           Restrain the files to the one with a given value of a
-                            given parameter, Work ONLY for the first keyword
-         --test                Start the testing of the program
-         --version             Display the version of the program
-         --docs                Diplay the online or local documentation program
+	optional arguments:
+	  -h, --help            show this help message and exit
+	  --list                List all keywords in a given file (if a list of file
+		                is given the first one is used)
+	  --grep GREP           Restrain the files to the one with a given value of a
+		                given parameter. It can be used multiple times with
+		                different values
+	  --save                Save the list of files into an ascii file
+	  --test                Start the testing of the program
+	  --version             Display the version of the program
+	  --docs                Diplay the online or local documentation program
 
+	Mandatory arguments if you want to dfitsort your files:
+	  -file [FILE [FILE ...]]
+		                a file, a list of file separated by coma, *.fits is
+		                accepted, * as well, test* as well, testdir/test* as
+		                well
+	  -key KEY              Header keyword or list of header keywords (separated
+		                by coma)
 
-
-      Mandatory arguments:
-         -file [FILE [FILE ...]]
-                            a file, a list of file separated by coma, *.fits is
-                            accepted, * as well
-         -key KEY           Header keyword or list of header keywords (separated
-                            by coma)
 
 
 In details it means:
@@ -224,6 +226,19 @@ Few extra arguments can be used:
     ESO TEL AMBI WINDDIR           | ESO TEL AMBI WINDSP            | ESO TEL AZ                    
     ESO TEL CHOP ST                | ESO TEL DATE                   | ESO TEL DID                   
       
+* '- -save': This function save the list of files (without all the parameters) into a file called 'dfitspy_file_list.txt'. An example is given below::
+
+	
+	##file produced by dfitspy 2018-10-03 21:16:42.133299
+	##Current directory: /home/alien/Desktop/Test_data
+	r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0000.fits
+	r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0001.fits
+	r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0002.fits
+	r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0003.fits
+	r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0004.fits
+	r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0005.fits
+
+
 * '- -docs': Display in the web browser the documentation of the code. If you have a valid internet connection it will open the online documentation, if not it will open the local documentation.
 * '- -version': Display in terminal the current version of the software.
 

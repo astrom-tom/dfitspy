@@ -5,7 +5,6 @@ setup.py
 dfitspy/__info__.py
 dfitspy/__init__.py
 dfitspy/__main__.py
-dfitspy/_fitsio_wrap.cpython-36m-x86_64-linux-gnu.so
 dfitspy/cli.py
 dfitspy/display.py
 dfitspy/get_files_and_keys.py
@@ -48,6 +47,7 @@ dfitspy/docs/build/html/_static/comment-bright.png
 dfitspy/docs/build/html/_static/comment-close.png
 dfitspy/docs/build/html/_static/comment.png
 dfitspy/docs/build/html/_static/custom.css
+dfitspy/docs/build/html/_static/dfitspy_tr.png
 dfitspy/docs/build/html/_static/doctools.js
 dfitspy/docs/build/html/_static/documentation_options.js
 dfitspy/docs/build/html/_static/down-pressed.png
@@ -112,6 +112,7 @@ dfitspy/docs/source/.usage.rst.un~
 dfitspy/docs/source/.usage_module.rst.un~
 dfitspy/docs/source/conf.py
 dfitspy/docs/source/dfitspy.png
+dfitspy/docs/source/dfitspy_tr.png
 dfitspy/docs/source/index.rst
 dfitspy/docs/source/installation.rst
 dfitspy/docs/source/logo.png
