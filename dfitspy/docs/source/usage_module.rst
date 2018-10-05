@@ -79,40 +79,40 @@ This function takes two arguments. The first is the file argument and must be a 
 The easiest way is to analyse **all** the files in a directory::
 
     In [3]: listfiles = dfitspy.get_files(['all'],'Test_data/')
-	['/home/alien/Desktop/Test_data/r.XSHOO.2018-06-01T09:53:45.055_tpl-A02_0001.fits',
-	 '/home/alien/Desktop/Test_data/r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0004.fits',
-	 '/home/alien/Desktop/Test_data/r.XSHOO.2018-06-01T09:53:45.055_tpl-A01_0002.fits',
-	 '/home/alien/Desktop/Test_data/r.XSHOO.2018-06-01T09:53:43.577_tpl-A02_0001.fits',
-	 '/home/alien/Desktop/Test_data/r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0002.fits',
-	 '/home/alien/Desktop/Test_data/r.XSHOO.2018-06-01T09:53:45.055_tpl-A02_0000.fits',
-	 '/home/alien/Desktop/Test_data/r.XSHOO.2018-06-01T09:53:43.577_tpl-A01_0001.fits',
-	 '/home/alien/Desktop/Test_data/r.XSHOO.2018-06-01T09:53:44.797_tpl-A03_0002.fits',
-	 '/home/alien/Desktop/Test_data/r.XSHOO.2018-06-01T09:53:44.797_tpl-A03_0000.fits',
-	 '/home/alien/Desktop/Test_data/r.XSHOO.2018-06-01T09:53:45.055_tpl-A03_0001.fits',
-	 '/home/alien/Desktop/Test_data/r.XSHOO.2018-06-01T09:53:45.055_tpl-A02_0002.fits',
-	 '/home/alien/Desktop/Test_data/r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0006.fits',
-	 '/home/alien/Desktop/Test_data/r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0000.fits',
-	 '/home/alien/Desktop/Test_data/r.XSHOO.2018-06-01T09:53:43.577_tpl-A02_0002.fits',
-	 '/home/alien/Desktop/Test_data/r.XSHOO.2018-06-01T09:53:43.577_tpl-A01_0000.fits',
-	 '/home/alien/Desktop/Test_data/r.XSHOO.2018-06-01T09:53:44.797_tpl-A01_0002.fits',
-	 '/home/alien/Desktop/Test_data/r.XSHOO.2018-06-01T09:53:43.577_tpl-A03_0001.fits',
-	 '/home/alien/Desktop/Test_data/r.XSHOO.2018-06-01T09:53:44.797_tpl-A01_0001.fits',
-	 '/home/alien/Desktop/Test_data/r.XSHOO.2018-06-01T09:53:45.055_tpl-A01_0001.fits',
-	 '/home/alien/Desktop/Test_data/r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0001.fits',
-	 '/home/alien/Desktop/Test_data/r.XSHOO.2018-06-01T09:53:43.577_tpl-A03_0000.fits',
-	 '/home/alien/Desktop/Test_data/r.XSHOO.2018-06-01T09:53:45.055_tpl-A01_0000.fits',
-	 '/home/alien/Desktop/Test_data/r.XSHOO.2018-06-01T09:53:43.577_tpl-A03_0002.fits',
-	 '/home/alien/Desktop/Test_data/r.XSHOO.2018-06-01T09:53:44.797_tpl-A02_0001.fits',
-	 '/home/alien/Desktop/Test_data/r.XSHOO.2018-06-01T09:53:44.797_tpl-A03_0001.fits',
-	 '/home/alien/Desktop/Test_data/r.XSHOO.2018-06-01T09:53:45.055_tpl-A03_0000.fits',
-	 '/home/alien/Desktop/Test_data/r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0003.fits',
-	 '/home/alien/Desktop/Test_data/r.XSHOO.2018-06-01T09:53:43.577_tpl-A02_0000.fits',
-	 '/home/alien/Desktop/Test_data/r.XSHOO.2018-06-01T09:53:45.055_tpl-A03_0002.fits',
-	 '/home/alien/Desktop/Test_data/r.XSHOO.2018-06-01T09:53:44.797_tpl-A02_0000.fits',
-	 '/home/alien/Desktop/Test_data/r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0005.fits',
-	 '/home/alien/Desktop/Test_data/r.XSHOO.2018-06-01T09:53:44.797_tpl-A01_0000.fits',
-	 '/home/alien/Desktop/Test_data/r.XSHOO.2018-06-01T09:53:43.577_tpl-A01_0002.fits',
-	 '/home/alien/Desktop/Test_data/r.XSHOO.2018-06-01T09:53:44.797_tpl-A02_0002.fits']
+	['/home/alien/Desktop/Test_data/r.XSHOO.2099-14-59T09:53:45.055_tpl-A02_0001.fits',
+	 '/home/alien/Desktop/Test_data/r.XSHOO.2099-14-59T09:59:57.509_tpl-A01_0004.fits',
+	 '/home/alien/Desktop/Test_data/r.XSHOO.2099-14-59T09:53:45.055_tpl-A01_0002.fits',
+	 '/home/alien/Desktop/Test_data/r.XSHOO.2099-14-59T09:53:43.577_tpl-A02_0001.fits',
+	 '/home/alien/Desktop/Test_data/r.XSHOO.2099-14-59T09:59:57.509_tpl-A01_0002.fits',
+	 '/home/alien/Desktop/Test_data/r.XSHOO.2099-14-59T09:53:45.055_tpl-A02_0000.fits',
+	 '/home/alien/Desktop/Test_data/r.XSHOO.2099-14-59T09:53:43.577_tpl-A01_0001.fits',
+	 '/home/alien/Desktop/Test_data/r.XSHOO.2099-14-59T09:53:44.797_tpl-A03_0002.fits',
+	 '/home/alien/Desktop/Test_data/r.XSHOO.2099-14-59T09:53:44.797_tpl-A03_0000.fits',
+	 '/home/alien/Desktop/Test_data/r.XSHOO.2099-14-59T09:53:45.055_tpl-A03_0001.fits',
+	 '/home/alien/Desktop/Test_data/r.XSHOO.2099-14-59T09:53:45.055_tpl-A02_0002.fits',
+	 '/home/alien/Desktop/Test_data/r.XSHOO.2099-14-59T09:59:57.509_tpl-A01_0006.fits',
+	 '/home/alien/Desktop/Test_data/r.XSHOO.2099-14-59T09:59:57.509_tpl-A01_0000.fits',
+	 '/home/alien/Desktop/Test_data/r.XSHOO.2099-14-59T09:53:43.577_tpl-A02_0002.fits',
+	 '/home/alien/Desktop/Test_data/r.XSHOO.2099-14-59T09:53:43.577_tpl-A01_0000.fits',
+	 '/home/alien/Desktop/Test_data/r.XSHOO.2099-14-59T09:53:44.797_tpl-A01_0002.fits',
+	 '/home/alien/Desktop/Test_data/r.XSHOO.2099-14-59T09:53:43.577_tpl-A03_0001.fits',
+	 '/home/alien/Desktop/Test_data/r.XSHOO.2099-14-59T09:53:44.797_tpl-A01_0001.fits',
+	 '/home/alien/Desktop/Test_data/r.XSHOO.2099-14-59T09:53:45.055_tpl-A01_0001.fits',
+	 '/home/alien/Desktop/Test_data/r.XSHOO.2099-14-59T09:59:57.509_tpl-A01_0001.fits',
+	 '/home/alien/Desktop/Test_data/r.XSHOO.2099-14-59T09:53:43.577_tpl-A03_0000.fits',
+	 '/home/alien/Desktop/Test_data/r.XSHOO.2099-14-59T09:53:45.055_tpl-A01_0000.fits',
+	 '/home/alien/Desktop/Test_data/r.XSHOO.2099-14-59T09:53:43.577_tpl-A03_0002.fits',
+	 '/home/alien/Desktop/Test_data/r.XSHOO.2099-14-59T09:53:44.797_tpl-A02_0001.fits',
+	 '/home/alien/Desktop/Test_data/r.XSHOO.2099-14-59T09:53:44.797_tpl-A03_0001.fits',
+	 '/home/alien/Desktop/Test_data/r.XSHOO.2099-14-59T09:53:45.055_tpl-A03_0000.fits',
+	 '/home/alien/Desktop/Test_data/r.XSHOO.2099-14-59T09:59:57.509_tpl-A01_0003.fits',
+	 '/home/alien/Desktop/Test_data/r.XSHOO.2099-14-59T09:53:43.577_tpl-A02_0000.fits',
+	 '/home/alien/Desktop/Test_data/r.XSHOO.2099-14-59T09:53:45.055_tpl-A03_0002.fits',
+	 '/home/alien/Desktop/Test_data/r.XSHOO.2099-14-59T09:53:44.797_tpl-A02_0000.fits',
+	 '/home/alien/Desktop/Test_data/r.XSHOO.2099-14-59T09:59:57.509_tpl-A01_0005.fits',
+	 '/home/alien/Desktop/Test_data/r.XSHOO.2099-14-59T09:53:44.797_tpl-A01_0000.fits',
+	 '/home/alien/Desktop/Test_data/r.XSHOO.2099-14-59T09:53:43.577_tpl-A01_0002.fits',
+	 '/home/alien/Desktop/Test_data/r.XSHOO.2099-14-59T09:53:44.797_tpl-A02_0002.fits']
 
 You would get the same results using::
 
@@ -233,36 +233,36 @@ This function takes as argument the list of file and the list of parameter and r
     In [10]: fitsort = dfitspy.dfitsort(listfiles, listkeys)
 
     In [11]: fitsort
-    {'r.XSHOO.2018-06-01T09:53:45.055_tpl-A02_0001.fits': {'OBJECT': 'LAMP,AFC',
+    {'r.XSHOO.2099-14-59T09:53:45.055_tpl-A02_0001.fits': {'OBJECT': 'LAMP,AFC',
       'LST': '78685.247',
-      'DATE': '2018-06-01T09:55:04'},
-     'r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0004.fits': {'OBJECT': 'STD,TELLURIC',
+      'DATE': '2099-14-59T09:55:04'},
+     'r.XSHOO.2099-14-59T09:59:57.509_tpl-A01_0004.fits': {'OBJECT': 'STD,TELLURIC',
       'LST': '79056.26',
-      'DATE': '2018-06-01T10:03:01'},
-     'r.XSHOO.2018-06-01T09:53:45.055_tpl-A01_0002.fits': {'OBJECT': 'LAMP,AFC',
+      'DATE': '2099-14-59T10:03:01'},
+     'r.XSHOO.2099-14-59T09:53:45.055_tpl-A01_0002.fits': {'OBJECT': 'LAMP,AFC',
       'LST': '78685.247',
-      'DATE': '2018-06-01T09:54:49'},
-     'r.XSHOO.2018-06-01T09:53:45.055_tpl-A03_0002.fits': {'OBJECT': 'LAMP,AFC',
+      'DATE': '2099-14-59T09:54:49'},
+     'r.XSHOO.2099-14-59T09:53:45.055_tpl-A03_0002.fits': {'OBJECT': 'LAMP,AFC',
       'LST': '78685.247',
-      'DATE': '2018-06-01T09:56:30'},
-     'r.XSHOO.2018-06-01T09:53:44.797_tpl-A02_0000.fits': {'OBJECT': 'LAMP,AFC',
+      'DATE': '2099-14-59T09:56:30'},
+     'r.XSHOO.2099-14-59T09:53:44.797_tpl-A02_0000.fits': {'OBJECT': 'LAMP,AFC',
       'LST': '78684.245',
-      'DATE': '2018-06-01T09:55:03'},
-     'r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0005.fits': {'OBJECT': 'STD,TELLURIC',
+      'DATE': '2099-14-59T09:55:03'},
+     'r.XSHOO.2099-14-59T09:59:57.509_tpl-A01_0005.fits': {'OBJECT': 'STD,TELLURIC',
       'LST': '79056.26',
-      'DATE': '2018-06-01T10:03:02'},
+      'DATE': '2099-14-59T10:03:02'},
       .
       .
       .
-     'r.XSHOO.2018-06-01T09:53:44.797_tpl-A01_0000.fits': {'OBJECT': 'LAMP,AFC',
+     'r.XSHOO.2099-14-59T09:53:44.797_tpl-A01_0000.fits': {'OBJECT': 'LAMP,AFC',
       'LST': '78684.245',
-      'DATE': '2018-06-01T09:54:48'},
-     'r.XSHOO.2018-06-01T09:53:43.577_tpl-A01_0002.fits': {'OBJECT': 'LAMP,AFC',
+      'DATE': '2099-14-59T09:54:48'},
+     'r.XSHOO.2099-14-59T09:53:43.577_tpl-A01_0002.fits': {'OBJECT': 'LAMP,AFC',
       'LST': '78684.245',
-      'DATE': '2018-06-01T09:54:42'},
-     'r.XSHOO.2018-06-01T09:53:44.797_tpl-A02_0002.fits': {'OBJECT': 'LAMP,AFC',
+      'DATE': '2099-14-59T09:54:42'},
+     'r.XSHOO.2099-14-59T09:53:44.797_tpl-A02_0002.fits': {'OBJECT': 'LAMP,AFC',
       'LST': '78684.245',
-      'DATE': '2018-06-01T09:55:03'}}
+      'DATE': '2099-14-59T09:55:03'}}
 
 you can display everything in a nice way using the *display_final* function::
 
@@ -270,40 +270,40 @@ you can display everything in a nice way using the *display_final* function::
 
     filename                                         	OBJECT      	LST      	DATE               
     -------------------------------------------------	------------	---------	-------------------
-    r.XSHOO.2018-06-01T09:53:45.055_tpl-A02_0001.fits	LAMP,AFC    	78685.247	2018-06-01T09:55:04
-    r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0004.fits	STD,TELLURIC	79056.26 	2018-06-01T10:03:01
-    r.XSHOO.2018-06-01T09:53:45.055_tpl-A01_0002.fits	LAMP,AFC    	78685.247	2018-06-01T09:54:49
-    r.XSHOO.2018-06-01T09:53:43.577_tpl-A02_0001.fits	LAMP,AFC    	78684.245	2018-06-01T09:54:57
-    r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0002.fits	STD,TELLURIC	79056.26 	2018-06-01T10:03:01
-    r.XSHOO.2018-06-01T09:53:45.055_tpl-A02_0000.fits	LAMP,AFC    	78685.247	2018-06-01T09:55:04
-    r.XSHOO.2018-06-01T09:53:43.577_tpl-A01_0001.fits	LAMP,AFC    	78684.245	2018-06-01T09:54:42
-    r.XSHOO.2018-06-01T09:53:44.797_tpl-A03_0002.fits	LAMP,AFC    	78684.245	2018-06-01T09:56:28
-    r.XSHOO.2018-06-01T09:53:44.797_tpl-A03_0000.fits	LAMP,AFC    	78684.245	2018-06-01T09:56:28
-    r.XSHOO.2018-06-01T09:53:45.055_tpl-A03_0001.fits	LAMP,AFC    	78685.247	2018-06-01T09:56:30
-    r.XSHOO.2018-06-01T09:53:45.055_tpl-A02_0002.fits	LAMP,AFC    	78685.247	2018-06-01T09:55:04
-    r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0006.fits	HD 205828   	79056.26 	2018-06-01T10:03:02
-    r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0000.fits	STD,TELLURIC	79056.26 	2018-06-01T10:03:01
-    r.XSHOO.2018-06-01T09:53:43.577_tpl-A02_0002.fits	LAMP,AFC    	78684.245	2018-06-01T09:54:57
-    r.XSHOO.2018-06-01T09:53:43.577_tpl-A01_0000.fits	LAMP,AFC    	78684.245	2018-06-01T09:54:42
-    r.XSHOO.2018-06-01T09:53:44.797_tpl-A01_0002.fits	LAMP,AFC    	78684.245	2018-06-01T09:54:48
-    r.XSHOO.2018-06-01T09:53:43.577_tpl-A03_0001.fits	LAMP,AFC    	78684.245	2018-06-01T09:56:22
-    r.XSHOO.2018-06-01T09:53:44.797_tpl-A01_0001.fits	LAMP,AFC    	78684.245	2018-06-01T09:54:48
-    r.XSHOO.2018-06-01T09:53:45.055_tpl-A01_0001.fits	LAMP,AFC    	78685.247	2018-06-01T09:54:49
-    r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0001.fits	STD,TELLURIC	79056.26 	2018-06-01T10:03:01
-    r.XSHOO.2018-06-01T09:53:43.577_tpl-A03_0000.fits	LAMP,AFC    	78684.245	2018-06-01T09:56:22
-    r.XSHOO.2018-06-01T09:53:45.055_tpl-A01_0000.fits	LAMP,AFC    	78685.247	2018-06-01T09:54:49
-    r.XSHOO.2018-06-01T09:53:43.577_tpl-A03_0002.fits	LAMP,AFC    	78684.245	2018-06-01T09:56:22
-    r.XSHOO.2018-06-01T09:53:44.797_tpl-A02_0001.fits	LAMP,AFC    	78684.245	2018-06-01T09:55:03
-    r.XSHOO.2018-06-01T09:53:44.797_tpl-A03_0001.fits	LAMP,AFC    	78684.245	2018-06-01T09:56:28
-    r.XSHOO.2018-06-01T09:53:45.055_tpl-A03_0000.fits	LAMP,AFC    	78685.247	2018-06-01T09:56:30
-    r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0003.fits	STD,TELLURIC	79056.26 	2018-06-01T10:03:01
-    r.XSHOO.2018-06-01T09:53:43.577_tpl-A02_0000.fits	LAMP,AFC    	78684.245	2018-06-01T09:54:57
-    r.XSHOO.2018-06-01T09:53:45.055_tpl-A03_0002.fits	LAMP,AFC    	78685.247	2018-06-01T09:56:30
-    r.XSHOO.2018-06-01T09:53:44.797_tpl-A02_0000.fits	LAMP,AFC    	78684.245	2018-06-01T09:55:03
-    r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0005.fits	STD,TELLURIC	79056.26 	2018-06-01T10:03:02
-    r.XSHOO.2018-06-01T09:53:44.797_tpl-A01_0000.fits	LAMP,AFC    	78684.245	2018-06-01T09:54:48
-    r.XSHOO.2018-06-01T09:53:43.577_tpl-A01_0002.fits	LAMP,AFC    	78684.245	2018-06-01T09:54:42
-    r.XSHOO.2018-06-01T09:53:44.797_tpl-A02_0002.fits	LAMP,AFC    	78684.245	2018-06-01T09:55:03
+    r.XSHOO.2099-14-59T09:53:45.055_tpl-A02_0001.fits	LAMP,AFC    	78685.247	2099-14-59T09:55:04
+    r.XSHOO.2099-14-59T09:59:57.509_tpl-A01_0004.fits	STD,TELLURIC	79056.26 	2099-14-59T10:03:01
+    r.XSHOO.2099-14-59T09:53:45.055_tpl-A01_0002.fits	LAMP,AFC    	78685.247	2099-14-59T09:54:49
+    r.XSHOO.2099-14-59T09:53:43.577_tpl-A02_0001.fits	LAMP,AFC    	78684.245	2099-14-59T09:54:57
+    r.XSHOO.2099-14-59T09:59:57.509_tpl-A01_0002.fits	STD,TELLURIC	79056.26 	2099-14-59T10:03:01
+    r.XSHOO.2099-14-59T09:53:45.055_tpl-A02_0000.fits	LAMP,AFC    	78685.247	2099-14-59T09:55:04
+    r.XSHOO.2099-14-59T09:53:43.577_tpl-A01_0001.fits	LAMP,AFC    	78684.245	2099-14-59T09:54:42
+    r.XSHOO.2099-14-59T09:53:44.797_tpl-A03_0002.fits	LAMP,AFC    	78684.245	2099-14-59T09:56:28
+    r.XSHOO.2099-14-59T09:53:44.797_tpl-A03_0000.fits	LAMP,AFC    	78684.245	2099-14-59T09:56:28
+    r.XSHOO.2099-14-59T09:53:45.055_tpl-A03_0001.fits	LAMP,AFC    	78685.247	2099-14-59T09:56:30
+    r.XSHOO.2099-14-59T09:53:45.055_tpl-A02_0002.fits	LAMP,AFC    	78685.247	2099-14-59T09:55:04
+    r.XSHOO.2099-14-59T09:59:57.509_tpl-A01_0006.fits	HD 205828   	79056.26 	2099-14-59T10:03:02
+    r.XSHOO.2099-14-59T09:59:57.509_tpl-A01_0000.fits	STD,TELLURIC	79056.26 	2099-14-59T10:03:01
+    r.XSHOO.2099-14-59T09:53:43.577_tpl-A02_0002.fits	LAMP,AFC    	78684.245	2099-14-59T09:54:57
+    r.XSHOO.2099-14-59T09:53:43.577_tpl-A01_0000.fits	LAMP,AFC    	78684.245	2099-14-59T09:54:42
+    r.XSHOO.2099-14-59T09:53:44.797_tpl-A01_0002.fits	LAMP,AFC    	78684.245	2099-14-59T09:54:48
+    r.XSHOO.2099-14-59T09:53:43.577_tpl-A03_0001.fits	LAMP,AFC    	78684.245	2099-14-59T09:56:22
+    r.XSHOO.2099-14-59T09:53:44.797_tpl-A01_0001.fits	LAMP,AFC    	78684.245	2099-14-59T09:54:48
+    r.XSHOO.2099-14-59T09:53:45.055_tpl-A01_0001.fits	LAMP,AFC    	78685.247	2099-14-59T09:54:49
+    r.XSHOO.2099-14-59T09:59:57.509_tpl-A01_0001.fits	STD,TELLURIC	79056.26 	2099-14-59T10:03:01
+    r.XSHOO.2099-14-59T09:53:43.577_tpl-A03_0000.fits	LAMP,AFC    	78684.245	2099-14-59T09:56:22
+    r.XSHOO.2099-14-59T09:53:45.055_tpl-A01_0000.fits	LAMP,AFC    	78685.247	2099-14-59T09:54:49
+    r.XSHOO.2099-14-59T09:53:43.577_tpl-A03_0002.fits	LAMP,AFC    	78684.245	2099-14-59T09:56:22
+    r.XSHOO.2099-14-59T09:53:44.797_tpl-A02_0001.fits	LAMP,AFC    	78684.245	2099-14-59T09:55:03
+    r.XSHOO.2099-14-59T09:53:44.797_tpl-A03_0001.fits	LAMP,AFC    	78684.245	2099-14-59T09:56:28
+    r.XSHOO.2099-14-59T09:53:45.055_tpl-A03_0000.fits	LAMP,AFC    	78685.247	2099-14-59T09:56:30
+    r.XSHOO.2099-14-59T09:59:57.509_tpl-A01_0003.fits	STD,TELLURIC	79056.26 	2099-14-59T10:03:01
+    r.XSHOO.2099-14-59T09:53:43.577_tpl-A02_0000.fits	LAMP,AFC    	78684.245	2099-14-59T09:54:57
+    r.XSHOO.2099-14-59T09:53:45.055_tpl-A03_0002.fits	LAMP,AFC    	78685.247	2099-14-59T09:56:30
+    r.XSHOO.2099-14-59T09:53:44.797_tpl-A02_0000.fits	LAMP,AFC    	78684.245	2099-14-59T09:55:03
+    r.XSHOO.2099-14-59T09:59:57.509_tpl-A01_0005.fits	STD,TELLURIC	79056.26 	2099-14-59T10:03:02
+    r.XSHOO.2099-14-59T09:53:44.797_tpl-A01_0000.fits	LAMP,AFC    	78684.245	2099-14-59T09:54:48
+    r.XSHOO.2099-14-59T09:53:43.577_tpl-A01_0002.fits	LAMP,AFC    	78684.245	2099-14-59T09:54:42
+    r.XSHOO.2099-14-59T09:53:44.797_tpl-A02_0002.fits	LAMP,AFC    	78684.245	2099-14-59T09:55:03
 
 
 4 - Grepping
@@ -318,13 +318,13 @@ By default it is set to *None* but you can give a *grepping value* (**in a list*
 
     filename                                         	OBJECT      	LST     	DATE               
     -------------------------------------------------	------------	--------	-------------------
-    r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0004.fits	STD,TELLURIC	79056.26	2018-06-01T10:03:01
-    r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0002.fits	STD,TELLURIC	79056.26	2018-06-01T10:03:01
-    r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0006.fits	HD 205828   	79056.26	2018-06-01T10:03:02
-    r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0000.fits	STD,TELLURIC	79056.26	2018-06-01T10:03:01
-    r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0001.fits	STD,TELLURIC	79056.26	2018-06-01T10:03:01
-    r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0003.fits	STD,TELLURIC	79056.26	2018-06-01T10:03:01
-    r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0005.fits	STD,TELLURIC	79056.26	2018-06-01T10:03:02
+    r.XSHOO.2099-14-59T09:59:57.509_tpl-A01_0004.fits	STD,TELLURIC	79056.26	2099-14-59T10:03:01
+    r.XSHOO.2099-14-59T09:59:57.509_tpl-A01_0002.fits	STD,TELLURIC	79056.26	2099-14-59T10:03:01
+    r.XSHOO.2099-14-59T09:59:57.509_tpl-A01_0006.fits	HD 205828   	79056.26	2099-14-59T10:03:02
+    r.XSHOO.2099-14-59T09:59:57.509_tpl-A01_0000.fits	STD,TELLURIC	79056.26	2099-14-59T10:03:01
+    r.XSHOO.2099-14-59T09:59:57.509_tpl-A01_0001.fits	STD,TELLURIC	79056.26	2099-14-59T10:03:01
+    r.XSHOO.2099-14-59T09:59:57.509_tpl-A01_0003.fits	STD,TELLURIC	79056.26	2099-14-59T10:03:01
+    r.XSHOO.2099-14-59T09:59:57.509_tpl-A01_0005.fits	STD,TELLURIC	79056.26	2099-14-59T10:03:02
 
 
 If we want to remove the third line then we must add a grepping value of 'STD,TELLURIC'::
@@ -334,12 +334,12 @@ If we want to remove the third line then we must add a grepping value of 'STD,TE
 
     filename                                         	OBJECT      	LST     	DATE
     -------------------------------------------------	------------	--------	-------------------
-    r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0004.fits	STD,TELLURIC	79056.26	2018-06-01T10:03:01
-    r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0002.fits	STD,TELLURIC	79056.26	2018-06-01T10:03:01
-    r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0000.fits	STD,TELLURIC	79056.26	2018-06-01T10:03:01
-    r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0001.fits	STD,TELLURIC	79056.26	2018-06-01T10:03:01
-    r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0003.fits	STD,TELLURIC	79056.26	2018-06-01T10:03:01
-    r.XSHOO.2018-06-01T09:59:57.509_tpl-A01_0005.fits	STD,TELLURIC	79056.26	2018-06-01T10:03:02
+    r.XSHOO.2099-14-59T09:59:57.509_tpl-A01_0004.fits	STD,TELLURIC	79056.26	2099-14-59T10:03:01
+    r.XSHOO.2099-14-59T09:59:57.509_tpl-A01_0002.fits	STD,TELLURIC	79056.26	2099-14-59T10:03:01
+    r.XSHOO.2099-14-59T09:59:57.509_tpl-A01_0000.fits	STD,TELLURIC	79056.26	2099-14-59T10:03:01
+    r.XSHOO.2099-14-59T09:59:57.509_tpl-A01_0001.fits	STD,TELLURIC	79056.26	2099-14-59T10:03:01
+    r.XSHOO.2099-14-59T09:59:57.509_tpl-A01_0003.fits	STD,TELLURIC	79056.26	2099-14-59T10:03:01
+    r.XSHOO.2099-14-59T09:59:57.509_tpl-A01_0005.fits	STD,TELLURIC	79056.26	2099-14-59T10:03:02
 
 
 
