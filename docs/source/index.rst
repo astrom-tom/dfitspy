@@ -6,6 +6,22 @@
 Welcome to dfitspy's documentation!
 ===================================
 
+|Python36| |zenodo| |Licence|
+
+
+.. |Licence| image:: https://img.shields.io/badge/License-GPLv3-blue.svg
+      :target: http://perso.crans.org/besson/LICENSE.html
+
+.. |Opensource| image:: https://badges.frapsoft.com/os/v1/open-source.svg?v=103
+      :target: https://github.com/ellerbrock/open-source-badges/
+
+.. |zenodo| image:: https://zenodo.org/badge/150992970.svg
+   :target: https://zenodo.org/badge/latestdoi/150992970
+
+.. |Python36| image:: https://img.shields.io/badge/python-3.6-blue.svg
+.. _Python36: https://www.python.org/downloads/release/python-360/
+
+
 .. figure:: dfitspy.png
     :width: 750px
     :align: center
