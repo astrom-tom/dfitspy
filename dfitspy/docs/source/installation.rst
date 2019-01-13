@@ -31,7 +31,7 @@ Other libraries are used but they are all part of the standard python library. A
 The last dfitspy version is v18.10 and is available in the pypi test repository. To install it::
 
 
-     pip install --extra-index-url https://test.pypi.org/simple dfitspy --user
+     pip install -i https://test.pypi.org/simple/ dfitspy --user
 
 Using this command will allow you not to have to install any other package. Pip will install what is missing for you.
 
