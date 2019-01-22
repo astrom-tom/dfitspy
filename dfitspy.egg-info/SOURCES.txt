@@ -19,6 +19,7 @@ dfitspy.egg-info/top_level.txt
 dfitspy/docs/.nojekyll
 dfitspy/docs/Makefile
 dfitspy/docs/index.html
+dfitspy/docs/logo.txt
 dfitspy/docs/build/doctrees/environment.pickle
 dfitspy/docs/build/doctrees/index.doctree
 dfitspy/docs/build/doctrees/installation.doctree
@@ -55,6 +56,7 @@ dfitspy/docs/build/html/_static/down.png
 dfitspy/docs/build/html/_static/file.png
 dfitspy/docs/build/html/_static/jquery-3.2.1.js
 dfitspy/docs/build/html/_static/jquery.js
+dfitspy/docs/build/html/_static/language_data.js
 dfitspy/docs/build/html/_static/minus.png
 dfitspy/docs/build/html/_static/plus.png
 dfitspy/docs/build/html/_static/pygments.css
@@ -117,6 +119,7 @@ dfitspy/docs/source/index.rst
 dfitspy/docs/source/installation.rst
 dfitspy/docs/source/logo.png
 dfitspy/docs/source/logo.txt
+dfitspy/docs/source/result.jpg
 dfitspy/docs/source/usage.rst
 dfitspy/docs/source/usage_module.rst
 dfitspy/tests/pylintrc

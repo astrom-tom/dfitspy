@@ -159,8 +159,8 @@ class Testgetfiles(unittest.TestCase):
         ##we are expecting 4 files to be found
         ##for convinience here we just compare the file name (without paths)
         files = [os.path.basename(i) for i in files]
-        expected_files = ['test.fits', 'test5.fits', 'test2.fits', 'test4.fits', 'test3.fits']
-        self.assertEqual(files, expected_files)
+        expected_files = set(['test.fits', 'test5.fits', 'test2.fits', 'test4.fits', 'test3.fits'])
+        self.assertEqual(set(files), expected_files)
 
     def test_get_single_file_wrongname(self):
         '''

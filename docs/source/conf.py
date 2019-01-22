@@ -26,7 +26,7 @@ author = 'R. Thomas'
 # The short X.Y version
 version = '19.1'
 # The full version, including alpha/beta/rc tags
-release = '19.1.2'
+release = '19.1.3'
 
 
 # -- General configuration ---------------------------------------------------
