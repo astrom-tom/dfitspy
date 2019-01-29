@@ -29,7 +29,7 @@ Other libraries are used but they are all part of the standard python library. A
 1-from the python repository
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The last dfitspy version is v18.10 and is available in the pypi test repository. To install it::
+The last dfitspy version is v19.1.5 and is available in the pypi test repository. To install it::
 
 
      pip install -i https://test.pypi.org/simple/ dfitspy --user
