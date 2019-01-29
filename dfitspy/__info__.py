@@ -1,8 +1,8 @@
-__version__ = '19.1.3'
+__version__ = '19.1.5'
 __place__ = 'ESO Paranal observatory'
 __credits__ = "Romain Thomas"
 __license__ = "GNU GPL v3"
 __maintainer__ = "Romain Thomas"
 __email__ = "the.spartan.proj@gmail.com"
-__status__ = "Development"
+__status__ = "released"
 __website__ = "https://astrom-tom.github.io/dfitspy/build/html/index.html"

@@ -153,7 +153,7 @@ def keywords_view(keywords):
         print(line)
         i += 3
 
-class Testdisplay_list(unittest.TestCase):
+class Testdisplaylist(unittest.TestCase):
     '''
     Class that test the display of the list of header keywords
     '''
@@ -206,7 +206,7 @@ class Testdisplay_list(unittest.TestCase):
         self.displaylist(['A', 'B', 'C', 'D', 'E', 'F'], out)
 
 
-class Testdisplay_final(unittest.TestCase):
+class Testdisplayfinal(unittest.TestCase):
     '''
     Class that tests the final display function
     '''

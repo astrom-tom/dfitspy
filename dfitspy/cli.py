@@ -25,7 +25,6 @@ This file organises the command line interface (and nunit test it)
 
 
 ##standard library
-import os
 import argparse
 
 ##testing
@@ -83,7 +82,7 @@ def command_line(args):
 
 
 
-class interface_test(unittest.TestCase):
+class Interfacetest(unittest.TestCase):
     '''
     Class that define the test for the command line interface
     '''

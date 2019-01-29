@@ -8,7 +8,7 @@ dfitspy is a program aimed at reproducing the dfits program in python.
 the functions can be used inside another program or it can also be called
 as an executable
 
-usage: dfitspy FILE.fits OBJECT
+usage: dfitspy -f FILE.fits -k OBJECT
 
 @place: ESO - La Silla - Paranal Observatory
 @author(s): Romain Thomas
@@ -22,8 +22,8 @@ usage: dfitspy FILE.fits OBJECT
 @Last SciOps review [date + name]: 18-09-2018 - Romain Thomas
 @Usage: dfitspy FILE.fits HEADER_KEY_WORD, diftspy --help for more options
 @Licence: GPL
-@Testable:
-@Test data place (if any required):
+@Testable: Yes
+@Test data place (if any required): inside the package
 '''
 
 
@@ -43,13 +43,16 @@ from . import get_files_and_keys as get
 from . import tests
 
 def main():
+    '''
+    This is the main function of the program.
+    '''
     ###first we load the command line interface
     args = cli.command_line(sys.argv[1:])
 
     ###here we check if at least one argument was given:
-    if args.docs == False and args.file == None and args.grep == None and \
-            args.key == None and args.list == False and args.version == False and\
-            args.test == False:
+    if not args.docs and args.file is None and args.grep is None and \
+            args.key is None and not args.list and not args.version and\
+            not args.test:
         print('\033[1m[DFITSPY Error]> no argument passed ...exit\033[0;0m')
         sys.exit()
 
@@ -57,11 +60,11 @@ def main():
         print('version %s, Author: %s'%(info.__version__, info.__credits__))
         sys.exit()
 
-    if args.docs == True:
+    if args.docs is True:
         ##check if there is any internet connection
         try:
             socket.setdefaulttimeout(3)
-            socket.socket(socket.AF_INET, socket.SOCK_STREAM).connect(("8.8.8.8",53))
+            socket.socket(socket.AF_INET, socket.SOCK_STREAM).connect(("8.8.8.8", 53))
             url = info.__website__
         ##if not we use the local documentation distributed along the software
         except:
@@ -75,8 +78,8 @@ def main():
             exist = call(['which', i])
             if exist == 0:
                 if i == 'firefox':
-                   call([i, '--no-remote', url]) 
-                   sys.exit()
+                    call([i, '--no-remote', url])
+                    sys.exit()
                 ##if it does then we use it to load the documentation
                 else:
                     call([i, url])
@@ -128,16 +131,15 @@ def main():
     ##display them in terminal
     dp.dfitsort_view(allvalues)
 
-    
     print('\n\033[1m[DFITSPY INFO]> %s files used in output \033[0;0m'%len(allvalues))
     if args.save:
         ###if we want to save the list of files into a file:
-        with open('dfitspy_file_list.txt', 'w') as f:
-            f.write('##file produced by dfitspy %s\n'%(datetime.datetime.now())) 
-            f.write('##Current directory: %s\n'%os.getcwd())
-            for i in  allvalues.keys():
-                f.write('%s\n'%i)    
-        if os.path.isfile('dfitspy_file_list.txt'): 
+        with open('dfitspy_file_list.txt', 'w') as finalfile:
+            finalfile.write('##file produced by dfitspy %s\n'%(datetime.datetime.now()))
+            finalfile.write('##Current directory: %s\n'%os.getcwd())
+            for i in allvalues.keys():
+                finalfile.write('%s\n'%i)
+        if os.path.isfile('dfitspy_file_list.txt'):
             print('\033[1m[DFITSPY INFO]> File saved: dfitspy_file_list.txt \033[0;0m')
 
 

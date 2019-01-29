@@ -1,10 +1,9 @@
 ---
 title: 'dfitspy: a dfits|fitsort implementation in python'
 tags:
-  - Python
-  - astronomy
   - fitsfiles
-
+  - Python
+  - Astronomy
 authors:
   - name: Romain Thomas
     orcid: 0000-0001-8385-3276
@@ -12,8 +11,7 @@ authors:
 affiliations:
  - name: European Southern Observatory, Av. Alonsode Córdov a3107, 7630355 Vitacura, Santiago, Chile
    index: 1
-date: 25 January 2019
-bibliography: paper.bib
+date: 28 January 2019
 ---
 
 # Summary
@@ -33,12 +31,10 @@ program.
 dfitspy was design to port the dfits and fitsort capabilities to one of the most used 
 language used in science: python. It can be used as an executable (as the original 
 programs) but also, and it is its strenght, as a python module. Therefore fits file 
-can be selected in an efficient and fast way based on their metadata values.  
+can be selected in an efficient and fast way based on their metadata values inside 
+python programs  
 
 
-# Acknowledgements
-
- 
 
 # References
 Hanisch, R. J et al; 2001, A&A, 376, 359H

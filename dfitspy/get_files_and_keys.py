@@ -209,6 +209,6 @@ class Testgetfiles(unittest.TestCase):
                 'tests'))
         files = [os.path.basename(i) for i in files]
         self.assertEqual(files, inputlist)
- 
-if __name__ == "__main__": 
+
+if __name__ == "__main__":
     unittest.main(verbosity=3)

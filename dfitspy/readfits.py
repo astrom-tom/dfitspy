@@ -27,12 +27,10 @@ This file organises reads the fits files
 import os
 
 ##testing
-import io
 import unittest
 import unittest.mock
 
 ###third party
-import numpy
 import fitsio._fitsio_wrap as _fitsio_wrap
 
 def read_fitsfile(thefile):
@@ -139,7 +137,7 @@ def dfitsort(listfiles, listkeys, grepping=None):
     This function get for all files, the value of all the keywords that are passed
 
     example:  dfitsort([file1, file2], [key1, key2]) <-- no grep
-    example:  dfitsort([file1, file2], [key1, key2], ['match', 'match2']) <-- multi grep 
+    example:  dfitsort([file1, file2], [key1, key2], ['match', 'match2']) <-- multi grep
 
     Parameter
     ---------
@@ -149,8 +147,8 @@ def dfitsort(listfiles, listkeys, grepping=None):
                 list, of keywords (strings)
     grep
                 list of string,
-                if not false, the grepping valueS 
-                will be compared to all the values 
+                if not false, the grepping valueS
+                will be compared to all the values
                 of the keywords. If all grepping values appear in the
                 header of one file the file will be kept
     Return
@@ -166,14 +164,12 @@ def dfitsort(listfiles, listkeys, grepping=None):
     for file in listfiles:
         ##and create a key dictionnary
         key_dict = {}
-        save = 'ok'
         for key in listkeys:
             ###get the value
             value = keywords_in_file(file, key)
             ##append the value to the dictionnary
             key_dict[key] = value
 
-    
         ##do the greeping
         if not grepping:
             file_dict[os.path.basename(file)] = key_dict
@@ -188,7 +184,11 @@ def dfitsort(listfiles, listkeys, grepping=None):
 
 
 
-class Testkeyword_extraction(unittest.TestCase):
+class Testkeywordextraction(unittest.TestCase):
+    '''
+    This class is a testing class that deal with the extraction of the keywords inside
+    the fits files
+    '''
 
     def test_get_all_keyword(self):
         '''
@@ -201,14 +201,14 @@ class Testkeyword_extraction(unittest.TestCase):
         ###expected header keyword:
         expected = ['SIMPLE', 'BITPIX', 'NAXIS', \
                     'NAXIS1', 'NAXIS2', 'EXTEND', \
-                    'COMMENT', 'NAME', 'YEAR', 
+                    'COMMENT', 'NAME', 'YEAR',
                     'PLACE', 'AUTHOR']
         ###run the function
         keywords = get_all_keyword(filetest)
         ##compare the output and expected quantity
         self.assertEqual(keywords, expected)
-         
-    def test_get_value_True(self):
+
+    def test_get_value_true(self):
         '''
         This function test function that gets the value of the keyword in the file
         in the case the keyword exists
@@ -219,10 +219,10 @@ class Testkeyword_extraction(unittest.TestCase):
 
         ##get the year
         v = keywords_in_file(filetest, 'YEAR')
-        
+
         ##and compare expected value and output
         self.assertEqual(v, '2018')
-        
+
     def test_get_value_wrong(self):
         '''
         This function test function that gets the value of the keyword in the file
@@ -234,11 +234,14 @@ class Testkeyword_extraction(unittest.TestCase):
 
         ##get the year
         v = keywords_in_file(filetest, 'YEARS')
-        
+
         ##and compare expected value and output
         self.assertEqual(v, '')
 
     def test_get_value_no_grep(self):
+        '''
+        This function tests the extraction of keywords without grepping values
+        '''
         ##get 2 test files
         dir_path = os.path.dirname(os.path.realpath(__file__))
         filetest = os.path.join(dir_path, 'tests/test.fits')
@@ -248,11 +251,15 @@ class Testkeyword_extraction(unittest.TestCase):
         allvalues = dfitsort([filetest, filetest2], ['YEAR', 'NAME'], False)
 
         ##expected values:
-        expected = {'test.fits':{'YEAR':'2018','NAME':'dfitspy'}, 'test2.fits':{'YEAR':'2018', 'NAME':'dfitspy'}}
+        expected = {'test.fits':{'YEAR':'2018', 'NAME':'dfitspy'}, \
+                'test2.fits':{'YEAR':'2018', 'NAME':'dfitspy'}}
 
         self.assertEqual(expected, allvalues)
 
     def test_get_value_with_grep(self):
+        '''
+        Same as before but woth grepping
+        '''
         ##get 2 test files
         dir_path = os.path.dirname(os.path.realpath(__file__))
         filetest = os.path.join(dir_path, 'tests/test.fits')
@@ -262,12 +269,18 @@ class Testkeyword_extraction(unittest.TestCase):
         allvalues = dfitsort([filetest, filetest2], ['YEAR', 'NAME'], ['2018'])
 
         ##expected values (one out of the two files as year=2018)
-        expected = {'test.fits':{'YEAR':'2018','NAME':'dfitspy'}}
+        expected = {'test.fits':{'YEAR':'2018', 'NAME':'dfitspy'}}
 
         self.assertEqual(expected, allvalues)
 
-class Test_extractheader(unittest.TestCase):
+class Testextractheader(unittest.TestCase):
+    '''
+    This class tests the extraction of the header from the fits file
+    '''
     def test_readfile(self):
+        '''
+        This function test the header extraction
+        '''
         ##get the test file
         dir_path = os.path.dirname(os.path.realpath(__file__))
         filetest = os.path.join(dir_path, 'tests/test.fits')
@@ -278,4 +291,4 @@ class Test_extractheader(unittest.TestCase):
                 'NAXIS2': '1', 'EXTEND': 'T', 'COMMENT': '', \
                 'NAME': 'dfitspy ', 'YEAR': '2018    ', 'PLACE': 'ESO Paranal', \
                 'AUTHOR': 'Romain Thomas'}
-        self.assertEqual(dict_value, exp) 
+        self.assertEqual(dict_value, exp)
