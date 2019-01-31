@@ -15,7 +15,7 @@ date: 28 January 2019
 ---
 
 # Summary
-The fits format (Flexible Image Transport System) [Hanish:2001] is a widely used format to
+The fits format (Flexible Image Transport System) [Hanisch:2001] is a widely used format to
 store astronomical data. It has been developed in the late 1970 to reach its 
 final form almost two decades ago. It is able to store the data themselves as
 well as the metadata describing the data tables.
@@ -28,13 +28,11 @@ software/eclipse/eug/eug/node8.html). The main limitation is that they are stand
 programs useable only in a terminal. They can not be used natively inside a another 
 program. 
 
-dfitspy was design to port the dfits and fitsort capabilities to one of the most used 
+dfitspy was design to port the dfits and fitsort\footnote{https://www.eso.org/sci/software/eclipse/eug/eug/node8.html} capabilities to one of the most used 
 language used in science: python. It can be used as an executable (as the original 
 programs) but also, and it is its strenght, as a python module. Therefore fits file 
 can be selected in an efficient and fast way based on their metadata values inside 
 python programs  
 
 
-
 # References
-Hanisch, R. J et al; 2001, A&A, 376, 359H
