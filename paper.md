@@ -9,14 +9,14 @@ authors:
     orcid: 0000-0001-8385-3276
     affiliation: 1
 affiliations:
- - name: European Southern Observatory, Av. Alonsode Córdov a3107, 7630355 Vitacura, Santiago, Chile
+ - name: European Southern Observatory, Av. Alonso de Córdoa 3107, 7630355 Vitacura, Santiago, Chile
    index: 1
 date: 28 January 2019
 bibliography: paper.bib
 ---
 
 # Summary
-The fits format (Flexible Image Transport System) [Hanisch:2001] is a widely used format to
+The fits format (Flexible Image Transport System) [@Hanisch:2001] is a widely used format to
 store astronomical data. It has been developed in the late 1970 to reach its 
 final form almost two decades ago. It is able to store the data themselves as
 well as the metadata describing the data tables.
