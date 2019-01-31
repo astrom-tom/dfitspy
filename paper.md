@@ -29,11 +29,11 @@ software/eclipse/eug/eug/node8.html). The main limitation is that they are stand
 programs useable only in a terminal. They can not be used natively inside a another 
 program. 
 
-dfitspy was design to port the dfits and fitsort  capabilities to one of the most used 
+dfitspy was designed to port the dfits and fitsort capabilities to one of the most used 
 language used in science: python. It can be used as an executable (as the original 
-programs) but also, and it is its strenght, as a python module. Therefore fits file 
+programs) but also, and it is its strenghth, as a python module. Therefore fits file 
 can be selected in an efficient and fast way based on their metadata values inside 
-python programs  
+python programs.
 
 
 # References
