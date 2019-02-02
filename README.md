@@ -15,8 +15,8 @@ is not made for that (see fitsio and astropy). It works only on the header and a
 
 Acknowldgements
 ===============
-The python wrapper of the CFITSIO library have been made for the fitsio python library (`fitsio <https://
-github.com/esheldon/fitsio>`_) and is used in dfitspy.
+The python wrapper of the CFITSIO library have been made for the fitsio python library (https://
+github.com/esheldon/fitsio) and is used in dfitspy.
 
 ----
 
@@ -24,8 +24,7 @@ github.com/esheldon/fitsio>`_) and is used in dfitspy.
 dfitspy is not perfect! It has been primarily developed for my private research and I decided to release 
 in the spirit of making the research process as transparent as possible and in the hope it can be used by
 other people. If you have any comment or anything you would like to be added to dfitspy, or, even better,
-if you want to modify you can either do it yourself or please feel free to contact me! ---> **rthomas@eso
-.org, the.spartan.proj@gmail.com**
+if you want to modify you can either do it yourself or please feel free to contact me! ---> **the.spartan.proj@gmail.com**
 
 ----
 
