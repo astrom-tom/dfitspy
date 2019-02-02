@@ -1,11 +1,13 @@
 What is dfitspy?
 ================
+
+The full documentation can be found here: https://astrom-tom.github.io/dfitspy/build/html/index.html
+
 dfitspy is a small project that migrates the main dfits and fitsort capabilities to python.
 It is made to search information inside header of fitsfile. The fits part of the code come from the pythion 
 wrapper of the fits library CFITSIO (see below). dfitspy can be used both as an executable program and as a python
 module inside another code.
 
-The full documentation can be found here: https://astrom-tom.github.io/dfitspy/build/html/index.html
 
 What is not dfitspy?
 ====================
@@ -13,10 +15,21 @@ dfitspy does not read **data** inside fits file. Other libraries are doing this 
 is not made for that (see fitsio and astropy). It works only on the header and allows you to search/display the fits files header. It is also made to find common values in large amount of fits files in a very fast way. 
 
 
+Installation?
+=============
+
+The last dfitspy version is v19.1.5 and is available in the pypi test repository. To install it::
+
+     pip install -i https://test.pypi.org/simple/ dfitspy --user
+
+Using this command will allow you not to have to install any other package. Pip will install what is mis
+sing for you.
+
+
+
 Acknowldgements
 ===============
-The python wrapper of the CFITSIO library have been made for the fitsio python library (https://
-github.com/esheldon/fitsio) and is used in dfitspy.
+The python wrapper of the CFITSIO library have been made for the fitsio python library (https://github.com/esheldon/fitsio) and is used in dfitspy.
 
 ----
 
