@@ -29,27 +29,24 @@ if you want to modify you can either do it yourself or please feel free to conta
 
 ----
 
-.. warning::
 
-	**Copyright**
+**Copyright**
 
-	dfitspy is a free software: you can redistribute it and/or modify it under
-	the terms of the GNU General Public License as published by the Free Software Foundation,
-	version 3 of the License.
+dfitspy is a free software: you can redistribute it and/or modify it under
+the terms of the GNU General Public License as published by the Free Software Foundation,
+version 3 of the License.
 
-	dfitspy is distributed without any warranty; without even the implied warranty of merchantability
-	or fitness for a particular purpose.  See the GNU General Public License for more details.
+dfitspy is distributed without any warranty; without even the implied warranty of merchantability
+or fitness for a particular purpose.  See the GNU General Public License for more details.
 
-	You should have received a copy of the GNU General Public License along with the program.
-	If not, see http://www.gnu.org/licenses/ .
+You should have received a copy of the GNU General Public License along with the program.
+If not, see http://www.gnu.org/licenses/ .
 
 ----
 
-.. warning::
+**Disclaimer**
 
-	**Disclaimer**
-
-	dfitspy is not supported nor endorsed by the European Southern Observatory [ESO].
+dfitspy is not supported nor endorsed by the European Southern Observatory [ESO].
 
 
 
