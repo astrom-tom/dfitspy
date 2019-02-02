@@ -26,11 +26,6 @@ Using this command will allow you not to have to install any other package. Pip 
 sing for you.
 
 
-
-Acknowldgements
-===============
-The python wrapper of the CFITSIO library have been made for the fitsio python library (https://github.com/esheldon/fitsio) and is used in dfitspy.
-
 ----
 
 **Contribute!**
@@ -61,7 +56,9 @@ If not, see http://www.gnu.org/licenses/ .
 dfitspy is not supported nor endorsed by the European Southern Observatory [ESO].
 
 
-
+Acknowledgments
+===============
+The python wrapper of the CFITSIO library have been made for the fitsio python library (https://github.com/esheldon/fitsio) and is used in dfitspy.
 
 
 
