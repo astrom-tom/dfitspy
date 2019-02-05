@@ -3,10 +3,11 @@ What is dfitspy?
 
 The full documentation can be found here: https://astrom-tom.github.io/dfitspy/build/html/index.html
 
-dfitspy is a small project that migrates the main dfits and fitsort capabilities to python.
-It is made to search information inside header of fitsfile. The fits part of the code come from the pythion 
-wrapper of the fits library CFITSIO (see below). dfitspy can be used both as an executable program and as a python
-module inside another code.
+
+The FITS (Flexible Image Transport System) is one of the most used format in astronomy [https://fits.gsfc.nasa.gov/fits_documentation.html]. It is used to store a lot of different types of data such as 1D or 2D spectra, 3D data cubes. The FITS files are built with two components. The data themselves are stored as tables and contains any types of data. Then a header is built containing set of keywords-value pairs aiming at describing the data themselves. 
+
+The present python module, dfitspy, is a small project that migrates the main dfits and fitsort capabilities to python [https://www.eso.org/sci/software/eclipse/eug/eug/node8.html]. It is a metadata searcher/displayer for FITS files. As dfits and fitsort, dfitspy is able to display in the terminal the result of the metada search and is able to grep certain types of values and keywords inside large samples files. Therefore it can be used directly with the command line interface. Nevertheless, dfitspy can be, and it is its strength, imported as a python module and use these functionnalities inside another python code.   
+
 
 
 What is not dfitspy?
@@ -59,7 +60,3 @@ dfitspy is not supported nor endorsed by the European Southern Observatory [ESO]
 Acknowledgments
 ===============
 The python wrapper of the CFITSIO library have been made for the fitsio python library (https://github.com/esheldon/fitsio) and is used in dfitspy.
-
-
-
-
