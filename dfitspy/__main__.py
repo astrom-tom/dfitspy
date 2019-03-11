@@ -32,6 +32,7 @@ import sys
 import os
 from subprocess import call
 import datetime
+import socket
 
 
 ###local imports

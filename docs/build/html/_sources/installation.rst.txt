@@ -40,9 +40,11 @@ Using this command will allow you not to have to install any other package. Pip 
 2-From the local the github repository
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The installable package can be found in the github directory under the ''dist'' directory. Take the last version and
-run::
+The installable package can be found in the github directory under the ''dist'' directory. Take the last version and run::
 
-	pip install dfitspy.X.Y.Z.tar.gz --user
+	pip install dfitspy-X.Y.Z.tar.gz --user
+
+In the versionning scheme of dfitspy, X is the year, Y is the month, and Z is the number of revision in this month. Therefore 19.1.5 means, fifth revision of January 2019.
+
 
 This will install dfitspy.

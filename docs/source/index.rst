@@ -43,7 +43,7 @@ Content
 What is dfitspy?
 ================
 
-dfitspy is a small project that migrates the main dfits and fitsort capabilities to python.
+`dfitspy <https://github.com/astrom-tom/dfitspy>`_ is a small project that migrates the main dfits and fitsort capabilities to python.
 It is made to search information inside header of fitsfile. The fits part of the code come from the python 
 wrapper of the fits library CFITSIO (see below). dfitspy can be used both as a executable program and as a python
 module inside another code.
@@ -64,7 +64,7 @@ The python wrapper of the CFITSIO library have been made for the fitsio python l
 dfitspy is not perfect! It has been primarily developed for my private research and I decided to release i
 n the spirit of making the research process as transparent as possible and in the hope it can be used by
 other people. If you have any comment or anything you would like to be added to dfitspy, or, even better,
-if you want to modify you can either do it yourself or please feel free to contact me! ---> **rthomas@eso.org, the.spartan.proj@gmail.com**
+if you want to modify you can either do it yourself or please feel free to contact me! ---> **rthomas@eso.org, the.spartan.proj@gmail.com**. In any case, you can find the source code `here <https://github.com/astrom-tom/dfitspy>`_.
 
 ----
 
