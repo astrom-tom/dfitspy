@@ -38,6 +38,7 @@ Content
    installation
    usage
    usage_module
+   modules
 
 
 What is dfitspy?

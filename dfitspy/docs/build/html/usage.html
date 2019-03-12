@@ -17,34 +17,36 @@
   
 
   
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="dfitspy as a Python Module" href="usage_module.html" />
     <link rel="prev" title="Installation" href="installation.html" /> 
-
-  
-  <script src="_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -100,6 +102,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="usage_module.html">dfitspy as a Python Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">dfitspy API functions</a></li>
 </ul>
 
             
@@ -209,7 +212,7 @@
 <div class="section" id="if-you-want-to-dfits-fitsort">
 <h2>If you want to dfits | fitsort<a class="headerlink" href="#if-you-want-to-dfits-fitsort" title="Permalink to this headline">¶</a></h2>
 <ul>
-<li><p class="first">-file: here is where you give your files. You have multiple option how to give values to this argument:</p>
+<li><p class="first">-file: This is where you feed dfitspy with your files. You have multiple option how to give values to this argument:</p>
 <blockquote>
 <div><ul class="simple">
 <li>A single file:  <strong>-file test.fits</strong></li>
@@ -223,10 +226,10 @@
 </ul>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
-<p class="last">The directory that is considered here is the current directory where dfistpy is started.</p>
+<p class="last">The directory that is considered here is the current directory where dfitspy is started.</p>
 </div>
 <ul>
-<li><p class="first">-key: Here is where you ask dfitspy to look for particular keywords in the headers. Here again you have multiple option</p>
+<li><p class="first">-key: this is where you ask dfitspy to look for particular keywords in the headers. Here again you have multiple option</p>
 <blockquote>
 <div><ul class="simple">
 <li>a single keyword: <strong>-key OBJECT</strong></li>
@@ -239,7 +242,7 @@
 <p class="first admonition-title">Warning</p>
 <p>Two things you must be careful of:</p>
 <ul class="last simple">
-<li>ESO keywords may contain the ‘HIERARCH’ prefix. This is ignored by dfitspy therefore do not use you can not use this prefix. For example if you have the following keywords HIERARCH ESO PRO CATG you must call it with ESO.PRO.CATG</li>
+<li>ESO keywords may contain the ‘HIERARCH’ prefix. This is ignored by dfitspy therefore you cannot use this prefix. For example, if you have the following keywords HIERARCH ESO PRO CATG you must call it with ESO.PRO.CATG</li>
 <li>If your keywords contain spaces (ex: ESO OBS ID) you must replace it by dots: ESO.OBS.ID</li>
 </ul>
 </div>
@@ -288,11 +291,11 @@
 <span class="p">[</span><span class="n">DFITSPY</span> <span class="n">INFO</span><span class="p">]</span><span class="o">&gt;</span> <span class="mi">34</span> <span class="n">files</span> <span class="n">used</span> <span class="ow">in</span> <span class="n">output</span>
 </pre></div>
 </div>
-<p>First dfitspy gives you the number of files that was considered with the command, this number depends on what you give through the ‘-f’ argument. Then it displays the header always starting with the filename and then all the keywords the user requires to be displayed. And It displays the list of all the filenames and fits header values. Finally it gives you the number of files in the list.</p>
+<p>First dfitspy gives you the number of files that was considered with the command, this number depends on what you give through the ‘-f’ argument. Then it displays the header always starting with the filename and then all the keywords the user requires to be displayed. And It displays the list of all the filenames and fits header values. Finally, it gives you the number of files in the list.</p>
 </div>
 <div class="section" id="grepping-option">
 <h2>GREPPING option<a class="headerlink" href="#grepping-option" title="Permalink to this headline">¶</a></h2>
-<p>dfitspy offers you the possibility to display files with particular values that you are expecting. This is done using the option <em>- - grep</em> (double dash) and giving as arguement an expected value of a keyword given with the <em>-key</em> option. Doing so will tell dfitspy to consider the files only if one of the keyword that the user ask to display as the grepping value.</p>
+<p>dfitspy offers you the possibility to display files with particular values that you are expecting. This is done using the option <em>- - grep</em> (double dash) and giving as argument an expected value of a keyword given with the <em>-key</em> option. Doing so will tell dfitspy to consider the files only if one of the keyword that the user ask to display as the grepping value.</p>
 <div class="section" id="simple-grepping">
 <h3>Simple grepping<a class="headerlink" href="#simple-grepping" title="Permalink to this headline">¶</a></h3>
 <p>Taking the same command as above, one might want to get only the files with LST = 79056.26. This is easily done using: <strong>dfitspy -f Test_data/* -k OBJECT,LST,ESO.OBS.ID - -grep 79056.26</strong>  and produce the output in terminal:</p>
@@ -316,7 +319,7 @@
 </div>
 <div class="section" id="multi-grepping">
 <h3>Multi grepping<a class="headerlink" href="#multi-grepping" title="Permalink to this headline">¶</a></h3>
-<p>In the previous command we see that one file as a different OBJECT value as the other ones. If we want to remove it we must <strong>add a grepping option</strong> and take only files with OBJECT=’STD,TELLURIC’, like this:</p>
+<p>In the previous command we see that one file as a different OBJECT value as the other ones. If we want to remove it, we must <strong>add a grepping option</strong> and take only files with OBJECT=’STD,TELLURIC’, like this:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">Command</span><span class="p">:</span> <span class="n">dfitspy</span> <span class="o">-</span><span class="n">f</span> <span class="n">Test_data</span><span class="o">/*</span> <span class="o">-</span><span class="n">k</span> <span class="n">OBJECT</span><span class="p">,</span><span class="n">LST</span><span class="p">,</span><span class="n">ESO</span><span class="o">.</span><span class="n">OBS</span><span class="o">.</span><span class="n">ID</span> <span class="o">--</span><span class="n">grep</span> <span class="mf">79056.26</span> <span class="o">--</span><span class="n">grep</span> <span class="n">STD</span><span class="p">,</span><span class="n">TELLURIC</span><span class="p">]</span>
 
 <span class="p">[</span><span class="n">DFITSPY</span> <span class="n">INFO</span><span class="p">]</span><span class="o">&gt;</span> <span class="mi">34</span> <span class="n">fits</span> <span class="n">files</span> <span class="n">will</span> <span class="n">be</span> <span class="n">considered</span>
@@ -405,7 +408,7 @@
         <a href="usage_module.html" class="btn btn-neutral float-right" title="dfitspy as a Python Module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="installation.html" class="btn btn-neutral" title="Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="installation.html" class="btn btn-neutral float-left" title="Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -431,26 +434,16 @@
   
 
 
-  
-
-    
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
-    
-
-  
-
-  <script type="text/javascript" src="_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

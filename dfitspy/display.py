@@ -1,27 +1,5 @@
 '''
----dfitspy---
-
-dfitspy is a program aimed at reproducing the dfits program in python.
-the functions can be used inside another program or it can also be called
-as an executable
-
-This file organises the terminal display of the output od the code, if used
-as an executable
-
-@place: ESO - La Silla - Paranal Observatory
-@author(s): Romain Thomas
-@year(s):  2018
-@First version: 18.09-0
-@Current version: 18.10-0
-@Telescope(s): ALL
-@Instrument(s): ALL
-@Valid for SciOpsPy: v0.1-b
-@Documentation url:
-@Last SciOps review [date + name]: 18-09-2018 - Romain Thomas
-@Usage: inside another code (dfitspy)
-@Licence: GPL
-@Testable: Yes
-@Test data place (if any required): N.A.
+This file organises the terminal display of the output of the code
 '''
 
 ###standrd imports
@@ -39,18 +17,17 @@ def dfitsort_view(values_dict):
     '''
     This function displays a-la-dfits the requested informations
 
-    First we display the number of files that was found
-    Then we display the header with keywords
+    First we display the number of files that was found and then we 
+    display the header with keywords
 
-    Parameter
-    ---------
-    values_dict
-                dictionnary, keys=filename
-                             values=dictionnary of keyword-value pair
+    Parameters
+    ----------
+    values_dict : dictionnary
+                keys=filename & values=dictionnary of keyword-value pair
 
-    Return
-    ------
-    None
+    Returns
+    -------
+    None (prints in terminal)
     '''
     ###############get columns sizes
     ##1-filename
@@ -105,21 +82,16 @@ def dfitsort_view(values_dict):
 
 def keywords_view(keywords):
     '''
-    This function displays the list of keywords given in parameters
-    By default it displays it in a 3 columns display :
-
-    1   2   3
-    4   5   6
-    .   .   .
-    .   .   .
+    This function displays the list of keywords given in parameters.
+    By default it displays it in a 3 columns display.
 
     Parameters
     ----------
-    keywords
-                list of keywords (string)
+    keywords : list
+               list of keywords (each keyword is a string)
 
-    Return
-    ------
+    Returns
+    -------
     None (display in terminal)
     '''
 

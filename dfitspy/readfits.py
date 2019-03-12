@@ -1,29 +1,8 @@
 '''
----dfitspy---
-
-dfitspy is a program aimed at reproducing the dfits program in python.
-the functions can be used inside another program or it can also be called
-as an executable
-
-This file organises reads the fits files
-
-@place: ESO - La Silla - Paranal Observatory
-@author(s): Romain Thomas
-@year(s):  2018
-@First version: 18.09-0
-@Current version: 18.10-0
-@Telescope(s): ALL
-@Instrument(s): ALL
-@Valid for SciOpsPy: v0.1-b
-@Documentation url:
-@Last SciOps review [date + name]: 18-09-2018 - Romain Thomas
-@Usage: inside another code (dfitspy)
-@Licence: GPL
-@Testable: Yes
-@Test data place (if any required): N.A.
+This file organises and reads the FITS files
 '''
 
-###standrd imports
+###standard imports
 import os
 
 ##testing
@@ -38,8 +17,7 @@ def read_fitsfile(thefile):
     This function is largely inspired from the fitsio python library and used the
     python wrapper around the cFitsio library.
     It takes as argument the name (including path if the location of the file is different from the
-    current folder) and returns a dictionnary of keyword = header keyword and value = header value.
-
+    current folder) and returns a dictionnary of keyword = header keyword and value = header value.\n\n
 
     WARNING: in the ESO fits header format, the HIERARCH prefix will be ignored by this function
              and the resulting dictionnary will not contain the HIERARCH prefix.
@@ -84,15 +62,15 @@ def get_all_keyword(thefile):
     '''
     This function gets all the keyword in the header of the file
 
-    Parameter:
+    Parameters
     ----------
-    thefile
-                str, path/and/file.txt
+    thefile     str
+                path/and/file.txt
 
-    Return
-    ------
-    keywords
-                list, of keywords (string)
+    Returns
+    -------
+    keywords    list
+                list of keywords (string)
     '''
     ##get header
     header = read_fitsfile(thefile)
@@ -134,28 +112,31 @@ def keywords_in_file(thefile, keyword):
 
 def dfitsort(listfiles, listkeys, grepping=None):
     '''
-    This function get for all files, the value of all the keywords that are passed
+    This function get for all files, the value of all the keywords that are passed\n
 
-    example:  dfitsort([file1, file2], [key1, key2]) <-- no grep
-    example:  dfitsort([file1, file2], [key1, key2], ['match', 'match2']) <-- multi grep
-
-    Parameter
-    ---------
-    listfiles
+    Parameters
+    ----------
+    listfiles : lisr
                 list, with file names (string, path included)
-    listkeys
+    listkeys :  list
                 list, of keywords (strings)
-    grep
-                list of string,
-                if not false, the grepping valueS
+    grep : list
+                list of string, if not false, the grepping valueS
                 will be compared to all the values
                 of the keywords. If all grepping values appear in the
                 header of one file the file will be kept
-    Return
-    ------
-    file_dict
-                dictionnary, keys=filename
-                             values=dictionnary of keyword-value pairs
+
+    Returns
+    -------
+    file_dict : dictionary
+                dictionary, keys=filename & values=dictionnary of keyword-value pairs
+
+    Examples
+    --------
+    dfitsort([file1, file2], [key1, key2]) <-- no grep\n
+    dfitsort([file1, file2], [key1, key2], ['match', 'match2']) <-- multi grep
+
+
     '''
 
     file_dict = {}

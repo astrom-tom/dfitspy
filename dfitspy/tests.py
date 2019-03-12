@@ -1,26 +1,5 @@
 '''
----dfitspy---
-
-dfitspy is a program aimed at reproducing the dfits program in python.
-the functions can be used inside another program or it can also be called
-as an executable
-
 This file organises the tests of the library
-
-@place: ESO - La Silla - Paranal Observatory
-@author(s): Romain Thomas
-@year(s):  2018
-@First version: 18.09-0
-@Current version: 18.10-0
-@Telescope(s): ALL
-@Instrument(s): ALL
-@Valid for SciOpsPy: v0.1-b
-@Documentation url:
-@Last SciOps review [date + name]: 18-09-2018 - Romain Thomas
-@Usage: inside another code (dfitspy)
-@Licence: GPL
-@Testable: Yes
-@Test data place (if any required): N.A.
 '''
 
 #testing

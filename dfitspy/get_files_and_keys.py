@@ -1,29 +1,8 @@
 '''
----dfitspy---
-
-dfitspy is a program aimed at reproducing the dfits program in python.
-the functions can be used inside another program or it can also be called
-as an executable
-
-This file create the file list depending on the user input as well as the keywords input
-
-@place: ESO - La Silla - Paranal Observatory
-@author(s): Romain Thomas
-@year(s):  2018
-@First version: 18.09-0
-@Current version: 18.10-0
-@Telescope(s): ALL
-@Instrument(s): ALL
-@Valid for SciOpsPy: v0.1-b
-@Documentation url:
-@Last SciOps review [date + name]: 18-09-2018 - Romain Thomas
-@Usage: inside another code (dfitspy)
-@Licence: GPL
-@Testable: Yes
-@Test data place (if any required): N.A.
+This file creates the filelist depending on the user input as well as the keywords input
 '''
 
-###standrd imports
+###standard imports
 import os
 
 ##testing
@@ -34,26 +13,27 @@ import unittest.mock
 def get_files(files, dire=False):
     '''
     This function extracts the list of files based on the files
-    and dire parameters.
+    and dire parameter.
 
     example: get_files(['fil1.fits,file2.fits'] , '/home/Documents')
     example: get_files(['fil1.fits,file2.fits'])
 
 
-    Parameter
-    ---------
-    files
-                list of str, list of files names (without path)
-                             it can be ['file1.fits,file2.fits,....']
-                                       ['file1.fits']
-                                       ['file1,fits', 'file2.fits']
-                                       ['all']
-    dire
-                str, path of the directory to look in
+    Parameters
+    ----------
+    files : list of str
+            list of files names (without path), it can be:\n
+            ['file1.fits,file2.fits,....']\n
+            ['file1.fits']\n
+            ['file1,fits', 'file2.fits']\n
+            ['all']\n
+    dire :  str 
+            path of the directory to look in
 
-    Return
-    ------
-    list of files
+    Returns
+    -------
+    allfiles : list 
+                list of all the files
     '''
 
     ##if no directory was given, we assume the current working directory
@@ -86,22 +66,22 @@ def get_files(files, dire=False):
 
 def get_keys(key_string):
     '''
-    This function extract from a string the list of keys
+    This function extracts from a string the list of keys
 
-    Parameter
-    ---------
-    keystring
-                string, keys to be requested by user
-                        ex: SEEING
-                            SEEING,AIRMASS
-                            SEEING,ARIMASS,OBID
+    Parameters
+    ----------
+    keystring : string
+                keys to be requested by user, example:\n
+                \tSEEING\n
+                \tSEEING,AIRMASS\n
+                \tSEEING,ARIMASS,OBID\n
                 if a string contains dots, e.g, ESO.SEQ.ARM it will be
                 transform to ESO SEQ ARM (with spaces)
 
-    Return
-    ------
-    keys
-            list, list of keys (string)
+    Returns
+    -------
+    keys : list
+           list of keys (string)
     '''
 
     keys = [i.strip().replace('.', ' ') for i in key_string.split(',')]

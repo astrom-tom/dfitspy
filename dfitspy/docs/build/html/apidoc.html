@@ -1,0 +1,848 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>dfitspy package &mdash; dfitspy 19.1.3 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> dfitspy
+          
+
+          
+            
+            <img src="_static/dfitspy_tr.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                19.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Home</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">dfitspy as an executable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage_module.html">dfitspy as a Python Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">dfitspy</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">dfitspy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>dfitspy package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/apidoc.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="dfitspy-package">
+<h1>dfitspy package<a class="headerlink" href="#dfitspy-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-dfitspy.cli">
+<span id="dfitspy-cli-module"></span><h2>dfitspy.cli module<a class="headerlink" href="#module-dfitspy.cli" title="Permalink to this headline">¶</a></h2>
+<p>—dfitspy—</p>
+<p>dfitspy is a program aimed at reproducing the dfits program in python.
+the functions can be used inside another program or it can also be called
+as an executable</p>
+<p>This file organises the command line interface (and nunit test it)</p>
+<p>&#64;place: ESO - La Silla - Paranal Observatory
+&#64;author(s): Romain Thomas
+&#64;year(s):  2018
+&#64;First version: 18.09-0
+&#64;Current version: 18.10-0
+&#64;Telescope(s): ALL
+&#64;Instrument(s): ALL
+&#64;Valid for SciOpsPy: v0.1-b
+&#64;Documentation url:
+&#64;Last SciOps review [date + name]: 18-09-2018 - Romain Thomas
+&#64;Usage: inside another code (dfitspy)
+&#64;Licence: GPL
+&#64;Testable: Yes
+&#64;Test data place (if any required): N.A.</p>
+<dl class="class">
+<dt id="dfitspy.cli.Interfacetest">
+<em class="property">class </em><code class="descclassname">dfitspy.cli.</code><code class="descname">Interfacetest</code><span class="sig-paren">(</span><em>methodName='runTest'</em><span class="sig-paren">)</span><a class="headerlink" href="#dfitspy.cli.Interfacetest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">unittest.case.TestCase</span></code></p>
+<p>Class that define the test for the command line interface</p>
+<dl class="method">
+<dt id="dfitspy.cli.Interfacetest.test_cli">
+<code class="descname">test_cli</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dfitspy.cli.Interfacetest.test_cli" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method tests the command line interface
+The principle is that we send some argument configuration
+and see what the interface is giving back</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="dfitspy.cli.command_line">
+<code class="descclassname">dfitspy.cli.</code><code class="descname">command_line</code><span class="sig-paren">(</span><em>args</em><span class="sig-paren">)</span><a class="headerlink" href="#dfitspy.cli.command_line" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function defines the command line interface of the program.
+It is used only if dfitspy is used as an executable</p>
+<p>None</p>
+<p>args    Namespace with arguments</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-dfitspy.display">
+<span id="dfitspy-display-module"></span><h2>dfitspy.display module<a class="headerlink" href="#module-dfitspy.display" title="Permalink to this headline">¶</a></h2>
+<p>—dfitspy—</p>
+<p>dfitspy is a program aimed at reproducing the dfits program in python.
+the functions can be used inside another program or it can also be called
+as an executable</p>
+<p>This file organises the terminal display of the output od the code, if used
+as an executable</p>
+<p>&#64;place: ESO - La Silla - Paranal Observatory
+&#64;author(s): Romain Thomas
+&#64;year(s):  2018
+&#64;First version: 18.09-0
+&#64;Current version: 18.10-0
+&#64;Telescope(s): ALL
+&#64;Instrument(s): ALL
+&#64;Valid for SciOpsPy: v0.1-b
+&#64;Documentation url:
+&#64;Last SciOps review [date + name]: 18-09-2018 - Romain Thomas
+&#64;Usage: inside another code (dfitspy)
+&#64;Licence: GPL
+&#64;Testable: Yes
+&#64;Test data place (if any required): N.A.</p>
+<dl class="class">
+<dt id="dfitspy.display.Testdisplayfinal">
+<em class="property">class </em><code class="descclassname">dfitspy.display.</code><code class="descname">Testdisplayfinal</code><span class="sig-paren">(</span><em>methodName='runTest'</em><span class="sig-paren">)</span><a class="headerlink" href="#dfitspy.display.Testdisplayfinal" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">unittest.case.TestCase</span></code></p>
+<p>Class that tests the final display function</p>
+<dl class="method">
+<dt id="dfitspy.display.Testdisplayfinal.displayfinal">
+<code class="descname">displayfinal</code><span class="sig-paren">(</span><em>param</em>, <em>exp</em>, <em>mock_stdout</em><span class="sig-paren">)</span><a class="headerlink" href="#dfitspy.display.Testdisplayfinal.displayfinal" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function that actually run the test</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dfitspy.display.Testdisplayfinal.test_displayfinal">
+<code class="descname">test_displayfinal</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dfitspy.display.Testdisplayfinal.test_displayfinal" title="Permalink to this definition">¶</a></dt>
+<dd><p>test the final display function</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="dfitspy.display.Testdisplaylist">
+<em class="property">class </em><code class="descclassname">dfitspy.display.</code><code class="descname">Testdisplaylist</code><span class="sig-paren">(</span><em>methodName='runTest'</em><span class="sig-paren">)</span><a class="headerlink" href="#dfitspy.display.Testdisplaylist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">unittest.case.TestCase</span></code></p>
+<p>Class that test the display of the list of header keywords</p>
+<dl class="method">
+<dt id="dfitspy.display.Testdisplaylist.displaylist">
+<code class="descname">displaylist</code><span class="sig-paren">(</span><em>param</em>, <em>exp</em>, <em>mock_stdout</em><span class="sig-paren">)</span><a class="headerlink" href="#dfitspy.display.Testdisplaylist.displaylist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function that run that actually run the test</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dfitspy.display.Testdisplaylist.test_five">
+<code class="descname">test_five</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dfitspy.display.Testdisplaylist.test_five" title="Permalink to this definition">¶</a></dt>
+<dd><p>idem with five</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dfitspy.display.Testdisplaylist.test_four">
+<code class="descname">test_four</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dfitspy.display.Testdisplaylist.test_four" title="Permalink to this definition">¶</a></dt>
+<dd><p>idem with 4 keywords</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dfitspy.display.Testdisplaylist.test_six">
+<code class="descname">test_six</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dfitspy.display.Testdisplaylist.test_six" title="Permalink to this definition">¶</a></dt>
+<dd><p>idem with six</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dfitspy.display.Testdisplaylist.test_three">
+<code class="descname">test_three</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dfitspy.display.Testdisplaylist.test_three" title="Permalink to this definition">¶</a></dt>
+<dd><p>Test if 3 keywords have to be displayed</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="dfitspy.display.dfitsort_view">
+<code class="descclassname">dfitspy.display.</code><code class="descname">dfitsort_view</code><span class="sig-paren">(</span><em>values_dict</em><span class="sig-paren">)</span><a class="headerlink" href="#dfitspy.display.dfitsort_view" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function displays a-la-dfits the requested informations</p>
+<p>First we display the number of files that was found
+Then we display the header with keywords</p>
+<dl class="docutils">
+<dt>values_dict</dt>
+<dd><dl class="first last docutils">
+<dt>dictionnary, keys=filename</dt>
+<dd>values=dictionnary of keyword-value pair</dd>
+</dl>
+</dd>
+</dl>
+<p>None</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="dfitspy.display.keywords_view">
+<code class="descclassname">dfitspy.display.</code><code class="descname">keywords_view</code><span class="sig-paren">(</span><em>keywords</em><span class="sig-paren">)</span><a class="headerlink" href="#dfitspy.display.keywords_view" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function displays the list of keywords given in parameters
+By default it displays it in a 3 columns display :</p>
+<p>1   2   3
+4   5   6
+.   .   .
+.   .   .</p>
+<dl class="docutils">
+<dt>keywords</dt>
+<dd>list of keywords (string)</dd>
+</dl>
+<p>None (display in terminal)</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-dfitspy.get_files_and_keys">
+<span id="dfitspy-get-files-and-keys-module"></span><h2>dfitspy.get_files_and_keys module<a class="headerlink" href="#module-dfitspy.get_files_and_keys" title="Permalink to this headline">¶</a></h2>
+<p>—dfitspy—</p>
+<p>dfitspy is a program aimed at reproducing the dfits program in python.
+the functions can be used inside another program or it can also be called
+as an executable</p>
+<p>This file create the file list depending on the user input as well as the keywords input</p>
+<p>&#64;place: ESO - La Silla - Paranal Observatory
+&#64;author(s): Romain Thomas
+&#64;year(s):  2018
+&#64;First version: 18.09-0
+&#64;Current version: 18.10-0
+&#64;Telescope(s): ALL
+&#64;Instrument(s): ALL
+&#64;Valid for SciOpsPy: v0.1-b
+&#64;Documentation url:
+&#64;Last SciOps review [date + name]: 18-09-2018 - Romain Thomas
+&#64;Usage: inside another code (dfitspy)
+&#64;Licence: GPL
+&#64;Testable: Yes
+&#64;Test data place (if any required): N.A.</p>
+<dl class="class">
+<dt id="dfitspy.get_files_and_keys.Testgetfiles">
+<em class="property">class </em><code class="descclassname">dfitspy.get_files_and_keys.</code><code class="descname">Testgetfiles</code><span class="sig-paren">(</span><em>methodName='runTest'</em><span class="sig-paren">)</span><a class="headerlink" href="#dfitspy.get_files_and_keys.Testgetfiles" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">unittest.case.TestCase</span></code></p>
+<p>Class that tests the get file function</p>
+<dl class="method">
+<dt id="dfitspy.get_files_and_keys.Testgetfiles.test_get_file_all_no_files">
+<code class="descname">test_get_file_all_no_files</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dfitspy.get_files_and_keys.Testgetfiles.test_get_file_all_no_files" title="Permalink to this definition">¶</a></dt>
+<dd><p>Here we test the get_files function when the user does not precise the
+directory (&lt;–&gt; look current directory), ask for all file and does not get any
+file in return (no fits file)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dfitspy.get_files_and_keys.Testgetfiles.test_get_file_all_with_files">
+<code class="descname">test_get_file_all_with_files</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dfitspy.get_files_and_keys.Testgetfiles.test_get_file_all_with_files" title="Permalink to this definition">¶</a></dt>
+<dd><p>Here we test the get_files function when the user does not precise the
+directory (&lt;–&gt; look current directory), ask for all file and does get file
+file in return</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dfitspy.get_files_and_keys.Testgetfiles.test_get_multi_file_goodname">
+<code class="descname">test_get_multi_file_goodname</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dfitspy.get_files_and_keys.Testgetfiles.test_get_multi_file_goodname" title="Permalink to this definition">¶</a></dt>
+<dd><p>Test for multiple files</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dfitspy.get_files_and_keys.Testgetfiles.test_get_single_file_goodname">
+<code class="descname">test_get_single_file_goodname</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dfitspy.get_files_and_keys.Testgetfiles.test_get_single_file_goodname" title="Permalink to this definition">¶</a></dt>
+<dd><p>Test with single file when a good filename is given</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dfitspy.get_files_and_keys.Testgetfiles.test_get_single_file_wrongname">
+<code class="descname">test_get_single_file_wrongname</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dfitspy.get_files_and_keys.Testgetfiles.test_get_single_file_wrongname" title="Permalink to this definition">¶</a></dt>
+<dd><p>Test with single file when a wrong filename is given</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dfitspy.get_files_and_keys.Testgetfiles.test_list_files">
+<code class="descname">test_list_files</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dfitspy.get_files_and_keys.Testgetfiles.test_list_files" title="Permalink to this definition">¶</a></dt>
+<dd><p>Test for list of files as input</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="dfitspy.get_files_and_keys.Testgetkeys">
+<em class="property">class </em><code class="descclassname">dfitspy.get_files_and_keys.</code><code class="descname">Testgetkeys</code><span class="sig-paren">(</span><em>methodName='runTest'</em><span class="sig-paren">)</span><a class="headerlink" href="#dfitspy.get_files_and_keys.Testgetkeys" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">unittest.case.TestCase</span></code></p>
+<p>Class that tests the keyword relative functions</p>
+<dl class="method">
+<dt id="dfitspy.get_files_and_keys.Testgetkeys.test_get_multi_key">
+<code class="descname">test_get_multi_key</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dfitspy.get_files_and_keys.Testgetkeys.test_get_multi_key" title="Permalink to this definition">¶</a></dt>
+<dd><p>We give three keywords and have to get the three keywords
+contained in a list</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dfitspy.get_files_and_keys.Testgetkeys.test_get_single_key">
+<code class="descname">test_get_single_key</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dfitspy.get_files_and_keys.Testgetkeys.test_get_single_key" title="Permalink to this definition">¶</a></dt>
+<dd><p>We give a single keyword and have to get exaclty the same
+keyword contained in a list</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="dfitspy.get_files_and_keys.get_files">
+<code class="descclassname">dfitspy.get_files_and_keys.</code><code class="descname">get_files</code><span class="sig-paren">(</span><em>files</em>, <em>dire=False</em><span class="sig-paren">)</span><a class="headerlink" href="#dfitspy.get_files_and_keys.get_files" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function extracts the list of files based on the files
+and dire parameters.</p>
+<p>example: get_files([‘fil1.fits,file2.fits’] , ‘/home/Documents’)
+example: get_files([‘fil1.fits,file2.fits’])</p>
+<dl class="docutils">
+<dt>files</dt>
+<dd><dl class="first last docutils">
+<dt>list of str, list of files names (without path)</dt>
+<dd><dl class="first last docutils">
+<dt>it can be [‘file1.fits,file2.fits,….’]</dt>
+<dd>[‘file1.fits’]
+[‘file1,fits’, ‘file2.fits’]
+[‘all’]</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+<dt>dire</dt>
+<dd>str, path of the directory to look in</dd>
+</dl>
+<p>list of files</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="dfitspy.get_files_and_keys.get_keys">
+<code class="descclassname">dfitspy.get_files_and_keys.</code><code class="descname">get_keys</code><span class="sig-paren">(</span><em>key_string</em><span class="sig-paren">)</span><a class="headerlink" href="#dfitspy.get_files_and_keys.get_keys" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function extract from a string the list of keys</p>
+<dl class="docutils">
+<dt>keystring</dt>
+<dd><dl class="first docutils">
+<dt>string, keys to be requested by user</dt>
+<dd><dl class="first last docutils">
+<dt>ex: SEEING</dt>
+<dd>SEEING,AIRMASS
+SEEING,ARIMASS,OBID</dd>
+</dl>
+</dd>
+</dl>
+<p class="last">if a string contains dots, e.g, ESO.SEQ.ARM it will be
+transform to ESO SEQ ARM (with spaces)</p>
+</dd>
+</dl>
+<dl class="docutils">
+<dt>keys</dt>
+<dd>list, list of keys (string)</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-dfitspy.readfits">
+<span id="dfitspy-readfits-module"></span><h2>dfitspy.readfits module<a class="headerlink" href="#module-dfitspy.readfits" title="Permalink to this headline">¶</a></h2>
+<p>—dfitspy—</p>
+<p>dfitspy is a program aimed at reproducing the dfits program in python.
+the functions can be used inside another program or it can also be called
+as an executable</p>
+<p>This file organises reads the fits files</p>
+<p>&#64;place: ESO - La Silla - Paranal Observatory
+&#64;author(s): Romain Thomas
+&#64;year(s):  2018
+&#64;First version: 18.09-0
+&#64;Current version: 18.10-0
+&#64;Telescope(s): ALL
+&#64;Instrument(s): ALL
+&#64;Valid for SciOpsPy: v0.1-b
+&#64;Documentation url:
+&#64;Last SciOps review [date + name]: 18-09-2018 - Romain Thomas
+&#64;Usage: inside another code (dfitspy)
+&#64;Licence: GPL
+&#64;Testable: Yes
+&#64;Test data place (if any required): N.A.</p>
+<dl class="class">
+<dt id="dfitspy.readfits.Testextractheader">
+<em class="property">class </em><code class="descclassname">dfitspy.readfits.</code><code class="descname">Testextractheader</code><span class="sig-paren">(</span><em>methodName='runTest'</em><span class="sig-paren">)</span><a class="headerlink" href="#dfitspy.readfits.Testextractheader" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">unittest.case.TestCase</span></code></p>
+<p>This class tests the extraction of the header from the fits file</p>
+<dl class="method">
+<dt id="dfitspy.readfits.Testextractheader.test_readfile">
+<code class="descname">test_readfile</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dfitspy.readfits.Testextractheader.test_readfile" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function test the header extraction</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="dfitspy.readfits.Testkeywordextraction">
+<em class="property">class </em><code class="descclassname">dfitspy.readfits.</code><code class="descname">Testkeywordextraction</code><span class="sig-paren">(</span><em>methodName='runTest'</em><span class="sig-paren">)</span><a class="headerlink" href="#dfitspy.readfits.Testkeywordextraction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">unittest.case.TestCase</span></code></p>
+<p>This class is a testing class that deal with the extraction of the keywords inside
+the fits files</p>
+<dl class="method">
+<dt id="dfitspy.readfits.Testkeywordextraction.test_get_all_keyword">
+<code class="descname">test_get_all_keyword</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dfitspy.readfits.Testkeywordextraction.test_get_all_keyword" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function test function that extracts all the keyword of the header</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dfitspy.readfits.Testkeywordextraction.test_get_value_no_grep">
+<code class="descname">test_get_value_no_grep</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dfitspy.readfits.Testkeywordextraction.test_get_value_no_grep" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function tests the extraction of keywords without grepping values</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dfitspy.readfits.Testkeywordextraction.test_get_value_true">
+<code class="descname">test_get_value_true</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dfitspy.readfits.Testkeywordextraction.test_get_value_true" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function test function that gets the value of the keyword in the file
+in the case the keyword exists</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dfitspy.readfits.Testkeywordextraction.test_get_value_with_grep">
+<code class="descname">test_get_value_with_grep</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dfitspy.readfits.Testkeywordextraction.test_get_value_with_grep" title="Permalink to this definition">¶</a></dt>
+<dd><p>Same as before but woth grepping</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dfitspy.readfits.Testkeywordextraction.test_get_value_wrong">
+<code class="descname">test_get_value_wrong</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dfitspy.readfits.Testkeywordextraction.test_get_value_wrong" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function test function that gets the value of the keyword in the file
+in the case the keyword does not exist</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="dfitspy.readfits.dfitsort">
+<code class="descclassname">dfitspy.readfits.</code><code class="descname">dfitsort</code><span class="sig-paren">(</span><em>listfiles</em>, <em>listkeys</em>, <em>grepping=None</em><span class="sig-paren">)</span><a class="headerlink" href="#dfitspy.readfits.dfitsort" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function get for all files, the value of all the keywords that are passed</p>
+<p>example:  dfitsort([file1, file2], [key1, key2]) &lt;– no grep
+example:  dfitsort([file1, file2], [key1, key2], [‘match’, ‘match2’]) &lt;– multi grep</p>
+<dl class="docutils">
+<dt>listfiles</dt>
+<dd>list, with file names (string, path included)</dd>
+<dt>listkeys</dt>
+<dd>list, of keywords (strings)</dd>
+<dt>grep</dt>
+<dd>list of string,
+if not false, the grepping valueS
+will be compared to all the values
+of the keywords. If all grepping values appear in the
+header of one file the file will be kept</dd>
+</dl>
+<dl class="docutils">
+<dt>file_dict</dt>
+<dd><dl class="first last docutils">
+<dt>dictionnary, keys=filename</dt>
+<dd>values=dictionnary of keyword-value pairs</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="dfitspy.readfits.get_all_keyword">
+<code class="descclassname">dfitspy.readfits.</code><code class="descname">get_all_keyword</code><span class="sig-paren">(</span><em>thefile</em><span class="sig-paren">)</span><a class="headerlink" href="#dfitspy.readfits.get_all_keyword" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function gets all the keyword in the header of the file</p>
+<dl class="docutils">
+<dt>thefile</dt>
+<dd>str, path/and/file.txt</dd>
+</dl>
+<dl class="docutils">
+<dt>keywords</dt>
+<dd>list, of keywords (string)</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="dfitspy.readfits.keywords_in_file">
+<code class="descclassname">dfitspy.readfits.</code><code class="descname">keywords_in_file</code><span class="sig-paren">(</span><em>thefile</em>, <em>keyword</em><span class="sig-paren">)</span><a class="headerlink" href="#dfitspy.readfits.keywords_in_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function extracts in the thefile file the value
+of the keyword</p>
+<dl class="docutils">
+<dt>thefile</dt>
+<dd>str, path/to/file.fits</dd>
+<dt>keyword</dt>
+<dd>str, keyword to get the value of</dd>
+</dl>
+<dl class="docutils">
+<dt>value</dt>
+<dd>str, value of the keyword inside the file</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="dfitspy.readfits.read_fitsfile">
+<code class="descclassname">dfitspy.readfits.</code><code class="descname">read_fitsfile</code><span class="sig-paren">(</span><em>thefile</em><span class="sig-paren">)</span><a class="headerlink" href="#dfitspy.readfits.read_fitsfile" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function is largely inspired from the fitsio python library and used the
+python wrapper around the cFitsio library.
+It takes as argument the name (including path if the location of the file is different from the
+current folder) and returns a dictionnary of keyword = header keyword and value = header value.</p>
+<dl class="docutils">
+<dt>WARNING: in the ESO fits header format, the HIERARCH prefix will be ignored by this function</dt>
+<dd>and the resulting dictionnary will not contain the HIERARCH prefix.
+Ex: ‘HIERARCH ESO TEL ALT’ will become ‘ESO TEL ALT’</dd>
+</dl>
+<dl class="docutils">
+<dt>filename</dt>
+<dd>str,  path/to/file (fits file)</dd>
+</dl>
+<dl class="docutils">
+<dt>dict_values</dt>
+<dd>python dictionnary with header keywords/value pairs.</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-dfitspy.tests">
+<span id="dfitspy-tests-module"></span><h2>dfitspy.tests module<a class="headerlink" href="#module-dfitspy.tests" title="Permalink to this headline">¶</a></h2>
+<p>—dfitspy—</p>
+<p>dfitspy is a program aimed at reproducing the dfits program in python.
+the functions can be used inside another program or it can also be called
+as an executable</p>
+<p>This file organises the tests of the library</p>
+<p>&#64;place: ESO - La Silla - Paranal Observatory
+&#64;author(s): Romain Thomas
+&#64;year(s):  2018
+&#64;First version: 18.09-0
+&#64;Current version: 18.10-0
+&#64;Telescope(s): ALL
+&#64;Instrument(s): ALL
+&#64;Valid for SciOpsPy: v0.1-b
+&#64;Documentation url:
+&#64;Last SciOps review [date + name]: 18-09-2018 - Romain Thomas
+&#64;Usage: inside another code (dfitspy)
+&#64;Licence: GPL
+&#64;Testable: Yes
+&#64;Test data place (if any required): N.A.</p>
+<dl class="function">
+<dt id="dfitspy.tests.test">
+<code class="descclassname">dfitspy.tests.</code><code class="descname">test</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dfitspy.tests.test" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function calls the test of each module and run them</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-dfitspy">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-dfitspy" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="dfitspy.get_files">
+<code class="descclassname">dfitspy.</code><code class="descname">get_files</code><span class="sig-paren">(</span><em>files</em>, <em>dire=False</em><span class="sig-paren">)</span><a class="headerlink" href="#dfitspy.get_files" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function extracts the list of files based on the files
+and dire parameters.</p>
+<p>example: get_files([‘fil1.fits,file2.fits’] , ‘/home/Documents’)
+example: get_files([‘fil1.fits,file2.fits’])</p>
+<dl class="docutils">
+<dt>files</dt>
+<dd><dl class="first last docutils">
+<dt>list of str, list of files names (without path)</dt>
+<dd><dl class="first last docutils">
+<dt>it can be [‘file1.fits,file2.fits,….’]</dt>
+<dd>[‘file1.fits’]
+[‘file1,fits’, ‘file2.fits’]
+[‘all’]</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+<dt>dire</dt>
+<dd>str, path of the directory to look in</dd>
+</dl>
+<p>list of files</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="dfitspy.get_keys">
+<code class="descclassname">dfitspy.</code><code class="descname">get_keys</code><span class="sig-paren">(</span><em>key_string</em><span class="sig-paren">)</span><a class="headerlink" href="#dfitspy.get_keys" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function extract from a string the list of keys</p>
+<dl class="docutils">
+<dt>keystring</dt>
+<dd><dl class="first docutils">
+<dt>string, keys to be requested by user</dt>
+<dd><dl class="first last docutils">
+<dt>ex: SEEING</dt>
+<dd>SEEING,AIRMASS
+SEEING,ARIMASS,OBID</dd>
+</dl>
+</dd>
+</dl>
+<p class="last">if a string contains dots, e.g, ESO.SEQ.ARM it will be
+transform to ESO SEQ ARM (with spaces)</p>
+</dd>
+</dl>
+<dl class="docutils">
+<dt>keys</dt>
+<dd>list, list of keys (string)</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="dfitspy.test">
+<code class="descclassname">dfitspy.</code><code class="descname">test</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dfitspy.test" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function calls the test of each module and run them</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="dfitspy.read_fitsfile">
+<code class="descclassname">dfitspy.</code><code class="descname">read_fitsfile</code><span class="sig-paren">(</span><em>thefile</em><span class="sig-paren">)</span><a class="headerlink" href="#dfitspy.read_fitsfile" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function is largely inspired from the fitsio python library and used the
+python wrapper around the cFitsio library.
+It takes as argument the name (including path if the location of the file is different from the
+current folder) and returns a dictionnary of keyword = header keyword and value = header value.</p>
+<dl class="docutils">
+<dt>WARNING: in the ESO fits header format, the HIERARCH prefix will be ignored by this function</dt>
+<dd>and the resulting dictionnary will not contain the HIERARCH prefix.
+Ex: ‘HIERARCH ESO TEL ALT’ will become ‘ESO TEL ALT’</dd>
+</dl>
+<dl class="docutils">
+<dt>filename</dt>
+<dd>str,  path/to/file (fits file)</dd>
+</dl>
+<dl class="docutils">
+<dt>dict_values</dt>
+<dd>python dictionnary with header keywords/value pairs.</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="dfitspy.dfitsort">
+<code class="descclassname">dfitspy.</code><code class="descname">dfitsort</code><span class="sig-paren">(</span><em>listfiles</em>, <em>listkeys</em>, <em>grepping=None</em><span class="sig-paren">)</span><a class="headerlink" href="#dfitspy.dfitsort" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function get for all files, the value of all the keywords that are passed</p>
+<p>example:  dfitsort([file1, file2], [key1, key2]) &lt;– no grep
+example:  dfitsort([file1, file2], [key1, key2], [‘match’, ‘match2’]) &lt;– multi grep</p>
+<dl class="docutils">
+<dt>listfiles</dt>
+<dd>list, with file names (string, path included)</dd>
+<dt>listkeys</dt>
+<dd>list, of keywords (strings)</dd>
+<dt>grep</dt>
+<dd>list of string,
+if not false, the grepping valueS
+will be compared to all the values
+of the keywords. If all grepping values appear in the
+header of one file the file will be kept</dd>
+</dl>
+<dl class="docutils">
+<dt>file_dict</dt>
+<dd><dl class="first last docutils">
+<dt>dictionnary, keys=filename</dt>
+<dd>values=dictionnary of keyword-value pairs</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="dfitspy.keywords_in_file">
+<code class="descclassname">dfitspy.</code><code class="descname">keywords_in_file</code><span class="sig-paren">(</span><em>thefile</em>, <em>keyword</em><span class="sig-paren">)</span><a class="headerlink" href="#dfitspy.keywords_in_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function extracts in the thefile file the value
+of the keyword</p>
+<dl class="docutils">
+<dt>thefile</dt>
+<dd>str, path/to/file.fits</dd>
+<dt>keyword</dt>
+<dd>str, keyword to get the value of</dd>
+</dl>
+<dl class="docutils">
+<dt>value</dt>
+<dd>str, value of the keyword inside the file</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="dfitspy.dfitsort_view">
+<code class="descclassname">dfitspy.</code><code class="descname">dfitsort_view</code><span class="sig-paren">(</span><em>values_dict</em><span class="sig-paren">)</span><a class="headerlink" href="#dfitspy.dfitsort_view" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function displays a-la-dfits the requested informations</p>
+<p>First we display the number of files that was found
+Then we display the header with keywords</p>
+<dl class="docutils">
+<dt>values_dict</dt>
+<dd><dl class="first last docutils">
+<dt>dictionnary, keys=filename</dt>
+<dd>values=dictionnary of keyword-value pair</dd>
+</dl>
+</dd>
+</dl>
+<p>None</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="dfitspy.keywords_view">
+<code class="descclassname">dfitspy.</code><code class="descname">keywords_view</code><span class="sig-paren">(</span><em>keywords</em><span class="sig-paren">)</span><a class="headerlink" href="#dfitspy.keywords_view" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function displays the list of keywords given in parameters
+By default it displays it in a 3 columns display :</p>
+<p>1   2   3
+4   5   6
+.   .   .
+.   .   .</p>
+<dl class="docutils">
+<dt>keywords</dt>
+<dd>list of keywords (string)</dd>
+</dl>
+<p>None (display in terminal)</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, R. Thomas
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

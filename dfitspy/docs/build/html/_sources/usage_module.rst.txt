@@ -26,7 +26,7 @@ dfitspy can be also used as a third party module in one of your own code. You ca
            In [1]: import dfitspy
 
 
-dfitspy contains few functions that I will details below::
+dfitspy contains a few functions that I detail below::
 
     get_all_keyword
     get_files
@@ -123,7 +123,7 @@ You would get the same results using::
 2 - Get your keywords ready
 ---------------------------
 
-After preparing the files you must prepare the keywords you want to fitsort your files with. The correct format is a list of string, each string being a keyword, example::
+After preparing the files you must prepare the keywords you want to fitsort your files with. The correct format is a list of strings, each string being a keyword, example::
 
     listkeys = ['OBJECT', 'LST', 'DATE']
 
@@ -173,7 +173,7 @@ This function takes a file as input and return the list of all the keywords::
      'UTC',
      'LST'...........(cut for display convinience)]
 
-If you have a very long list you can display it using the *display_list* function, which will cut the length by three::
+If you have a very long list you can display it using the *keywords_view* function, which will cut the length by three::
 
     In [8] : dfitspy.keywords_view(keys)
 
@@ -229,7 +229,7 @@ At this point you are ready to fitsort all files. In order to achieve that you h
 
 
 
-This function takes as argument the list of file and the list of parameter and returns a dictionnary of files withe values of all the keywords required::
+This function takes as argument the list of files and the list of parameters and returns a dictionary of files with values of all the keywords required::
 
     In [10]: fitsort = dfitspy.dfitsort(listfiles, listkeys)
 
@@ -265,7 +265,7 @@ This function takes as argument the list of file and the list of parameter and r
       'LST': '78684.245',
       'DATE': '2099-14-59T09:55:03'}}
 
-you can display everything in a nice way using the *display_final* function::
+you can display everything in a nice way using the *dfitsort_view* function::
 
     In [12]: dfitspy.dfitsort_view(fitsort)
 
