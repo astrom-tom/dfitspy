@@ -65,7 +65,7 @@ dfitspy has few optionnal arguments and 2 semi mandatory arguements. You can not
 If you want to dfits | fitsort
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-* -file: here is where you give your files. You have multiple option how to give values to this argument:
+* -file: This is where you feed dfitspy with your files. You have multiple option how to give values to this argument:
 
     * A single file:  **-file test.fits**
     * Multiple particular files: **-file test.fits,test2.fits**. They must be separated with comas and **without spaces**
@@ -76,20 +76,18 @@ If you want to dfits | fitsort
 
 .. warning::
 	
-    The directory that is considered here is the current directory where dfistpy is started.
+    The directory that is considered here is the current directory where dfitspy is started.
 
-* -key: Here is where you ask dfitspy to look for particular keywords in the headers. Here again you have multiple option
+* -key: this is where you ask dfitspy to look for particular keywords in the headers. Here again you have multiple option
   
     * a single keyword: **-key OBJECT**
     * multiple arguments: **-key OBJECT,LST**. They must be separated by comas and **without spaces**.
-
-
 
 .. warning::
 
     Two things you must be careful of:
 
-    * ESO keywords may contain the 'HIERARCH' prefix. This is ignored by dfitspy therefore do not use you can not use this prefix. For example if you have the following keywords HIERARCH ESO PRO CATG you must call it with ESO.PRO.CATG 
+    * ESO keywords may contain the 'HIERARCH' prefix. This is ignored by dfitspy therefore you cannot use this prefix. For example, if you have the following keywords HIERARCH ESO PRO CATG you must call it with ESO.PRO.CATG 
     * If your keywords contain spaces (ex: ESO OBS ID) you must replace it by dots: ESO.OBS.ID
     
 An example of output is the following (running the command: **dfitspy -f Test_data/* -k OBJECT,LST,ESO.OBS.ID**)::
@@ -138,12 +136,12 @@ An example of output is the following (running the command: **dfitspy -f Test_da
 	[DFITSPY INFO]> 34 files used in output 
 
 
-First dfitspy gives you the number of files that was considered with the command, this number depends on what you give through the '-f' argument. Then it displays the header always starting with the filename and then all the keywords the user requires to be displayed. And It displays the list of all the filenames and fits header values. Finally it gives you the number of files in the list.
+First dfitspy gives you the number of files that was considered with the command, this number depends on what you give through the '-f' argument. Then it displays the header always starting with the filename and then all the keywords the user requires to be displayed. And It displays the list of all the filenames and fits header values. Finally, it gives you the number of files in the list.
 
 GREPPING option
 ^^^^^^^^^^^^^^^
 
-dfitspy offers you the possibility to display files with particular values that you are expecting. This is done using the option *- - grep* (double dash) and giving as arguement an expected value of a keyword given with the *-key* option. Doing so will tell dfitspy to consider the files only if one of the keyword that the user ask to display as the grepping value. 
+dfitspy offers you the possibility to display files with particular values that you are expecting. This is done using the option *- - grep* (double dash) and giving as argument an expected value of a keyword given with the *-key* option. Doing so will tell dfitspy to consider the files only if one of the keyword that the user ask to display as the grepping value. 
 
 Simple grepping
 ---------------
@@ -170,7 +168,7 @@ Taking the same command as above, one might want to get only the files with LST 
 Multi grepping
 --------------
 
-In the previous command we see that one file as a different OBJECT value as the other ones. If we want to remove it we must **add a grepping option** and take only files with OBJECT='STD,TELLURIC', like this::
+In the previous command we see that one file as a different OBJECT value as the other ones. If we want to remove it, we must **add a grepping option** and take only files with OBJECT='STD,TELLURIC', like this::
 
     	[Command: dfitspy -f Test_data/* -k OBJECT,LST,ESO.OBS.ID --grep 79056.26 --grep STD,TELLURIC]
 
