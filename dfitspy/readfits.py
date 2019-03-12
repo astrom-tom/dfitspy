@@ -157,7 +157,19 @@ def dfitsort(listfiles, listkeys, grepping=None):
         else:
             ###we check at one if all the grepping values are
             ##in the file
-            if set(grepping).issubset(key_dict.values()):
+
+            grepped = []
+            for i in key_dict.values():
+                for j in grepping:
+                    if '.' in j:
+                        k = j.replace(".", " ")
+                    else:
+                        k = j
+                    if k in i:
+                        grepped.append(j)
+
+            #if set(grepping).issubset(key_dict.values()):
+            if set(grepped) == set(grepping):
                 file_dict[os.path.basename(file)] = key_dict
 
 
@@ -239,7 +251,7 @@ class Testkeywordextraction(unittest.TestCase):
 
     def test_get_value_with_grep(self):
         '''
-        Same as before but woth grepping
+        Same as before but with grepping
         '''
         ##get 2 test files
         dir_path = os.path.dirname(os.path.realpath(__file__))
@@ -250,7 +262,8 @@ class Testkeywordextraction(unittest.TestCase):
         allvalues = dfitsort([filetest, filetest2], ['YEAR', 'NAME'], ['2018'])
 
         ##expected values (one out of the two files as year=2018)
-        expected = {'test.fits':{'YEAR':'2018', 'NAME':'dfitspy'}}
+        expected = {'test.fits':{'YEAR':'2018', 'NAME':'dfitspy'}, \
+                   'test5.fits':{'YEAR':'201810', 'NAME':'dfitspy'}}
 
         self.assertEqual(expected, allvalues)
 

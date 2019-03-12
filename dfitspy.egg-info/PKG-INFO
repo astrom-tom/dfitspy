@@ -1,10 +1,10 @@
 Metadata-Version: 1.2
 Name: dfitspy
-Version: 19.1.5
+Version: 19.3.2
 Summary: A dfits|fitsio implementation in python
-Home-page: UNKNOWN
+Home-page: https://astrom-tom.github.io/dfitspy/build/html/index.html
 Author: Romain Thomas
-License: UNKNOWN
+License: GNU GPL v3
 Description: UNKNOWN
 Platform: UNKNOWN
 Requires-Python: >=3.6

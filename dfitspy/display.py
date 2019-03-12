@@ -32,52 +32,53 @@ def dfitsort_view(values_dict):
     ###############get columns sizes
     ##1-filename
     filenames = list(values_dict.keys())
-    maxsize_filename = max([len(os.path.basename(i)) for i in filenames])
+    if filenames: 
+        maxsize_filename = max([len(os.path.basename(i)) for i in filenames])
 
-    ##2-keywords
-    keys = list(values_dict[filenames[0]])
-    header_keys_length = [len(i) for i in keys]
-    keys_length = numpy.zeros((len(values_dict), len(keys)))
-    for i in range(len(filenames)):
-        for j in range(len(keys)):
-            keys_length[i][j] = len(str(values_dict[filenames[i]][keys[j]]))
+        ##2-keywords
+        keys = list(values_dict[filenames[0]])
+        header_keys_length = [len(i) for i in keys]
+        keys_length = numpy.zeros((len(values_dict), len(keys)))
+        for i in range(len(filenames)):
+            for j in range(len(keys)):
+                keys_length[i][j] = len(str(values_dict[filenames[i]][keys[j]]))
 
-    keys_length = keys_length.T
-    length = [int(max(i)) for i in keys_length]
+        keys_length = keys_length.T
+        length = [int(max(i)) for i in keys_length]
 
-    ################prepare header
-    ##create format
-    form = ""
-    form += "{:%s}"%maxsize_filename
-    #for i in length:
-    for i, j in zip(length, header_keys_length):
-        if i > j:
-            form += "\t{:%s}"%i
-        else:
-            form += "\t{:%s}"%j
-    form += ""
+        ################prepare header
+        ##create format
+        form = ""
+        form += "{:%s}"%maxsize_filename
+        #for i in length:
+        for i, j in zip(length, header_keys_length):
+            if i > j:
+                form += "\t{:%s}"%i
+            else:
+                form += "\t{:%s}"%j
+        form += ""
 
-    #header
-    header = form.format('filename', *keys)
+        #header
+        header = form.format('filename', *keys)
 
-    #separation
-    sep = maxsize_filename*"-"
-    for i, j in zip(length, header_keys_length):
-        if i > j:
-            sep += '\t'+i*"-"
-        else:
-            sep += '\t'+j*"-"
+        #separation
+        sep = maxsize_filename*"-"
+        for i, j in zip(length, header_keys_length):
+            if i > j:
+                sep += '\t'+i*"-"
+            else:
+                sep += '\t'+j*"-"
 
 
-    ##print them
-    print(header)
-    print(sep)
-    ##and print all values
-    for i in values_dict:
-        linevalues = [os.path.basename(i)]
-        values = list(values_dict[i].values())
-        allvalue = linevalues + values
-        print(form.format(*allvalue))
+        ##print them
+        print(header)
+        print(sep)
+        ##and print all values
+        for i in values_dict:
+            linevalues = [os.path.basename(i)]
+            values = list(values_dict[i].values())
+            allvalue = linevalues + values
+            print(form.format(*allvalue))
 
 
 def keywords_view(keywords):
