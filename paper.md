@@ -47,16 +47,17 @@ A command line interface has been included in dfitspy so it can be used as a Ter
 
 ``dfitspy -f Test_data/* -k author,number,type --grep 2dspec``\
 
-This command will search is all the FITS file contained in the \textit{Test_data} directory. Dfitspy will search for three keywords in the header: author, time and type. Finally, the terminal will display only the file where both 79098.26 and STD,TELLURIC are in the keyword values. The terminal output is similar to the dfits|fitsort combination. It display in a column format, each files with the requested keyword and value for each keywords.
+This command will search is all the FITS file contained in the \textit{Test_data} directory. Dfitspy will search for three keywords in the header: author, time and type. Finally, the terminal will display only the file where both 79098.26 and STD,TELLURIC are in the keyword values. The terminal output is similar to the dfits|fitsort combination. It displays in a column fashion, each file with the requested keyword and value for each keyword.
 
+\newpage
 
 ``filename     author                number          type``\
 ``----------   ------------          --------        ------``\
-``file1.fits   R. Thomas	     79098.26        2dspec``\
+``file1.fits   R. Thomas	     49098.26        2dspec``\
 ``file2.fits   R. Thomas	     79098.26        2dspec``\
-``file3.fits   R. Thomas	     79198.26        2dspec``\
+``file3.fits   R. Thomas	     69198.26        2dspec``\
 ``file4.fits   R. Thomas	     79498.26        2dspec``\
-``file5.fits   R. Thomas	     79098.26        2dspec``\
+``file5.fits   R. Thomas	     89098.26        2dspec``\
 ``file6.fits   R. Thomas	     79498.26        2dspec``
 
 
