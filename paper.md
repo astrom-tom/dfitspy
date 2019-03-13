@@ -17,23 +17,35 @@ bibliography: paper.bib
 
 # Summary
 The FITS format (Flexible Image Transport System) [@Hanisch:2001] is a widely used format to
-store astronomical data. It has been developed in the late 1970 to reach its 
-final form almost two decades ago. It is able to store the data themselves as
-well as the metadata describing the data tables.
+store astronomical data. It is used to store a lot of different types of data such as 1D or 2D spectra, 
+3D data cubes. It has been developed in the late 1970 to reach its final form almost two decades ago. 
+FITS files are built with two components. The data themselves are stored as tables and contains 
+any types of data. A header is built containing set of keywords-value pairs aiming at describing 
+the data themselves.
 
 Accessing and displaying metadata inside the FITS file is important to get an overview
 of what is inside the files. It is particularly useful when dealing with large amount
-of files at once. This have been already publicly available for years with the dfits 
-and fitsort algorithms (the documentation is available here https://www.eso.org/sci/software/eclipse/eug/eug/node8.html). 
-The main limitation is that they are stand-alone 
-programs useable only in a terminal. They can not be used natively inside another 
-program. 
+of files at once. Tools have been already publicly available for years with the dfits 
+and fitsort algorithms (the documentation is available here 
+https://www.eso.org/sci/software/eclipse/eug/eug/node8.html). The main limitation is 
+that they are stand-alone programs useable only in a terminal. They can not be used natively 
+inside another program. 
 
-dfitspy was designed to port the dfits and fitsort capabilities to one of the most used 
-language used in science: python. It can be used as an executable (as the original 
-programs) but also, and it is its strength, as a Python module. Therefore FITS files 
-can be selected in an efficient and fast way based on their metadata values inside 
-python programs.
+The present python module, dfitspy, is a project that migrates the main dfits 
+and fitsort capabilities to python. It is a metadata searcher/displayer for FITS files. 
+As dfits and fitsort, dfitspy is able to display in the terminal the result of a metadata 
+search and is able to grep certain values of keywords inside large samples of files. 
+Therefore it can be used directly with the command line interface. Nevertheless, 
+dfitspy can be, and it is its strength, imported as a python module the user can 
+use these functionnalities inside another python code or the python interpretor.
+
+
+Examples:
+
+\begin{itemize}
+\item The terminal interface (a-la-dfits|fitsort):
+\item The python module:
+\end{itemize}
 
 
 # References
