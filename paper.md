@@ -49,15 +49,14 @@ A command line interface has been included in dfitspy so it can be used as a Ter
 
 This command will search is all the FITS file contained in the \textit{Test_data} directory. Dfitspy will search for three keywords in the header: author, time and type. Finally, the terminal will display only the file where both 79098.26 and STD,TELLURIC are in the keyword values. The terminal output is similar to the dfits|fitsort combination:
 
-``
-filename     author          number          type\
-----------   ------------    --------        ------\
-file1.fits   R. Thomas	     79098.26        2dspec\
-file2.fits   R. Thomas	     79098.26        2dspec\
-file3.fits   R. Thomas	     79098.26        2dspec\
-file4.fits   R. Thomas	     79098.26        2dspec\
-file5.fits   R. Thomas	     79098.26        2dspec\
-file6.fits   R. Thomas	     79098.26        2dspec``
+``filename     author                number          type``\
+``----------   ------------          --------        ------``\
+``file1.fits   R. Thomas	     79098.26        2dspec``\
+``file2.fits   R. Thomas	     79098.26        2dspec``\
+``file3.fits   R. Thomas	     79098.26        2dspec``\
+``file4.fits   R. Thomas	     79098.26        2dspec``\
+``file5.fits   R. Thomas	     79098.26        2dspec``\
+``file6.fits   R. Thomas	     79098.26        2dspec``
 
 
 # dfitspy as a Python module
@@ -74,10 +73,6 @@ And finally, we can fitsort the files and eventually grep.\
 ``fitsortgrep = dfitspy.dfitsort(listfiles, listkeys, grepping)``
 
 The final output is stored as a dictionnary of files for which each keywords/values is given.
-
-
-
-
 
 
 
