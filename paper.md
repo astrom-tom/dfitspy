@@ -55,11 +55,14 @@ TO be used as a Python module, dfitspy must be imported. Then a set of command h
 First all the files must be gathered:\
 ``listfiles = dfitspy.get_files(['all'],'Test_data/')``
 
-Then, one must prepare the list of keywords to look for:
+Then, one must prepare the list of keywords to look for:\
 ``listkeys = ['author', 'time', 'type']``
 
-And finally make the fitsort with the (optional) grepping.
+And finally make the fitsort with the (optional) grepping.\
 ``fitsortgrep = dfitspy.dfitsort(listfiles, listkeys, ['79098.26', 'STD,TELLURIC'])``
+
+The final output is stored as a dictionnary of files for which each keywords/values is given.
+
 
 
 
