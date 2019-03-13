@@ -46,7 +46,7 @@ A command line interface has been included in ``dfitspy`` so it can be used as a
 
 ``dfitspy -f Test_data/* -k author,number,type --grep 2dspec``\
 
-This command will search in all the FITS file present in the \textit{Test_data} directory. ``dfitspy`` will search for three keywords in the header: author, time and type. Finally, the terminal will display only the file where ``2dspec`` is in the requested keyword values. The terminal output is similar to the dfits|fitsort combination. It displays, in a column fashion, each file with the requested keyword its corresponding values:
+This command will search in all the FITS file present in the _Test_data_ directory. ``dfitspy`` will search for three keywords in the header: author, time and type. Finally, the terminal will display only the file where ``2dspec`` is in the requested keyword values. The terminal output is similar to the dfits|fitsort combination. It displays, in a column fashion, each file with the requested keyword its corresponding values:
 
 \newpage
 
@@ -85,6 +85,5 @@ The final output is stored as a dictionnary of files for which each keywords/val
 # Acknowledgements
 
 The author would like to thank the Journal of Open Source Software to give the opportunity to researchers to publish their softwares and to the referee of this paper for helpful comments.
-
 
 # References
