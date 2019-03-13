@@ -39,6 +39,7 @@ Content
    usage
    usage_module
    modules
+   dfits_fitsort
 
 
 What is dfitspy?
