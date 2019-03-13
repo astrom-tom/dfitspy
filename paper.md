@@ -40,8 +40,6 @@ dfitspy can be, and it is its strength, imported as a python module and the user
 use these functionnalities inside another python code or the python interpretor.
 
 
-Examples:
-
 # dfitspy as a terminal command
 A command line interface has been included in dfitspy so it can be used as a Terminal command. A typical command is:\
 
