@@ -45,23 +45,36 @@ Examples:
 # dfitspy as a terminal command
 A command line interface has been included in dfitspy so it can be used as a Terminal command. A typical command is:\
 
-``dfitspy -f Test_data/* -k author,time,type --grep 79098.26 --grep STD,TELLURIC``\
+``dfitspy -f Test_data/* -k author,number,type --grep 79098.26 --grep 2dspec``\
 
 This command will search is all the FITS file contained in the \textit{Test_data} directory. Dfitspy will search for three keywords in the header: author, time and type. Finally, the terminal will display only the file where both 79098.26 and STD,TELLURIC are in the keyword values.
+
+``
+filename     author          number          type\
+----------   ------------    --------        ------\
+file1.fits   R. Thomas	     79098.26        2dspec\
+file2.fits   R. Thomas	     79098.26        2dspec\
+file3.fits   R. Thomas	     79098.26        2dspec\
+file4.fits   R. Thomas	     79098.26        2dspec\
+file5.fits   R. Thomas	     79098.26        2dspec\
+file6.fits   R. Thomas	     79098.26        2dspec``
+
 
 # dfitspy as a Python module
 TO be used as a Python module, dfitspy must be imported. Then a set of command have to be ran in order to read the final list of filenames/keywords/values. Example:
 
-First all the files must be gathered:\
+First all, the files must be gathered:\
 ``listfiles = dfitspy.get_files(['all'],'Test_data/')``
 
-Then, one must prepare the list of keywords to look for:\
-``listkeys = ['author', 'time', 'type']``
+Then, one must prepare the list of keywords to look for, and eventually the grepping values:\
+``listkeys = ['author', 'time', 'type']``\
+``grepping = ['79098.26', 'STD,TELLURIC']``
 
-And finally make the fitsort with the (optional) grepping.\
-``fitsortgrep = dfitspy.dfitsort(listfiles, listkeys, ['79098.26', 'STD,TELLURIC'])``
+And finally, we can fitsort the files and eventually grep.\
+``fitsortgrep = dfitspy.dfitsort(listfiles, listkeys, grepping)``
 
 The final output is stored as a dictionnary of files for which each keywords/values is given.
+
 
 
 
