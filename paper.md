@@ -23,15 +23,15 @@ FITS files are built with two components. The data themselves are stored as tabl
 any types of data. A header is built containing set of keywords-value pairs aiming at describing 
 the data themselves.
 
-Accessing and displaying metadata inside the FITS file is important to get an overview
-of what is inside the files. It is particularly useful when dealing with large amount
+Accessing and displaying metadata inside FITS files is important in order to get an overview
+of what is inside these files. It is particularly useful when dealing with large amount
 of files at once. Tools have been already publicly available for years with the dfits 
 and fitsort algorithms (the documentation is available here 
 https://www.eso.org/sci/software/eclipse/eug/eug/node8.html). The main limitation is 
 that they are stand-alone programs useable only in a terminal. They can not be used natively 
 inside another program. 
 
-The present python module, dfitspy, is a project that migrates the main dfits 
+The python module presented in this paper, dfitspy, is a project that migrates the main dfits 
 and fitsort capabilities to python. It is a metadata searcher/displayer for FITS files. 
 As dfits and fitsort, dfitspy is able to display in the terminal the result of a metadata 
 search and is able to grep certain values of keywords inside large samples of files. 
