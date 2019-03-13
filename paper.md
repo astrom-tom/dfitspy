@@ -43,8 +43,13 @@ use these functionnalities inside another python code or the python interpretor.
 Examples:
 
 \begin{itemize}
-\item The terminal interface (a-la-dfits|fitsort):
-\item The python module:
+\item The terminal interface (a-la-dfits|fitsort):\\
+``dfitspy -f Test_data/* -k OBJECT,LST,ESO.OBS.ID --grep 79056.26 --grep STD,TELLURIC``
+
+This command will search is all the FITS file contained in the \textit{Test_data} directory. Dfitspy will search for three keywords in the header: OBJECT, LST and ESO OBS ID. Finally, the terminal will display only the file where both 79056.26 and STD,TELLURIC are in the keyword values.
+
+\item The python module:\\
+````
 \end{itemize}
 
 
