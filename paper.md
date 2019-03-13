@@ -48,4 +48,13 @@ Examples:
 \end{itemize}
 
 
+# Availability
+
+dfitspy is an GPL licensed software and the source code is available at https://github.com/astrom-tom/dfitspy. The full documentation is available at https://astrom-tom.github.io/dfitspy/build/html/index.html .
+
+# Acknowledgements
+
+The author would like to thank the Journal of Open Source Software to give the opportunity to researchers to publish software and to the referee of this paper for helpful comments.
+
+
 # References
