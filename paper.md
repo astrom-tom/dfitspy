@@ -43,13 +43,20 @@ use these functionnalities inside another python code or the python interpretor.
 Examples:
 
 # dfitspy as a terminal command
-A command line interface has been included in dfitspy so it can be used as a Terminal command. A typical command is:\\
+A command line interface has been included in dfitspy so it can be used as a Terminal command. A typical command is:\
 
-``dfitspy -f Test_data/* -k author,time,type --grep 79098.26 --grep STD,TELLURIC``\\
+``dfitspy -f Test_data/* -k author,time,type --grep 79098.26 --grep STD,TELLURIC``\
 
 This command will search is all the FITS file contained in the \textit{Test_data} directory. Dfitspy will search for three keywords in the header: author, time and type. Finally, the terminal will display only the file where both 79098.26 and STD,TELLURIC are in the keyword values.
 
 # dfitspy as a Python module
+TO be used as a Python module, dfitspy must be imported. Then a set of command have to be ran in order to read the final list of filenames/keywords/values. Example:
+
+``listfiles = dfitspy.get_files(['all'],'Test_data/')``
+``listkeys = ['OBJECT', 'LST', 'DATE']``
+``fitsort = dfitspy.dfitsort(listfiles, listkeys)``
+
+
 
 
 # Availability
