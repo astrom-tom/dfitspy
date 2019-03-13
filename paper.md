@@ -64,6 +64,9 @@ This command will search is all the FITS file contained in the \textit{Test_data
 # dfitspy as a Python module
 To be used as a Python module, dfitspy must be imported. Then a set of command have to be used in order to produce the final list of filenames/keywords/values. In short, two main commands must be used:
 
+Import the module:\
+``import dfitspy``
+
 First all, the files must be gathered:\
 ``listfiles = dfitspy.get_files(['all'],'Test_data/')``
 
