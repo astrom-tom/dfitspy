@@ -51,8 +51,8 @@ This command will search is all the FITS file contained in the \textit{Test_data
 
 \newpage
 
-``filename     author             number          type``\
-``----------   ------------       --------        ------``\
+``filename     author            number          type``\
+``----------   ------------      --------        ------``\
 ``file1.fits   R. Thomas	     49098.26        2dspec``\
 ``file2.fits   R. Thomas	     79098.26        2dspec``\
 ``file3.fits   R. Thomas	     69198.26        2dspec``\
