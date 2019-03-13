@@ -29,10 +29,9 @@ Other libraries are used, but they are all part of the standard python library. 
 1-from the python repository
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The last dfitspy version is v19.1.5 and is available in the pypi test repository. To install it::
+The last dfitspy version is v19.3.3 and is available in the main pypi repository. To install it::
 
-
-     pip install -i https://test.pypi.org/simple/ dfitspy --user
+     pip install dfitspy --user
 
 Using this command will allow you not to have to install any other package. Pip will install what is missing for you.
 

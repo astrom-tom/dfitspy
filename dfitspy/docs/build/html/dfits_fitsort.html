@@ -1,0 +1,327 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>dfits and fitsort &mdash; dfitspy 19.3.3 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="get files and keys functions" href="dfitspy.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> dfitspy
+          
+
+          
+            
+            <img src="_static/dfitspy_tr.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                19.3
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="index.html">Home</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">dfitspy as an executable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage_module.html">dfitspy as a Python Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">dfitspy API functions</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">dfits and fitsort</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">dfitspy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>dfits and fitsort</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/dfits_fitsort.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <p id="dfitsfitsort"><img alt="Python36" src="https://img.shields.io/badge/python-3.6-blue.svg" /> <a class="reference external" href="https://zenodo.org/badge/latestdoi/150992970"><img alt="zenodo" src="https://zenodo.org/badge/150992970.svg" /></a> <a class="reference external" href="http://perso.crans.org/besson/LICENSE.html"><img alt="Licence" src="https://img.shields.io/badge/License-GPLv3-blue.svg" /></a></p>
+<div class="section" id="dfits-and-fitsort">
+<h1>dfits and fitsort<a class="headerlink" href="#dfits-and-fitsort" title="Permalink to this headline">¶</a></h1>
+<p>We provide in this page the man pages of the dfits and fitsort original packages.</p>
+<p>The <a class="reference external" href="ftp://134.171.42.54/scisoft/scisoft4/linux/redhat9/eclipse/eclipse/man/html1/fitsort.html">dfits</a> manpage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Name
+ dfits - display FITS file header information
+
+Synopsis
+       dfits [-x xtnum] &lt;list&gt;
+       dfits [-x xtnum] -
+
+Description
+       dfits  displays FITS header informations on stdout. Header
+       information  can  be  found  in  the  main   header   only
+       (default),  in  extensions, or in both.  See the -x option
+       below.  dfits accepts multi-file input.  `dfits -&#39; expects
+       single file data coming from stdin.
+
+Options
+       -x xtnum
+              Specifies  the  extension  to print out. Extensions
+              are numbered starting from 1. If this option is not
+              specified,  only the main header is printed out. If
+              this option specifies an extension  that  does  not
+              exist, nothing is printed out.
+              Specify 0 as extension number to get a print of the
+              main header plus all extension headers.
+
+       Examples :
+       dfits *.fits
+       dfits *.fits | grep NAXIS3
+       gzip -d &lt; star.fits.gz | dfits - | more
+       dfits -x 0 *.fits
+       dfits -x 3 *.fits
+
+See Also
+       fitsort can be combined with dfits output to sort out key-
+       word values of a group of FITS files.
+
+Files
+       Files shall all comply with FITS format
+</pre></div>
+</div>
+<p>And the <a class="reference external" href="ftp://134.171.42.54/scisoft/scisoft4/linux/redhat9/eclipse/eclipse/man/html1/dfits.html">fitsort</a> manpage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Name
+ fitsort  -  sort  FITS  header  information from a list of
+ files
+
+Synopsis
+       dfits &lt;FITS files...&gt; | fitsort &lt;FITS keywords...&gt;
+
+Description
+       fitsort extract keyword values from a set of FITS  headers
+       and outputs it in an ASCII table format, which is compati-
+       ble with most data processing software packages. It  shall
+       only be used in combination with the dfits utility.
+
+       The  ASCII output is shown in columns. Columns are aligned
+       with blank characters and also separated  by  tabulations.
+       Blank alignment allows human readers to visualize the out-
+       put in a pretty format, tabulations are there for  spread-
+       sheet  compatibility. If you want to load out fitsort out-
+       put into any spreadsheet, specify  that  fields  shall  be
+       separated  by  tabulations  and entries separated by line-
+       feeds.
+
+       Examples :
+       dfits *.fits | fitsort BITPIX NAXIS NAXIS1 NAXIS2
+
+       The output would look like:
+       FILE           BITPIX   NAXIS    NAXIS1   NAXIS2
+       file0001.fits  16       2        128      128
+       file0002.fits  32       2        512      512
+       ...
+
+       ESO specific features in the FITS  header  are  also  sup-
+       ported.  To  get  values for `HIERARCH ESO&#39; keywords, just
+       give the complete names within double quotes. e.g.
+
+       dfits *.fits | fitsort &quot;HIERARCH ESO INS LENS&quot;
+
+       Another way of giving HIERARCH ESO keywords is to use  the
+       short FITS notation, the above example can be given as:
+
+       dfits *.fits | fitsort INS.LENS
+
+       Example:  to  retrieve  the  DPR keywords from an ESO FITS
+       header, you would use:
+
+       dfits  *.fits  |  fitsort  To  be  completed...   DPR.CATG
+       DPR.TYPE DPR.TECH
+
+       This second way of requesting HIERARCH ESO keywords is not
+       only shorter to type, it also avoids typing quotes or dou-
+       ble-quotes on the command-line, making it easier to script
+       with fitsort.
+
+       Notice that the keywords you give on the command-line  are
+       case-insensitive.  The above line is equivalent to:
+
+       dfits *.fits | fitsort dpr.catg dpr.type dpr.tech
+
+Options
+       -d     Do not print out the first output line. This option
+              is useful to get only the  query  results,  without
+              the  top line (giving all column names). This makes
+              it easy to script fitsort from programs like awk or
+              perl.
+
+Files
+       Input  files  to  dfits shall all comply with FITS format.
+       fitsort also supports HIERARCH ESO FITS format.
+
+See Also
+       dfits (1)
+</pre></div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="dfitspy.html" class="btn btn-neutral float-left" title="get files and keys functions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, R. Thomas
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

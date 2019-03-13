@@ -21,6 +21,7 @@ dfitspy/docs/Makefile
 dfitspy/docs/index.html
 dfitspy/docs/logo.txt
 dfitspy/docs/build/doctrees/apidoc.doctree
+dfitspy/docs/build/doctrees/dfits_fitsort.doctree
 dfitspy/docs/build/doctrees/dfitspy.doctree
 dfitspy/docs/build/doctrees/environment.pickle
 dfitspy/docs/build/doctrees/index.doctree
@@ -31,6 +32,7 @@ dfitspy/docs/build/doctrees/usage_module.doctree
 dfitspy/docs/build/html/.buildinfo
 dfitspy/docs/build/html/.nojekyll
 dfitspy/docs/build/html/apidoc.html
+dfitspy/docs/build/html/dfits_fitsort.html
 dfitspy/docs/build/html/dfitspy.html
 dfitspy/docs/build/html/genindex.html
 dfitspy/docs/build/html/index.html
@@ -45,6 +47,7 @@ dfitspy/docs/build/html/usage_module.html
 dfitspy/docs/build/html/_images/dfitspy.png
 dfitspy/docs/build/html/_images/logo.png
 dfitspy/docs/build/html/_sources/apidoc.rst.txt
+dfitspy/docs/build/html/_sources/dfits_fitsort.rst.txt
 dfitspy/docs/build/html/_sources/dfitspy.rst.txt
 dfitspy/docs/build/html/_sources/index.rst.txt
 dfitspy/docs/build/html/_sources/installation.rst.txt
@@ -208,6 +211,7 @@ dfitspy/docs/docs/source/result.jpg
 dfitspy/docs/docs/source/usage.rst
 dfitspy/docs/docs/source/usage_module.rst
 dfitspy/docs/source/conf.py
+dfitspy/docs/source/dfits_fitsort.rst
 dfitspy/docs/source/dfitspy.png
 dfitspy/docs/source/dfitspy.rst
 dfitspy/docs/source/dfitspy_tr.png

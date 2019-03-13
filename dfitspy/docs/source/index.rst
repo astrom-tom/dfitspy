@@ -39,6 +39,7 @@ Content
    usage
    usage_module
    modules
+   dfits_fitsort
 
 
 What is dfitspy?
@@ -51,7 +52,7 @@ module inside another code.
 
 What is not dfitspy?
 ====================
-dfitspy does not read data inside fits file. Other libraries are doing this very efficiently and dfitspy is not made for that (see fitsio and astropy). It works only on the header and allows you to find common values in large amount of fits files in a very fast way. 
+dfitspy does not read data inside fits file. Other libraries are doing this very efficiently and dfitspy is not made for that (see fitsio and astropy). It works only on the header and allows you to find common values in an efficient and convenient way. 
 
 
 Acknowldgements
