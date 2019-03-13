@@ -36,7 +36,7 @@ and fitsort capabilities to python. It is a metadata searcher/displayer for FITS
 As dfits and fitsort, dfitspy is able to display in the terminal the result of a metadata 
 search and is able to grep certain values of keywords inside large samples of files. 
 Therefore it can be used directly with the command line interface. Nevertheless, 
-dfitspy can be, and it is its strength, imported as a python module the user can 
+dfitspy can be, and it is its strength, imported as a python module and the user can 
 use these functionnalities inside another python code or the python interpretor.
 
 
@@ -51,8 +51,8 @@ This command will search is all the FITS file contained in the \textit{Test_data
 
 \newpage
 
-``filename     author                number          type``\
-``----------   ------------          --------        ------``\
+``filename     author             number          type``\
+``----------   ------------       --------        ------``\
 ``file1.fits   R. Thomas	     49098.26        2dspec``\
 ``file2.fits   R. Thomas	     79098.26        2dspec``\
 ``file3.fits   R. Thomas	     69198.26        2dspec``\
