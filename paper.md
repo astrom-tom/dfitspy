@@ -74,7 +74,7 @@ Then, one must prepare the list of keywords to look for, and eventually the grep
 And finally, we can fitsort the files and eventually grep.\
 ``fitsortgrep = dfitspy.dfitsort(listfiles, listkeys, grepping)``
 
-The final output is stored as a dictionnary of files for which each keywords/values is given.
+The final output is stored as a dictionnary of files for which each keywords/values is given. It can also be displayed in the same way as for the terminal output (see above).
 
 # Availability
 
