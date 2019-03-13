@@ -81,7 +81,7 @@ The final output is stored as a dictionnary of files for which each keywords/val
 
 # Availability
 
-dfitspy is an GPL licensed software and the source code is available at https://github.com/astrom-tom/dfitspy. The full documentation is available at https://astrom-tom.github.io/dfitspy/build/html/index.html .
+dfitspy is a GPL licensed software and the source code is available at https://github.com/astrom-tom/dfitspy. The full documentation is available at https://astrom-tom.github.io/dfitspy/build/html/index.html .
 
 # Acknowledgements
 
