@@ -84,7 +84,7 @@ The final output is stored as a dictionnary of files for which each keywords/val
 
 # Acknowledgements
 
-The author would like to thank the Journal of Open Source Software to give the opportunity to researchers to publish software and to the referee of this paper for helpful comments.
+The author would like to thank the Journal of Open Source Software to give the opportunity to researchers to publish their softwares and to the referee of this paper for helpful comments.
 
 
 # References
