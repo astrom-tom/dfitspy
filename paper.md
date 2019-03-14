@@ -70,8 +70,8 @@ Then, the files must be gathered:\
 ``listfiles = dfitspy.get_files(['all'],'Test_data/')``
 
 And the list of keywords must be prepared, and eventually the grepping values:\
-``listkeys = ['author', 'time', 'type']``\
-``grepping = ['79098.26', 'STD,TELLURIC']``
+``listkeys = ['author', 'number', 'type']``\
+``grepping = ['2dspec']``
 
 Finally, we can fitsort the files and eventually grep.\
 ``fitsortgrep = dfitspy.dfitsort(listfiles, listkeys, grepping)``
