@@ -63,17 +63,17 @@ This command will search in all the FITS file present in the \textit{Test_data} 
 # dfitspy as a Python module
 To be used as a Python module, ``dfitspy`` must be imported. Then a set of command have to be used in order to produce the final list of filenames/keywords/values. In short, three main commands must be used:
 
-Import the module:\
+First of all, import the module:\
 ``import dfitspy``
 
-First all, the files must be gathered:\
+Then, the files must be gathered:\
 ``listfiles = dfitspy.get_files(['all'],'Test_data/')``
 
-Then, one must prepare the list of keywords to look for, and eventually the grepping values:\
+And the list of keywords must be prepared, and eventually the grepping values:\
 ``listkeys = ['author', 'time', 'type']``\
 ``grepping = ['79098.26', 'STD,TELLURIC']``
 
-And finally, we can fitsort the files and eventually grep.\
+Finally, we can fitsort the files and eventually grep.\
 ``fitsortgrep = dfitspy.dfitsort(listfiles, listkeys, grepping)``
 
 The final output is stored as a dictionnary of files for which each keywords/values is given. It can also be displayed in the same way as for the terminal output (see above).
