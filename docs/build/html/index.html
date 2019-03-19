@@ -159,7 +159,7 @@
             
   <div class="section" id="welcome-to-dfitspy-s-documentation">
 <h1>Welcome to dfitspy’s documentation!<a class="headerlink" href="#welcome-to-dfitspy-s-documentation" title="Permalink to this headline">¶</a></h1>
-<p><img alt="Python36" src="https://img.shields.io/badge/python-3.6-blue.svg" /> <a class="reference external" href="https://zenodo.org/badge/latestdoi/150992970"><img alt="zenodo" src="https://zenodo.org/badge/150992970.svg" /></a> <a class="reference external" href="http://perso.crans.org/besson/LICENSE.html"><img alt="Licence" src="https://img.shields.io/badge/License-GPLv3-blue.svg" /></a></p>
+<p><a class="reference external" href="https://doi.org/10.21105/joss.01249"><img alt="JOSS" src="http://joss.theoj.org/papers/10.21105/joss.01249/status.svg" /></a> <img alt="Python36" src="https://img.shields.io/badge/python-3.6-blue.svg" /> <a class="reference external" href="http://perso.crans.org/besson/LICENSE.html"><img alt="Licence" src="https://img.shields.io/badge/License-GPLv3-blue.svg" /></a></p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="_images/dfitspy.png"><img alt="GUI" src="_images/dfitspy.png" style="width: 750px;" /></a>
 </div>
@@ -177,6 +177,13 @@
 </ul>
 </div>
 </div>
+<div class="section" id="change-log">
+<h1>Change log<a class="headerlink" href="#change-log" title="Permalink to this headline">¶</a></h1>
+<dl class="docutils">
+<dt><strong>19.3.4:</strong></dt>
+<dd><em>.FST</em>, <em>.fst</em> and compressed FITS files (just compressed data, not the header), are allowed.</dd>
+</dl>
+</div>
 <div class="section" id="what-is-dfitspy">
 <h1>What is dfitspy?<a class="headerlink" href="#what-is-dfitspy" title="Permalink to this headline">¶</a></h1>
 <p><a class="reference external" href="https://github.com/astrom-tom/dfitspy">dfitspy</a> is a small project that migrates the main dfits and fitsort capabilities to python.
@@ -188,9 +195,10 @@ module inside another code.</p>
 <h1>What is not dfitspy?<a class="headerlink" href="#what-is-not-dfitspy" title="Permalink to this headline">¶</a></h1>
 <p>dfitspy does not read data inside fits file. Other libraries are doing this very efficiently and dfitspy is not made for that (see fitsio and astropy). It works only on the header and allows you to find common values in an efficient and convenient way.</p>
 </div>
-<div class="section" id="acknowldgements">
-<h1>Acknowldgements<a class="headerlink" href="#acknowldgements" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="acknowldgements-and-citation">
+<h1>Acknowldgements and citation<a class="headerlink" href="#acknowldgements-and-citation" title="Permalink to this headline">¶</a></h1>
 <p>The python wrapper of the CFITSIO library has been made for the fitsio python library (<a class="reference external" href="https://github.com/esheldon/fitsio">fitsio</a>) and is used in dfitspy.</p>
+<p>If you get to use dfitspy for your work, please quote the JOSS <a class="reference external" href="http://joss.theoj.org/papers/10.21105/joss.01249">Paper</a> [Journal of Open Source software]. Thanks!</p>
 <hr class="docutils" />
 <p><strong>Contribute!</strong>
 dfitspy is not perfect! It has been primarily developed for my private research and I decided to release i

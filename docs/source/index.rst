@@ -6,17 +6,16 @@
 Welcome to dfitspy's documentation!
 ===================================
 
-|Python36| |zenodo| |Licence|
+|JOSS| |Python36| |Licence|
 
+.. |JOSS| image:: http://joss.theoj.org/papers/10.21105/joss.01249/status.svg
+   :target: https://doi.org/10.21105/joss.01249
 
 .. |Licence| image:: https://img.shields.io/badge/License-GPLv3-blue.svg
       :target: http://perso.crans.org/besson/LICENSE.html
 
 .. |Opensource| image:: https://badges.frapsoft.com/os/v1/open-source.svg?v=103
       :target: https://github.com/ellerbrock/open-source-badges/
-
-.. |zenodo| image:: https://zenodo.org/badge/150992970.svg
-   :target: https://zenodo.org/badge/latestdoi/150992970
 
 .. |Python36| image:: https://img.shields.io/badge/python-3.6-blue.svg
 .. _Python36: https://www.python.org/downloads/release/python-360/
@@ -42,6 +41,12 @@ Content
    dfits_fitsort
 
 
+Change log
+==========
+
+**19.3.4:** 
+        *.FST*, *.fst* and compressed FITS files (just compressed data, not the header), are allowed.
+
 What is dfitspy?
 ================
 
@@ -55,9 +60,11 @@ What is not dfitspy?
 dfitspy does not read data inside fits file. Other libraries are doing this very efficiently and dfitspy is not made for that (see fitsio and astropy). It works only on the header and allows you to find common values in an efficient and convenient way. 
 
 
-Acknowldgements
-===============
+Acknowldgements and citation
+============================
 The python wrapper of the CFITSIO library has been made for the fitsio python library (`fitsio <https://github.com/esheldon/fitsio>`_) and is used in dfitspy.
+
+If you get to use dfitspy for your work, please quote the JOSS `Paper <http://joss.theoj.org/papers/10.21105/joss.01249>`_ [Journal of Open Source software]. Thanks!
 
 ----
 

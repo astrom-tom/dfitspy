@@ -1,6 +1,6 @@
 from setuptools import setup
 
-__version__ = '19.3.3'
+__version__ = '19.3.4'
 __place__ = 'ESO Paranal observatory'
 __credits__ = "Romain Thomas"
 __license__ = "GNU GPL v3"
@@ -22,6 +22,7 @@ setup(
    install_requires = [
        "numpy >= 1.14.3",
        "fitsio >= 0.9.11",
+       "python-magic >= 0.4.15",
    ],
    include_package_data=True,
 )

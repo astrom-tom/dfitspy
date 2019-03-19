@@ -1,2 +1,3 @@
 numpy>=1.14.3
 fitsio>=0.9.11
+python-magic>=0.4.15

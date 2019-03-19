@@ -5,6 +5,10 @@ This file creates the filelist depending on the user input as well as the keywor
 ###standard imports
 import os
 
+##third party
+import numpy
+import magic
+
 ##testing
 import unittest
 import unittest.mock
@@ -36,32 +40,88 @@ def get_files(files, dire=False):
                 list of all the files
     '''
 
+    ##allowed extensiont 
+    extensions = ['.fits', '.fts', '.FTS']
+
     ##if no directory was given, we assume the current working directory
     if not dire:
         dire = os.getcwd()
+ 
+
 
     ##A list is given, need to check if some are fits file
     if len(files) > 1:
         allfiles = []
+        files = [os.path.join(dire, i) for i in files]
         for k in files:
-            if k.endswith(".fits"):
-                allfiles.append(k)
+            if k.endswith(tuple(extensions)):
+                if magic.from_file(k).split()[0] == 'FITS':
+                    allfiles.append(k)
+            else:
+                if not os.path.isdir(k):
+                    filetype = numpy.array(magic.from_file(k).split())
+                    if filetype[1] == 'compressed':
+                        findwas = numpy.where(filetype == 'was')[0]
+                        if findwas:
+                            original_name = filetype[findwas[0]+1][1:-2]
+                            if original_name.endswith(tuple(extensions)):
+                                allfiles.append(k)
 
+                    elif filetype[0] == 'FITS':
+                        allfiles.append(f)
+
+                    else:
+                        pass
+     
     ##third option the user wants to look at all the files in the directory
     elif files == ['all']:
         allfiles = []
         files_path = [os.path.join(dire, i) for i in os.listdir(dire)]
         for k in files_path:
-            if k.endswith(".fits"):
-                allfiles.append(k)
+            if k.endswith(tuple(extensions)):
+                if magic.from_file(k).split()[0] == 'FITS': 
+                    allfiles.append(k)
+            else:
+                if not os.path.isdir(k):
+                    filetype = numpy.array(magic.from_file(k).split())
+                    if filetype[1] == 'compressed':
+                        findwas = numpy.where(filetype == 'was')[0]
+                        if findwas:
+                            original_name = filetype[findwas[0]+1][1:-2]
+                            if original_name.endswith(tuple(extensions)):
+                                allfiles.append(k)
 
+                    elif filetype[0] == 'FITS':
+                        allfiles.append(f)
+
+                    else:
+                        pass
+     
     else:
         ##last solution, the user gives a files or a list of files
         ##we split it by coma
         splits = files[0].split(',')
-        allfiles = [os.path.join(dire, i.strip()) for i in splits if \
-                os.path.join(dire, i).endswith(".fits")]
+        allfiles = []
+        for i in splits:
+            f = os.path.join(dire,i)
+            if f.endswith(tuple(extensions)):
+                if magic.from_file(f).split()[0] == 'FITS': 
+                    allfiles.append(f)
+            else:
+                if not os.path.isdir(f) and os.path.isfile(f):
+                    filetype = numpy.array(magic.from_file(f).split())
+                    if filetype[1] == 'compressed':
+                        findwas = numpy.where(filetype == 'was')[0]
+                        if findwas:
+                            original_name = filetype[findwas[0]+1][1:-2]
+                            if original_name.endswith(tuple(extensions)):
+                                allfiles.append(f)
+                    elif filetype[0] == 'FITS':
+                        allfiles.append(f)
 
+                    else:
+                        pass
+                        
     return allfiles
 
 def get_keys(key_string):
