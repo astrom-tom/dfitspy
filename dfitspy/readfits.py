@@ -45,7 +45,11 @@ def read_fitsfile(thefile):
 
     ###loop over the header
     for i in a:
-        n = i['name']
+        if i['card_string'][:8] == 'HIERARCH':
+            prefix = 'HIERARCH '
+        else:
+            prefix = ''
+        n = prefix + i['name'] 
         v = i['value']
         if len(v) > 2 and v[0] == "'" and v[-1] == "'":
             v = v[1:-1]

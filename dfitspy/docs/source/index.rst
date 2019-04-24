@@ -41,6 +41,15 @@ Content
    dfits_fitsort
 
 
+Change log
+==========
+
+**19.4.0**:
+        * The fitsio library v1.0.1 causes problem for the moment. The version 0.9.11 is therefore forced for the moment until a workaround is found.
+
+**19.3.4:** 
+        *.FST*, *.fst* and compressed FITS files (just compressed data, not the header), are allowed.
+
 What is dfitspy?
 ================
 
@@ -54,9 +63,11 @@ What is not dfitspy?
 dfitspy does not read data inside fits file. Other libraries are doing this very efficiently and dfitspy is not made for that (see fitsio and astropy). It works only on the header and allows you to find common values in an efficient and convenient way. 
 
 
-Acknowldgements
-===============
+Acknowldgements and citation
+============================
 The python wrapper of the CFITSIO library has been made for the fitsio python library (`fitsio <https://github.com/esheldon/fitsio>`_) and is used in dfitspy.
+
+If you get to use dfitspy for your work, please quote the JOSS `Paper <http://joss.theoj.org/papers/10.21105/joss.01249>`_ [Journal of Open Source software]. Thanks!
 
 ----
 

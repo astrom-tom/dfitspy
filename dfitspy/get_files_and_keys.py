@@ -5,13 +5,13 @@ This file creates the filelist depending on the user input as well as the keywor
 ###standard imports
 import os
 
-##third party
-import numpy
-import magic
-
 ##testing
 import unittest
 import unittest.mock
+
+##third party
+import numpy
+import magic
 
 
 def get_files(files, dire=False):
@@ -41,7 +41,7 @@ def get_files(files, dire=False):
     '''
 
     ##allowed extensiont 
-    extensions = ['.fits', '.fts', '.FTS']
+    extensions = ['.fits', '.fts', '.FTS', '.Z']
 
     ##if no directory was given, we assume the current working directory
     if not dire:

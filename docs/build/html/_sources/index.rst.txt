@@ -44,6 +44,9 @@ Content
 Change log
 ==========
 
+**19.4.0**:
+        * The fitsio library v1.0.1 causes problem for the moment. The version 0.9.11 is therefore forced for the moment until a workaround is found.
+
 **19.3.4:** 
         *.FST*, *.fst* and compressed FITS files (just compressed data, not the header), are allowed.
 

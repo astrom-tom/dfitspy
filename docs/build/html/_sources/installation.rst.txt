@@ -18,7 +18,7 @@
 Installation
 ============
 
-dfitspy is written in python 3.6. It needs only the following libraries:
+dfitspy is written in python 3.6 (and work in python 3.7.3). It needs only the following libraries:
 
 * Numpy v1.14.3: Numerical python
 * fitsio v0.9.11: fitsio library
@@ -29,7 +29,7 @@ Other libraries are used, but they are all part of the standard python library. 
 1-from the python repository
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The last dfitspy version is v19.3.4 and is available in the main pypi repository. To install it::
+The last dfitspy version is v19.4.0 and is available in the main pypi repository. To install it::
 
      pip install dfitspy --user
 
