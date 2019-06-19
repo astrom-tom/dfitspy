@@ -57,7 +57,6 @@ def read_fitsfile(thefile):
 
     ##and close the file
     FITS.close()
-
     return dict_values
 
 
@@ -139,8 +138,6 @@ def dfitsort(listfiles, listkeys, grepping=None):
     --------
     dfitsort([file1, file2], [key1, key2]) <-- no grep\n
     dfitsort([file1, file2], [key1, key2], ['match', 'match2']) <-- multi grep
-
-
     '''
 
     file_dict = {}
@@ -161,14 +158,14 @@ def dfitsort(listfiles, listkeys, grepping=None):
         else:
             ###we check at one if all the grepping values are
             ##in the file
-
             grepped = []
             for i in key_dict.values():
                 for j in grepping:
-                    if '.' in j:
-                        k = j.replace(".", " ")
-                    else:
-                        k = j
+                    k = j
+                    #f '.' in j:
+                    #    k = j.replace(".", " ")
+                    #else:
+                    #    k = j
                     if k in i:
                         grepped.append(j)
 

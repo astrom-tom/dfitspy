@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>dfitspy as an executable &mdash; dfitspy 19.3.3 documentation</title>
+  <title>dfitspy as an executable &mdash; dfitspy 19.6.1 documentation</title>
   
 
   
@@ -63,7 +63,7 @@
             
             
               <div class="version">
-                19.3
+                19.6
               </div>
             
           
@@ -207,44 +207,44 @@
 <p>In details it means:</p>
 <p>dfitspy has few optionnal arguments and 2 semi mandatory arguements. You can not start dfitspy without any argument:</p>
 <ul class="simple">
-<li>-h and ‘- -help’: Display this help in the terminal.</li>
+<li><p>-h and ‘- -help’: Display this help in the terminal.</p></li>
 </ul>
 </div>
 <div class="section" id="if-you-want-to-dfits-fitsort">
 <h2>If you want to dfits | fitsort<a class="headerlink" href="#if-you-want-to-dfits-fitsort" title="Permalink to this headline">¶</a></h2>
 <ul>
-<li><p class="first">-file: This is where you feed dfitspy with your files. You have multiple option how to give values to this argument:</p>
+<li><p>-file: This is where you feed dfitspy with your files. You have multiple option how to give values to this argument:</p>
 <blockquote>
 <div><ul class="simple">
-<li>A single file:  <strong>-file test.fits</strong></li>
-<li>Multiple particular files: <strong>-file test.fits,test2.fits</strong>. They must be separated with comas and <strong>without spaces</strong></li>
-<li>You can use the ‘all’ argument: <strong>-file all</strong></li>
-<li>You can use the ‘*’ solution: <strong>-file</strong> *</li>
-<li>Semi complete names: <strong>-file test*</strong> or <strong>-file *test.fits</strong> or with path: <strong>-file /test/*test.fits</strong>.</li>
+<li><p>A single file:  <strong>-file test.fits</strong></p></li>
+<li><p>Multiple particular files: <strong>-file test.fits,test2.fits</strong>. They must be separated with comas and <strong>without spaces</strong></p></li>
+<li><p>You can use the ‘all’ argument: <strong>-file all</strong></p></li>
+<li><p>You can use the ‘*’ solution: <strong>-file</strong> *</p></li>
+<li><p>Semi complete names: <strong>-file test*</strong> or <strong>-file *test.fits</strong> or with path: <strong>-file /test/*test.fits</strong>.</p></li>
 </ul>
 </div></blockquote>
 </li>
 </ul>
 <div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">The directory that is considered here is the current directory where dfitspy is started.</p>
+<p class="admonition-title">Warning</p>
+<p>The directory that is considered here is the current directory where dfitspy is started.</p>
 </div>
 <ul>
-<li><p class="first">-key: this is where you ask dfitspy to look for particular keywords in the headers. Here again you have multiple option</p>
+<li><p>-key: this is where you ask dfitspy to look for particular keywords in the headers. Here again you have multiple option</p>
 <blockquote>
 <div><ul class="simple">
-<li>a single keyword: <strong>-key OBJECT</strong></li>
-<li>multiple arguments: <strong>-key OBJECT,LST</strong>. They must be separated by comas and <strong>without spaces</strong>.</li>
+<li><p>a single keyword: <strong>-key OBJECT</strong></p></li>
+<li><p>multiple arguments: <strong>-key OBJECT,LST</strong>. They must be separated by comas and <strong>without spaces</strong>.</p></li>
 </ul>
 </div></blockquote>
 </li>
 </ul>
 <div class="admonition warning">
-<p class="first admonition-title">Warning</p>
+<p class="admonition-title">Warning</p>
 <p>Two things you must be careful of:</p>
-<ul class="last simple">
-<li>ESO keywords may contain the ‘HIERARCH’ prefix. This is ignored by dfitspy therefore you cannot use this prefix. For example, if you have the following keywords HIERARCH ESO PRO CATG you must call it with ESO.PRO.CATG</li>
-<li>If your keywords contain spaces (ex: ESO OBS ID) you must replace it by dots: ESO.OBS.ID</li>
+<ul class="simple">
+<li><p>ESO keywords may contain the ‘HIERARCH’ prefix. This is ignored by dfitspy therefore you cannot use this prefix. For example, if you have the following keywords HIERARCH ESO PRO CATG you must call it with ESO.PRO.CATG</p></li>
+<li><p>If your keywords contain spaces (ex: ESO OBS ID) you must replace it by dots: ESO.OBS.ID</p></li>
 </ul>
 </div>
 <p>An example of output is the following (running the command: <strong>dfitspy -f Test_data/* -k OBJECT,LST,ESO.OBS.ID</strong>):</p>
@@ -343,9 +343,8 @@
 <h2>Extra arguments<a class="headerlink" href="#extra-arguments" title="Permalink to this headline">¶</a></h2>
 <p>Few extra arguments can be used:</p>
 <ul>
-<li><p class="first">‘- -test’: This runs the tests (written with unittest library) of dfitspy.</p>
-</li>
-<li><p class="first">‘- -list’: <strong>This must be used with the -file option described above</strong>. It takes the first file given by ‘-file’ and display a list of all the arguments in a 3 columns fashion. Example:</p>
+<li><p>‘- -test’: This runs the tests (written with unittest library) of dfitspy.</p></li>
+<li><p>‘- -list’: <strong>This must be used with the -file option described above</strong>. It takes the first file given by ‘-file’ and display a list of all the arguments in a 3 columns fashion. Example:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">DFITSPY</span> <span class="n">INFO</span><span class="p">]</span><span class="o">&gt;</span><span class="n">keywords</span> <span class="ow">in</span> <span class="n">r</span><span class="o">.</span><span class="n">XSHOO</span><span class="o">.</span><span class="mi">2099</span><span class="o">-</span><span class="mi">14</span><span class="o">-</span><span class="mi">59</span><span class="n">T09</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="mf">43.577</span><span class="n">_tpl</span><span class="o">-</span><span class="n">A01_0000</span><span class="o">.</span><span class="n">fits</span>
 <span class="o">--------------------------------------------------------------------------------</span>
 <span class="n">SIMPLE</span>                         <span class="o">|</span> <span class="n">BITPIX</span>                         <span class="o">|</span> <span class="n">NAXIS</span>
@@ -378,7 +377,7 @@
 </pre></div>
 </div>
 </li>
-<li><p class="first">‘- -save’: This function save the list of files (without all the parameters) into a file called ‘dfitspy_file_list.txt’. An example is given below:</p>
+<li><p>‘- -save’: This function save the list of files (without all the parameters) into a file called ‘dfitspy_file_list.txt’. An example is given below:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">##file produced by dfitspy 2018-10-03 21:16:42.133299</span>
 <span class="c1">##Current directory: /home/alien/Desktop/Test_data</span>
 <span class="n">r</span><span class="o">.</span><span class="n">XSHOO</span><span class="o">.</span><span class="mi">2099</span><span class="o">-</span><span class="mi">14</span><span class="o">-</span><span class="mi">59</span><span class="n">T09</span><span class="p">:</span><span class="mi">59</span><span class="p">:</span><span class="mf">57.509</span><span class="n">_tpl</span><span class="o">-</span><span class="n">A01_0000</span><span class="o">.</span><span class="n">fits</span>
@@ -390,10 +389,8 @@
 </pre></div>
 </div>
 </li>
-<li><p class="first">‘- -docs’: Display in the web browser the documentation of the code. If you have a valid internet connection it will open the online documentation, if not it will open the local documentation.</p>
-</li>
-<li><p class="first">‘- -version’: Display in terminal the current version of the software.</p>
-</li>
+<li><p>‘- -docs’: Display in the web browser the documentation of the code. If you have a valid internet connection it will open the online documentation, if not it will open the local documentation.</p></li>
+<li><p>‘- -version’: Display in terminal the current version of the software.</p></li>
 </ul>
 </div>
 </div>

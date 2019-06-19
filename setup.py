@@ -1,6 +1,6 @@
 from setuptools import setup
 
-__version__ = '19.4.0'
+__version__ = '19.6.1'
 __place__ = 'ESO Paranal observatory'
 __credits__ = "Romain Thomas"
 __license__ = "GNU GPL v3"

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>get files and keys functions &mdash; dfitspy 19.3.3 documentation</title>
+  <title>get files and keys functions &mdash; dfitspy 19.6.1 documentation</title>
   
 
   
@@ -63,7 +63,7 @@
             
             
               <div class="version">
-                19.3
+                19.6
               </div>
             
           
@@ -176,66 +176,53 @@
 and dire parameter.</p>
 <p>example: get_files([‘fil1.fits,file2.fits’] , ‘/home/Documents’)
 example: get_files([‘fil1.fits,file2.fits’])</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
-<dt><strong>files</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list of str</span></dt>
-<dd><p class="first">list of files names (without path), it can be:</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>files</strong><span class="classifier">list of str</span></dt><dd><p>list of files names (without path), it can be:</p>
 <p>[‘file1.fits,file2.fits,….’]</p>
 <p>[‘file1.fits’]</p>
 <p>[‘file1,fits’, ‘file2.fits’]</p>
-<p class="last">[‘all’]</p>
+<p>[‘all’]</p>
 </dd>
-<dt><strong>dire</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">path of the directory to look in</p>
-</dd>
-</dl>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>allfiles</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list</span></dt>
-<dd><p class="first last">list of all the files</p>
+<dt><strong>dire</strong><span class="classifier">str</span></dt><dd><p>path of the directory to look in</p>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>allfiles</strong><span class="classifier">list</span></dt><dd><p>list of all the files</p>
+</dd>
+</dl>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="function">
 <dt id="dfitspy.get_files_and_keys.get_keys">
 <code class="descclassname">dfitspy.get_files_and_keys.</code><code class="descname">get_keys</code><span class="sig-paren">(</span><em>key_string</em><span class="sig-paren">)</span><a class="headerlink" href="#dfitspy.get_files_and_keys.get_keys" title="Permalink to this definition">¶</a></dt>
 <dd><p>This function extracts from a string the list of keys</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
-<dt><strong>keystring</strong> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
-<dd><p class="first">keys to be requested by user, example:</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>keystring</strong><span class="classifier">string</span></dt><dd><p>keys to be requested by user, example:</p>
 <blockquote>
 <div><p>SEEING</p>
 <p>SEEING,AIRMASS</p>
 <p>SEEING,ARIMASS,OBID</p>
 </div></blockquote>
-<p class="last">if a string contains dots, e.g, ESO.SEQ.ARM it will be
+<p>if a string contains dots, e.g, ESO.SEQ.ARM it will be
 transform to ESO SEQ ARM (with spaces)</p>
 </dd>
 </dl>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>keys</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list</span></dt>
-<dd><p class="first last">list of keys (string)</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>keys</strong><span class="classifier">list</span></dt><dd><p>list of keys (string)</p>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
 </div>
@@ -246,35 +233,27 @@ transform to ESO SEQ ARM (with spaces)</p>
 <dt id="dfitspy.readfits.dfitsort">
 <code class="descclassname">dfitspy.readfits.</code><code class="descname">dfitsort</code><span class="sig-paren">(</span><em>listfiles</em>, <em>listkeys</em>, <em>grepping=None</em><span class="sig-paren">)</span><a class="headerlink" href="#dfitspy.readfits.dfitsort" title="Permalink to this definition">¶</a></dt>
 <dd><p>This function get for all files, the value of all the keywords that are passed</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
-<dt><strong>listfiles</strong> <span class="classifier-delimiter">:</span> <span class="classifier">lisr</span></dt>
-<dd><p class="first last">list, with file names (string, path included)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>listfiles</strong><span class="classifier">lisr</span></dt><dd><p>list, with file names (string, path included)</p>
 </dd>
-<dt><strong>listkeys</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list</span></dt>
-<dd><p class="first last">list, of keywords (strings)</p>
+<dt><strong>listkeys</strong><span class="classifier">list</span></dt><dd><p>list, of keywords (strings)</p>
 </dd>
-<dt><strong>grep</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list</span></dt>
-<dd><p class="first last">list of string, if not false, the grepping valueS
+<dt><strong>grep</strong><span class="classifier">list</span></dt><dd><p>list of string, if not false, the grepping valueS
 will be compared to all the values
 of the keywords. If all grepping values appear in the
 header of one file the file will be kept</p>
 </dd>
 </dl>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>file_dict</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dictionary</span></dt>
-<dd><p class="first last">dictionary, keys=filename &amp; values=dictionnary of keyword-value pairs</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>file_dict</strong><span class="classifier">dictionary</span></dt><dd><p>dictionary, keys=filename &amp; values=dictionnary of keyword-value pairs</p>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <p>dfitsort([file1, file2], [key1, key2]) &lt;– no grep</p>
 <p>dfitsort([file1, file2], [key1, key2], [‘match’, ‘match2’]) &lt;– multi grep</p>
@@ -284,26 +263,20 @@ header of one file the file will be kept</p>
 <dt id="dfitspy.readfits.get_all_keyword">
 <code class="descclassname">dfitspy.readfits.</code><code class="descname">get_all_keyword</code><span class="sig-paren">(</span><em>thefile</em><span class="sig-paren">)</span><a class="headerlink" href="#dfitspy.readfits.get_all_keyword" title="Permalink to this definition">¶</a></dt>
 <dd><p>This function gets all the keyword in the header of the file</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
-<dt><strong>thefile     str</strong></dt>
-<dd><p class="first last">path/and/file.txt</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>thefile     str</strong></dt><dd><p>path/and/file.txt</p>
 </dd>
 </dl>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>keywords    list</strong></dt>
-<dd><p class="first last">list of keywords (string)</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>keywords    list</dt><dd><p>list of keywords (string)</p>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
 </div>
@@ -316,25 +289,19 @@ header of one file the file will be kept</p>
 <dd><p>This function displays a-la-dfits the requested informations</p>
 <p>First we display the number of files that was found and then we 
 display the header with keywords</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
-<dt><strong>values_dict</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dictionnary</span></dt>
-<dd><p class="first last">keys=filename &amp; values=dictionnary of keyword-value pair</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>values_dict</strong><span class="classifier">dictionnary</span></dt><dd><p>keys=filename &amp; values=dictionnary of keyword-value pair</p>
 </dd>
 </dl>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>None (prints in terminal)</strong></dt>
-<dd></dd>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>None (prints in terminal)</dt><dd></dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="function">
@@ -342,25 +309,19 @@ display the header with keywords</p>
 <code class="descclassname">dfitspy.display.</code><code class="descname">keywords_view</code><span class="sig-paren">(</span><em>keywords</em><span class="sig-paren">)</span><a class="headerlink" href="#dfitspy.display.keywords_view" title="Permalink to this definition">¶</a></dt>
 <dd><p>This function displays the list of keywords given in parameters.
 By default it displays it in a 3 columns display.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
-<dt><strong>keywords</strong> <span class="classifier-delimiter">:</span> <span class="classifier">list</span></dt>
-<dd><p class="first last">list of keywords (each keyword is a string)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>keywords</strong><span class="classifier">list</span></dt><dd><p>list of keywords (each keyword is a string)</p>
 </dd>
 </dl>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>None (display in terminal)</strong></dt>
-<dd></dd>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>None (display in terminal)</dt><dd></dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
 </div>

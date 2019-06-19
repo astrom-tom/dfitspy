@@ -83,6 +83,7 @@ dfitspy/docs/build/html/_static/css/badge_only.css
 dfitspy/docs/build/html/_static/css/theme.css
 dfitspy/docs/build/html/_static/fonts/Inconsolata-Bold.ttf
 dfitspy/docs/build/html/_static/fonts/Inconsolata-Regular.ttf
+dfitspy/docs/build/html/_static/fonts/Inconsolata.ttf
 dfitspy/docs/build/html/_static/fonts/Lato-Bold.ttf
 dfitspy/docs/build/html/_static/fonts/Lato-BoldItalic.ttf
 dfitspy/docs/build/html/_static/fonts/Lato-Italic.ttf
