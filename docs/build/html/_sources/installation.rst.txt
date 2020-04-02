@@ -30,6 +30,7 @@ Other libraries are used, but they are all part of the standard python library. 
 
         for Mac user you might get problem with the libmagic library.
         You might want to install py37-magic from macports.
+        Thanks to A. Mehner for this.
 
 1-from the python repository
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
