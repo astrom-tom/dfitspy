@@ -44,7 +44,7 @@ Content
 Change log
 ==========
 
-**20.3.1**:
+**20.3.2**:
         * change in keyword query
         * update in documentation
 
