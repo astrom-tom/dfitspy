@@ -11,7 +11,7 @@ This file organises the command line interface (and nunit test it)
 @author(s): Romain Thomas
 @year(s):  2018
 @First version: 18.09-0
-@Current version: 18.10-0
+@Current version: 20.3.1
 @Telescope(s): ALL
 @Instrument(s): ALL
 @Valid for SciOpsPy: v0.1-b
@@ -63,18 +63,19 @@ def command_line(args):
     #parser.add_argument('--dir', help='Directory where we search for files. \
     #        If none given, the default directory is the one from where dfitspy \
     #        is started.', default=os.getcwd())
-    parser.add_argument('--list', help='List all keywords in a given file \
+    opt = parser.add_argument_group("Optional arguments")
+    opt.add_argument('--list', help='List all keywords in a given file \
             (if a list of file is given the first one is used)', action='store_true')
-    parser.add_argument('--grep', help='Restrain the files to the one with a given \
+    opt.add_argument('--grep', help='Restrain the files to the one with a given \
             value of a given parameter. It can be used multiple times with different values', \
             type=str, action='append')
-    parser.add_argument('--save', help='Save the list of files into an ascii file',\
+    opt.add_argument('--save', help='Save the list of files into an ascii file',\
             action='store_true')
-    parser.add_argument('--test', help='Start the testing of the program', \
+    opt.add_argument('--test', help='Start the testing of the program', \
             action='store_true')
-    parser.add_argument('--version', help='Display the version of the program', \
-            action='store_true')
-    parser.add_argument('--docs', help='Diplay the online or local documentation program', \
+    opt.add_argument('--version', help='Display the version of the program', \
+            action='version', version=info.__version__)
+    opt.add_argument('--docs', help='Diplay the online or local documentation program', \
             action='store_true')
 
     ##create a group of arguments that are mandatory

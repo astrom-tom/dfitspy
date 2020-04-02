@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Installation &mdash; dfitspy 19.6.1 documentation</title>
+  <title>Installation &mdash; dfitspy 20.3.2 documentation</title>
   
 
   
@@ -21,10 +21,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -63,7 +63,7 @@
             
             
               <div class="version">
-                19.6
+                20.3
               </div>
             
           
@@ -165,16 +165,21 @@
   <p id="installation"><a class="reference external" href="https://doi.org/10.21105/joss.01249"><img alt="JOSS" src="http://joss.theoj.org/papers/10.21105/joss.01249/status.svg" /></a> <img alt="Python36" src="https://img.shields.io/badge/python-3.6-blue.svg" /> <a class="reference external" href="http://perso.crans.org/besson/LICENSE.html"><img alt="Licence" src="https://img.shields.io/badge/License-GPLv3-blue.svg" /></a></p>
 <div class="section" id="id1">
 <h1>Installation<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
-<p>dfitspy is written in python 3.6 (and work in python 3.7.3). It needs only the following libraries:</p>
+<p>dfitspy is written in python 3.6 (and work in python 3.8.2). It needs only the following libraries:</p>
 <ul class="simple">
 <li><p>Numpy v1.14.3: Numerical python</p></li>
 <li><p>fitsio v0.9.11: fitsio library</p></li>
 <li><p>python-magic v0.4.15: file type checker</p></li>
 </ul>
 <p>Other libraries are used, but they are all part of the standard python library. As such no extra installations are needed.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>for Mac user you might get problem with the libmagic library.
+You might want to install py37-magic from macports.</p>
+</div>
 <div class="section" id="from-the-python-repository">
 <h2>1-from the python repository<a class="headerlink" href="#from-the-python-repository" title="Permalink to this headline">¶</a></h2>
-<p>The last dfitspy version is v19.6.1 and is available in the main pypi repository. To install it:</p>
+<p>The last dfitspy version is v20.3.2 and is available in the main pypi repository. To install it:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">dfitspy</span> <span class="o">--</span><span class="n">user</span>
 </pre></div>
 </div>

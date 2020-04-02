@@ -44,6 +44,10 @@ Content
 Change log
 ==========
 
+**20.3.2**:
+        * change in keyword query
+        * update in documentation
+
 **19.6.1**:
         * Bug fix with grepping
 

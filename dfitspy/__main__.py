@@ -52,13 +52,8 @@ def main():
 
     ###here we check if at least one argument was given:
     if not args.docs and args.file is None and args.grep is None and \
-            args.key is None and not args.list and not args.version and\
-            not args.test:
+            args.key is None and not args.list and not args.test:
         print('\033[1m[DFITSPY Error]> no argument passed ...exit\033[0;0m')
-        sys.exit()
-
-    if args.version:
-        print('version %s, Author: %s'%(info.__version__, info.__credits__))
         sys.exit()
 
     if args.docs is True:

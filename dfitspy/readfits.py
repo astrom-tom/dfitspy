@@ -83,7 +83,7 @@ def get_all_keyword(thefile):
 
     return keywords
 
-def keywords_in_file(thefile, keyword):
+def keywords_in_file(thefile, keyword, extract=True, header={}):
     '''
     This function extracts in the thefile file the value
     of the keyword
@@ -96,21 +96,33 @@ def keywords_in_file(thefile, keyword):
     keyword
                 str, keyword to get the value of
 
+    extract     boolean, if we need to re-extract the keywords
+    
+    dict_keys   dict, if extract=False, one must give a pre-extracted header
+
     return
     ------
     value
                 str, value of the keyword inside the file
     '''
+    if extract:
+        ##get all keyword
+        header = read_fitsfile(thefile)
 
-    ##get all keyword
-    header = read_fitsfile(thefile)
+    ###check for keywords containing the keyword requested
+    match = [i for i in list(header.keys()) if keyword in i]
 
-    if keyword in list(header.keys()):
-        value = str(header[keyword])
-    else:
-        value = ''
+    dict_keys = {}
 
-    return value.strip()
+    for i in match:
+        dict_keys[i] = header[i].strip()
+
+    #if keyword in list(header.keys()):
+    #    value = str(header[keyword])
+    #else:
+    #    value = ''
+
+    return dict_keys
 
 
 def dfitsort(listfiles, listkeys, grepping=None):
@@ -146,11 +158,13 @@ def dfitsort(listfiles, listkeys, grepping=None):
     for file in listfiles:
         ##and create a key dictionnary
         key_dict = {}
+        header = read_fitsfile(file)
         for key in listkeys:
             ###get the value
-            value = keywords_in_file(file, key)
+            value_dict = keywords_in_file(file, key, False, header)
             ##append the value to the dictionnary
-            key_dict[key] = value
+            for i in value_dict:
+                key_dict[i] = value_dict[i]
 
         ##do the greeping
         if not grepping:
@@ -215,7 +229,7 @@ class Testkeywordextraction(unittest.TestCase):
         v = keywords_in_file(filetest, 'YEAR')
 
         ##and compare expected value and output
-        self.assertEqual(v, '2018')
+        self.assertEqual(v, {'YEAR':'2018'})
 
     def test_get_value_wrong(self):
         '''
@@ -230,7 +244,7 @@ class Testkeywordextraction(unittest.TestCase):
         v = keywords_in_file(filetest, 'YEARS')
 
         ##and compare expected value and output
-        self.assertEqual(v, '')
+        self.assertFalse(v)
 
     def test_get_value_no_grep(self):
         '''

@@ -35,6 +35,7 @@ dfitspy contains a few functions that I detail below::
     dfitsort
     dfitsort_view
     test
+    version
 
 
 
@@ -79,44 +80,61 @@ This function takes two arguments. The first is the file argument and must be a 
 The easiest way is to analyse **all** the files in a directory::
 
     In [3]: listfiles = dfitspy.get_files(['all'],'Test_data/')
-	['/home/alien/Desktop/Test_data/r.XSHOO.2099-14-59T09:53:45.055_tpl-A02_0001.fits',
-	 '/home/alien/Desktop/Test_data/r.XSHOO.2099-14-59T09:59:57.509_tpl-A01_0004.fits',
-	 '/home/alien/Desktop/Test_data/r.XSHOO.2099-14-59T09:53:45.055_tpl-A01_0002.fits',
-	 '/home/alien/Desktop/Test_data/r.XSHOO.2099-14-59T09:53:43.577_tpl-A02_0001.fits',
-	 '/home/alien/Desktop/Test_data/r.XSHOO.2099-14-59T09:59:57.509_tpl-A01_0002.fits',
-	 '/home/alien/Desktop/Test_data/r.XSHOO.2099-14-59T09:53:45.055_tpl-A02_0000.fits',
-	 '/home/alien/Desktop/Test_data/r.XSHOO.2099-14-59T09:53:43.577_tpl-A01_0001.fits',
-	 '/home/alien/Desktop/Test_data/r.XSHOO.2099-14-59T09:53:44.797_tpl-A03_0002.fits',
-	 '/home/alien/Desktop/Test_data/r.XSHOO.2099-14-59T09:53:44.797_tpl-A03_0000.fits',
-	 '/home/alien/Desktop/Test_data/r.XSHOO.2099-14-59T09:53:45.055_tpl-A03_0001.fits',
-	 '/home/alien/Desktop/Test_data/r.XSHOO.2099-14-59T09:53:45.055_tpl-A02_0002.fits',
-	 '/home/alien/Desktop/Test_data/r.XSHOO.2099-14-59T09:59:57.509_tpl-A01_0006.fits',
-	 '/home/alien/Desktop/Test_data/r.XSHOO.2099-14-59T09:59:57.509_tpl-A01_0000.fits',
-	 '/home/alien/Desktop/Test_data/r.XSHOO.2099-14-59T09:53:43.577_tpl-A02_0002.fits',
-	 '/home/alien/Desktop/Test_data/r.XSHOO.2099-14-59T09:53:43.577_tpl-A01_0000.fits',
-	 '/home/alien/Desktop/Test_data/r.XSHOO.2099-14-59T09:53:44.797_tpl-A01_0002.fits',
-	 '/home/alien/Desktop/Test_data/r.XSHOO.2099-14-59T09:53:43.577_tpl-A03_0001.fits',
-	 '/home/alien/Desktop/Test_data/r.XSHOO.2099-14-59T09:53:44.797_tpl-A01_0001.fits',
-	 '/home/alien/Desktop/Test_data/r.XSHOO.2099-14-59T09:53:45.055_tpl-A01_0001.fits',
-	 '/home/alien/Desktop/Test_data/r.XSHOO.2099-14-59T09:59:57.509_tpl-A01_0001.fits',
-	 '/home/alien/Desktop/Test_data/r.XSHOO.2099-14-59T09:53:43.577_tpl-A03_0000.fits',
-	 '/home/alien/Desktop/Test_data/r.XSHOO.2099-14-59T09:53:45.055_tpl-A01_0000.fits',
-	 '/home/alien/Desktop/Test_data/r.XSHOO.2099-14-59T09:53:43.577_tpl-A03_0002.fits',
-	 '/home/alien/Desktop/Test_data/r.XSHOO.2099-14-59T09:53:44.797_tpl-A02_0001.fits',
-	 '/home/alien/Desktop/Test_data/r.XSHOO.2099-14-59T09:53:44.797_tpl-A03_0001.fits',
-	 '/home/alien/Desktop/Test_data/r.XSHOO.2099-14-59T09:53:45.055_tpl-A03_0000.fits',
-	 '/home/alien/Desktop/Test_data/r.XSHOO.2099-14-59T09:59:57.509_tpl-A01_0003.fits',
-	 '/home/alien/Desktop/Test_data/r.XSHOO.2099-14-59T09:53:43.577_tpl-A02_0000.fits',
-	 '/home/alien/Desktop/Test_data/r.XSHOO.2099-14-59T09:53:45.055_tpl-A03_0002.fits',
-	 '/home/alien/Desktop/Test_data/r.XSHOO.2099-14-59T09:53:44.797_tpl-A02_0000.fits',
-	 '/home/alien/Desktop/Test_data/r.XSHOO.2099-14-59T09:59:57.509_tpl-A01_0005.fits',
-	 '/home/alien/Desktop/Test_data/r.XSHOO.2099-14-59T09:53:44.797_tpl-A01_0000.fits',
-	 '/home/alien/Desktop/Test_data/r.XSHOO.2099-14-59T09:53:43.577_tpl-A01_0002.fits',
-	 '/home/alien/Desktop/Test_data/r.XSHOO.2099-14-59T09:53:44.797_tpl-A02_0002.fits']
+    ['/run/media/romain/Test_Data/r.NACO.2919-99-04T21:42:06_tpl-A01_0001.fits',
+     '/run/media/romain/Test_Data/r.NACO.2919-99-04T21:11:06_tpl-A01_0001.fits',
+     '/run/media/romain/Test_Data/r.NACO.2919-99-05T03:26:03_tpl-A01_0001.fits',
+     '/run/media/romain/Test_Data/r.FORS2.2919-99-04T22:03:03_tpl-A01_0001.fits',
+     '/run/media/romain/Test_Data/r.NACO.2919-99-04T21:11:03_tpl-A01_0001.fits',
+     '/run/media/romain/Test_Data/r.FORS2.2919-99-05T01:01:06_tpl-A01_0001.fits',
+     '/run/media/romain/Test_Data/r.KMOS.2919-99-05T03:50:03_tpl-A01_0001.fits',
+     '/run/media/romain/Test_Data/r.FORS2.2919-99-05T04:25:00_tpl-A01_0001.fits',
+     '/run/media/romain/Test_Data/r.KMOS.2919-99-05T03:50:00_tpl-A01_0001.fits',
+     '/run/media/romain/Test_Data/r.FORS2.2919-99-04T22:03:06_tpl-A01_0001.fits',
+     '/run/media/romain/Test_Data/r.NACO.2919-99-05T03:26:06_tpl-A01_0001.fits',
+     '/run/media/romain/Test_Data/r.NACO.2919-99-05T01:52:00_tpl-A01_0001.fits',
+     '/run/media/romain/Test_Data/r.NACO.2919-99-05T01:52:03_tpl-A01_0001.fits',
+     '/run/media/romain/Test_Data/r.FORS2.2919-99-05T05:06:03_tpl-A01_0001.fits',
+     '/run/media/romain/Test_Data/r.NACO.2919-99-05T05:57:00_tpl-A01_0001.fits',
+     '/run/media/romain/Test_Data/r.NACO.2919-99-05T00:06:03_tpl-A01_0001.fits',
+     '/run/media/romain/Test_Data/r.FORS2.2919-99-05T01:01:03_tpl-A01_0001.fits',
+     '/run/media/romain/Test_Data/r.FORS2.2919-99-05T05:06:06_tpl-A01_0001.fits',
+     '/run/media/romain/Test_Data/r.NACO.2919-99-04T21:42:00_tpl-A01_0001.fits',
+     '/run/media/romain/Test_Data/r.KMOS.2919-99-04T21:00:06_tpl-A01_0001.fits',
+     '/run/media/romain/Test_Data/r.FORS2.2919-99-04T22:44:00_tpl-A01_0001.fits',
+     '/run/media/romain/Test_Data/r.KMOS.2919-99-04T21:00:03_tpl-A01_0001.fits',
+     '/run/media/romain/Test_Data/r.NACO.2919-99-05T03:26:00_tpl-A01_0001.fits',
+     '/run/media/romain/Test_Data/r.FORS2.2919-99-05T04:25:03_tpl-A01_0001.fits',
+     '/run/media/romain/Test_Data/r.FORS2.2919-99-05T00:47:06_tpl-A01_0001.fits',
+     '/run/media/romain/Test_Data/r.NACO.2919-99-05T00:06:06_tpl-A01_0001.fits',
+     '/run/media/romain/Test_Data/r.NACO.2919-99-05T01:52:06_tpl-A01_0001.fits',
+     '/run/media/romain/Test_Data/r.KMOS.2919-99-05T03:50:06_tpl-A01_0001.fits',
+     '/run/media/romain/Test_Data/r.FORS2.2919-99-05T00:47:00_tpl-A01_0001.fits',
+     '/run/media/romain/Test_Data/r.FORS2.2919-99-04T22:03:00_tpl-A01_0001.fits',
+     '/run/media/romain/Test_Data/r.NACO.2919-99-05T02:35:03_tpl-A01_0001.fits',
+     '/run/media/romain/Test_Data/r.NACO.2919-99-04T21:42:03_tpl-A01_0001.fits',
+     '/run/media/romain/Test_Data/r.KMOS.2919-99-04T21:00:00_tpl-A01_0001.fits',
+     '/run/media/romain/Test_Data/r.NACO.2919-99-05T02:35:00_tpl-A01_0001.fits',
+     '/run/media/romain/Test_Data/r.FORS2.2919-99-04T22:44:06_tpl-A01_0001.fits',
+     '/run/media/romain/Test_Data/r.FORS2.2919-99-04T22:44:03_tpl-A01_0001.fits',
+     '/run/media/romain/Test_Data/r.KMOS.2919-99-04T23:35:06_tpl-A01_0001.fits',
+     '/run/media/romain/Test_Data/r.NACO.2919-99-05T05:57:03_tpl-A01_0001.fits',
+     '/run/media/romain/Test_Data/r.NACO.2919-99-05T02:35:06_tpl-A01_0001.fits',
+     '/run/media/romain/Test_Data/r.NACO.2919-99-05T00:06:00_tpl-A01_0001.fits',
+     '/run/media/romain/Test_Data/r.FORS2.2919-99-05T01:01:00_tpl-A01_0001.fits',
+     '/run/media/romain/Test_Data/r.NACO.2919-99-04T21:11:00_tpl-A01_0001.fits',
+     '/run/media/romain/Test_Data/r.FORS2.2919-99-05T00:47:03_tpl-A01_0001.fits',
+     '/run/media/romain/Test_Data/r.KMOS.2919-99-04T23:35:00_tpl-A01_0001.fits',
+     '/run/media/romain/Test_Data/r.KMOS.2919-99-04T23:35:03_tpl-A01_0001.fits',
+     '/run/media/romain/Test_Data/r.FORS2.2919-99-05T04:25:06_tpl-A01_0001.fits',
+     '/run/media/romain/Test_Data/r.NACO.2919-99-05T05:57:06_tpl-A01_0001.fits',
+     '/run/media/romain/Test_Data/r.FORS2.2919-99-05T05:06:00_tpl-A01_0001.fits']
+
 
 You would get the same results using::
 
     In [4]: listfiles = get_files(['all'],'../Test_data/')
+    or
+    In [5]: listfiles = get_files(['all']) ##<---If you are alredy in the dictionnary
 
 
 2 - Get your keywords ready
@@ -124,7 +142,7 @@ You would get the same results using::
 
 After preparing the files you must prepare the keywords you want to fitsort your files with. The correct format is a list of strings, each string being a keyword, example::
 
-    listkeys = ['OBJECT', 'LST', 'DATE']
+    listkeys = ['HIERARCH ESO OBS ID', 'EXPTIME']
 
 
 If you do not remember the name of the keywords you want to use you can retrieve them all and display them::
@@ -151,46 +169,46 @@ This function takes a file as input and return the list of all the keywords::
     In [7]: keys
 
         ['SIMPLE',
-     'BITPIX',
-     'NAXIS',
-     'EXTEND',
-     'COMMENT',
-     'DATE',
-     'ORIGIN',
-     'TELESCOP',
-     'INSTRUME',
-     'OBJECT',
-     'MJD-OBS',
-     'DATE-OBS',
-     'PI-COI',
-     'DATAMD5',
-     'PIPEFILE',
-     'RA',
-     'DEC',
-     'EQUINOX',
-     'RADECSYS',
-     'UTC',
-     'LST'...........(cut for display convinience)]
+         'BITPIX',
+         'NAXIS',
+         'EXTEND',
+         'HIERARCH ESO INS MODE',
+         'HIERARCH ESO OBS PROG ID',
+         'HIERARCH ESO OBS ID',
+         'HIERARCH ESO OBS TARG NAME',
+         'DATE-OBS',
+         'MJD-OBS',
+         'EXPTIME',
+         'HIERARCH ESO OBS AIRM',
+         'HIERARCH ESO OBS AMBI FWHM',
+         'HIERARCH ESO OBS AMBI TRANS',
+         'HIERARCH ESO TPL EXPNO',
+         'HIERARCH ESO TPL NEXP',
+         'HIERARCH ESO TEL AIRM START',
+         'HIERARCH ESO TEL AIRM END',
+         'HIERARCH ESO TEL AMBI FWHM START',
+         'HIERARCH ESO TEL AMBI FWHM END',
+         'HIERARCH ESO PRO CATG'
+         .
+         .
+         .(cut for display convinience)]
+
 
 If you have a very long list you can display it using the *keywords_view* function, which will cut the length by three::
 
     In [8] : dfitspy.keywords_view(keys)
 
-    List of keywords in the first file
-    ----------------------------------
-    SIMPLE                        | BITPIX                        | NAXIS                        
-    EXTEND                        | COMMENT                       | DATE                         
-    ORIGIN                        | TELESCOP                      | INSTRUME                     
-    OBJECT                        | MJD-OBS                       | DATE-OBS                     
-    PI-COI                        | DATAMD5                       | PIPEFILE                     
-    RA                            | DEC                           | EQUINOX                      
-    RADECSYS                      | UTC                           | LST                          
-    OBSERVER                      | ARCFILE                       | ESO OBS DID                  
-    ESO OBS GRP                   | ESO OBS ID                    | ESO OBS NAME                 
-    ESO OBS NTPL                  | ESO OBS PI-COI ID             | ESO OBS PI-COI NAME          
-    .                             | .                             | .             
-    .                             | .                             | .       
-    .                             | .                             | .       
+    --------------------------------------------------------------------------------
+    SIMPLE                            | BITPIX                            | NAXIS                            
+    EXTEND                            | HIERARCH ESO INS MODE             | HIERARCH ESO OBS PROG ID         
+    HIERARCH ESO OBS ID               | HIERARCH ESO OBS TARG NAME        | DATE-OBS                         
+    MJD-OBS                           | EXPTIME                           | HIERARCH ESO OBS AIRM            
+    HIERARCH ESO OBS AMBI FWHM        | HIERARCH ESO OBS AMBI TRANS       | HIERARCH ESO TPL EXPNO           
+    HIERARCH ESO TPL NEXP             | HIERARCH ESO TEL AIRM START       | HIERARCH ESO TEL AIRM END        
+    HIERARCH ESO TEL AMBI FWHM START  | HIERARCH ESO TEL AMBI FWHM END    | HIERARCH ESO PRO CATG       
+    .                                 | .                                 | .             
+    .                                 | .                                 | .       
+    .                                 | .                                 | .       
     (it has been cut)
 
 
@@ -233,113 +251,122 @@ This function takes as argument the list of files and the list of parameters and
     In [10]: fitsort = dfitspy.dfitsort(listfiles, listkeys)
 
     In [11]: fitsort
-    {'r.XSHOO.2099-14-59T09:53:45.055_tpl-A02_0001.fits': {'OBJECT': 'LAMP,AFC',
-      'LST': '78685.247',
-      'DATE': '2099-14-59T09:55:04'},
-     'r.XSHOO.2099-14-59T09:59:57.509_tpl-A01_0004.fits': {'OBJECT': 'STD,TELLURIC',
-      'LST': '79056.26',
-      'DATE': '2099-14-59T10:03:01'},
-     'r.XSHOO.2099-14-59T09:53:45.055_tpl-A01_0002.fits': {'OBJECT': 'LAMP,AFC',
-      'LST': '78685.247',
-      'DATE': '2099-14-59T09:54:49'},
-     'r.XSHOO.2099-14-59T09:53:45.055_tpl-A03_0002.fits': {'OBJECT': 'LAMP,AFC',
-      'LST': '78685.247',
-      'DATE': '2099-14-59T09:56:30'},
-     'r.XSHOO.2099-14-59T09:53:44.797_tpl-A02_0000.fits': {'OBJECT': 'LAMP,AFC',
-      'LST': '78684.245',
-      'DATE': '2099-14-59T09:55:03'},
-     'r.XSHOO.2099-14-59T09:59:57.509_tpl-A01_0005.fits': {'OBJECT': 'STD,TELLURIC',
-      'LST': '79056.26',
-      'DATE': '2099-14-59T10:03:02'},
-      .
-      .
-      .
-     'r.XSHOO.2099-14-59T09:53:44.797_tpl-A01_0000.fits': {'OBJECT': 'LAMP,AFC',
-      'LST': '78684.245',
-      'DATE': '2099-14-59T09:54:48'},
-     'r.XSHOO.2099-14-59T09:53:43.577_tpl-A01_0002.fits': {'OBJECT': 'LAMP,AFC',
-      'LST': '78684.245',
-      'DATE': '2099-14-59T09:54:42'},
-     'r.XSHOO.2099-14-59T09:53:44.797_tpl-A02_0002.fits': {'OBJECT': 'LAMP,AFC',
-      'LST': '78684.245',
-      'DATE': '2099-14-59T09:55:03'}}
+   {'r.NACO.2019-09-04T21:42:06_tpl-A01_0001.fits': {'HIERARCH ESO OBS ID': '5464795467',
+  'EXPTIME': '234.0'},
+ 'r.NACO.2019-09-04T21:11:06_tpl-A01_0001.fits': {'HIERARCH ESO OBS ID': '5464795467',
+  'EXPTIME': '234.0'},
+ 'r.NACO.2019-09-05T03:26:03_tpl-A01_0001.fits': {'HIERARCH ESO OBS ID': '5464795467',
+  'EXPTIME': '234.0'},
+ 'r.FORS2.2019-09-04T22:03:03_tpl-A01_0001.fits': {'HIERARCH ESO OBS ID': '5464795467',
+  'EXPTIME': '234.0'},
+ 'r.NACO.2019-09-04T21:11:03_tpl-A01_0001.fits': {'HIERARCH ESO OBS ID': '5464795467',
+  'EXPTIME': '234.0'},
+ 'r.FORS2.2019-09-05T01:01:06_tpl-A01_0001.fits': {'HIERARCH ESO OBS ID': '5464795467',
+  'EXPTIME': '234.0'},
+ .
+ .
+ .
+ .
+ 'r.FORS2.2019-09-05T00:47:03_tpl-A01_0001.fits': {'HIERARCH ESO OBS ID': '56472813',
+  'EXPTIME': '234.0'},
+ 'r.KMOS.2019-09-04T23:35:00_tpl-A01_0001.fits': {'HIERARCH ESO OBS ID': '56472813',
+  'EXPTIME': '234.0'},
+ 'r.KMOS.2019-09-04T23:35:03_tpl-A01_0001.fits': {'HIERARCH ESO OBS ID': '56472813',
+  'EXPTIME': '234.0'},
+ 'r.FORS2.2019-09-05T04:25:06_tpl-A01_0001.fits': {'HIERARCH ESO OBS ID': '56472813',
+  'EXPTIME': '234.0'},
+ 'r.NACO.2019-09-05T05:57:06_tpl-A01_0001.fits': {'HIERARCH ESO OBS ID': '56472813',
+  'EXPTIME': '234.0'},
+ 'r.FORS2.2019-09-05T05:06:00_tpl-A01_0001.fits': {'HIERARCH ESO OBS ID': '56472813',
+  'EXPTIME': '234.0'}}
+
 
 you can display everything in a nice way using the *dfitsort_view* function::
 
     In [12]: dfitspy.dfitsort_view(fitsort)
 
-    filename                                         	OBJECT      	LST      	DATE               
-    -------------------------------------------------	------------	---------	-------------------
-    r.XSHOO.2099-14-59T09:53:45.055_tpl-A02_0001.fits	LAMP,AFC    	78685.247	2099-14-59T09:55:04
-    r.XSHOO.2099-14-59T09:59:57.509_tpl-A01_0004.fits	STD,TELLURIC	79056.26 	2099-14-59T10:03:01
-    r.XSHOO.2099-14-59T09:53:45.055_tpl-A01_0002.fits	LAMP,AFC    	78685.247	2099-14-59T09:54:49
-    r.XSHOO.2099-14-59T09:53:43.577_tpl-A02_0001.fits	LAMP,AFC    	78684.245	2099-14-59T09:54:57
-    r.XSHOO.2099-14-59T09:59:57.509_tpl-A01_0002.fits	STD,TELLURIC	79056.26 	2099-14-59T10:03:01
-    r.XSHOO.2099-14-59T09:53:45.055_tpl-A02_0000.fits	LAMP,AFC    	78685.247	2099-14-59T09:55:04
-    r.XSHOO.2099-14-59T09:53:43.577_tpl-A01_0001.fits	LAMP,AFC    	78684.245	2099-14-59T09:54:42
-    r.XSHOO.2099-14-59T09:53:44.797_tpl-A03_0002.fits	LAMP,AFC    	78684.245	2099-14-59T09:56:28
-    r.XSHOO.2099-14-59T09:53:44.797_tpl-A03_0000.fits	LAMP,AFC    	78684.245	2099-14-59T09:56:28
-    r.XSHOO.2099-14-59T09:53:45.055_tpl-A03_0001.fits	LAMP,AFC    	78685.247	2099-14-59T09:56:30
-    r.XSHOO.2099-14-59T09:53:45.055_tpl-A02_0002.fits	LAMP,AFC    	78685.247	2099-14-59T09:55:04
-    r.XSHOO.2099-14-59T09:59:57.509_tpl-A01_0006.fits	HD 205828   	79056.26 	2099-14-59T10:03:02
-    r.XSHOO.2099-14-59T09:59:57.509_tpl-A01_0000.fits	STD,TELLURIC	79056.26 	2099-14-59T10:03:01
-    r.XSHOO.2099-14-59T09:53:43.577_tpl-A02_0002.fits	LAMP,AFC    	78684.245	2099-14-59T09:54:57
-    r.XSHOO.2099-14-59T09:53:43.577_tpl-A01_0000.fits	LAMP,AFC    	78684.245	2099-14-59T09:54:42
-    r.XSHOO.2099-14-59T09:53:44.797_tpl-A01_0002.fits	LAMP,AFC    	78684.245	2099-14-59T09:54:48
-    r.XSHOO.2099-14-59T09:53:43.577_tpl-A03_0001.fits	LAMP,AFC    	78684.245	2099-14-59T09:56:22
-    r.XSHOO.2099-14-59T09:53:44.797_tpl-A01_0001.fits	LAMP,AFC    	78684.245	2099-14-59T09:54:48
-    r.XSHOO.2099-14-59T09:53:45.055_tpl-A01_0001.fits	LAMP,AFC    	78685.247	2099-14-59T09:54:49
-    r.XSHOO.2099-14-59T09:59:57.509_tpl-A01_0001.fits	STD,TELLURIC	79056.26 	2099-14-59T10:03:01
-    r.XSHOO.2099-14-59T09:53:43.577_tpl-A03_0000.fits	LAMP,AFC    	78684.245	2099-14-59T09:56:22
-    r.XSHOO.2099-14-59T09:53:45.055_tpl-A01_0000.fits	LAMP,AFC    	78685.247	2099-14-59T09:54:49
-    r.XSHOO.2099-14-59T09:53:43.577_tpl-A03_0002.fits	LAMP,AFC    	78684.245	2099-14-59T09:56:22
-    r.XSHOO.2099-14-59T09:53:44.797_tpl-A02_0001.fits	LAMP,AFC    	78684.245	2099-14-59T09:55:03
-    r.XSHOO.2099-14-59T09:53:44.797_tpl-A03_0001.fits	LAMP,AFC    	78684.245	2099-14-59T09:56:28
-    r.XSHOO.2099-14-59T09:53:45.055_tpl-A03_0000.fits	LAMP,AFC    	78685.247	2099-14-59T09:56:30
-    r.XSHOO.2099-14-59T09:59:57.509_tpl-A01_0003.fits	STD,TELLURIC	79056.26 	2099-14-59T10:03:01
-    r.XSHOO.2099-14-59T09:53:43.577_tpl-A02_0000.fits	LAMP,AFC    	78684.245	2099-14-59T09:54:57
-    r.XSHOO.2099-14-59T09:53:45.055_tpl-A03_0002.fits	LAMP,AFC    	78685.247	2099-14-59T09:56:30
-    r.XSHOO.2099-14-59T09:53:44.797_tpl-A02_0000.fits	LAMP,AFC    	78684.245	2099-14-59T09:55:03
-    r.XSHOO.2099-14-59T09:59:57.509_tpl-A01_0005.fits	STD,TELLURIC	79056.26 	2099-14-59T10:03:02
-    r.XSHOO.2099-14-59T09:53:44.797_tpl-A01_0000.fits	LAMP,AFC    	78684.245	2099-14-59T09:54:48
-    r.XSHOO.2099-14-59T09:53:43.577_tpl-A01_0002.fits	LAMP,AFC    	78684.245	2099-14-59T09:54:42
-    r.XSHOO.2099-14-59T09:53:44.797_tpl-A02_0002.fits	LAMP,AFC    	78684.245	2099-14-59T09:55:03
+       filename                                     	     HIERARCH ESO OBS ID      EXPTIME
+        ---------------------------------------------	     -------------------      -------
+
+        r.FORS2.2919-99-04T22:03:00_tpl-A01_0001.fits 		56472813              234.0
+        r.FORS2.2919-99-04T22:03:03_tpl-A01_0001.fits 		56472813              234.0
+        r.FORS2.2919-99-04T22:03:06_tpl-A01_0001.fits 		56472813              234.0
+        r.FORS2.2919-99-04T22:44:00_tpl-A01_0001.fits 		56472813              234.0
+        r.FORS2.2919-99-04T22:44:03_tpl-A01_0001.fits 		56472813              234.0
+        r.FORS2.2919-99-04T22:44:06_tpl-A01_0001.fits 		56472813              234.0
+        r.FORS2.2919-99-05T00:47:00_tpl-A01_0001.fits 		56472813              234.0
+        r.FORS2.2919-99-05T00:47:03_tpl-A01_0001.fits 		56472813              234.0
+        r.FORS2.2919-99-05T00:47:06_tpl-A01_0001.fits 		56472813              234.0
+        r.FORS2.2919-99-05T01:01:00_tpl-A01_0001.fits 		56472813              234.0
+        r.FORS2.2919-99-05T01:01:03_tpl-A01_0001.fits 		56472813              234.0
+        r.FORS2.2919-99-05T01:01:06_tpl-A01_0001.fits 		56472813              234.0
+        r.FORS2.2919-99-05T04:25:00_tpl-A01_0001.fits 		56472813              234.0
+        r.FORS2.2919-99-05T04:25:03_tpl-A01_0001.fits 		56472813              234.0
+        r.FORS2.2919-99-05T04:25:06_tpl-A01_0001.fits 		56472813              234.0
+        r.FORS2.2919-99-05T05:06:00_tpl-A01_0001.fits 		56472813              234.0
+        r.FORS2.2919-99-05T05:06:03_tpl-A01_0001.fits 		56472813              234.0
+        r.FORS2.2919-99-05T05:06:06_tpl-A01_0001.fits 		56472813              234.0
+        r.KMOS.2919-99-04T21:00:00_tpl-A01_0001.fits 		56479546              234.0
+        r.KMOS.2919-99-04T21:00:03_tpl-A01_0001.fits 		56479546              234.0
+        r.KMOS.2919-99-04T21:00:06_tpl-A01_0001.fits 		56479546              234.0
+        r.KMOS.2919-99-04T23:35:00_tpl-A01_0001.fits 		56479546              234.0
+        r.KMOS.2919-99-04T23:35:03_tpl-A01_0001.fits 		56479546              234.0
+        r.KMOS.2919-99-04T23:35:06_tpl-A01_0001.fits 		56479546              234.0
+        r.KMOS.2919-99-05T03:50:00_tpl-A01_0001.fits 		56479546              234.0
+        r.KMOS.2919-99-05T03:50:03_tpl-A01_0001.fits 		56479546              234.0
+        r.KMOS.2919-99-05T03:50:06_tpl-A01_0001.fits 		56479546              234.0
+        r.NACO.2919-99-04T21:11:00_tpl-A01_0001.fits 		5464795467            234.0
+        r.NACO.2919-99-04T21:11:03_tpl-A01_0001.fits 		5464795467            234.0
+        r.NACO.2919-99-04T21:11:06_tpl-A01_0001.fits 		5464795467            234.0
+        r.NACO.2919-99-04T21:42:00_tpl-A01_0001.fits 		5464795467            234.0
+        r.NACO.2919-99-04T21:42:03_tpl-A01_0001.fits 		5464795467            234.0
+        r.NACO.2919-99-04T21:42:06_tpl-A01_0001.fits 		5464795467            234.0
+        r.NACO.2919-99-05T00:06:00_tpl-A01_0001.fits 		5464795467            234.0
+        r.NACO.2919-99-05T00:06:03_tpl-A01_0001.fits 		5464795467            234.0
+        r.NACO.2919-99-05T00:06:06_tpl-A01_0001.fits 		5464795467            234.0
+        r.NACO.2919-99-05T01:52:00_tpl-A01_0001.fits 		5464795467            234.0
+        r.NACO.2919-99-05T01:52:03_tpl-A01_0001.fits 		5464795467            234.0
+        r.NACO.2919-99-05T01:52:06_tpl-A01_0001.fits 		5464795467            234.0
+        r.NACO.2919-99-05T02:35:00_tpl-A01_0001.fits 		5464795467            234.0
+        r.NACO.2919-99-05T02:35:03_tpl-A01_0001.fits 		5464795467            234.0
+        r.NACO.2919-99-05T02:35:06_tpl-A01_0001.fits 		5464795467            234.0
+        r.NACO.2919-99-05T03:26:00_tpl-A01_0001.fits 		5464795467            234.0
+        r.NACO.2919-99-05T03:26:03_tpl-A01_0001.fits 		5464795467            234.0
+        r.NACO.2919-99-05T03:26:06_tpl-A01_0001.fits 		5464795467            234.0
+        r.NACO.2919-99-05T05:57:00_tpl-A01_0001.fits 		439120439             234.0
+        r.NACO.2919-99-05T05:57:03_tpl-A01_0001.fits 		439120439             234.0
+        r.NACO.2919-99-05T05:57:06_tpl-A01_0001.fits 		439120439             234.0
 
 
 4 - Grepping
 ------------
 
 The last option allows you to grep files that have a certain value in their keywords.
-By default it is set to *None* but you can give a *grepping value* (**in a list**) to replace it. When doing so dfitspy will look at all the files you give in listfiles and in all the keywords you give in listkeys. **If all the grepping values are inside the keyword values the file will be kept, if not the file will be rejected.** For example here we want all the files for which LST = 79056.26 ::
+By default it is set to *None* but you can give a *grepping value* (**in a list**) to replace it. When doing so dfitspy will look at all the files you give in listfiles and in all the keywords you give in listkeys. **If all the grepping values are inside the keyword values the file will be kept, if not the file will be rejected.** For example here we want all the files for which HIERARCH ESO OBS ID = 439120439 ::
 
-    In [13]: fitsortgrep = dfitspy.dfitsort(listfiles, listkeys, ['79056.26'])
+    In [13]: fitsortgrep = dfitspy.dfitsort(listfiles, listkeys, ['439120439'])
 
     In [14]: dfitspy.dfitsort_view(fitsortgrep)
 
-    filename                                         	OBJECT      	LST     	DATE               
-    -------------------------------------------------	------------	--------	-------------------
-    r.XSHOO.2099-14-59T09:59:57.509_tpl-A01_0004.fits	STD,TELLURIC	79056.26	2099-14-59T10:03:01
-    r.XSHOO.2099-14-59T09:59:57.509_tpl-A01_0002.fits	STD,TELLURIC	79056.26	2099-14-59T10:03:01
-    r.XSHOO.2099-14-59T09:59:57.509_tpl-A01_0006.fits	HD 205828   	79056.26	2099-14-59T10:03:02
-    r.XSHOO.2099-14-59T09:59:57.509_tpl-A01_0000.fits	STD,TELLURIC	79056.26	2099-14-59T10:03:01
-    r.XSHOO.2099-14-59T09:59:57.509_tpl-A01_0001.fits	STD,TELLURIC	79056.26	2099-14-59T10:03:01
-    r.XSHOO.2099-14-59T09:59:57.509_tpl-A01_0003.fits	STD,TELLURIC	79056.26	2099-14-59T10:03:01
-    r.XSHOO.2099-14-59T09:59:57.509_tpl-A01_0005.fits	STD,TELLURIC	79056.26	2099-14-59T10:03:02
+        filename                                     	     HIERARCH ESO OBS ID      EXPTIME    HIERARCH ESO PRO CATG
+        ---------------------------------------------	     -------------------      -------    ---------------------
+        r.NACO.2919-99-05T05:57:00_tpl-A01_0001.fits 		439120439             234.0             nac1 
+        r.NACO.2919-99-05T05:57:03_tpl-A01_0001.fits 		439120439             234.0             nac2
+        r.NACO.2919-99-05T05:57:06_tpl-A01_0001.fits 		439120439             234.0             nac3
 
+.. warning ::
+    
+        We added an extra value in the listkeys: 'HIERARCH ESO PRO CATG'
 
-If we want to remove the third line then we must add a grepping value of 'STD,TELLURIC'::
+We can also multi-grep. For example if you want to keep only *HIERARCH ESO PRO CATG = nac2* then we must add a grepping value ::
 
-    In [15]: fitsortgrep = dfitspy.dfitsort(listfiles, listkeys, ['79056.26', 'STD,TELLURIC'])
+    In [15]: fitsortgrep = dfitspy.dfitsort(listfiles, listkeys, ['439120439', 'nac2'])
     In [16:] dfitspy.dfitsort_view(fitsortgrep)
 
-    filename                                         	OBJECT      	LST     	DATE
-    -------------------------------------------------	------------	--------	-------------------
-    r.XSHOO.2099-14-59T09:59:57.509_tpl-A01_0004.fits	STD,TELLURIC	79056.26	2099-14-59T10:03:01
-    r.XSHOO.2099-14-59T09:59:57.509_tpl-A01_0002.fits	STD,TELLURIC	79056.26	2099-14-59T10:03:01
-    r.XSHOO.2099-14-59T09:59:57.509_tpl-A01_0000.fits	STD,TELLURIC	79056.26	2099-14-59T10:03:01
-    r.XSHOO.2099-14-59T09:59:57.509_tpl-A01_0001.fits	STD,TELLURIC	79056.26	2099-14-59T10:03:01
-    r.XSHOO.2099-14-59T09:59:57.509_tpl-A01_0003.fits	STD,TELLURIC	79056.26	2099-14-59T10:03:01
-    r.XSHOO.2099-14-59T09:59:57.509_tpl-A01_0005.fits	STD,TELLURIC	79056.26	2099-14-59T10:03:02
+        filename                                     	     HIERARCH ESO OBS ID      EXPTIME    HIERARCH ESO PRO CATG
+        ---------------------------------------------	     -------------------      -------    ---------------------
+
+        r.NACO.2919-99-05T05:57:03_tpl-A01_0001.fits 		439120439             234.0             nac2
 
 
 

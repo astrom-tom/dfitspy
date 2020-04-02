@@ -18,7 +18,7 @@
 Installation
 ============
 
-dfitspy is written in python 3.6 (and work in python 3.7.3). It needs only the following libraries:
+dfitspy is written in python 3.6 (and work in python 3.8.2). It needs only the following libraries:
 
 * Numpy v1.14.3: Numerical python
 * fitsio v0.9.11: fitsio library
@@ -26,10 +26,15 @@ dfitspy is written in python 3.6 (and work in python 3.7.3). It needs only the f
 
 Other libraries are used, but they are all part of the standard python library. As such no extra installations are needed.
 
+.. warning ::
+
+        for Mac user you might get problem with the libmagic library.
+        You might want to install py37-magic from macports.
+
 1-from the python repository
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The last dfitspy version is v19.6.1 and is available in the main pypi repository. To install it::
+The last dfitspy version is v20.3.2 and is available in the main pypi repository. To install it::
 
      pip install dfitspy --user
 

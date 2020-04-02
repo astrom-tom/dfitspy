@@ -24,9 +24,9 @@ copyright = '2018, R. Thomas'
 author = 'R. Thomas'
 
 # The short X.Y version
-version = '19.6'
+version = '20.3'
 # The full version, including alpha/beta/rc tags
-release = '19.6.1'
+release = '20.3.2'
 
 
 # -- General configuration ---------------------------------------------------
