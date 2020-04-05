@@ -35,7 +35,7 @@ Other libraries are used, but they are all part of the standard python library. 
 1-from the python repository
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The last dfitspy version is v20.3.2 and is available in the main pypi repository. To install it::
+The last dfitspy version is v20.4.1 and is available in the main pypi repository. To install it::
 
      pip install dfitspy --user
 

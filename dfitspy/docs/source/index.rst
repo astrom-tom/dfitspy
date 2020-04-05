@@ -44,6 +44,9 @@ Content
 Change log
 ==========
 
+**20.4.1**:
+        * Bug fix in display of one of the files does not have all the keywords
+
 **20.3.2**:
         * change in keyword query
         * update in documentation

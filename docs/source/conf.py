@@ -20,13 +20,13 @@
 # -- Project information -----------------------------------------------------
 
 project = 'dfitspy'
-copyright = '2018, R. Thomas'
+copyright = '2018-20, R. Thomas'
 author = 'R. Thomas'
 
 # The short X.Y version
-version = '20.3'
+version = '20.4'
 # The full version, including alpha/beta/rc tags
-release = '20.3.2'
+release = '20.4.1'
 
 
 # -- General configuration ---------------------------------------------------

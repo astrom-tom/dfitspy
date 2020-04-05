@@ -1,5 +1,17 @@
 '''
-This file organises the terminal display of the output of the code
+dfitspy is a program aimed at reproducing the dfits program in python.
+This file codes the display
+
+@place: ESO - La Silla - Paranal Observatory
+@author(s): Romain Thomas
+@year(s):  ex 2018
+@First version: 19.9-0
+@Current version: 20.4.1
+@Telescope(s): ALL
+@Instrument(s): ALL
+@Valid for SciOpsPy: v0.1-b
+@Documentation url:
+@Last SciOps review [date + name]: 18-09-2018 - Romain Thomas
 '''
 
 ###standrd imports
@@ -41,6 +53,10 @@ def dfitsort_view(values_dict):
         keys_length = numpy.zeros((len(values_dict), len(keys)))
         for i in range(len(filenames)):
             for j in range(len(keys)):
+                ###if the keyword is not founf we show it!
+                if keys[j] not in values_dict[filenames[i]].keys():
+                    values_dict[filenames[i]][keys[j]] = ' '
+
                 keys_length[i][j] = len(str(values_dict[filenames[i]][keys[j]]))
 
         keys_length = keys_length.T
@@ -70,6 +86,7 @@ def dfitsort_view(values_dict):
                 sep += '\t'+j*"-"
 
 
+
         ##print them
         print(header)
         print(sep)
@@ -77,6 +94,12 @@ def dfitsort_view(values_dict):
         for i in values_dict:
             linevalues = [os.path.basename(i)]
             values = list(values_dict[i].values())
+
+            ##check if one line is missing a keyword
+            ##and replace by 'Not FOUND'
+            #if len(keys)-len(values) != 0:
+            #    values += ['Not FOUND!'] * (len(keys)-len(values))
+                
             allvalue = linevalues + values
             print(form.format(*allvalue))
 
