@@ -4,24 +4,26 @@ This file organises and reads the FITS files
 
 ###standard imports
 import os
+import warnings
+import time
 
 ##testing
 import unittest
 import unittest.mock
 
 ###third party
-import fitsio._fitsio_wrap as _fitsio_wrap
+from astropy.io import fits as pyfits
+from astropy.io.fits.verify import VerifyWarning
 
-def read_fitsfile(thefile):
+warnings.simplefilter('ignore', category=VerifyWarning)
+
+def read_fitsfile(thefile, HDU = 0):
     '''
     This function is largely inspired from the fitsio python library and used the
     python wrapper around the cFitsio library.
     It takes as argument the name (including path if the location of the file is different from the
-    current folder) and returns a dictionnary of keyword = header keyword and value = header value.\n\n
-
-    WARNING: in the ESO fits header format, the HIERARCH prefix will be ignored by this function
-             and the resulting dictionnary will not contain the HIERARCH prefix.
-             Ex: 'HIERARCH ESO TEL ALT' will become 'ESO TEL ALT'
+    current folder) and returns a dictionnary of keyword = header keyword and value = header
+    value.\n\n
 
     Parameter
     ----------
@@ -35,33 +37,21 @@ def read_fitsfile(thefile):
 
     '''
     ###open the fits file
-    FITS = _fitsio_wrap.FITS(thefile, 0, 0)
-
-    ##read header (a is a dicytionnary but with two much imformation)
-    a = FITS.read_header(1)
-
-    ###open empty dictionnary to save the header
-    dict_values = {}
-
-    ###loop over the header
-    for i in a:
-        if i['card_string'][:8] == 'HIERARCH':
-            prefix = 'HIERARCH '
-        else:
-            prefix = ''
-        n = prefix + i['name'] 
-        v = i['value']
-        if len(v) > 2 and v[0] == "'" and v[-1] == "'":
-            v = v[1:-1]
-        dict_values[n] = v
+    #header = FITS[HDU].header
+    try:
+        dict_values = pyfits.getheader(thefile, ext=HDU)
+        keys = list(dict_values.keys())
+    except IndexError:
+        raise ValueError('HDU %s not in %s'%(HDU, os.path.basename(thefile)))
 
     ##and close the file
-    FITS.close()
-    return dict_values
+    #FITS.close()
+    #print(dict_values)
+    return dict_values, keys
 
 
 
-def get_all_keyword(thefile):
+def get_all_keyword(thefile, HDU = 0):
     '''
     This function gets all the keyword in the header of the file
 
@@ -69,6 +59,8 @@ def get_all_keyword(thefile):
     ----------
     thefile     str
                 path/and/file.txt
+    HDU         int
+                FITS extension number to get the keywords from
 
     Returns
     -------
@@ -76,14 +68,14 @@ def get_all_keyword(thefile):
                 list of keywords (string)
     '''
     ##get header
-    header = read_fitsfile(thefile)
+    header,keys = read_fitsfile(thefile, HDU)
 
     ###and keywords
-    keywords = list(header.keys())
+    #keywords = list(header.keys())
 
-    return keywords
+    return keys
 
-def keywords_in_file(thefile, keyword, extract=True, header={}):
+def keywords_in_file(thefile, keyword, exact=False, extract=True, header={}):
     '''
     This function extracts in the thefile file the value
     of the keyword
@@ -96,8 +88,12 @@ def keywords_in_file(thefile, keyword, extract=True, header={}):
     keyword
                 str, keyword to get the value of
 
+    exact       boolean, to consider only exact values of keywords
+                         (instead of considering all keywords with
+                          a given value)
+
     extract     boolean, if we need to re-extract the keywords
-    
+
     dict_keys   dict, if extract=False, one must give a pre-extracted header
 
     return
@@ -107,25 +103,33 @@ def keywords_in_file(thefile, keyword, extract=True, header={}):
     '''
     if extract:
         ##get all keyword
-        header = read_fitsfile(thefile)
-
-    ###check for keywords containing the keyword requested
-    match = [i for i in list(header.keys()) if keyword in i]
+        header, allkeys = read_fitsfile(thefile)
 
     dict_keys = {}
+    if exact: ##we consider the keyword given by the user only
+        match = [keyword]
+        if keyword in header:
+            dict_keys[keyword] = str(header[keyword]).strip()
+    else: ## we check for all keywords containing the keyword requested
+        ##strip the hierarch keyword:
+        hierarch = 0
+        if keyword.startswith('HIERARCH '):
+            keyword = keyword.replace('HIERARCH ', '')
+            hierarch = 1
 
-    for i in match:
-        dict_keys[i] = header[i].strip()
-
-    #if keyword in list(header.keys()):
-    #    value = str(header[keyword])
-    #else:
-    #    value = ''
+        match = [i for i in list(header.keys()) if keyword in i]
+        
+        for i in match:
+            ###we put back the HIERARCH
+            key = i
+            if i.startswith('ESO ') and hierarch==1:
+                key = 'HIERARCH ' + i
+            dict_keys[key] = str(header[i]).strip()
 
     return dict_keys
 
 
-def dfitsort(listfiles, listkeys, grepping=None):
+def dfitsort(listfiles, listkeys, exact=False, grepping=None, HDU = 0):
     '''
     This function get for all files, the value of all the keywords that are passed\n
 
@@ -140,6 +144,11 @@ def dfitsort(listfiles, listkeys, grepping=None):
                 will be compared to all the values
                 of the keywords. If all grepping values appear in the
                 header of one file the file will be kept
+    exact   : bool
+              if the exact keyword from the user must be retrieved. If not,
+              any keyword containing the requested keyword will be used.
+    HDU     : int
+              extension number to look in. Default is primary: 0
 
     Returns
     -------
@@ -158,10 +167,11 @@ def dfitsort(listfiles, listkeys, grepping=None):
     for file in listfiles:
         ##and create a key dictionnary
         key_dict = {}
-        header = read_fitsfile(file)
+        header, allkeys = read_fitsfile(file, HDU)
         for key in listkeys:
             ###get the value
-            value_dict = keywords_in_file(file, key, False, header)
+            value_dict = keywords_in_file(file, key, exact, False, header)
+
             ##append the value to the dictionnary
             for i in value_dict:
                 key_dict[i] = value_dict[i]
@@ -187,7 +197,6 @@ def dfitsort(listfiles, listkeys, grepping=None):
             if set(grepped) == set(grepping):
                 file_dict[os.path.basename(file)] = key_dict
 
-
     return file_dict
 
 
@@ -209,7 +218,7 @@ class Testkeywordextraction(unittest.TestCase):
         ###expected header keyword:
         expected = ['SIMPLE', 'BITPIX', 'NAXIS', \
                     'NAXIS1', 'NAXIS2', 'EXTEND', \
-                    'COMMENT', 'NAME', 'YEAR',
+                    'COMMENT', 'COMMENT', 'NAME', 'YEAR',
                     'PLACE', 'AUTHOR']
         ###run the function
         keywords = get_all_keyword(filetest)
@@ -218,7 +227,7 @@ class Testkeywordextraction(unittest.TestCase):
 
     def test_get_value_true(self):
         '''
-        This function test function that gets the value of the keyword in the file
+        This method tests the function that gets the value of the keyword in the file
         in the case the keyword exists
         '''
         ##get a test file
@@ -242,6 +251,7 @@ class Testkeywordextraction(unittest.TestCase):
 
         ##get the year
         v = keywords_in_file(filetest, 'YEARS')
+        print(v)
 
         ##and compare expected value and output
         self.assertFalse(v)
@@ -256,11 +266,72 @@ class Testkeywordextraction(unittest.TestCase):
         filetest2 = os.path.join(dir_path, 'tests/test2.fits')
 
         ###get all values
-        allvalues = dfitsort([filetest, filetest2], ['YEAR', 'NAME'], False)
+        allvalues = dfitsort([filetest, filetest2], ['YEAR', 'NAME'])
 
         ##expected values:
         expected = {'test.fits':{'YEAR':'2018', 'NAME':'dfitspy'}, \
                 'test2.fits':{'YEAR':'2018', 'NAME':'dfitspy'}}
+
+        self.assertEqual(expected, allvalues)
+
+    def test_get_value_same_keyword_root(self):
+        '''
+        This function tests the extraction of keywords without grepping values
+        when there are similar keywords
+        '''
+        ##get 2 test files
+        dir_path = os.path.dirname(os.path.realpath(__file__))
+        filetest = os.path.join(dir_path, 'tests/test.fits')
+        filetest2 = os.path.join(dir_path, 'tests/test2.fits')
+
+        ###get all values
+        allvalues = dfitsort([filetest, filetest2], ['NAXIS'])
+
+        ##expected values:
+        expected = {'test.fits':{'NAXIS': '2', 'NAXIS1': '4', 'NAXIS2': '1'},
+                    'test2.fits':{'NAXIS': '2', 'NAXIS1': '4', 'NAXIS2': '1'}}
+
+        self.assertEqual(expected, allvalues)
+
+    def test_get_value_same_keyword_root_but_exact(self):
+        '''
+        This function tests the extraction of keywords without grepping values
+        when there are similar keywords. But this time we force the keyword matching
+        '''
+        ##get 2 test files
+        dir_path = os.path.dirname(os.path.realpath(__file__))
+        filetest = os.path.join(dir_path, 'tests/test.fits')
+        filetest2 = os.path.join(dir_path, 'tests/test2.fits')
+
+        ###get all values
+        allvalues = dfitsort([filetest, filetest2], ['NAXIS'], exact=True)
+
+        ##expected values:
+        expected = {'test.fits':{'NAXIS': '2'},
+                    'test2.fits':{'NAXIS': '2'}}
+
+        self.assertEqual(expected, allvalues)
+
+
+
+    def test_get_value_missing_keyword(self):
+        '''
+        This function tests the extraction of keywords without grepping values
+        but with some missin keyword
+        '''
+        ##get 2 test files
+        dir_path = os.path.dirname(os.path.realpath(__file__))
+        filetest = os.path.join(dir_path, 'tests/test.fits')
+        filetest2 = os.path.join(dir_path, 'tests/test2.fits')
+        filetest3 = os.path.join(dir_path, 'tests/test_extra_keyword.fits')
+
+        ###get all values
+        allvalues = dfitsort([filetest, filetest2, filetest3], ['YEAR', 'NAME', 'EXTRA'])
+
+        ##expected values:
+        expected = {'test.fits':{'YEAR':'2018', 'NAME':'dfitspy'},
+                    'test2.fits':{'YEAR':'2018', 'NAME':'dfitspy'},
+                    'test_extra_keyword.fits':{'YEAR':'201810', 'NAME':'dfitspy', 'EXTRA': 'extra keyword'}}
 
         self.assertEqual(expected, allvalues)
 
@@ -294,10 +365,13 @@ class Testextractheader(unittest.TestCase):
         dir_path = os.path.dirname(os.path.realpath(__file__))
         filetest = os.path.join(dir_path, 'tests/test.fits')
         ###run the function on the test file
-        dict_value = read_fitsfile(filetest)
+        dict_value, keys = read_fitsfile(filetest)
         ##check if the header is the expected one
-        exp = {'SIMPLE': 'T', 'BITPIX': '-64', 'NAXIS': '2', 'NAXIS1': '4', \
-                'NAXIS2': '1', 'EXTEND': 'T', 'COMMENT': '', \
-                'NAME': 'dfitspy ', 'YEAR': '2018    ', 'PLACE': 'ESO Paranal', \
+        dict_value = dict(dict_value)
+        dict_value['COMMENT'] = str(dict_value['COMMENT'])
+        exp = {'SIMPLE': True, 'BITPIX': -64, 'NAXIS': 2, 'NAXIS1': 4, \
+                'NAXIS2': 1, 'EXTEND': True, 'COMMENT': "  FITS (Flexible Image Transport System) format"+\
+                " is defined in 'Astronomy\n  and Astrophysics', volume 376, page 359; bibcode: 2001A&A...376..359H",
+                'NAME': 'dfitspy', 'YEAR': '2018', 'PLACE': 'ESO Paranal', \
                 'AUTHOR': 'Romain Thomas'}
         self.assertEqual(dict_value, exp)

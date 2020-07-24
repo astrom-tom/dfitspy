@@ -1,17 +1,16 @@
 '''
 dfitspy is a program aimed at reproducing the dfits program in python.
-This file codes the display
+This file codes the display in the terminal
 
 @place: ESO - La Silla - Paranal Observatory
 @author(s): Romain Thomas
-@year(s):  ex 2018
+@year(s): 2018-2020
 @First version: 19.9-0
-@Current version: 20.4.1
+@Current version: 20.7.0
 @Telescope(s): ALL
 @Instrument(s): ALL
-@Valid for SciOpsPy: v0.1-b
 @Documentation url:
-@Last SciOps review [date + name]: 18-09-2018 - Romain Thomas
+@Last review [date + name]: 2020-07-21 - Romain Thomas
 '''
 
 ###standrd imports
@@ -29,7 +28,7 @@ def dfitsort_view(values_dict):
     '''
     This function displays a-la-dfits the requested informations
 
-    First we display the number of files that was found and then we 
+    First we display the number of files that was found and then we
     display the header with keywords
 
     Parameters
@@ -41,23 +40,45 @@ def dfitsort_view(values_dict):
     -------
     None (prints in terminal)
     '''
+    ###first we must make sure that there is an entry for each keywords for all the files
+    ###get all keywords
+    allkeys = []
+    for i in values_dict:
+        for k in values_dict[i].keys():
+            allkeys.append(k)
+    allkeys = numpy.unique(allkeys)
+
+    ###then we add potential missing keywords to each file dictionary
+    final_values_dict = {}
+    for i in values_dict:
+        for k in allkeys:
+            if k not in values_dict[i].keys():
+                values_dict[i][k] = '-'
+        ###and finally make sure they are all in the right order
+        ordered_dict = {} ###there are faster way to do it but requires latest python
+        for j in sorted(allkeys):
+            ordered_dict[j] = values_dict[i][j]
+        final_values_dict[i] = ordered_dict
+
+
+    ###and then we work on the display
     ###############get columns sizes
     ##1-filename
-    filenames = list(values_dict.keys())
-    if filenames: 
+    filenames = list(final_values_dict.keys())
+    if filenames:
         maxsize_filename = max([len(os.path.basename(i)) for i in filenames])
 
         ##2-keywords
-        keys = list(values_dict[filenames[0]])
+        keys = list(final_values_dict[filenames[0]])
         header_keys_length = [len(i) for i in keys]
-        keys_length = numpy.zeros((len(values_dict), len(keys)))
+        keys_length = numpy.zeros((len(final_values_dict), len(keys)))
         for i in range(len(filenames)):
             for j in range(len(keys)):
                 ###if the keyword is not founf we show it!
-                if keys[j] not in values_dict[filenames[i]].keys():
-                    values_dict[filenames[i]][keys[j]] = ' '
+                if keys[j] not in final_values_dict[filenames[i]].keys():
+                    final_values_dict[filenames[i]][keys[j]] = ' '
 
-                keys_length[i][j] = len(str(values_dict[filenames[i]][keys[j]]))
+                keys_length[i][j] = len(str(final_values_dict[filenames[i]][keys[j]]))
 
         keys_length = keys_length.T
         length = [int(max(i)) for i in keys_length]
@@ -65,13 +86,13 @@ def dfitsort_view(values_dict):
         ################prepare header
         ##create format
         form = ""
-        form += "{:%s}"%maxsize_filename
+        form += "{:^%s}"%maxsize_filename
         #for i in length:
         for i, j in zip(length, header_keys_length):
             if i > j:
-                form += "\t{:%s}"%i
+                form += "\t{:^%s}"%i
             else:
-                form += "\t{:%s}"%j
+                form += "\t{:^%s}"%j
         form += ""
 
         #header
@@ -91,16 +112,16 @@ def dfitsort_view(values_dict):
         print(header)
         print(sep)
         ##and print all values
-        for i in values_dict:
+        for i in final_values_dict:
             linevalues = [os.path.basename(i)]
-            values = list(values_dict[i].values())
+            values = list(final_values_dict[i].values())
 
             ##check if one line is missing a keyword
             ##and replace by 'Not FOUND'
             #if len(keys)-len(values) != 0:
             #    values += ['Not FOUND!'] * (len(keys)-len(values))
-                
             allvalue = linevalues + values
+            #print(allvalue)
             print(form.format(*allvalue))
 
 
@@ -219,13 +240,28 @@ class Testdisplayfinal(unittest.TestCase):
         '''
         test the final display function
         '''
-        out1 = 'filename  	AA	BB	CC\n'
-        out2 = '----------	--	--	--\n'
-        out3 = 'file1.fits	 1	 2	 3\n'
-        out4 = 'file2.fits	 3	 4	 5\n'
-        out5 = 'file3.fits	 3	 7	 7\n'
+        out1 = '{:^9}\t{:^2}\t{:^2}\t{:^2}\n'.format(' filename ', 'AA', 'BB', 'CC')
+        out2 = '{:^9}\t{:^2}\t{:^2}\t{:^2}\n'.format('----------', '--', '--', '--')
+        out3 = '{:^9}\t{:^2}\t{:^2}\t{:^2}\n'.format('file1.fits', '1', '2', '3')
+        out4 = '{:^9}\t{:^2}\t{:^2}\t{:^2}\n'.format('file2.fits', '3', '4', '5')
+        out5 = '{:^9}\t{:^2}\t{:^2}\t{:^2}\n'.format('file3.fits', '3', '7', '7')
         out = out1 + out2 + out3 + out4+ out5
         dico = {'file1.fits': {'AA':1, 'BB':2, 'CC':3}, \
                 'file2.fits': {'AA':3, 'BB':4, 'CC':5},\
                 'file3.fits': {'AA':3, 'BB':7, 'CC':7}}
+        self.displayfinal(dico, out)
+
+    def test_displayfinal_missing_keyword(self):
+        '''
+        test the final display function when a keyword is missing for a file
+        '''
+        out1 = '{:^9}\t{:^2}\t{:^2}\t{:^2}\n'.format(' filename ', 'AA', 'BB', 'CC')
+        out2 = '{:^9}\t{:^2}\t{:^2}\t{:^2}\n'.format('----------', '--', '--', '--')
+        out3 = '{:^9}\t{:^2}\t{:^2}\t{:^2}\n'.format('file1.fits', '1', '-', '-')
+        out4 = '{:^9}\t{:^2}\t{:^2}\t{:^2}\n'.format('file2.fits', '3', '-', '5')
+        out5 = '{:^9}\t{:^2}\t{:^2}\t{:^2}\n'.format('file3.fits', '3', '7', '-')
+        out = out1 + out2 + out3 + out4+ out5
+        dico = {'file1.fits': {'AA':1}, \
+                'file2.fits': {'AA':3, 'CC':5},\
+                'file3.fits': {'AA':3, 'BB':7}}
         self.displayfinal(dico, out)

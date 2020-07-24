@@ -25,12 +25,14 @@ def test():
     suite2 = unittest.TestLoader().loadTestsFromModule(display)
     unittest.TextTestRunner(verbosity=3).run(suite2)
 
-    ##test the display
+    ##test gettting file names and keywords from user 
+    print('\n\033[1m---UnitTest getting file names\033[0;0m')
+    suite4 = unittest.TestLoader().loadTestsFromModule(get_files_and_keys)
+    unittest.TextTestRunner(verbosity=3).run(suite4)
+
+    ##test the readfits
     print('\n\033[1m---UnitTest read fits and extraction functions\033[0;0m')
     suite3 = unittest.TestLoader().loadTestsFromModule(readfits)
     unittest.TextTestRunner(verbosity=3).run(suite3)
 
-    ##test the display
-    print('\n\033[1m---UnitTest getting file names\033[0;0m')
-    suite4 = unittest.TestLoader().loadTestsFromModule(get_files_and_keys)
-    unittest.TextTestRunner(verbosity=3).run(suite4)
+

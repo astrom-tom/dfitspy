@@ -1,6 +1,6 @@
 from setuptools import setup
 
-__version__ = '20.4.1'
+__version__ = '20.5.0.beta'
 __place__ = 'ESO Paranal observatory'
 __credits__ = "Romain Thomas"
 __license__ = "GNU GPL v3"
@@ -21,7 +21,7 @@ setup(
    python_requires = '>=3.6',
    install_requires = [
        "numpy >= 1.14.3",
-       "fitsio == 0.9.11",
+       "astropy >= 4.0",
        "python-magic >= 0.4.15",
    ],
    include_package_data=True,

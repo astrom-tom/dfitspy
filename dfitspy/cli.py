@@ -11,7 +11,7 @@ This file organises the command line interface (and nunit test it)
 @author(s): Romain Thomas
 @year(s):  2018
 @First version: 18.09-0
-@Current version: 20.3.1
+@Current version: 20.7.1
 @Telescope(s): ALL
 @Instrument(s): ALL
 @Valid for SciOpsPy: v0.1-b
@@ -69,6 +69,9 @@ def command_line(args):
     opt.add_argument('--grep', help='Restrain the files to the one with a given \
             value of a given parameter. It can be used multiple times with different values', \
             type=str, action='append')
+    opt.add_argument('--exact', '-e', help='Consider only exact matches for keywords',
+                     action='store_true')
+    opt.add_argument('--HDU', '-H', help='HDU extension, default is 0 (primary header)', type=int, default=0) 
     opt.add_argument('--save', help='Save the list of files into an ascii file',\
             action='store_true')
     opt.add_argument('--test', help='Start the testing of the program', \

@@ -1,4 +1,4 @@
-__version__ = '20.4.1'
+__version__ = '20.7.0'
 __place__ = 'ESO Paranal observatory'
 __credits__ = "Romain Thomas"
 __license__ = "GNU GPL v3"

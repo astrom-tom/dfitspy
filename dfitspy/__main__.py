@@ -33,6 +33,7 @@ import os
 from subprocess import call
 import datetime
 import socket
+import time
 
 
 ###local imports
@@ -68,8 +69,7 @@ def main():
             dir_path = os.path.dirname(os.path.realpath(__file__))
             url = os.path.join(dir_path, 'docs/build/html/index.html')
 
-        for i in ['firefox', 'falkon', 'open', 'qupzilla', \
-                'chromium', 'google-chrome']:
+        for i in ['firefox', 'falkon', 'open', 'chromium', 'google-chrome']:
             ##we check if the command exist in the system
             exist = call(['which', i])
             if exist == 0:
@@ -97,7 +97,7 @@ def main():
 
     if args.list:
         ###get all keywords
-        all_keywords = readfits.get_all_keyword(list_files[0])
+        all_keywords = readfits.get_all_keyword(list_files[0], int(args.HDU))
         ###display them
         print('\n\033[1m[DFITSPY INFO]>keywords in %s \033[0;0m'%\
                 os.path.basename(list_files[0]))
@@ -106,7 +106,8 @@ def main():
 
     ##display number of files
     print('\n\033[1m[DFITSPY INFO]> Current directory: %s \033[0;0m'%os.getcwd())
-    print('\033[1m[DFITSPY INFO]> %s fits files will be considered \033[0;0m\n'%len(list_files))
+    print('\033[1m[DFITSPY INFO]> %s fits files will be considered \033[0;0m'%len(list_files))
+    print('\033[1m[DFITSPY INFO]> We look in HDU %s \033[0;0m\n'%args.HDU)
 
     ###get greeping from command line
     if args.grep:
@@ -122,7 +123,7 @@ def main():
         list_keys = get.get_keys(args.key)
 
     ##get all values for each keys and each files
-    allvalues = readfits.dfitsort(list_files, list_keys, grep)
+    allvalues = readfits.dfitsort(list_files, list_keys, args.exact, grep, int(args.HDU))
 
     ##display them in terminal
     dp.dfitsort_view(allvalues)

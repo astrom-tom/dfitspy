@@ -44,6 +44,10 @@ Content
 Change log
 ==========
 
+**20.5.1**:
+        * Bug fix when there is an empty file next to the fits file and the '-f *' or '-f all' is called.
+        * Add a '-e' or '- -exact' flag to enforce the extracted keywords to **exactly** match the user-provided one (it will not take all the keywords containing the one given by the user). 
+
 **20.4.1**:
         * Bug fix in display of one of the files does not have all the keywords
 

@@ -40,15 +40,13 @@ def get_files(files, dire=False):
                 list of all the files
     '''
 
-    ##allowed extensiont 
-    extensions = ['.fits', '.fts', '.FTS', '.Z']
+    ##allowed extensions
+    extensions = ['.fits', '.fts', '.FTS', '.Z', '.fz']
 
     ##if no directory was given, we assume the current working directory
     if not dire:
         dire = os.getcwd()
  
-
-
     ##A list is given, need to check if some are fits file
     if len(files) > 1:
         allfiles = []
@@ -60,7 +58,9 @@ def get_files(files, dire=False):
             else:
                 if not os.path.isdir(k):
                     filetype = numpy.array(magic.from_file(k).split())
-                    if filetype[1] == 'compressed':
+                    if len(filetype) < 2:
+                        pass
+                    elif filetype[1] == 'compressed':
                         findwas = numpy.where(filetype == 'was')[0]
                         if findwas:
                             original_name = filetype[findwas[0]+1][1:-2]
@@ -68,7 +68,7 @@ def get_files(files, dire=False):
                                 allfiles.append(k)
 
                     elif filetype[0] == 'FITS':
-                        allfiles.append(f)
+                        allfiles.append(k)
 
                     else:
                         pass
@@ -84,7 +84,9 @@ def get_files(files, dire=False):
             else:
                 if not os.path.isdir(k):
                     filetype = numpy.array(magic.from_file(k).split())
-                    if filetype[1] == 'compressed':
+                    if len(filetype) < 2:
+                        pass
+                    elif filetype[1] == 'compressed':
                         findwas = numpy.where(filetype == 'was')[0]
                         if findwas:
                             original_name = filetype[findwas[0]+1][1:-2]
@@ -110,7 +112,9 @@ def get_files(files, dire=False):
             else:
                 if not os.path.isdir(f) and os.path.isfile(f):
                     filetype = numpy.array(magic.from_file(f).split())
-                    if filetype[1] == 'compressed':
+                    if len(filetype) < 2:
+                        pass 
+                    elif filetype[1] == 'compressed':
                         findwas = numpy.where(filetype == 'was')[0]
                         if findwas:
                             original_name = filetype[findwas[0]+1][1:-2]
@@ -118,7 +122,6 @@ def get_files(files, dire=False):
                                 allfiles.append(f)
                     elif filetype[0] == 'FITS':
                         allfiles.append(f)
-
                     else:
                         pass
                         
@@ -167,8 +170,17 @@ class Testgetkeys(unittest.TestCase):
         contained in a list
         '''
         key = 'OBJECT,STR,SEEING'
-        out = get_keys(key)
+        out= get_keys(key)
         self.assertEqual(['OBJECT', 'STR', 'SEEING'], out)
+
+    def test_get_multi_key_with_HIERARCH(self):
+        '''
+        We give three keywords and have to get the three keywords
+        contained in a list
+        '''
+        key = 'OBJECT,STR,SEEING,HIERARCH.ESO.OBS.START'
+        out = get_keys(key)
+        self.assertEqual(['OBJECT', 'STR', 'SEEING', 'HIERARCH ESO OBS START'], out)
 
 
 class Testgetfiles(unittest.TestCase):
@@ -199,7 +211,8 @@ class Testgetfiles(unittest.TestCase):
         ##we are expecting 4 files to be found
         ##for convinience here we just compare the file name (without paths)
         files = [os.path.basename(i) for i in files]
-        expected_files = set(['test.fits', 'test5.fits', 'test2.fits', 'test4.fits', 'test3.fits'])
+        expected_files = set(['test.fits', 'test5.fits', 'test2.fits', 'test4.fits',
+                              'test3.fits', 'test_extra_keyword.fits'])
         self.assertEqual(set(files), expected_files)
 
     def test_get_single_file_wrongname(self):

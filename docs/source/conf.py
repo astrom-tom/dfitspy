@@ -24,9 +24,9 @@ copyright = '2018-20, R. Thomas'
 author = 'R. Thomas'
 
 # The short X.Y version
-version = '20.4'
+version = '20.7'
 # The full version, including alpha/beta/rc tags
-release = '20.4.1'
+release = '20.7.0'
 
 
 # -- General configuration ---------------------------------------------------
@@ -74,7 +74,7 @@ pygments_style = 'sphinx'
 
 # -- Options for HTML output -------------------------------------------------
 
-html_logo = "dfitspy_tr.png"
+html_logo = "dfitspy.png"
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.

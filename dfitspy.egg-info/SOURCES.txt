@@ -61,6 +61,7 @@ dfitspy/docs/build/html/_static/comment-bright.png
 dfitspy/docs/build/html/_static/comment-close.png
 dfitspy/docs/build/html/_static/comment.png
 dfitspy/docs/build/html/_static/custom.css
+dfitspy/docs/build/html/_static/dfitspy.png
 dfitspy/docs/build/html/_static/dfitspy_tr.png
 dfitspy/docs/build/html/_static/doctools.js
 dfitspy/docs/build/html/_static/documentation_options.js
@@ -217,6 +218,7 @@ dfitspy/docs/source/dfits_fitsort.rst
 dfitspy/docs/source/dfitspy.png
 dfitspy/docs/source/dfitspy.rst
 dfitspy/docs/source/dfitspy_tr.png
+dfitspy/docs/source/display_log.png
 dfitspy/docs/source/index.rst
 dfitspy/docs/source/installation.rst
 dfitspy/docs/source/logo.png

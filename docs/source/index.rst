@@ -44,6 +44,19 @@ Content
 Change log
 ==========
 
+**20.7.1**:
+        **MAJOR CHANGES!**
+
+        * Move from fitsio to astropy 4.0 as FITS header reading library
+        * Bug fix for terminal display when one of the keywords is not found in the fits header. It is replaced by '-'.
+        * You can now use *.fits.fz files [thanks to @vertighel for proposing this change!]
+        * You can now access the headers from different extenstions! (default is header 0, primary header)
+
+        Thanks to C. Herenz for the two tickets on github that triggered some changes in this version!
+
+        * Bug fix when there is an empty file next to the fits files and the '-f *' or '-f all' is called.
+        * Add a '-e' or '- -exact' flag to enforce the extracted keywords to **exactly** match the user-provided one (it will not take all the keywords containing the one given by the user). 
+
 **20.4.1**:
         * Bug fix in display of one of the files does not have all the keywords
 

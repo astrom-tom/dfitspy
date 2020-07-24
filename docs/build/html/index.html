@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Welcome to dfitspy’s documentation! &mdash; dfitspy 20.4.1 documentation</title>
+  <title>Welcome to dfitspy’s documentation! &mdash; dfitspy 20.7.0 documentation</title>
   
 
   
@@ -54,7 +54,7 @@
 
           
             
-            <img src="_static/dfitspy_tr.png" class="logo" alt="Logo"/>
+            <img src="_static/dfitspy.png" class="logo" alt="Logo"/>
           
           </a>
 
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                20.4
+                20.7
               </div>
             
           
@@ -179,7 +179,20 @@
 </div>
 <div class="section" id="change-log">
 <h1>Change log<a class="headerlink" href="#change-log" title="Permalink to this headline">¶</a></h1>
-<dl class="simple">
+<dl>
+<dt><strong>20.7.1</strong>:</dt><dd><p><strong>MAJOR CHANGES!</strong></p>
+<ul class="simple">
+<li><p>Move from fitsio to astropy 4.0 as FITS header reading library</p></li>
+<li><p>Bug fix for terminal display when one of the keywords is not found in the fits header. It is replaced by ‘-‘.</p></li>
+<li><p>You can now use <a href="#id1"><span class="problematic" id="id2">*</span></a>.fits.fz files [thanks to &#64;vertighel for proposing this change!]</p></li>
+<li><p>You can now access the headers from different extenstions! (default is header 0, primary header)</p></li>
+</ul>
+<p>Thanks to C. Herenz for the two tickets on github that triggered some changes in this version!</p>
+<ul class="simple">
+<li><p>Bug fix when there is an empty file next to the fits files and the ‘-f <a href="#id3"><span class="problematic" id="id4">*</span></a>’ or ‘-f all’ is called.</p></li>
+<li><p>Add a ‘-e’ or ‘- -exact’ flag to enforce the extracted keywords to <strong>exactly</strong> match the user-provided one (it will not take all the keywords containing the one given by the user).</p></li>
+</ul>
+</dd>
 <dt><strong>20.4.1</strong>:</dt><dd><ul class="simple">
 <li><p>Bug fix in display of one of the files does not have all the keywords</p></li>
 </ul>
