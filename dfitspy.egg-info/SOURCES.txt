@@ -70,6 +70,7 @@ dfitspy/docs/build/html/_static/down.png
 dfitspy/docs/build/html/_static/file.png
 dfitspy/docs/build/html/_static/jquery-3.2.1.js
 dfitspy/docs/build/html/_static/jquery-3.4.1.js
+dfitspy/docs/build/html/_static/jquery-3.5.1.js
 dfitspy/docs/build/html/_static/jquery.js
 dfitspy/docs/build/html/_static/language_data.js
 dfitspy/docs/build/html/_static/minus.png

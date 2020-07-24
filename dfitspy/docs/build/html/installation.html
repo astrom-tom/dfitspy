@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Installation &mdash; dfitspy 20.5.1 documentation</title>
+  <title>Installation &mdash; dfitspy 20.7.0 documentation</title>
   
 
   
@@ -63,7 +63,7 @@
             
             
               <div class="version">
-                20.5
+                20.7
               </div>
             
           
@@ -91,7 +91,7 @@
 <li class="toctree-l1"><a class="reference internal" href="index.html">Home</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Installation</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#from-the-python-repository">1-from the python repository</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#from-the-local-the-github-repository">2-From the local the github repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#from-the-github-repository">2-From the github repository</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="usage.html">dfitspy as an executable</a></li>
@@ -167,8 +167,8 @@
 <h1>Installation<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 <p>dfitspy is written in python 3.6 (and work in python 3.8.2). It needs only the following libraries:</p>
 <ul class="simple">
-<li><p>Numpy v1.14.3: Numerical python</p></li>
-<li><p>fitsio v0.9.11: fitsio library</p></li>
+<li><p>Numpy v1.14.3 or higher: Numerical python</p></li>
+<li><p>astropy v4.0.1: FITS reader library</p></li>
 <li><p>python-magic v0.4.15: file type checker</p></li>
 </ul>
 <p>Other libraries are used, but they are all part of the standard python library. As such no extra installations are needed.</p>
@@ -180,20 +180,20 @@ Thanks to A. Mehner for this.</p>
 </div>
 <div class="section" id="from-the-python-repository">
 <h2>1-from the python repository<a class="headerlink" href="#from-the-python-repository" title="Permalink to this headline">¶</a></h2>
-<p>The last dfitspy version is v20.5.1 (1st version of May 2020) and is available in the main pypi repository. To install it:</p>
+<p>The last dfitspy version is v20.7.1 (1st version of July 2020) and is available in the main pypi repository. To install it:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">dfitspy</span> <span class="o">--</span><span class="n">user</span>
 </pre></div>
 </div>
 <p>Using this command will allow you not to have to install any other package. Pip will install what is missing for you.</p>
 </div>
-<div class="section" id="from-the-local-the-github-repository">
-<h2>2-From the local the github repository<a class="headerlink" href="#from-the-local-the-github-repository" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="from-the-github-repository">
+<h2>2-From the github repository<a class="headerlink" href="#from-the-github-repository" title="Permalink to this headline">¶</a></h2>
 <p>The installable package can be found in the github directory under the ‘’dist’’ directory. Take the last version and run:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">dfitspy</span><span class="o">-</span><span class="n">X</span><span class="o">.</span><span class="n">Y</span><span class="o">.</span><span class="n">Z</span><span class="o">.</span><span class="n">tar</span><span class="o">.</span><span class="n">gz</span> <span class="o">--</span><span class="n">user</span>
 </pre></div>
 </div>
-<p>In the version number of dfitspy, X is the year, Y is the month, and Z is the number of revisions in that month. Therefore 19.1.5 means, fifth revision of January 2019.</p>
 <p>This will install dfitspy.</p>
+<p>In the version number of dfitspy, X is the year, Y is the month, and Z is the number of revisions in that month. Therefore 20.5.5 means, fifth revision of May 2020.</p>
 </div>
 </div>
 

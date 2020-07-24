@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>get files and keys functions &mdash; dfitspy 20.5.1 documentation</title>
+  <title>get files and keys functions &mdash; dfitspy 20.7.0 documentation</title>
   
 
   
@@ -63,7 +63,7 @@
             
             
               <div class="version">
-                20.5
+                20.7
               </div>
             
           
@@ -231,7 +231,7 @@ transform to ESO SEQ ARM (with spaces)</p>
 <p>This file organises and reads the FITS files</p>
 <dl class="py function">
 <dt id="dfitspy.readfits.dfitsort">
-<code class="sig-prename descclassname">dfitspy.readfits.</code><code class="sig-name descname">dfitsort</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">listfiles</span></em>, <em class="sig-param"><span class="n">listkeys</span></em>, <em class="sig-param"><span class="n">exact</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">grepping</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#dfitspy.readfits.dfitsort" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">dfitspy.readfits.</code><code class="sig-name descname">dfitsort</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">listfiles</span></em>, <em class="sig-param"><span class="n">listkeys</span></em>, <em class="sig-param"><span class="n">exact</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">grepping</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">HDU</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#dfitspy.readfits.dfitsort" title="Permalink to this definition">¶</a></dt>
 <dd><p>This function get for all files, the value of all the keywords that are passed</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -244,6 +244,11 @@ transform to ESO SEQ ARM (with spaces)</p>
 will be compared to all the values
 of the keywords. If all grepping values appear in the
 header of one file the file will be kept</p>
+</dd>
+<dt><strong>exact</strong><span class="classifier">bool</span></dt><dd><p>if the exact keyword from the user must be retrieved. If not,
+any keyword containing the requested keyword will be used.</p>
+</dd>
+<dt><strong>HDU</strong><span class="classifier">int</span></dt><dd><p>extension number to look in. Default is primary: 0</p>
 </dd>
 </dl>
 </dd>
@@ -261,12 +266,14 @@ header of one file the file will be kept</p>
 
 <dl class="py function">
 <dt id="dfitspy.readfits.get_all_keyword">
-<code class="sig-prename descclassname">dfitspy.readfits.</code><code class="sig-name descname">get_all_keyword</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">thefile</span></em><span class="sig-paren">)</span><a class="headerlink" href="#dfitspy.readfits.get_all_keyword" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">dfitspy.readfits.</code><code class="sig-name descname">get_all_keyword</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">thefile</span></em>, <em class="sig-param"><span class="n">HDU</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#dfitspy.readfits.get_all_keyword" title="Permalink to this definition">¶</a></dt>
 <dd><p>This function gets all the keyword in the header of the file</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>thefile     str</strong></dt><dd><p>path/and/file.txt</p>
+</dd>
+<dt><strong>HDU         int</strong></dt><dd><p>FITS extension number to get the keywords from</p>
 </dd>
 </dl>
 </dd>
@@ -283,22 +290,21 @@ header of one file the file will be kept</p>
 <div class="section" id="module-dfitspy.display">
 <span id="display-function"></span><h1>display function<a class="headerlink" href="#module-dfitspy.display" title="Permalink to this headline">¶</a></h1>
 <p>dfitspy is a program aimed at reproducing the dfits program in python.
-This file codes the display</p>
+This file codes the display in the terminal</p>
 <p>&#64;place: ESO - La Silla - Paranal Observatory
 &#64;author(s): Romain Thomas
-&#64;year(s):  ex 2018
+&#64;year(s): 2018-2020
 &#64;First version: 19.9-0
-&#64;Current version: 20.4.1
+&#64;Current version: 20.7.0
 &#64;Telescope(s): ALL
 &#64;Instrument(s): ALL
-&#64;Valid for SciOpsPy: v0.1-b
 &#64;Documentation url:
-&#64;Last SciOps review [date + name]: 18-09-2018 - Romain Thomas</p>
+&#64;Last review [date + name]: 2020-07-21 - Romain Thomas</p>
 <dl class="py function">
 <dt id="dfitspy.display.dfitsort_view">
 <code class="sig-prename descclassname">dfitspy.display.</code><code class="sig-name descname">dfitsort_view</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">values_dict</span></em><span class="sig-paren">)</span><a class="headerlink" href="#dfitspy.display.dfitsort_view" title="Permalink to this definition">¶</a></dt>
 <dd><p>This function displays a-la-dfits the requested informations</p>
-<p>First we display the number of files that was found and then we 
+<p>First we display the number of files that was found and then we
 display the header with keywords</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
